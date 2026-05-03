@@ -7,6 +7,7 @@ import TournamentBracketPage from "./pages/TournamentBracketPage";
 import LeaderboardPage from "./pages/LeaderboardPage";
 import MatchDetailPage from "./pages/MatchDetailPage";
 import PlayerProfilePage from "./pages/PlayerProfilePage";
+import RefereeScoringPage from "./pages/RefereeScoringPage";
 import TopAppBar from "./components/TopAppBar";
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
           <Route path="/dashboard" element={<DashboardPage />} />
           <Route path="/tournaments" element={<TournamentListPage />} />
           <Route path="/bracket" element={<TournamentBracketPage />} />
+          <Route path="/scoring" element={<RefereeScoringPage />} />
           <Route path="/leaderboard" element={<LeaderboardPage />} />
           <Route path="/matches/:id" element={<MatchDetailPage />} />
           <Route path="/players/:id" element={<PlayerProfilePage />} />
