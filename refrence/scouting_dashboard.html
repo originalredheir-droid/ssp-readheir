@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AGS Global Arena | Tactical Command</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "secondary-fixed-dim": "#00daf3",
+                        "primary-fixed-dim": "#c8c6c5",
+                        "on-surface": "#e5e2e1",
+                        "secondary-fixed": "#9cf0ff",
+                        "error": "#ffb4ab",
+                        "on-tertiary-container": "#4c3f00",
+                        "surface": "#131313",
+                        "on-error-container": "#ffdad6",
+                        "on-tertiary-fixed-variant": "#544600",
+                        "on-primary-fixed": "#1c1b1b",
+                        "on-primary-container": "#7e7d7d",
+                        "surface-tint": "#c8c6c5",
+                        "primary-container": "#121212",
+                        "inverse-on-surface": "#313030",
+                        "background": "#131313",
+                        "on-error": "#690005",
+                        "surface-bright": "#393939",
+                        "on-secondary": "#00363d",
+                        "error-container": "#93000a",
+                        "surface-container-lowest": "#0e0e0e",
+                        "surface-container-high": "#2a2a2a",
+                        "primary": "#c8c6c5",
+                        "on-secondary-fixed-variant": "#004f58",
+                        "outline-variant": "#444748",
+                        "on-tertiary": "#3a3000",
+                        "tertiary-fixed": "#ffe16d",
+                        "on-secondary-fixed": "#001f24",
+                        "inverse-surface": "#e5e2e1",
+                        "tertiary-container": "#c9a900",
+                        "secondary": "#bdf4ff",
+                        "surface-container-highest": "#353534",
+                        "outline": "#8e9192",
+                        "surface-container-low": "#1c1b1b",
+                        "on-primary-fixed-variant": "#474646",
+                        "inverse-primary": "#5f5e5e",
+                        "on-primary": "#313030",
+                        "secondary-container": "#00e3fd",
+                        "primary-fixed": "#e5e2e1",
+                        "on-surface-variant": "#c4c7c7",
+                        "on-background": "#e5e2e1",
+                        "tertiary": "#e9c400",
+                        "surface-dim": "#131313",
+                        "tertiary-fixed-dim": "#e9c400",
+                        "surface-container": "#201f1f",
+                        "surface-variant": "#353534",
+                        "on-tertiary-fixed": "#221b00",
+                        "on-secondary-container": "#00616d"
+                    },
+                    fontFamily: {
+                        "headline": ["Space Grotesk"],
+                        "body": ["Inter"],
+                        "label": ["Space Grotesk"]
+                    },
+                    borderRadius: { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #131313;
+            color: #e5e2e1;
+            font-family: 'Inter', sans-serif;
+        }
+        .scrolling-ticker {
+            animation: ticker 30s linear infinite;
+        }
+        @keyframes ticker {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="flex min-h-screen">
+<!-- Sidebar Navigation (Desktop) -->
+<aside class="hidden md:flex flex-col h-screen py-8 bg-[#1C1B1B] dark:bg-[#1C1B1B] h-full w-72 fixed left-0 top-0 z-50">
+<div class="px-8 mb-12">
+<span class="text-[#E9C400] font-black text-2xl font-headline tracking-tighter">AGS_CORE</span>
+</div>
+<nav class="flex flex-col space-y-4 px-4">
+<a class="text-gray-400 px-4 py-3 flex items-center gap-4 hover:bg-[#2A2A2A] hover:text-white transition-all font-label font-medium text-xs tracking-widest uppercase cursor-pointer" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+                Dashboard
+            </a>
+<a class="bg-[#201F1F] text-[#00E5FF] border-l-4 border-[#00E5FF] px-4 py-3 flex items-center gap-4 font-label font-medium text-xs tracking-widest uppercase cursor-pointer" href="#">
+<span class="material-symbols-outlined" data-icon="person_search">person_search</span>
+                Talent Search
+            </a>
+<a class="text-gray-400 px-4 py-3 flex items-center gap-4 hover:bg-[#2A2A2A] hover:text-white transition-all font-label font-medium text-xs tracking-widest uppercase cursor-pointer" href="#">
+<span class="material-symbols-outlined" data-icon="verified">verified</span>
+                Verified Stats
+            </a>
+<a class="text-gray-400 px-4 py-3 flex items-center gap-4 hover:bg-[#2A2A2A] hover:text-white transition-all font-label font-medium text-xs tracking-widest uppercase cursor-pointer" href="#">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+                Scouting Leads
+            </a>
+<a class="text-gray-400 px-4 py-3 flex items-center gap-4 hover:bg-[#2A2A2A] hover:text-white transition-all font-label font-medium text-xs tracking-widest uppercase cursor-pointer" href="#">
+<span class="material-symbols-outlined" data-icon="payments">payments</span>
+                Marketplace
+            </a>
+</nav>
+<div class="mt-auto px-6 py-6 border-t border-[#353534]/30">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-surface-container-high border border-outline-variant/20 overflow-hidden">
+<img alt="Scout Avatar" class="w-full h-full object-cover" data-alt="Cyberpunk style male tactical scout profile avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA66tBEJzQZt_hhJVcR0bIliLid567CIF_lbjoAxR1rnZqT5GGOswf5HGHkaGRTCZCxUivOGN8F4UtllMltnwMUU3mY3L5RjkmfUMSr6SU3M3gi_bp0rybov85LqgespHbGDHAfDkJegQyXmG05a_Z5KyfKgPV6AssRMFhgTgKyEc9bMbf2mYiCqxBfeIR2BSo5KL3xPOh0e3k7OwN3_PFVL7-UQudCjb2riiHIDATz-0Hoe_yiaZYTyWewdc4m91rK69T78x3aHErg"/>
+</div>
+<div>
+<div class="text-xs font-headline font-bold tracking-widest text-[#00E5FF]">COMMANDER_01</div>
+<div class="text-[10px] text-gray-500 uppercase">Lead Scout</div>
+</div>
+<div class="ml-auto">
+<span class="text-[10px] font-bold text-[#E9C400] px-1 border border-[#E9C400]/30">VERIFIED</span>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 md:ml-72 pb-24 md:pb-8">
+<!-- Top App Bar -->
+<header class="bg-[#131313] dark:bg-[#131313] w-full sticky top-0 z-40 shadow-[0_0_20px_rgba(0,229,255,0.04)]">
+<div class="flex justify-between items-center px-6 py-4 w-full">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[#00E5FF] cursor-pointer" data-icon="grid_view">grid_view</span>
+<h1 class="font-headline uppercase tracking-[0.05em] text-sm font-bold text-[#00E5FF]">TACTICAL COMMAND</h1>
+</div>
+<div class="flex items-center gap-6">
+<div class="hidden lg:flex items-center gap-2 text-[10px] font-headline font-bold text-gray-500 uppercase tracking-widest">
+<span class="w-2 h-2 rounded-full bg-red-500 animate-pulse"></span>
+                        LIVE NETWORK UPLINK
+                    </div>
+<button class="material-symbols-outlined text-on-surface hover:text-[#00E5FF] transition-colors" data-icon="notifications">notifications</button>
+<div class="w-8 h-8 rounded-full bg-surface-container overflow-hidden border border-[#00E5FF]/20">
+<img alt="Avatar" class="w-full h-full object-cover" data-alt="Small round tactical user avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCQ3LRVtIi2kSkHAh-WG_0_3Hhv1u8_xs-XFmTk29Gq4fvQ-2130bIzvofBK0Styrp0Z19zVkTrZ_HPN2dDWcZkZiyp5pAK3w6EBe3SIJUf02M9v29uzegulhqpcK8PiZPmg7m6jp2AmutCGv_2-0pVtVxw3C2t3Rsm5E62EFcjL5jTRJD8efAxhemg0VoatkTPsFUZ5vQUPZVSPJX2gfOhyAJT9d2f1zyyaq1F8wwnNJjHYdyRa1acbl1UVhC7us49xvEKS-dMPMZi"/>
+</div>
+</div>
+</div>
+<div class="bg-[#1C1B1B] h-[1px] w-full"></div>
+</header>
+<!-- Search Header Canvas -->
+<section class="p-6 md:p-10">
+<div class="max-w-7xl mx-auto space-y-8">
+<!-- Faceted Search Box -->
+<div class="bg-surface-container-low p-1 rounded-lg border border-outline-variant/10 shadow-2xl">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-1">
+<div class="lg:col-span-5 flex items-center px-4 py-3 gap-3 bg-surface-container rounded-l-md">
+<span class="material-symbols-outlined text-gray-500" data-icon="search">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-xs font-headline tracking-widest w-full placeholder-gray-600 uppercase" placeholder="SEARCH OPERATIVES BY ID OR TAG..." type="text"/>
+</div>
+<div class="lg:col-span-2 flex items-center px-4 py-3 bg-surface-container-high border-x border-background/50">
+<span class="material-symbols-outlined text-[#00E5FF] text-sm mr-2" data-icon="category">category</span>
+<select class="bg-transparent border-none focus:ring-0 text-[10px] font-headline font-bold uppercase tracking-tighter w-full text-on-surface">
+<option>ALL DOMAINS</option>
+<option>PHYSICAL</option>
+<option>ESPORTS</option>
+<option>HACKATHON</option>
+</select>
+</div>
+<div class="lg:col-span-2 flex items-center px-4 py-3 bg-surface-container-high">
+<span class="material-symbols-outlined text-[#00E5FF] text-sm mr-2" data-icon="location_on">location_on</span>
+<select class="bg-transparent border-none focus:ring-0 text-[10px] font-headline font-bold uppercase tracking-tighter w-full text-on-surface">
+<option>GLOBAL</option>
+<option>NA_CORE</option>
+<option>EU_ZONE</option>
+<option>ASIA_PAC</option>
+</select>
+</div>
+<div class="lg:col-span-3">
+<button class="w-full h-full bg-[#00E5FF] text-[#131313] font-headline font-black text-xs tracking-[0.2em] uppercase py-4 rounded-r-md hover:bg-[#00DAF3] transition-all active:scale-[0.98]">
+                                EXECUTE SEARCH
+                            </button>
+</div>
+</div>
+</div>
+<!-- Ticker Section -->
+<div class="relative overflow-hidden bg-surface-container-lowest h-10 flex items-center border-y border-[#00E5FF]/5">
+<div class="absolute left-0 z-10 bg-surface-container-lowest px-4 h-full flex items-center border-r border-[#00E5FF]/10">
+<span class="text-[9px] font-headline font-black text-[#E9C400] tracking-widest uppercase italic">TRENDING_TALENT</span>
+</div>
+<div class="scrolling-ticker whitespace-nowrap flex gap-12 text-[10px] font-headline tracking-widest text-gray-500">
+<span>// RECRUIT: <span class="text-white">CYBER_PUNK_09</span> - WIN_RATE: <span class="text-[#00E5FF]">92%</span></span>
+<span>// SIGNAL: <span class="text-white">M_JORDAN_V2</span> - SCORE: <span class="text-[#00E5FF]">4.8k</span></span>
+<span>// RECRUIT: <span class="text-white">VOID_WALKER</span> - KD: <span class="text-[#00E5FF]">3.1</span></span>
+<span>// SIGNAL: <span class="text-white">GHOST_SHELL</span> - COMMITS: <span class="text-[#00E5FF]">1.2k</span></span>
+<span>// RECRUIT: <span class="text-white">NEO_GLITCH</span> - WIN_RATE: <span class="text-[#00E5FF]">88%</span></span>
+</div>
+</div>
+<!-- Main Layout Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+<!-- Talent Feed (Left/Middle) -->
+<div class="lg:col-span-8 space-y-6">
+<div class="flex justify-between items-end mb-4">
+<h2 class="font-headline text-2xl font-black italic tracking-tighter text-white">HIGH_POTENTIAL_FEED</h2>
+<span class="text-[10px] text-gray-500 font-label tracking-widest uppercase">342 OPERATIVES FOUND</span>
+</div>
+<!-- Talent Card 1 -->
+<div class="bg-surface-container-low group hover:bg-surface-container transition-all duration-300 relative overflow-hidden p-6 border-l-2 border-[#00E5FF]/20 hover:border-[#00E5FF]">
+<div class="flex flex-col md:flex-row gap-6">
+<div class="relative">
+<div class="w-24 h-24 bg-surface-container-high rounded-md overflow-hidden border border-outline-variant/30">
+<img alt="Player" class="w-full h-full object-cover" data-alt="High quality artistic esport player portrait" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDD5_fZDtIRPsfEhczK8NVmXNqMGxnXIKqF5yPU2YCtUQB7eezW2GWwBN5faTw8lARVcQJ8XIyUltvrjr3O9whs4YrFTsa3n1omOcP9zlNIP6rU7tjLK9nhSwKeqehE0t3Yvc6BXAk0bgbD2HXZNoIrxZVMUebzzDBr3SQ2xvMAjXnIKuwj4gg67Z42KPac6bGVqNnMY4KwcPDKyy5hAQy6qdOVn5Z-Y-KrspNRJjjJs-7QWkHaVdcxfyhxt-SwxFwGWHB33TahQqQ2"/>
+</div>
+<div class="absolute -bottom-2 -right-2 bg-[#E9C400] text-black px-1.5 py-0.5 text-[8px] font-black tracking-tighter rounded-sm">ELITE_V</div>
+</div>
+<div class="flex-1 space-y-4">
+<div class="flex justify-between items-start">
+<div>
+<h3 class="text-xl font-headline font-bold text-white tracking-tight group-hover:text-[#00E5FF] transition-colors">K1NETIX_STRKR</h3>
+<p class="text-[10px] font-label text-gray-500 uppercase tracking-widest">DOMAIN: eSPORTS / APEX_PRIME</p>
+</div>
+<div class="flex gap-2">
+<button class="p-2 bg-surface-container-high text-gray-400 hover:text-white transition-colors border border-outline-variant/10">
+<span class="material-symbols-outlined text-sm" data-icon="visibility">visibility</span>
+</button>
+<button class="p-2 bg-surface-container-high text-[#00E5FF] hover:bg-[#00E5FF] hover:text-[#131313] transition-all border border-[#00E5FF]/20">
+<span class="material-symbols-outlined text-sm" data-icon="person_add">person_add</span>
+</button>
+</div>
+</div>
+<div class="grid grid-cols-3 gap-4 border-t border-outline-variant/10 pt-4">
+<div>
+<div class="text-[9px] text-gray-500 uppercase font-headline">Win Rate</div>
+<div class="text-lg font-headline font-bold text-[#00E5FF]">78.4%</div>
+</div>
+<div>
+<div class="text-[9px] text-gray-500 uppercase font-headline">K/D Ratio</div>
+<div class="text-lg font-headline font-bold text-white">2.41</div>
+</div>
+<div>
+<div class="text-[9px] text-gray-500 uppercase font-headline">Rank Score</div>
+<div class="text-lg font-headline font-bold text-[#E9C400]">4,892</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Talent Card 2 -->
+<div class="bg-surface-container-low group hover:bg-surface-container transition-all duration-300 relative overflow-hidden p-6 border-l-2 border-[#00E5FF]/20 hover:border-[#00E5FF]">
+<div class="flex flex-col md:flex-row gap-6">
+<div class="relative">
+<div class="w-24 h-24 bg-surface-container-high rounded-md overflow-hidden border border-outline-variant/30">
+<img alt="Player" class="w-full h-full object-cover" data-alt="Futuristic female digital artist or hacker avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCloN1K56E1dGJuRy2Zo2qwlO6g-2XmTNEwxCdBfJ4F-_G8soLwfdUpaRTLHiv4rG1zLYU6NBLOfFfDLtUBZwd0Q0Z_0lcBfI6NECBVDfxeiNjghNeP8-nqIqkmDKgjIZSf_g314Dkr-nlZw56X1BSm3TWNw25SXOnaFJ-ZCP8S37xYfaFQzjCdDVybawOpgZHeM2Ljgtckz4R_m_3zbeO24FY_82n0bhzC_f95uF4Js-oe81riRHFn6S2_jkqsuknxxoulowbrlwua"/>
+</div>
+<div class="absolute -bottom-2 -right-2 bg-[#00E5FF] text-black px-1.5 py-0.5 text-[8px] font-black tracking-tighter rounded-sm">PRO_STAT</div>
+</div>
+<div class="flex-1 space-y-4">
+<div class="flex justify-between items-start">
+<div>
+<h3 class="text-xl font-headline font-bold text-white tracking-tight group-hover:text-[#00E5FF] transition-colors">V0ID_RUNN3R</h3>
+<p class="text-[10px] font-label text-gray-500 uppercase tracking-widest">DOMAIN: HACKATHON / CYBER_SEC</p>
+</div>
+<div class="flex gap-2">
+<button class="p-2 bg-surface-container-high text-gray-400 hover:text-white transition-colors border border-outline-variant/10">
+<span class="material-symbols-outlined text-sm" data-icon="visibility">visibility</span>
+</button>
+<button class="p-2 bg-surface-container-high text-[#00E5FF] hover:bg-[#00E5FF] hover:text-[#131313] transition-all border border-[#00E5FF]/20">
+<span class="material-symbols-outlined text-sm" data-icon="person_add">person_add</span>
+</button>
+</div>
+</div>
+<div class="grid grid-cols-3 gap-4 border-t border-outline-variant/10 pt-4">
+<div>
+<div class="text-[9px] text-gray-500 uppercase font-headline">Commits</div>
+<div class="text-lg font-headline font-bold text-[#00E5FF]">1,450</div>
+</div>
+<div>
+<div class="text-[9px] text-gray-500 uppercase font-headline">Bounties</div>
+<div class="text-lg font-headline font-bold text-white">12</div>
+</div>
+<div>
+<div class="text-[9px] text-gray-500 uppercase font-headline">Uptime</div>
+<div class="text-lg font-headline font-bold text-white">99.9%</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Talent Card 3 -->
+<div class="bg-surface-container-low group hover:bg-surface-container transition-all duration-300 relative overflow-hidden p-6 border-l-2 border-[#00E5FF]/20 hover:border-[#00E5FF]">
+<div class="flex flex-col md:flex-row gap-6">
+<div class="relative">
+<div class="w-24 h-24 bg-surface-container-high rounded-md overflow-hidden border border-outline-variant/30">
+<img alt="Player" class="w-full h-full object-cover" data-alt="Athletic male profile photo for physical sports scouting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDaNyYOejSP__ppXpW4CXowhxChXZeB0tp9MdGZX5b2s_yX12siEh8n10BEy2U5Y6YqZnJkpGM0pMVeJvTHveE8Jx9M6JSCc_MJLz8K-vlAe30jP6dg-FhDUJv0EKw6Ubcda-AJd4kmmYAJTAX76d5LFvFBRagTHUAF7iNGpX89sc48C1SvMZ8vCb7n_XYoPBxM3AmA205t8HbrNKvSl2INwCMzVbSX9LM20XYfj0SxOu2lzT6Jj1H5b0rQ7sGNFRLW1a9VgBZfK4BD"/>
+</div>
+<div class="absolute -bottom-2 -right-2 bg-[#E9C400] text-black px-1.5 py-0.5 text-[8px] font-black tracking-tighter rounded-sm">LEAGUE_A</div>
+</div>
+<div class="flex-1 space-y-4">
+<div class="flex justify-between items-start">
+<div>
+<h3 class="text-xl font-headline font-bold text-white tracking-tight group-hover:text-[#00E5FF] transition-colors">PHOENIX_RISE</h3>
+<p class="text-[10px] font-label text-gray-500 uppercase tracking-widest">DOMAIN: PHYSICAL / URBAN_ATHLETE</p>
+</div>
+<div class="flex gap-2">
+<button class="p-2 bg-surface-container-high text-gray-400 hover:text-white transition-colors border border-outline-variant/10">
+<span class="material-symbols-outlined text-sm" data-icon="visibility">visibility</span>
+</button>
+<button class="p-2 bg-surface-container-high text-[#00E5FF] hover:bg-[#00E5FF] hover:text-[#131313] transition-all border border-[#00E5FF]/20">
+<span class="material-symbols-outlined text-sm" data-icon="person_add">person_add</span>
+</button>
+</div>
+</div>
+<div class="grid grid-cols-3 gap-4 border-t border-outline-variant/10 pt-4">
+<div>
+<div class="text-[9px] text-gray-500 uppercase font-headline">Vertical</div>
+<div class="text-lg font-headline font-bold text-white">38 IN</div>
+</div>
+<div>
+<div class="text-[9px] text-gray-500 uppercase font-headline">Sprint 40m</div>
+<div class="text-lg font-headline font-bold text-[#00E5FF]">4.42s</div>
+</div>
+<div>
+<div class="text-[9px] text-gray-500 uppercase font-headline">Agility</div>
+<div class="text-lg font-headline font-bold text-white">92/100</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Side Panels (Right) -->
+<div class="lg:col-span-4 space-y-8">
+<!-- Marketplace CTA -->
+<div class="bg-gradient-to-br from-[#1C1B1B] to-[#0E0E0E] p-6 border border-[#E9C400]/20 rounded-lg relative overflow-hidden group">
+<div class="absolute top-0 right-0 p-2">
+<span class="material-symbols-outlined text-[#E9C400]/20 text-6xl rotate-12 group-hover:rotate-0 transition-transform duration-700" data-icon="rocket_launch">rocket_launch</span>
+</div>
+<div class="relative z-10 space-y-4">
+<span class="text-[10px] font-black text-[#E9C400] tracking-[0.3em] uppercase">UPGRADE_PROTOCOL</span>
+<h3 class="text-xl font-headline font-bold text-white leading-tight">UNLOCK ELITE TIER SCOUTING LEADS</h3>
+<p class="text-xs text-gray-400 font-body">Get direct access to enterprise-grade talent metrics and verified recruitment licenses.</p>
+<button class="w-full bg-[#E9C400] text-black font-headline font-bold text-xs py-3 tracking-widest uppercase rounded hover:shadow-[0_0_15px_rgba(233,196,0,0.3)] transition-all">
+                                    GET SCOUTING LICENSE
+                                </button>
+</div>
+</div>
+<!-- Rising Stars Section -->
+<div class="bg-surface-container-low p-6 rounded-lg space-y-6">
+<div class="flex items-center justify-between">
+<h4 class="font-headline font-bold text-sm text-[#00E5FF] uppercase tracking-widest">RISING_STARS</h4>
+<span class="material-symbols-outlined text-[#00E5FF] text-sm" data-icon="trending_up">trending_up</span>
+</div>
+<div class="space-y-4">
+<div class="flex items-center gap-4 group cursor-pointer">
+<div class="w-10 h-10 bg-surface-container-high rounded-sm overflow-hidden border border-outline-variant/10">
+<img alt="Zeus" class="w-full h-full object-cover" data-alt="Small thumbnail of a high performing participant" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA7AZHNDzHGw0b_WXVM2f9F1nKAgXZLlTkCpxMqYmmbeGkRpJHMcpZQBLH_BxRBSBI6JOnxyVKOHi_03ngkMI712M2KOlwnwSeWDGpseaOa5pgzBdFx6_R2hn0cKzkwLKZIBj7sn9UJi4xOygjUdLjWEB0NPXKXLoF8nVFEIS0aFr1lrbEmi0qzOSUAr6H30c-K0poSH0HeN_7FktcZaq5GLoonaiVKMxshr2ELCH8Ex2a79aSwmZOVBrvpWEOOiulV79TLJwoi5hWD"/>
+</div>
+<div class="flex-1">
+<div class="text-xs font-headline font-bold text-white group-hover:text-[#00E5FF]">ZEUS_99</div>
+<div class="text-[9px] text-gray-500 uppercase tracking-tighter">+14% Performance Growth</div>
+</div>
+<div class="text-[#00E5FF] font-headline font-bold text-xs italic">TOP 1%</div>
+</div>
+<div class="flex items-center gap-4 group cursor-pointer">
+<div class="w-10 h-10 bg-surface-container-high rounded-sm overflow-hidden border border-outline-variant/10">
+<img alt="Lara" class="w-full h-full object-cover" data-alt="Small thumbnail of a high performing participant" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBLOYA7ld9IHdshlwE8_E0QoAFmxXRfZ5McfDzOf09OT_uwZ3WYN5ZqtGu6MsxsNeTtiFc-1SwgGuPexVe4CWZlbNwPBuRrHmSfpUgUtz4yVfVs8R531uObOUuzAfYVP8xbEHPcLinwqERxwldQX4HskjdZc5ry8owAxm17VZjynh5V2QyKMxBMLlApW_D9IRsGitOcgS-goKILpGgalF-GGoBNPgu9_uP4RUkwqqO07aLuFWNwnXQ7_XzJhDhncOovOvkbUXRcYRXk"/>
+</div>
+<div class="flex-1">
+<div class="text-xs font-headline font-bold text-white group-hover:text-[#00E5FF]">LARA_C_MOD</div>
+<div class="text-[9px] text-gray-500 uppercase tracking-tighter">+8% Win Projection</div>
+</div>
+<div class="text-[#00E5FF] font-headline font-bold text-xs italic">NEW</div>
+</div>
+<div class="flex items-center gap-4 group cursor-pointer">
+<div class="w-10 h-10 bg-surface-container-high rounded-sm overflow-hidden border border-outline-variant/10">
+<img alt="DRX" class="w-full h-full object-cover" data-alt="Small thumbnail of a high performing participant" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBDI5Ww4HQXFdcvqSnbxhi1zn0I6tV0tZc5bm2UGQCvvSpcdzN2uxQo8JGhYNOCOzP9-RgwTSHbkVOGakRm-yC03pHvf_n7a2CPnf78PpSlgFuevqkgpvWTWGkjaL4TTGlMKPSB-zrbkMut-fpig4_mIND_l-sus_j7bSfd3tQl1w-zcvackiocSnBODC4R3W4FWffUPuhuouaAIQVUbSImJUDhDfwRaiEsYn-235QGsAjtFopEMm6CyZxET_g-tsHS12UaNJp3FXfM"/>
+</div>
+<div class="flex-1">
+<div class="text-xs font-headline font-bold text-white group-hover:text-[#00E5FF]">DRX_GHOST</div>
+<div class="text-[9px] text-gray-500 uppercase tracking-tighter">+22% Multi-Domain</div>
+</div>
+<div class="text-[#00E5FF] font-headline font-bold text-xs italic">TREND</div>
+</div>
+</div>
+</div>
+<!-- Statistics Widget -->
+<div class="bg-surface-container-low p-6 rounded-lg border-t-2 border-[#E9C400]/40">
+<div class="space-y-4">
+<div class="text-[10px] font-headline font-bold text-gray-500 uppercase tracking-[0.2em]">NETWORK_SNAPSHOT</div>
+<div class="flex justify-between items-end">
+<span class="text-[2rem] font-headline font-black text-white italic">14.2K</span>
+<span class="text-[10px] font-label text-[#00E5FF] mb-2 uppercase tracking-widest">ACTIVE_OPERATIVES</span>
+</div>
+<div class="h-1 bg-surface-container-high w-full relative">
+<div class="absolute left-0 top-0 h-full bg-[#00E5FF] w-[72%]"></div>
+</div>
+<div class="flex justify-between text-[8px] font-headline text-gray-600 uppercase">
+<span>CAPACITY: 20K</span>
+<span>72% ALLOCATION</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Bottom Navigation (Mobile) -->
+<nav class="md:hidden fixed bottom-0 w-full z-50 rounded-t-lg bg-[#131313]/90 backdrop-blur-xl border-t border-[#353534]/15 shadow-[0_-4px_24px_rgba(0,0,0,0.5)] flex justify-around items-center h-20 px-4">
+<a class="flex flex-col items-center justify-center text-gray-500 opacity-60" href="#">
+<span class="material-symbols-outlined" data-icon="account_circle">account_circle</span>
+<span class="font-headline text-[10px] font-bold uppercase">PROFILES</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#00E5FF] scale-110" href="#">
+<span class="material-symbols-outlined" data-icon="query_stats">query_stats</span>
+<span class="font-headline text-[10px] font-bold uppercase">STATS</span>
+</a>
+<a class="flex flex-col items-center justify-center text-gray-500 opacity-60" href="#">
+<span class="material-symbols-outlined" data-icon="radar">radar</span>
+<span class="font-headline text-[10px] font-bold uppercase">LEADS</span>
+</a>
+<a class="flex flex-col items-center justify-center text-gray-500 opacity-60" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-headline text-[10px] font-bold uppercase">SETTINGS</span>
+</a>
+</nav>
+<!-- FAB Action (Contextual) -->
+<button class="fixed bottom-24 right-6 md:bottom-8 md:right-8 w-14 h-14 bg-[#00E5FF] text-[#131313] rounded-lg shadow-[0_0_20px_rgba(0,229,255,0.4)] flex items-center justify-center z-50 hover:scale-105 active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-2xl" data-icon="filter_list">filter_list</span>
+</button>
+</body></html>

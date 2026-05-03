@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Mission Success | AGS Global Arena</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-container-highest": "#353534",
+                        "on-tertiary-fixed-variant": "#544600",
+                        "on-secondary-fixed-variant": "#004f58",
+                        "on-surface": "#e5e2e1",
+                        "primary-fixed-dim": "#c8c6c5",
+                        "surface-variant": "#353534",
+                        "inverse-primary": "#5f5e5e",
+                        "surface-container-lowest": "#0e0e0e",
+                        "on-background": "#e5e2e1",
+                        "background": "#131313",
+                        "error": "#ffb4ab",
+                        "secondary": "#bdf4ff",
+                        "tertiary-container": "#c9a900",
+                        "primary-container": "#121212",
+                        "on-secondary-fixed": "#001f24",
+                        "surface": "#131313",
+                        "on-error": "#690005",
+                        "on-surface-variant": "#c4c7c7",
+                        "on-primary-fixed": "#1c1b1b",
+                        "inverse-on-surface": "#313030",
+                        "surface-container-low": "#1c1b1b",
+                        "outline-variant": "#444748",
+                        "secondary-fixed-dim": "#00daf3",
+                        "primary": "#c8c6c5",
+                        "surface-dim": "#131313",
+                        "on-tertiary-container": "#4c3f00",
+                        "tertiary-fixed": "#ffe16d",
+                        "primary-fixed": "#e5e2e1",
+                        "error-container": "#93000a",
+                        "tertiary": "#e9c400",
+                        "on-error-container": "#ffdad6",
+                        "outline": "#8e9192",
+                        "secondary-container": "#00e3fd",
+                        "surface-bright": "#393939",
+                        "inverse-surface": "#e5e2e1",
+                        "surface-tint": "#c8c6c5",
+                        "surface-container": "#201f1f",
+                        "secondary-fixed": "#9cf0ff",
+                        "on-tertiary": "#3a3000",
+                        "on-tertiary-fixed": "#221b00",
+                        "on-primary-fixed-variant": "#474646",
+                        "tertiary-fixed-dim": "#e9c400",
+                        "surface-container-high": "#2a2a2a",
+                        "on-primary-container": "#7e7d7d",
+                        "on-primary": "#313030",
+                        "on-secondary-container": "#00616d",
+                        "on-secondary": "#00363d"
+                    },
+                    fontFamily: {
+                        "headline": ["Space Grotesk"],
+                        "body": ["Inter"],
+                        "label": ["Space Grotesk"]
+                    },
+                    borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .success-glow {
+            text-shadow: 0 0 15px rgba(0, 229, 255, 0.4);
+        }
+        .tactical-grid {
+            background-image: radial-gradient(circle at 2px 2px, rgba(255,255,255,0.03) 1px, transparent 0);
+            background-size: 24px 24px;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body selection:bg-secondary-container selection:text-on-secondary-container">
+<!-- TopAppBar -->
+<header class="fixed top-0 left-0 w-full z-50 bg-[#131313] flex items-center justify-between px-6 py-4">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[#00E5FF] cursor-pointer hover:bg-[#2A2A2A] transition-colors p-2 rounded-md active:scale-95 duration-150" data-icon="arrow_back">arrow_back</span>
+<h1 class="font-space-grotesk tracking-tighter uppercase font-bold text-[#00E5FF] text-lg">ORDER STATUS</h1>
+</div>
+<div class="text-xl font-bold tracking-widest text-white font-headline">AGS ARENA</div>
+</header>
+<div class="bg-[#1C1B1B] h-[4px] w-full fixed top-[64px] z-50"></div>
+<main class="pt-24 pb-32 px-4 md:px-8 max-w-5xl mx-auto tactical-grid min-h-screen">
+<!-- Mission Success Hero -->
+<section class="flex flex-col items-center text-center mb-12 py-8">
+<div class="mb-6 relative">
+<div class="absolute inset-0 bg-secondary-fixed-dim/20 blur-3xl rounded-full"></div>
+<span class="material-symbols-outlined text-[80px] text-secondary-fixed-dim success-glow relative z-10" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<h2 class="font-headline text-3xl md:text-5xl font-bold tracking-tighter mb-2 text-on-background">MISSION SUCCESS: GEAR SECURED</h2>
+<div class="inline-flex items-center gap-2 px-3 py-1 bg-surface-container-high rounded-md border border-outline-variant/20">
+<span class="font-label text-xs font-bold text-secondary-fixed-dim tracking-widest">TRANSACTION PROTOCOL ID:</span>
+<span class="font-label text-xs font-medium text-white tracking-widest">#AGS-ORD-99210-X</span>
+</div>
+</section>
+<!-- Bento Layout for Content -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+<!-- Acquired Assets List -->
+<div class="md:col-span-8 space-y-4">
+<div class="flex items-center justify-between px-2 mb-2">
+<h3 class="font-headline font-bold text-sm tracking-[0.2em] uppercase text-on-surface-variant">ACQUIRED ASSETS</h3>
+<span class="font-label text-[10px] text-secondary-fixed-dim uppercase tracking-tighter">Inventory Sync: Success</span>
+</div>
+<!-- Asset Card 1 -->
+<div class="bg-surface-container-low p-4 flex gap-6 items-center border-l-4 border-secondary-fixed-dim group hover:bg-surface-container transition-colors">
+<div class="w-20 h-20 bg-surface-container-lowest flex items-center justify-center rounded">
+<img alt="Tactical Jersey" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity" data-alt="Black high tech athletic compression jersey" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCxPX45ojmosxr_B1Pj-GPt4Rd2k_VTk6i0XkFIsvGDXvi5B7p_dGwk46IKTMQsxUmNOFaLBKqC9pD3iySxhBVgRJXupww2N4fCma9EXWLh7eJ9cE7xg0plKzFn34I1Vnu9MR4ABAAtrmvXMAqphfuvdaKHnw94G8Ld4KnqDsHfxxnrexioJND1b7lGRv3OZ4Cibx1Icv9zVeSggySrJKGOJdAbm73bcBxN0usmjBCFJJ0nwSZff_SFWEngQMcoZcCWQcL0z9nnqq_b"/>
+</div>
+<div class="flex-grow">
+<div class="flex justify-between items-start">
+<div>
+<h4 class="font-headline font-bold text-white text-lg">Carbon-Thread Jersey</h4>
+<p class="font-label text-xs text-on-surface-variant tracking-widest uppercase">SKU: AG-JSY-C01</p>
+</div>
+<span class="font-headline font-bold text-white">$120.00</span>
+</div>
+<div class="mt-2 inline-flex items-center gap-1.5 px-2 py-0.5 bg-tertiary/10 rounded-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary animate-pulse"></span>
+<span class="font-label text-[10px] text-tertiary font-bold tracking-widest uppercase">DEPLOYED</span>
+</div>
+</div>
+</div>
+<!-- Asset Card 2 -->
+<div class="bg-surface-container-low p-4 flex gap-6 items-center border-l-4 border-secondary-fixed-dim group hover:bg-surface-container transition-colors">
+<div class="w-20 h-20 bg-surface-container-lowest flex items-center justify-center rounded">
+<img alt="Pro Controller" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity" data-alt="Sleek black pro gaming controller neon accents" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBtdLaYHFZiP9vKXIrDOuA1QlhOtQs9_b_fhWv0cxhlIGd2XRZGALP1ADAttePwBKtcquDbnbK_WexiJDJiL1OUKyiiDR8MfbKy2czeGSZQ7xjXhabYW0TXNptrYOPHnpei1FLqMK-4boB3M8P_KmnXBEXInxxbZOXlA9kFtLf47808DCy2IMe-Fb6iz6e1G3t02H024SVefOvQsPyEjidI0jR2oKaYwdNAhtqu2pW-rEG2eiSX6BwO3TegDOc8fOi2W3rKu_Z-UBPl"/>
+</div>
+<div class="flex-grow">
+<div class="flex justify-between items-start">
+<div>
+<h4 class="font-headline font-bold text-white text-lg">Pro-Tier Controller</h4>
+<p class="font-label text-xs text-on-surface-variant tracking-widest uppercase">SKU: AG-CTR-X9</p>
+</div>
+<span class="font-headline font-bold text-white">$215.00</span>
+</div>
+<div class="mt-2 inline-flex items-center gap-1.5 px-2 py-0.5 bg-tertiary/10 rounded-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary animate-pulse"></span>
+<span class="font-label text-[10px] text-tertiary font-bold tracking-widest uppercase">DEPLOYED</span>
+</div>
+</div>
+</div>
+<!-- Logistics Node -->
+<div class="bg-surface-container-lowest p-6 border border-outline-variant/10">
+<div class="flex items-center gap-4 mb-4">
+<div class="p-3 bg-surface-container rounded">
+<span class="material-symbols-outlined text-secondary-fixed-dim">local_shipping</span>
+</div>
+<div>
+<p class="font-label text-[10px] text-on-surface-variant uppercase tracking-widest">Tactical Delivery Protocol</p>
+<h5 class="font-headline font-bold text-white">ORBITAL DROP INITIATED</h5>
+</div>
+</div>
+<div class="h-1 w-full bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-secondary-fixed-dim w-[85%]"></div>
+</div>
+<div class="flex justify-between mt-2">
+<span class="font-label text-[9px] text-on-surface-variant uppercase">HUB DEPARTURE</span>
+<span class="font-label text-[9px] text-secondary-fixed-dim uppercase font-bold">IN TRANSIT (85%)</span>
+<span class="font-label text-[9px] text-on-surface-variant uppercase">USER VAULT</span>
+</div>
+</div>
+</div>
+<!-- Financial Ledger & Receipt Node -->
+<div class="md:col-span-4 space-y-6">
+<div class="bg-surface-container-low p-6 border-t-2 border-secondary-fixed-dim">
+<h3 class="font-headline font-bold text-sm tracking-[0.2em] uppercase text-on-surface-variant mb-6">FINANCIAL LEDGER</h3>
+<div class="space-y-3 mb-6">
+<div class="flex justify-between items-center">
+<span class="font-body text-sm text-on-surface-variant">Asset Subtotal</span>
+<span class="font-headline font-medium text-white">$335.00</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="font-body text-sm text-on-surface-variant">Platform Tax (10%)</span>
+<span class="font-headline font-medium text-white">$33.50</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="font-body text-sm text-on-surface-variant">Tactical Delivery</span>
+<span class="font-headline font-medium text-white">$2.44</span>
+</div>
+</div>
+<div class="pt-4 border-t border-outline-variant/20 flex justify-between items-end mb-8">
+<div>
+<p class="font-label text-[10px] text-secondary-fixed-dim font-bold tracking-widest uppercase">UNIFIED TOTAL</p>
+<p class="font-headline text-3xl font-extrabold text-white">$370.94</p>
+</div>
+<span class="material-symbols-outlined text-secondary-fixed-dim pb-1">verified_user</span>
+</div>
+<div class="space-y-3">
+<button class="w-full bg-secondary-fixed-dim text-on-secondary-fixed py-3 font-headline font-bold tracking-widest uppercase text-sm rounded-md active:scale-95 transition-transform hover:bg-secondary-container">
+                            RETURN TO HUB
+                        </button>
+<button class="w-full bg-transparent border border-outline-variant/30 text-white py-3 font-headline font-bold tracking-widest uppercase text-sm rounded-md active:scale-95 transition-transform hover:bg-surface-container-high">
+                            VIEW IN GEAR VAULT
+                        </button>
+</div>
+</div>
+<!-- SHA-256 Receipt Node -->
+<div class="bg-surface-container-lowest p-4 border border-outline-variant/10 font-mono text-[9px] break-all leading-tight">
+<p class="font-label text-[10px] text-on-surface-variant uppercase tracking-widest mb-2 font-sans">SECURE RECEIPT NODE</p>
+<p class="text-on-surface-variant/60 mb-1 uppercase">SHA-256 PROOF OF TRANSACTION:</p>
+<p class="text-secondary-fixed-dim/80">f3a67d8e2c4b1a09d8e7f6c5b4a3d2e1f0a9b8c7d6e5f4a3b2c1d0e9f8a7b6c5</p>
+<div class="mt-3 pt-3 border-t border-outline-variant/10 flex justify-between items-center font-sans">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[12px] text-tertiary" style="font-variation-settings: 'FILL' 1;">security</span>
+<span class="text-tertiary uppercase tracking-tighter font-bold">AES-256 SECURED</span>
+</div>
+<span class="text-on-surface-variant uppercase tracking-tighter">NODE: AGS-CONF-X9</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Security Advisory Footer -->
+<footer class="mt-12 text-center max-w-2xl mx-auto space-y-4">
+<div class="bg-surface-container/30 py-3 px-6 rounded-full inline-block border border-outline-variant/10">
+<p class="text-[10px] text-on-surface-variant tracking-[0.05em]">
+                    A copy of this receipt has been encrypted and transmitted to your <span class="text-secondary-fixed-dim font-bold">Arena Wallet</span>. 
+                    This transaction is immutable and verified on the AGS-Ledger.
+                </p>
+</div>
+<div class="flex justify-center gap-6">
+<div class="flex items-center gap-2">
+<span class="w-1.5 h-1.5 bg-secondary-fixed-dim rounded-full"></span>
+<span class="font-label text-[10px] text-on-surface-variant uppercase tracking-widest">Global Protocol v.4.2</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="w-1.5 h-1.5 bg-tertiary rounded-full"></span>
+<span class="font-label text-[10px] text-on-surface-variant uppercase tracking-widest">Encrypted: Success</span>
+</div>
+</div>
+</footer>
+</main>
+<!-- BottomNavBar (Visible on Mobile) -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-6 pt-2 bg-[#131313]/90 backdrop-blur-xl border-t border-white/10 md:hidden">
+<div class="flex flex-col items-center justify-center text-gray-500 hover:text-white px-3 py-1 transition-all active:scale-90 duration-200">
+<span class="material-symbols-outlined" data-icon="grid_view">grid_view</span>
+<span class="font-space-grotesk text-[10px] uppercase tracking-[0.05em]">HUB</span>
+</div>
+<div class="flex flex-col items-center justify-center text-gray-500 hover:text-white px-3 py-1 transition-all active:scale-90 duration-200">
+<span class="material-symbols-outlined" data-icon="shopping_bag">shopping_bag</span>
+<span class="font-space-grotesk text-[10px] uppercase tracking-[0.05em]">GEAR</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#00E5FF] bg-[#201F1F] rounded-md px-3 py-1 transition-all active:scale-90 duration-200">
+<span class="material-symbols-outlined" data-icon="receipt_long">receipt_long</span>
+<span class="font-space-grotesk text-[10px] uppercase tracking-[0.05em]">ORDERS</span>
+</div>
+<div class="flex flex-col items-center justify-center text-gray-500 hover:text-white px-3 py-1 transition-all active:scale-90 duration-200">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-space-grotesk text-[10px] uppercase tracking-[0.05em]">PROFILE</span>
+</div>
+</nav>
+</body></html>

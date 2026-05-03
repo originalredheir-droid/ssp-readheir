@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>PRO-SCOUT SHORTLIST | Tactical Command</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-container-low": "#1c1b1b",
+                        "tertiary": "#e9c400",
+                        "secondary-fixed": "#9cf0ff",
+                        "background": "#131313",
+                        "surface-tint": "#c8c6c5",
+                        "on-secondary-fixed-variant": "#004f58",
+                        "on-tertiary": "#3a3000",
+                        "on-background": "#e5e2e1",
+                        "surface-container": "#201f1f",
+                        "on-tertiary-container": "#4c3f00",
+                        "surface-bright": "#393939",
+                        "on-primary-fixed": "#1c1b1b",
+                        "tertiary-container": "#c9a900",
+                        "outline-variant": "#444748",
+                        "surface-variant": "#353534",
+                        "primary": "#c8c6c5",
+                        "inverse-surface": "#e5e2e1",
+                        "inverse-primary": "#5f5e5e",
+                        "inverse-on-surface": "#313030",
+                        "surface-container-lowest": "#0e0e0e",
+                        "on-secondary": "#00363d",
+                        "secondary-container": "#00e3fd",
+                        "primary-fixed": "#e5e2e1",
+                        "on-surface": "#e5e2e1",
+                        "secondary": "#bdf4ff",
+                        "on-primary-container": "#7e7d7d",
+                        "on-error-container": "#ffdad6",
+                        "tertiary-fixed-dim": "#e9c400",
+                        "surface-container-high": "#2a2a2a",
+                        "secondary-fixed-dim": "#00daf3",
+                        "on-tertiary-fixed": "#221b00",
+                        "error-container": "#93000a",
+                        "primary-fixed-dim": "#c8c6c5",
+                        "on-surface-variant": "#c4c7c7",
+                        "outline": "#8e9192",
+                        "surface-dim": "#131313",
+                        "primary-container": "#121212",
+                        "error": "#ffb4ab",
+                        "on-primary": "#313030",
+                        "surface": "#131313",
+                        "surface-container-highest": "#353534",
+                        "on-secondary-fixed": "#001f24",
+                        "on-secondary-container": "#00616d",
+                        "on-primary-fixed-variant": "#474646",
+                        "tertiary-fixed": "#ffe16d",
+                        "on-tertiary-fixed-variant": "#544600",
+                        "on-error": "#690005",
+                        "accent-cyan": "#00E5FF"
+                    },
+                    fontFamily: {
+                        "headline": ["Space Grotesk"],
+                        "body": ["Inter"],
+                        "label": ["Space Grotesk"]
+                    },
+                    borderRadius: { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glow-cyan {
+            box-shadow: 0 0 15px rgba(0, 229, 255, 0.15);
+        }
+        .glass-panel {
+            background: rgba(53, 53, 52, 0.6);
+            backdrop-filter: blur(12px);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body selection:bg-accent-cyan selection:text-background pb-24">
+<!-- TopAppBar -->
+<header class="bg-[#131313] docked full-width top-0 z-50 shadow-[0_0_32px_rgba(0,229,255,0.04)]">
+<div class="flex justify-between items-center px-6 py-4 w-full">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-accent-cyan text-2xl">grid_view</span>
+<h1 class="text-xl font-bold text-[#00E5FF] tracking-tighter font-headline uppercase tracking-[0.05em] text-sm">PRO-SCOUT SHORTLIST</h1>
+</div>
+<div class="flex items-center gap-6">
+<nav class="hidden md:flex gap-8">
+<a class="font-headline text-sm font-bold tracking-widest text-[#00E5FF] border-b-2 border-[#00E5FF] pb-1" href="#">DASHBOARD</a>
+<a class="font-headline text-sm font-bold tracking-widest text-gray-500 hover:text-accent-cyan transition-colors pb-1" href="#">SCOUT</a>
+<a class="font-headline text-sm font-bold tracking-widest text-gray-500 hover:text-accent-cyan transition-colors pb-1" href="#">INTEL</a>
+</nav>
+<div class="w-10 h-10 rounded-full border-2 border-accent-cyan overflow-hidden">
+<img alt="Scout Profile Avatar" data-alt="Professional scout avatar wearing tactical gear" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC71TMM3MkvkI5jFaIlILp6AhssJBfudyGgZzZTJmwxI0wcLRyjD3oy954oiWVLGo9RjIwfGk5BeBxhcduPYEFF6vC43CFfXBR1p-WZ-tiRHrY1Htz368Y9eGVeh9KxEC1YNczmPIt7IbZ6702TDKyCdzulnsbYZwlRW-ZRVUf2S6t5HvjKNez8VHfrg1IE4tEPtTRMVHv7YAi17GqcgbNJ1C2sdqvxg-wrxHUAiNJQ81xWPw5moBcAeObg9pG8GndFf_5TxFJl6mSl"/>
+</div>
+</div>
+</div>
+<div class="bg-[#1C1B1B] h-[4px] w-full"></div>
+</header>
+<main class="max-w-7xl mx-auto px-6 pt-12">
+<!-- Tactical Filter Row -->
+<div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
+<div class="space-y-2">
+<span class="font-label text-[10px] text-accent-cyan tracking-[0.2em] font-bold">OPERATIONAL DOMAIN</span>
+<div class="flex flex-wrap gap-2">
+<button class="bg-surface-container-high px-6 py-2 text-xs font-label font-bold tracking-widest border-b-2 border-accent-cyan text-accent-cyan">ALL_UNITS</button>
+<button class="bg-surface-container-low px-6 py-2 text-xs font-label font-bold tracking-widest text-on-surface-variant hover:bg-surface-container transition-colors">PHYSICAL</button>
+<button class="bg-surface-container-low px-6 py-2 text-xs font-label font-bold tracking-widest text-on-surface-variant hover:bg-surface-container transition-colors">ESPORTS</button>
+<button class="bg-surface-container-low px-6 py-2 text-xs font-label font-bold tracking-widest text-on-surface-variant hover:bg-surface-container transition-colors">DEV_OPS</button>
+</div>
+</div>
+<div class="text-right hidden md:block">
+<p class="font-label text-4xl font-extrabold text-on-surface leading-none">03 <span class="text-accent-cyan">/</span> 12</p>
+<p class="font-label text-[10px] text-gray-500 tracking-widest">ACTIVE_SHORTLIST_CAPACITY</p>
+</div>
+</div>
+<!-- Asymmetric Bento Grid for Shortlist -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+<!-- Entry 1: ESPORTS (VOID_RUNN3R) -->
+<div class="lg:col-span-8 bg-surface-container-low p-1 rounded-sm relative group overflow-hidden">
+<div class="absolute top-0 left-0 w-1 h-full bg-accent-cyan"></div>
+<div class="p-8 bg-surface-container h-full">
+<div class="flex flex-col md:flex-row justify-between items-start gap-6 mb-8">
+<div>
+<div class="flex items-center gap-3 mb-2">
+<span class="px-2 py-0.5 bg-accent-cyan text-background font-label text-[10px] font-black tracking-tighter">ESPORTS</span>
+<span class="text-tertiary flex items-center gap-1 font-label text-[10px] font-bold">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">verified</span> VERIFIED_ELITE
+                                </span>
+</div>
+<h2 class="font-headline text-5xl font-extrabold tracking-tighter text-on-surface mb-2">VOID_RUNN3R</h2>
+<p class="font-label text-xs text-accent-cyan opacity-80 uppercase tracking-widest">Role: Mid-Lane Assassin / Apex Tier</p>
+</div>
+<div class="flex flex-col items-end gap-2">
+<span class="bg-surface-container-highest px-4 py-1 text-[10px] font-label font-bold text-tertiary border border-tertiary/20">CONTRACT PENDING</span>
+<div class="text-right">
+<p class="text-[10px] text-gray-500 font-label">LAST_EVALUATION</p>
+<p class="text-xs font-label text-on-surface">OCT_24_2023</p>
+</div>
+</div>
+</div>
+<!-- Technical Stats -->
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8 bg-surface-container-lowest p-6 rounded-sm border border-white/5">
+<div>
+<p class="text-[10px] text-gray-500 font-label mb-1">WIN_RATE</p>
+<p class="text-2xl font-headline font-bold text-accent-cyan">74.2%</p>
+</div>
+<div>
+<p class="text-[10px] text-gray-500 font-label mb-1">K/D_RATIO</p>
+<p class="text-2xl font-headline font-bold text-on-surface">4.82</p>
+</div>
+<div>
+<p class="text-[10px] text-gray-500 font-label mb-1">APM_AVG</p>
+<p class="text-2xl font-headline font-bold text-on-surface">312</p>
+</div>
+<div>
+<p class="text-[10px] text-gray-500 font-label mb-1">TOURNAMENT_WINS</p>
+<p class="text-2xl font-headline font-bold text-on-surface">12</p>
+</div>
+</div>
+<!-- Scout Notes -->
+<div class="mb-8 max-w-2xl">
+<p class="text-[10px] text-accent-cyan font-label mb-2 flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">description</span> SCOUT_NOTES_SECURE
+                        </p>
+<p class="text-sm text-on-surface-variant leading-relaxed italic border-l-2 border-surface-container-high pl-4">
+                            "Unparalleled spatial awareness in high-pressure team fights. Mechanical ceiling far exceeds current league average. High priority acquisition before the Winter Draft."
+                        </p>
+</div>
+<div class="flex gap-4">
+<button class="bg-accent-cyan text-background px-8 py-3 text-xs font-label font-black tracking-[0.2em] hover:bg-secondary-fixed-dim transition-all active:scale-95 glow-cyan">CONTACT PRO</button>
+<button class="border border-outline-variant text-on-surface px-8 py-3 text-xs font-label font-bold tracking-[0.2em] hover:bg-surface-container-high transition-all">VIEW DATA REEL</button>
+</div>
+</div>
+</div>
+<!-- Entry 2: DEV (K1NETIX_STRKR) -->
+<div class="lg:col-span-4 bg-surface-container p-6 rounded-sm border-t-4 border-tertiary">
+<div class="flex justify-between items-start mb-6">
+<div>
+<span class="px-2 py-0.5 bg-surface-container-highest text-on-surface font-label text-[10px] font-black tracking-tighter">DEV_HACKATHON</span>
+<h2 class="font-headline text-3xl font-extrabold tracking-tighter text-on-surface mt-2">K1NETIX_STRKR</h2>
+</div>
+<span class="bg-surface-container-high px-3 py-1 text-[10px] font-label font-bold text-accent-cyan border border-accent-cyan/20 uppercase">New Lead</span>
+</div>
+<div class="space-y-6 mb-8">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 bg-surface-container-lowest flex items-center justify-center border border-white/5">
+<span class="material-symbols-outlined text-tertiary">star</span>
+</div>
+<div>
+<p class="text-[10px] text-gray-500 font-label">GITHUB_STARS</p>
+<p class="text-xl font-headline font-bold text-on-surface">2.4k+</p>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 bg-surface-container-lowest flex items-center justify-center border border-white/5">
+<span class="material-symbols-outlined text-tertiary">code</span>
+</div>
+<div>
+<p class="text-[10px] text-gray-500 font-label">MAIN_STACK</p>
+<p class="text-xl font-headline font-bold text-on-surface">RUST / WASM</p>
+</div>
+</div>
+</div>
+<div class="p-4 bg-surface-container-lowest mb-8 border-l-2 border-tertiary">
+<p class="text-[10px] text-tertiary font-label mb-1">TACTICAL_SNIPPET</p>
+<p class="text-xs text-on-surface-variant">Top performer at 2023 ETHGlobal. Specialized in zero-knowledge proofs and high-throughput networking layers.</p>
+</div>
+<button class="w-full bg-accent-cyan text-background py-3 text-xs font-label font-black tracking-[0.2em] hover:bg-secondary-fixed-dim transition-all active:scale-95">SCHEDULE EVALUATION</button>
+</div>
+<!-- Entry 3: PHYSICAL (MAXIMUS_X) -->
+<div class="lg:col-span-12 grid grid-cols-1 md:grid-cols-3 bg-surface-container-low overflow-hidden">
+<div class="relative h-64 md:h-auto">
+<img alt="Athlete Silhouette" class="w-full h-full object-cover grayscale opacity-40 mix-blend-luminosity" data-alt="High-contrast athletic silhouette in a sprinter stance" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDoV5oXoo06SEk8VKu8yqAX4c5ZZUOKsX3tcafo1PnAYBK-5Y3RzKk_N59rnRGpBHLFjhQVGYYwS-FU6ActmeDsgWGFWI7co4Nh7bwr1ITmVnp-74OhwtedtTgqgNOwXNqbw0XblMITPRrdgFALehVjsoBLXu_3rwBuX0KZMrvbTHoqYi5XlsUf2VGisqoXeMrTiu-BFiBFMzWg_sfezzIiyHZAsDy4COrJDFc8v7jenTDtfGIUm1s1g6KbGvlIJrm_sRYlYnqXR_VR"/>
+<div class="absolute inset-0 bg-gradient-to-r from-background via-transparent to-transparent"></div>
+<div class="absolute bottom-6 left-6">
+<span class="px-2 py-0.5 bg-on-background text-background font-label text-[10px] font-black tracking-tighter">PHYSICAL_SPORTS</span>
+<h2 class="font-headline text-4xl font-extrabold tracking-tighter text-on-surface">MAXIMUS_X</h2>
+</div>
+</div>
+<div class="p-8 md:col-span-2 flex flex-col md:flex-row gap-8 items-center bg-surface-container">
+<div class="flex-1 grid grid-cols-2 gap-8">
+<div>
+<p class="text-[10px] text-gray-500 font-label mb-1 uppercase">Sprint_Speed</p>
+<p class="text-3xl font-headline font-bold text-on-surface">10.2s <span class="text-xs text-accent-cyan tracking-normal">/ 100m</span></p>
+</div>
+<div>
+<p class="text-[10px] text-gray-500 font-label mb-1 uppercase">Status</p>
+<p class="text-lg font-headline font-bold text-tertiary uppercase">In Discussion</p>
+</div>
+<div class="col-span-2">
+<p class="text-[10px] text-gray-500 font-label mb-2">SCOUT_INTEL</p>
+<p class="text-sm text-on-surface-variant">Elite explosive power. Transitioning from collegiate track to pro rugby circuit. Medical clearance pending.</p>
+</div>
+</div>
+<div class="w-full md:w-auto flex flex-col gap-3">
+<button class="bg-accent-cyan text-background px-10 py-4 text-xs font-label font-black tracking-[0.2em] hover:bg-secondary-fixed-dim transition-all">CONTACT PRO</button>
+<button class="bg-surface-container-highest text-on-surface px-10 py-4 text-xs font-label font-bold tracking-[0.2em] hover:bg-surface-bright transition-all">FULL PROFILE</button>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar (Mobile Shell) -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center pt-2 pb-6 px-4 bg-[#0E0E0E] z-50 md:hidden border-t border-white/5">
+<div class="flex flex-col items-center justify-center text-gray-600 font-label text-[10px] font-bold tracking-widest hover:text-[#00DAF3]">
+<span class="material-symbols-outlined mb-1">analytics</span>
+<span>DASHBOARD</span>
+</div>
+<div class="flex flex-col items-center justify-center text-gray-600 font-label text-[10px] font-bold tracking-widest hover:text-[#00DAF3]">
+<span class="material-symbols-outlined mb-1">search_check</span>
+<span>SCOUT</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#00E5FF] bg-[#1C1B1B] rounded-md px-3 py-1 shadow-[0_0_10px_rgba(0,229,255,0.1)] font-label text-[10px] font-bold tracking-widest">
+<span class="material-symbols-outlined mb-1">star</span>
+<span>SHORTLIST</span>
+</div>
+<div class="flex flex-col items-center justify-center text-gray-600 font-label text-[10px] font-bold tracking-widest hover:text-[#00DAF3]">
+<span class="material-symbols-outlined mb-1">query_stats</span>
+<span>INTEL</span>
+</div>
+<div class="flex flex-col items-center justify-center text-gray-600 font-label text-[10px] font-bold tracking-widest hover:text-[#00DAF3]">
+<span class="material-symbols-outlined mb-1">settings_input_component</span>
+<span>SETTINGS</span>
+</div>
+</nav>
+<!-- FAB (Suppressed for focused list view) -->
+</body></html>

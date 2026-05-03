@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+  background-color: #131313;
+  color: #ffffff;
+}
+
+body {
+  @apply bg-[#131313] text-white antialiased;
+}

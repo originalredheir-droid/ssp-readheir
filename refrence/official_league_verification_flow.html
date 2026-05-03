@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>FEDERAL COMMAND | Audit &amp; Sanctioning Portal</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;900&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "outline": "#8e9192",
+                        "surface-container": "#201f1f",
+                        "on-secondary-fixed-variant": "#004f58",
+                        "secondary": "#bdf4ff",
+                        "error": "#ffb4ab",
+                        "surface-dim": "#131313",
+                        "inverse-primary": "#5f5e5e",
+                        "surface-variant": "#353534",
+                        "primary-fixed": "#e5e2e1",
+                        "on-primary-fixed": "#1c1b1b",
+                        "tertiary": "#e9c400",
+                        "on-background": "#e5e2e1",
+                        "secondary-container": "#00e3fd",
+                        "secondary-fixed": "#9cf0ff",
+                        "on-surface": "#e5e2e1",
+                        "on-tertiary": "#3a3000",
+                        "background": "#131313",
+                        "primary-fixed-dim": "#c8c6c5",
+                        "inverse-surface": "#e5e2e1",
+                        "on-secondary": "#00363d",
+                        "on-tertiary-fixed-variant": "#544600",
+                        "on-primary": "#313030",
+                        "on-tertiary-fixed": "#221b00",
+                        "surface-container-lowest": "#0e0e0e",
+                        "outline-variant": "#444748",
+                        "on-error": "#690005",
+                        "surface-container-low": "#1c1b1b",
+                        "primary-container": "#121212",
+                        "tertiary-fixed": "#ffe16d",
+                        "on-surface-variant": "#c4c7c7",
+                        "surface-bright": "#393939",
+                        "primary": "#c8c6c5",
+                        "on-secondary-fixed": "#001f24",
+                        "on-error-container": "#ffdad6",
+                        "on-primary-fixed-variant": "#474646",
+                        "surface-container-highest": "#353534",
+                        "surface-tint": "#c8c6c5",
+                        "secondary-fixed-dim": "#00daf3",
+                        "on-tertiary-container": "#4c3f00",
+                        "inverse-on-surface": "#313030",
+                        "on-secondary-container": "#00616d",
+                        "error-container": "#93000a",
+                        "tertiary-container": "#c9a900",
+                        "surface": "#131313"
+                    },
+                    fontFamily: {
+                        "headline": ["Space Grotesk"],
+                        "body": ["Inter"],
+                        "label": ["Space Grotesk"]
+                    },
+                    borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #131313;
+            color: #e5e2e1;
+        }
+        .glass-panel {
+            background: rgba(53, 53, 52, 0.6);
+            backdrop-filter: blur(12px);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-body selection:bg-secondary-container/30">
+<!-- TopAppBar -->
+<header class="bg-[#131313] dark:bg-[#131313] docked full-width top-0 border-none flex justify-between items-center w-full px-6 py-4 z-50 sticky">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[#00E5FF] text-2xl" data-icon="security">security</span>
+<h1 class="font-['Space_Grotesk'] tracking-tighter uppercase font-bold text-xl font-black tracking-widest text-[#00E5FF] uppercase">FEDERAL COMMAND</h1>
+</div>
+<div class="flex items-center gap-6">
+<nav class="hidden md:flex gap-8">
+<a class="font-['Space_Grotesk'] text-sm uppercase tracking-widest text-[#00E5FF] hover:opacity-80 transition-opacity" href="#">Audit</a>
+<a class="font-['Space_Grotesk'] text-sm uppercase tracking-widest text-zinc-500 hover:text-zinc-300 transition-colors" href="#">Compliance</a>
+<a class="font-['Space_Grotesk'] text-sm uppercase tracking-widest text-zinc-500 hover:text-zinc-300 transition-colors" href="#">Sanctions</a>
+</nav>
+<div class="w-10 h-10 rounded-full border border-[#00E5FF]/20 overflow-hidden">
+<img alt="Official Federation Seal" class="w-full h-full object-cover" data-alt="Official Federation Seal avatar representing security clearance" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBCLv7TmPVb1qG09DE3qrVUq1J1nsA8UH-pdpqLvFLzGtDNA2_HLSvl0lhZ36mlNeXqgsPT6fobyfFO9PhAQALFac9DTp9xRe29B-S6FJXaykN6rUScIGPhqyZsgwj9NCgqXD4iPrfEuaOmxDpOAPMUIhncqNOP8gLl5lK5PD54nqgNggDyPiDJLWeghpOiegkvxsstFGdqErHCXjLXCoy-jl1LH3zFQz0hKKxyNAVQ7snNeTs9Apg306knLqXMLQPiQWfotNpuU34l"/>
+</div>
+</div>
+</header>
+<main class="max-w-[1600px] mx-auto px-6 pt-8 pb-24 lg:grid lg:grid-cols-12 lg:gap-8">
+<!-- Left Column: Pending Leagues & Filter -->
+<div class="lg:col-span-4 space-y-6">
+<section class="bg-surface-container-low p-6 rounded-lg">
+<h2 class="font-headline text-xs font-bold uppercase tracking-[0.2em] text-on-primary-container mb-4">Registry Search</h2>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-sm" data-icon="search">search</span>
+<input class="w-full bg-surface-container-lowest border-none text-sm py-3 pl-10 pr-4 focus:ring-1 focus:ring-secondary/50 rounded-md" placeholder="Filter Pending Leagues..." type="text"/>
+</div>
+</section>
+<div class="space-y-4">
+<h2 class="font-headline text-xs font-bold uppercase tracking-[0.2em] text-on-primary-container">Verification Protocol</h2>
+<!-- League Item Active -->
+<div class="bg-surface-container-high border-l-2 border-[#00E5FF] p-4 cursor-pointer hover:bg-[#2A2A2A] transition-colors">
+<div class="flex justify-between items-start mb-2">
+<span class="font-headline font-bold text-lg text-on-surface">Regional Cyber Open</span>
+<span class="text-[10px] bg-secondary-container/10 text-secondary-fixed-dim px-2 py-0.5 font-bold uppercase tracking-wider">Awaiting Audit</span>
+</div>
+<div class="flex items-center gap-3 text-xs text-outline mb-3">
+<span class="font-mono">ID: FED-RCO-992</span>
+<span class="w-1 h-1 rounded-full bg-outline-variant"></span>
+<span>Tier 1 Regional</span>
+</div>
+<div class="flex items-center text-[#E9C400] text-[10px] font-bold uppercase tracking-tighter gap-1">
+<span class="material-symbols-outlined text-xs" data-icon="warning" style="font-variation-settings: 'FILL' 1;">warning</span>
+                        Review Anomaly: Data Inconsistency
+                    </div>
+</div>
+<!-- League Item 2 -->
+<div class="bg-surface-container-low p-4 cursor-pointer hover:bg-surface-container transition-colors">
+<div class="flex justify-between items-start mb-2">
+<span class="font-headline font-bold text-lg text-on-surface">Metropolis Football League</span>
+<span class="text-[10px] bg-tertiary-container/10 text-tertiary px-2 py-0.5 font-bold uppercase tracking-wider">Verified</span>
+</div>
+<div class="flex items-center gap-3 text-xs text-outline mb-1 text-on-primary-container">
+<span class="font-mono">ID: FED-MFL-412</span>
+<span class="w-1 h-1 rounded-full bg-outline-variant"></span>
+<span>Tier 2 Urban</span>
+</div>
+</div>
+<!-- League Item 3 -->
+<div class="bg-surface-container-low p-4 cursor-pointer hover:bg-surface-container transition-colors opacity-60">
+<div class="flex justify-between items-start mb-2">
+<span class="font-headline font-bold text-lg text-on-surface">Oceania Apex Circuit</span>
+<span class="text-[10px] bg-error-container/20 text-error px-2 py-0.5 font-bold uppercase tracking-wider">Sanctioned</span>
+</div>
+<div class="flex items-center gap-3 text-xs text-outline mb-1 text-on-primary-container">
+<span class="font-mono">ID: FED-OAC-008</span>
+<span class="w-1 h-1 rounded-full bg-outline-variant"></span>
+<span>Global Pro</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column: Command Center -->
+<div class="lg:col-span-8 space-y-8 mt-8 lg:mt-0">
+<!-- Active Audit Area -->
+<section class="bg-surface-container-low rounded-lg overflow-hidden border border-outline-variant/10">
+<div class="p-8 border-b border-outline-variant/10 flex flex-col md:flex-row md:items-end justify-between gap-6">
+<div>
+<div class="flex items-center gap-2 mb-2">
+<span class="text-[10px] font-bold uppercase tracking-[0.3em] text-secondary">Tactical Command</span>
+<span class="w-12 h-[1px] bg-secondary/30"></span>
+</div>
+<h2 class="font-headline text-5xl font-black uppercase tracking-tighter text-on-surface">Regional Cyber Open</h2>
+<p class="text-on-primary-container mt-2 max-w-md">Comprehensive audit of organizational transparency, financial solvency, and athlete identity management.</p>
+</div>
+<div class="flex flex-col items-end">
+<span class="font-headline text-[10px] font-bold uppercase tracking-widest text-outline mb-1">Audit Readiness Score</span>
+<div class="flex items-baseline gap-2">
+<span class="text-6xl font-black font-headline text-secondary">88</span>
+<span class="text-xl font-bold text-outline-variant">/100</span>
+</div>
+</div>
+</div>
+<div class="p-8 grid md:grid-cols-2 gap-12">
+<!-- Compliance Telemetry -->
+<div class="space-y-6">
+<h3 class="font-headline text-xs font-bold uppercase tracking-[0.2em] text-secondary">Compliance Telemetry</h3>
+<div class="space-y-4">
+<div class="flex items-center justify-between p-3 bg-surface-container-lowest rounded">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary text-sm" data-icon="fingerprint">fingerprint</span>
+<span class="text-sm font-medium">Identity silos verified</span>
+</div>
+<span class="material-symbols-outlined text-secondary text-lg" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<div class="flex items-center justify-between p-3 bg-surface-container-lowest rounded">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary text-sm" data-icon="account_balance">account_balance</span>
+<span class="text-sm font-medium">Financial escrow linked</span>
+</div>
+<span class="material-symbols-outlined text-secondary text-lg" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<div class="flex items-center justify-between p-3 bg-surface-container-lowest rounded border border-tertiary/20">
+<div class="flex items-center gap-3 text-tertiary">
+<span class="material-symbols-outlined text-sm" data-icon="sync_problem">sync_problem</span>
+<span class="text-sm font-medium">Organizer ID Latency</span>
+</div>
+<span class="text-[10px] font-bold">128ms Delay</span>
+</div>
+<div class="flex items-center justify-between p-3 bg-surface-container-lowest rounded">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-outline-variant text-sm" data-icon="gavel">gavel</span>
+<span class="text-sm font-medium text-outline-variant">Legal bind queue</span>
+</div>
+<span class="material-symbols-outlined text-outline-variant text-lg" data-icon="pending">pending</span>
+</div>
+</div>
+</div>
+<!-- Action Area -->
+<div class="flex flex-col justify-between p-6 bg-[#0E0E0E] rounded-xl border border-secondary/5 relative overflow-hidden">
+<!-- Abstract glow -->
+<div class="absolute -top-12 -right-12 w-32 h-32 bg-secondary/5 blur-[60px] rounded-full"></div>
+<div>
+<h3 class="font-headline text-xs font-bold uppercase tracking-[0.2em] text-on-surface mb-6">Official Verification</h3>
+<div class="space-y-4 mb-8">
+<p class="text-xs text-outline leading-relaxed">By initiating this action, you affirm that the subject league meets all Federal Command standards for data integrity and competitive fairness.</p>
+</div>
+</div>
+<div class="space-y-3">
+<button class="w-full bg-[#00E5FF] text-[#00363d] font-headline font-bold py-4 rounded-md uppercase tracking-widest text-sm hover:bg-[#00DAF3] transition-all Active:scale-95 duration-150">
+                                Approve Verification
+                            </button>
+<button class="w-full border border-tertiary text-tertiary font-headline font-bold py-4 rounded-md uppercase tracking-widest text-sm hover:bg-tertiary/10 transition-all">
+                                Sanction League
+                            </button>
+</div>
+</div>
+</div>
+</section>
+<!-- Real-time Event Log -->
+<section class="bg-surface-container-lowest p-6 rounded-lg border border-outline-variant/10">
+<div class="flex items-center justify-between mb-6">
+<h3 class="font-headline text-xs font-bold uppercase tracking-[0.2em] text-on-primary-container">Live Command Stream</h3>
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
+<span class="text-[10px] font-bold text-secondary uppercase tracking-widest">Live Sync</span>
+</div>
+</div>
+<div class="space-y-3 font-mono text-[11px] text-outline">
+<div class="flex gap-4">
+<span class="text-secondary/50">[14:22:01]</span>
+<span>INITIATING HANDSHAKE WITH REGIONAL_NODE_8... SUCCESS</span>
+</div>
+<div class="flex gap-4">
+<span class="text-secondary/50">[14:22:05]</span>
+<span>SCANNING ORGANIZER_ID: FED-RCO-992... ANOMALY DETECTED IN ADDRESS_FIELD_3</span>
+</div>
+<div class="flex gap-4">
+<span class="text-secondary/50">[14:22:12]</span>
+<span>COMPLIANCE_SCORE UPDATED: 88% (+3% FROM PREVIOUS AUDIT)</span>
+</div>
+<div class="flex gap-4">
+<span class="text-secondary/50">[14:22:18]</span>
+<span class="text-tertiary">WARNING: ESCROW_ACCOUNT_TIMEOUT ON SECONDARY_LEDGER</span>
+</div>
+</div>
+</section>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full h-16 bg-[#0E0E0E]/90 backdrop-blur-xl flex justify-around items-center px-4 pb-safe z-50 border-t border-zinc-800/15 shadow-[0_-4px_20px_rgba(0,229,255,0.04)] md:hidden">
+<a class="flex flex-col items-center justify-center text-[#00E5FF] bg-[#201F1F] rounded-md px-3 py-1 scale-95 duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+<span class="font-['Space_Grotesk'] text-[10px] uppercase tracking-[0.05em] font-medium">Audit</span>
+</a>
+<a class="flex flex-col items-center justify-center text-zinc-500 hover:text-zinc-300 transition-all duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="fact_check">fact_check</span>
+<span class="font-['Space_Grotesk'] text-[10px] uppercase tracking-[0.05em] font-medium">Compliance</span>
+</a>
+<a class="flex flex-col items-center justify-center text-zinc-500 hover:text-zinc-300 transition-all duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="gavel">gavel</span>
+<span class="font-['Space_Grotesk'] text-[10px] uppercase tracking-[0.05em] font-medium">Sanctions</span>
+</a>
+<a class="flex flex-col items-center justify-center text-zinc-500 hover:text-zinc-300 transition-all duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="history_edu">history_edu</span>
+<span class="font-['Space_Grotesk'] text-[10px] uppercase tracking-[0.05em] font-medium">Logs</span>
+</a>
+</nav>
+</body></html>

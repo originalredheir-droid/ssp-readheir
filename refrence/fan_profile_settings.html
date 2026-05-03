@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AGS Global Arena - System Settings</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "secondary-fixed-dim": "#00daf3",
+              "on-secondary-container": "#00616d",
+              "on-primary-fixed-variant": "#474646",
+              "on-primary-container": "#7e7d7d",
+              "secondary-container": "#00e3fd",
+              "on-tertiary-container": "#4c3f00",
+              "tertiary-fixed-dim": "#e9c400",
+              "on-secondary-fixed-variant": "#004f58",
+              "surface-tint": "#c8c6c5",
+              "surface-variant": "#353534",
+              "primary-container": "#121212",
+              "surface-container-lowest": "#0e0e0e",
+              "tertiary-container": "#c9a900",
+              "outline-variant": "#444748",
+              "surface-bright": "#393939",
+              "surface-container": "#201f1f",
+              "secondary": "#bdf4ff",
+              "error-container": "#93000a",
+              "on-background": "#e5e2e1",
+              "inverse-primary": "#5f5e5e",
+              "primary-fixed-dim": "#c8c6c5",
+              "on-secondary-fixed": "#001f24",
+              "secondary-fixed": "#9cf0ff",
+              "primary-fixed": "#e5e2e1",
+              "on-error-container": "#ffdad6",
+              "surface-container-highest": "#353534",
+              "tertiary-fixed": "#ffe16d",
+              "on-error": "#690005",
+              "surface": "#131313",
+              "on-secondary": "#00363d",
+              "inverse-surface": "#e5e2e1",
+              "on-primary-fixed": "#1c1b1b",
+              "surface-container-low": "#1c1b1b",
+              "background": "#131313",
+              "on-tertiary-fixed-variant": "#544600",
+              "error": "#ffb4ab",
+              "on-primary": "#313030",
+              "on-tertiary": "#3a3000",
+              "on-tertiary-fixed": "#221b00",
+              "surface-dim": "#131313",
+              "on-surface": "#e5e2e1",
+              "on-surface-variant": "#c4c7c7",
+              "tertiary": "#e9c400",
+              "surface-container-high": "#2a2a2a",
+              "inverse-on-surface": "#313030",
+              "primary": "#c8c6c5",
+              "outline": "#8e9192"
+            },
+            fontFamily: {
+              "headline": ["Space Grotesk"],
+              "body": ["Inter"],
+              "label": ["Space Grotesk"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3, .font-headline { font-family: 'Space Grotesk', sans-serif; }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface selection:bg-secondary-container selection:text-on-secondary-fixed">
+<!-- TopAppBar -->
+<header class="w-full sticky top-0 z-50 bg-[#131313] dark:bg-neutral-950 shadow-[0_0_15px_rgba(0,229,255,0.05)]">
+<div class="flex items-center justify-between px-6 py-4 w-full">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[#00E5FF]" data-icon="terminal">terminal</span>
+<h1 class="font-['Space_Grotesk'] uppercase tracking-widest text-sm text-[#00E5FF]">SYSTEM SETTINGS</h1>
+</div>
+<div class="flex items-center gap-6">
+<div class="hidden md:flex gap-8">
+<button class="font-['Space_Grotesk'] text-xs font-medium uppercase text-neutral-500 hover:text-[#00E5FF] transition-colors">Tactical</button>
+<button class="font-['Space_Grotesk'] text-xs font-medium uppercase text-neutral-500 hover:text-[#00E5FF] transition-colors">Intel</button>
+<button class="font-['Space_Grotesk'] text-xs font-medium uppercase text-[#00E5FF] border-b-2 border-[#00E5FF]">Profile</button>
+</div>
+<div class="w-10 h-10 rounded-full overflow-hidden border-2 border-surface-container-high">
+<img alt="User profile tactical avatar" class="w-full h-full object-cover" data-alt="Tactical user profile avatar with neon accents" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAjuLuZHTBDaGnNrI7sEA1HQ5T5HNDN_03AYF8miQ6imMiFORjIjRa7h4lCSN4Zu37PjP7Xth3yHPdL1dtUp7Jsz3sjFObYWXzNR8urPs05iO7LJ-aiqmlLlLSRsShtz680GQLkSJ_H8qxKR7Fo0LF381VYljIr0_DnHG3D_zyH_XsdbfUkSEqBqAOprZMTSSG3FFsSkUJdrsAqPGl1yQrnhYtD-kZl8doiXn3HxlbOWZF0MAf9T5gSt31xurMKThWRKd6cx2e2U5lV"/>
+</div>
+</div>
+</div>
+<div class="bg-[#1C1B1B] h-[4px] w-full"></div>
+</header>
+<div class="flex min-h-screen">
+<!-- NavigationDrawer (Sidebar) -->
+<aside class="hidden lg:block h-full w-80 bg-[#0E0E0E] dark:bg-black shadow-2xl shadow-cyan-500/10 border-r-0 sticky top-[72px]">
+<div class="p-8">
+<div class="flex items-center gap-4 mb-10">
+<img alt="Tactical User Avatar" class="w-12 h-12 rounded-lg object-cover" data-alt="Cyberpunk style user profile photo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBKgNPCFp6Xspv-9zGDMXkuxls6HO_NzYHLF8B69itQL8FR17V7qPHU9BqqVuHTGJSLHluuLmi6PTsT-9Jz3uiFPnpS8FIQWj_oTgYBSVs17vZmP2KJz9PULwaJF3aW-XncqJ-4A-uSoRgrDfmiJRocFlsFpmVzYe5-OJDBUbvJkrrQsrUzJgkLMnkQw-OG-Gz1uluMutLEelBriFgFGmc7V8achQ9U4gD_8206rwSJq9DtYjCa0wvwQUGfSl6HX17MmTbkoS6oIrkY"/>
+<div>
+<div class="text-[#E9C400] font-black italic text-sm">COMMANDER_01</div>
+<div class="font-['Space_Grotesk'] text-[10px] text-neutral-400 uppercase tracking-tighter">Verified Elite Tier</div>
+<div class="text-[9px] text-neutral-600 font-mono">IP: 192.168.1.1</div>
+</div>
+</div>
+<nav class="space-y-4">
+<div class="bg-[#1C1B1B] text-[#00E5FF] border-l-4 border-[#00E5FF] p-4 flex items-center gap-4 cursor-pointer active:translate-x-1 transition-all">
+<span class="material-symbols-outlined" data-icon="fingerprint">fingerprint</span>
+<span class="font-['Space_Grotesk'] text-xs font-medium uppercase">Protocol</span>
+</div>
+<div class="text-neutral-400 p-4 flex items-center gap-4 cursor-pointer hover:bg-[#201F1F] active:translate-x-1 transition-all">
+<span class="material-symbols-outlined" data-icon="enhanced_encryption">enhanced_encryption</span>
+<span class="font-['Space_Grotesk'] text-xs font-medium uppercase">Security</span>
+</div>
+<div class="text-neutral-400 p-4 flex items-center gap-4 cursor-pointer hover:bg-[#201F1F] active:translate-x-1 transition-all">
+<span class="material-symbols-outlined" data-icon="settings_input_component">settings_input_component</span>
+<span class="font-['Space_Grotesk'] text-xs font-medium uppercase">Systems</span>
+</div>
+<div class="text-neutral-400 p-4 flex items-center gap-4 cursor-pointer hover:bg-[#201F1F] active:translate-x-1 transition-all">
+<span class="material-symbols-outlined" data-icon="settings_backup_restore">settings_backup_restore</span>
+<span class="font-['Space_Grotesk'] text-xs font-medium uppercase">Logs</span>
+</div>
+</nav>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="flex-1 px-6 py-10 md:px-12 lg:px-20 bg-surface min-h-screen pb-32">
+<div class="max-w-5xl mx-auto">
+<!-- Personal Protocol Section -->
+<section class="mb-12">
+<div class="flex items-center gap-3 mb-6">
+<span class="w-2 h-6 bg-[#00E5FF]"></span>
+<h2 class="text-xl font-headline font-bold uppercase tracking-widest">Personal Protocol</h2>
+</div>
+<div class="bg-surface-container-low p-8 rounded-lg relative overflow-hidden">
+<!-- Abstract Tactical Background Element -->
+<div class="absolute top-0 right-0 p-4 opacity-10">
+<span class="material-symbols-outlined text-9xl" data-icon="shield_person">shield_person</span>
+</div>
+<div class="flex flex-col md:flex-row items-center gap-10">
+<div class="relative group">
+<div class="w-32 h-32 rounded-lg border-2 border-[#00E5FF] p-1 shadow-[0_0_20px_rgba(0,229,255,0.2)]">
+<img alt="COMMANDER_VANCE" class="w-full h-full object-cover rounded-md" data-alt="High resolution tactical profile photo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDCeM9o6MaJ1XvlZVsYRIUKsIrFB2DzhfLL1StG-laTJnVJBCozMm70Xb-y-34-c8B0TF8tJEtkL0NtC84Opz4cqHsIxFNz_Hh7dsIL8-PJqqAtC3zTm4btYW_uyAQB2IPYtGrbt-aIL3AOgOpOKHEgeFcr6Bt17GEFTFYrZkduPrYPe4Mukp0OcngXAJ7TuoADC4CfnkzkqjLXJReZzrTLKbRiTlokbyRS7eylE6eOOBDlM-0zGLuW3kIpHEFtetlzW2iHB9btSwDw"/>
+</div>
+<button class="absolute -bottom-2 -right-2 bg-tertiary text-on-tertiary p-2 rounded-md shadow-lg hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-sm" data-icon="edit">edit</span>
+</button>
+</div>
+<div class="flex-1 space-y-2">
+<div class="flex items-center gap-3">
+<h3 class="text-3xl font-headline font-extrabold tracking-tighter">COMMANDER_VANCE</h3>
+<span class="material-symbols-outlined text-tertiary" data-icon="verified" data-weight="fill" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+<div class="flex flex-wrap gap-4 text-xs font-label uppercase text-neutral-500 tracking-wider">
+<span class="bg-surface-container px-3 py-1 rounded border border-neutral-800">GLOBAL_ID: AGS-882-991-X</span>
+<span class="bg-surface-container px-3 py-1 rounded border border-neutral-800 text-[#00E5FF]">RANK: ELITE_TACTICIAN</span>
+</div>
+<div class="pt-4 flex gap-4">
+<button class="bg-[#00E5FF] text-[#00363d] px-6 py-2 font-headline font-bold text-xs uppercase tracking-widest rounded-md hover:bg-secondary-fixed-dim active:scale-95 transition-all">
+                                        Edit Identity
+                                    </button>
+<button class="border border-outline-variant text-on-surface px-6 py-2 font-headline font-bold text-xs uppercase tracking-widest rounded-md hover:bg-surface-container-high transition-all">
+                                        Download Credentials
+                                    </button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Bento Grid Layout for Security & Systems -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+<!-- Security Uplink -->
+<div class="bg-surface-container p-6 rounded-lg border-l-2 border-tertiary">
+<div class="flex items-center gap-3 mb-8">
+<span class="material-symbols-outlined text-tertiary" data-icon="security">security</span>
+<h2 class="text-lg font-headline font-bold uppercase tracking-tight">Security Uplink</h2>
+</div>
+<div class="space-y-6">
+<div class="flex items-center justify-between group">
+<div>
+<div class="text-sm font-bold text-on-surface">Biometric Unlock</div>
+<div class="text-[11px] text-neutral-500 font-body">Use device facial recognition or fingerprint</div>
+</div>
+<div class="w-12 h-6 bg-surface-container-high rounded-full relative p-1 cursor-pointer">
+<div class="w-4 h-4 bg-[#00E5FF] rounded-full translate-x-6 transition-transform"></div>
+</div>
+</div>
+<div class="flex items-center justify-between group">
+<div>
+<div class="text-sm font-bold text-on-surface">Two-Factor Authentication (2FA)</div>
+<div class="text-[11px] text-neutral-500 font-body">Add hardware token layer</div>
+</div>
+<div class="w-12 h-6 bg-surface-container-high rounded-full relative p-1 cursor-pointer">
+<div class="w-4 h-4 bg-neutral-600 rounded-full transition-transform"></div>
+</div>
+</div>
+<div class="pt-4 border-t border-neutral-800">
+<div class="text-[10px] font-label text-[#00E5FF] mb-3 uppercase tracking-widest">Data Privacy Controls</div>
+<div class="flex items-center justify-between group">
+<div class="text-sm text-neutral-300">Share Stats with Scouts</div>
+<div class="w-12 h-6 bg-surface-container-high rounded-full relative p-1 cursor-pointer">
+<div class="w-4 h-4 bg-[#00E5FF] rounded-full translate-x-6 transition-transform"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- System Configuration -->
+<div class="bg-surface-container p-6 rounded-lg border-r-2 border-neutral-800">
+<div class="flex items-center gap-3 mb-8">
+<span class="material-symbols-outlined text-neutral-400" data-icon="settings">settings</span>
+<h2 class="text-lg font-headline font-bold uppercase tracking-tight">System Config</h2>
+</div>
+<div class="space-y-6">
+<div class="flex items-center justify-between">
+<span class="text-sm font-bold text-on-surface">Interface Language</span>
+<div class="bg-surface-container-low px-4 py-1 text-xs font-label border border-neutral-800 rounded">
+                                    EN_GLOBAL [UTF-8]
+                                </div>
+</div>
+<div class="flex items-center justify-between">
+<span class="text-sm font-bold text-on-surface">Notification Triggers</span>
+<div class="flex gap-2">
+<span class="material-symbols-outlined text-sm text-[#00E5FF]" data-icon="sports_esports">sports_esports</span>
+<span class="material-symbols-outlined text-sm text-[#E9C400]" data-icon="payments">payments</span>
+</div>
+</div>
+<div class="pt-4 border-t border-neutral-800">
+<div class="text-[10px] font-label text-neutral-500 mb-3 uppercase tracking-widest">Theme Engine</div>
+<div class="grid grid-cols-2 gap-2">
+<button class="bg-surface-container-highest border border-[#00E5FF] p-3 rounded flex items-center justify-center gap-2">
+<div class="w-2 h-2 rounded-full bg-[#00E5FF]"></div>
+<span class="text-[10px] font-headline font-bold">TACTICAL_DARK</span>
+</button>
+<button class="bg-surface-container-low border border-neutral-800 p-3 rounded flex items-center justify-center gap-2 hover:border-neutral-600">
+<div class="w-2 h-2 rounded-full bg-neutral-600"></div>
+<span class="text-[10px] font-headline font-bold">CYBER_CHROME</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Communication Node & Account Commands -->
+<div class="space-y-6">
+<!-- Communication Node -->
+<div class="bg-surface-container-low p-6 rounded-lg">
+<div class="flex items-center justify-between mb-6">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="hub">hub</span>
+<h2 class="text-lg font-headline font-bold uppercase tracking-tight">Communication Node</h2>
+</div>
+<span class="text-[10px] bg-secondary-container/10 text-[#00E5FF] px-2 py-0.5 rounded border border-[#00E5FF]/20 font-label">DUAL_CHAT_SYNC_ACTIVE</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="bg-surface-container p-4 rounded border-l border-neutral-800">
+<div class="text-xs font-bold mb-1">Official Tactical Link</div>
+<div class="text-[10px] text-neutral-500 mb-3 font-body">Encrypted match communication and intel sharing</div>
+<div class="flex gap-2">
+<span class="material-symbols-outlined text-xs text-[#00E5FF]" data-icon="check_circle">check_circle</span>
+<span class="text-[9px] font-mono text-neutral-400">ACTIVE_TUNNEL_08</span>
+</div>
+</div>
+<div class="bg-surface-container p-4 rounded border-l border-neutral-800">
+<div class="text-xs font-bold mb-1">Casual Arena Hub</div>
+<div class="text-[10px] text-neutral-500 mb-3 font-body">Fan discussions, emotes, and general chat</div>
+<div class="flex gap-2">
+<span class="material-symbols-outlined text-xs text-neutral-600" data-icon="circle">circle</span>
+<span class="text-[9px] font-mono text-neutral-400">IDLE_CONNECTION</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Account Commands -->
+<div class="flex flex-col md:flex-row gap-4 pt-6">
+<button class="flex-1 bg-surface-container-high hover:bg-surface-container-highest p-4 rounded flex items-center justify-center gap-3 transition-all border border-neutral-800 active:scale-[0.98]">
+<span class="material-symbols-outlined text-neutral-400" data-icon="logout">logout</span>
+<span class="font-headline font-bold uppercase text-xs tracking-[0.2em]">Sign Out</span>
+</button>
+<button class="flex-1 bg-error-container/10 border border-error/30 hover:bg-error-container/20 p-4 rounded flex items-center justify-center gap-3 transition-all group active:scale-[0.98]">
+<span class="material-symbols-outlined text-tertiary" data-icon="warning">warning</span>
+<span class="font-headline font-bold uppercase text-xs tracking-[0.2em] text-tertiary">Deactivate Protocol</span>
+</button>
+</div>
+</div>
+</div>
+</main>
+</div>
+<!-- BottomNavBar (Mobile Only) -->
+<footer class="md:hidden fixed bottom-0 left-0 w-full z-50 bg-[#131313]/90 backdrop-blur-xl border-t border-neutral-800/20 shadow-[0_-8px_24px_rgba(0,0,0,0.5)]">
+<div class="flex justify-around items-center px-4 pb-6 pt-3">
+<div class="flex flex-col items-center justify-center text-neutral-600 hover:text-[#00E5FF] transition-all duration-300">
+<span class="material-symbols-outlined" data-icon="grid_view">grid_view</span>
+<span class="font-['Space_Grotesk'] text-[10px] uppercase font-bold tracking-tighter">Home</span>
+</div>
+<div class="flex flex-col items-center justify-center text-neutral-600 hover:text-[#00E5FF] transition-all duration-300">
+<span class="material-symbols-outlined" data-icon="query_stats">query_stats</span>
+<span class="font-['Space_Grotesk'] text-[10px] uppercase font-bold tracking-tighter">Tactical</span>
+</div>
+<div class="flex flex-col items-center justify-center text-neutral-600 hover:text-[#00E5FF] transition-all duration-300">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+<span class="font-['Space_Grotesk'] text-[10px] uppercase font-bold tracking-tighter">Intel</span>
+</div>
+<div class="flex flex-col items-center justify-center bg-[#201F1F] text-[#00E5FF] rounded-md px-3 py-1">
+<span class="material-symbols-outlined" data-icon="account_circle">account_circle</span>
+<span class="font-['Space_Grotesk'] text-[10px] uppercase font-bold tracking-tighter">Profile</span>
+</div>
+<div class="flex flex-col items-center justify-center text-neutral-600 hover:text-[#00E5FF] transition-all duration-300">
+<span class="material-symbols-outlined" data-icon="sensors">sensors</span>
+<span class="font-['Space_Grotesk'] text-[10px] uppercase font-bold tracking-tighter">Status</span>
+</div>
+</div>
+</footer>
+</body></html>

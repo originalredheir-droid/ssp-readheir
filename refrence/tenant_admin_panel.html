@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Titan Sports - Admin Command</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "error": "#ffb4ab",
+                        "surface-container-highest": "#353534",
+                        "surface-container-high": "#2a2a2a",
+                        "outline": "#8e9192",
+                        "on-secondary-fixed": "#001f24",
+                        "surface-variant": "#353534",
+                        "background": "#131313",
+                        "surface-tint": "#c8c6c5",
+                        "on-tertiary-fixed-variant": "#544600",
+                        "on-error-container": "#ffdad6",
+                        "surface-container": "#201f1f",
+                        "on-tertiary-container": "#4c3f00",
+                        "on-primary-fixed-variant": "#474646",
+                        "on-tertiary-fixed": "#221b00",
+                        "inverse-surface": "#e5e2e1",
+                        "secondary-fixed": "#9cf0ff",
+                        "secondary-container": "#00e3fd",
+                        "on-surface": "#e5e2e1",
+                        "primary": "#c8c6c5",
+                        "surface-container-lowest": "#0e0e0e",
+                        "error-container": "#93000a",
+                        "on-secondary-fixed-variant": "#004f58",
+                        "on-primary-container": "#7e7d7d",
+                        "surface-dim": "#131313",
+                        "on-tertiary": "#3a3000",
+                        "surface-container-low": "#1c1b1b",
+                        "tertiary-container": "#c9a900",
+                        "on-error": "#690005",
+                        "surface": "#131313",
+                        "on-surface-variant": "#c4c7c7",
+                        "tertiary-fixed-dim": "#e9c400",
+                        "primary-fixed": "#e5e2e1",
+                        "tertiary-fixed": "#ffe16d",
+                        "secondary-fixed-dim": "#00daf3",
+                        "primary-fixed-dim": "#c8c6c5",
+                        "primary-container": "#121212",
+                        "on-primary-fixed": "#1c1b1b",
+                        "tertiary": "#e9c400",
+                        "outline-variant": "#444748",
+                        "inverse-on-surface": "#313030",
+                        "inverse-primary": "#5f5e5e",
+                        "secondary": "#bdf4ff",
+                        "on-secondary": "#00363d",
+                        "surface-bright": "#393939",
+                        "on-primary": "#313030",
+                        "on-secondary-container": "#00616d",
+                        "on-background": "#e5e2e1"
+                    },
+                    fontFamily: {
+                        "headline": ["Space Grotesk"],
+                        "body": ["Inter"],
+                        "label": ["Space Grotesk"]
+                    },
+                    borderRadius: { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #131313;
+            color: #e5e2e1;
+            font-family: 'Inter', sans-serif;
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background selection:bg-secondary-container selection:text-on-secondary-container">
+<!-- TopAppBar -->
+<header class="bg-[#131313] dark:bg-[#131313] docked full-width top-0 z-50 sticky">
+<div class="flex justify-between items-center px-6 py-4 w-full shadow-[0_0_20px_rgba(0,229,255,0.04)]">
+<div class="flex items-center gap-4">
+<button class="text-[#00E5FF] hover:bg-[#2A2A2A] transition-colors p-2 rounded-md active:scale-95 duration-150">
+<span class="material-symbols-outlined">grid_view</span>
+</button>
+<h1 class="text-2xl font-bold tracking-tighter text-[#00E5FF] font-['Space_Grotesk'] tracking-tight uppercase">TITAN SPORTS</h1>
+</div>
+<div class="flex items-center gap-4">
+<div class="hidden md:flex items-center gap-6 px-4">
+<span class="text-[#00E5FF] font-['Space_Grotesk'] text-sm font-bold tracking-wider cursor-pointer">INSIGHTS</span>
+<span class="text-gray-400 font-['Space_Grotesk'] text-sm font-bold tracking-wider cursor-pointer hover:text-[#00E5FF] transition-colors">COMPETITIONS</span>
+<span class="text-gray-400 font-['Space_Grotesk'] text-sm font-bold tracking-wider cursor-pointer hover:text-[#00E5FF] transition-colors">FINANCIALS</span>
+<span class="text-gray-400 font-['Space_Grotesk'] text-sm font-bold tracking-wider cursor-pointer hover:text-[#00E5FF] transition-colors">ORGANIZATION</span>
+</div>
+<div class="w-10 h-10 rounded-full bg-surface-container-high border border-outline-variant flex items-center justify-center overflow-hidden">
+<img alt="Admin Profile" class="w-full h-full object-cover" data-alt="Admin user profile avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuADKlJ6Awp1PUs_kvV7n7MyuHx_Yq8XAFnQJlJ0kyMDVR7uVTwBplJLNMAaVwC8cbdIn6VBUYohqV1mB4dtEpwNtlcsGGGlPlyFEWImzGFC4DoHugVSOjPrYvsefDWjRT1RMfE_noVHumx2Ajt13RTC0e5rhrc2qB2qjz0Jo8OA_tj9iZymBjvK_Iv0vllvqY5V1GXeFkvbZWdCU6rIqRe91ibmIGZKpZ6_aUKMRQD3RKUHCOcBywiYiMDrPzhTUURY2t2GwqZ0-rfw"/>
+</div>
+</div>
+</div>
+<div class="bg-[#1C1B1B] h-[2px] w-full"></div>
+</header>
+<main class="max-w-7xl mx-auto px-6 pt-8 pb-32">
+<!-- Dashboard Hero Metrics: Asymmetric Grid -->
+<section class="grid grid-cols-1 md:grid-cols-12 gap-6 mb-12">
+<!-- Revenue Focus -->
+<div class="md:col-span-6 bg-surface-container-low p-8 rounded-lg relative overflow-hidden group">
+<div class="absolute top-0 right-0 w-32 h-32 bg-tertiary opacity-5 blur-[80px]"></div>
+<p class="font-label text-xs uppercase tracking-[0.2em] text-outline mb-2">Total Revenue (Gross)</p>
+<div class="flex items-baseline gap-2">
+<h2 class="font-headline text-6xl font-bold text-tertiary-fixed-dim tracking-tighter">$48.2k</h2>
+<span class="text-secondary-fixed-dim font-label text-sm font-bold">+12.4%</span>
+</div>
+<div class="mt-8 flex gap-4">
+<div class="bg-surface-container px-4 py-2 rounded-md">
+<p class="text-[10px] font-label text-outline uppercase tracking-widest">Growth</p>
+<p class="text-on-surface font-medium">Standard Ops</p>
+</div>
+<div class="bg-surface-container px-4 py-2 rounded-md border-l-2 border-tertiary">
+<p class="text-[10px] font-label text-outline uppercase tracking-widest">Projected</p>
+<p class="text-on-surface font-medium">$55.0k</p>
+</div>
+</div>
+</div>
+<!-- Stats Stack -->
+<div class="md:col-span-3 flex flex-col gap-6">
+<div class="bg-surface-container p-6 rounded-lg h-full flex flex-col justify-between border-t border-outline-variant/10">
+<span class="material-symbols-outlined text-secondary text-3xl">emoji_events</span>
+<div>
+<h3 class="font-headline text-4xl font-bold text-on-surface">12</h3>
+<p class="font-label text-[10px] uppercase tracking-[0.15em] text-outline">Active Competitions</p>
+</div>
+</div>
+</div>
+<div class="md:col-span-3 flex flex-col gap-6">
+<div class="bg-surface-container p-6 rounded-lg h-full flex flex-col justify-between border-t border-outline-variant/10">
+<span class="material-symbols-outlined text-secondary text-3xl">groups</span>
+<div>
+<h3 class="font-headline text-4xl font-bold text-on-surface">1,240</h3>
+<p class="font-label text-[10px] uppercase tracking-[0.15em] text-outline">Total Athletes</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Main Workspace: Bento Grid Style -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+<!-- Financial Performance (Razorpay 90/10 Split) -->
+<div class="lg:col-span-2 space-y-8">
+<div class="bg-surface-container-low rounded-lg p-1">
+<div class="bg-surface-container p-6 rounded-lg">
+<div class="flex justify-between items-start mb-8">
+<div>
+<h3 class="font-headline text-xl font-bold text-[#00E5FF] tracking-tight uppercase">Financial Performance</h3>
+<p class="text-outline text-xs font-body mt-1">Razorpay 90/10 Managed Split Model</p>
+</div>
+<span class="bg-secondary-container/10 text-secondary-fixed-dim px-3 py-1 text-[10px] font-label font-bold rounded uppercase tracking-wider">Operational</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+<div class="space-y-4">
+<div class="p-4 bg-surface-container-lowest rounded border-l-4 border-secondary">
+<p class="text-[10px] font-label text-outline uppercase tracking-widest">Escrow Balance</p>
+<h4 class="text-2xl font-headline font-bold text-on-surface">$12,840.00</h4>
+</div>
+<div class="p-4 bg-surface-container-lowest rounded">
+<p class="text-[10px] font-label text-outline uppercase tracking-widest">Next Payout</p>
+<h4 class="text-2xl font-headline font-bold text-on-surface">Oct 24, 2023</h4>
+</div>
+</div>
+<div class="flex flex-col justify-center">
+<div class="flex justify-between text-[10px] font-label text-outline uppercase tracking-widest mb-2">
+<span>Revenue Split</span>
+<span>90% Organization</span>
+</div>
+<div class="h-2 bg-surface-container-lowest rounded-full overflow-hidden flex">
+<div class="h-full bg-secondary w-[90%]"></div>
+<div class="h-full bg-outline-variant w-[10%]"></div>
+</div>
+<p class="text-[10px] text-outline mt-4 font-body leading-relaxed">
+                                    System automatically deducts 10% platform fee per transaction. Escrow released T+2 days post event verification.
+                                </p>
+</div>
+</div>
+</div>
+</div>
+<!-- Active Competitions List -->
+<div class="space-y-4">
+<div class="flex justify-between items-center px-2">
+<h3 class="font-headline text-lg font-bold uppercase tracking-tight">Active Competitions</h3>
+<button class="text-[10px] font-label text-secondary font-bold hover:underline">VIEW ALL</button>
+</div>
+<div class="flex flex-col gap-3">
+<!-- Comp 1 -->
+<div class="bg-surface-container-low hover:bg-surface-container-high transition-colors p-4 flex items-center justify-between group">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 bg-surface-container-highest flex items-center justify-center rounded-md border border-outline-variant/20">
+<span class="material-symbols-outlined text-secondary opacity-70">snowboarding</span>
+</div>
+<div>
+<h4 class="font-headline font-bold text-on-surface text-sm uppercase tracking-tight">Pro-Am Winter Cup</h4>
+<p class="text-[10px] text-outline font-body">Season 4 • 256 Participants</p>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<div class="text-right hidden sm:block">
+<p class="text-[10px] font-label text-outline uppercase tracking-widest">Prize Pool</p>
+<p class="text-sm font-headline font-bold text-tertiary">$5,000</p>
+</div>
+<span class="bg-secondary text-on-secondary px-2 py-1 text-[9px] font-label font-black rounded-sm">LIVE</span>
+</div>
+</div>
+<!-- Comp 2 -->
+<div class="bg-surface-container-low hover:bg-surface-container-high transition-colors p-4 flex items-center justify-between group">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 bg-surface-container-highest flex items-center justify-center rounded-md border border-outline-variant/20">
+<span class="material-symbols-outlined text-secondary opacity-70">sports_esports</span>
+</div>
+<div>
+<h4 class="font-headline font-bold text-on-surface text-sm uppercase tracking-tight">Elite Valorant Circuit</h4>
+<p class="text-[10px] text-outline font-body">Major • 16 Teams Registered</p>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<div class="text-right hidden sm:block">
+<p class="text-[10px] font-label text-outline uppercase tracking-widest">Prize Pool</p>
+<p class="text-sm font-headline font-bold text-tertiary">$12,500</p>
+</div>
+<span class="bg-surface-container-highest text-outline px-2 py-1 text-[9px] font-label font-black rounded-sm">UPCOMING</span>
+</div>
+</div>
+<!-- Comp 3 -->
+<div class="bg-surface-container-low hover:bg-surface-container-high transition-colors p-4 flex items-center justify-between group">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 bg-surface-container-highest flex items-center justify-center rounded-md border border-outline-variant/20">
+<span class="material-symbols-outlined text-secondary opacity-70">fitness_center</span>
+</div>
+<div>
+<h4 class="font-headline font-bold text-on-surface text-sm uppercase tracking-tight">Titan Strength Invitational</h4>
+<p class="text-[10px] text-outline font-body">Open Format • Registration Open</p>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<div class="text-right hidden sm:block">
+<p class="text-[10px] font-label text-outline uppercase tracking-widest">Prize Pool</p>
+<p class="text-sm font-headline font-bold text-tertiary">$2,000</p>
+</div>
+<span class="bg-surface-container-highest text-outline px-2 py-1 text-[9px] font-label font-black rounded-sm">REGISTRATION</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Side Gutter: Staff & Integrity Desk -->
+<div class="space-y-8">
+<!-- Staff Section -->
+<div class="bg-surface-container-low p-6 rounded-lg border-l border-outline-variant/20">
+<div class="flex items-center gap-2 mb-6">
+<span class="material-symbols-outlined text-secondary text-xl">badge</span>
+<h3 class="font-headline font-bold text-sm uppercase tracking-widest">Staff &amp; Officials</h3>
+</div>
+<div class="space-y-4">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded bg-[#2A2A2A] flex items-center justify-center overflow-hidden border border-outline-variant/30">
+<img alt="Staff 1" class="w-full h-full object-cover" data-alt="Official staff member photo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCdLs9pVJHAQcVTLdBkD5_1AYrRlJ0E5DsvPe3hr4tq6NfCVIUP3gT_JyxxZgkI7p5rYDqLx4vi6G_XXOKNS4EFhJOhmSEIBGeavyIncF4jSbkk4QBBB460SC9Yg-hXBg0XerBKQZvfPSFjbI2XrgL8OZY-EYwR8r1qwHnJIo3ZaJmMJAt1Zly4nAVh1jwGTuL7Sa4DB7i73BPfT6JnpppBeY-KyPaU59XCZrnCfpSvMu-NdgF-JS4JsF08zPAIXWF3x0kG0LbjtzoE"/>
+</div>
+<div>
+<p class="text-xs font-bold text-on-surface uppercase">Lead Arbiter</p>
+<p class="text-[10px] text-outline">Marcus Thorne • <span class="text-secondary">ACTIVE</span></p>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded bg-[#2A2A2A] flex items-center justify-center overflow-hidden border border-outline-variant/30">
+<img alt="Staff 2" class="w-full h-full object-cover" data-alt="Official staff member photo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuALH9LUC8HcGtUhNxzi_biTXX-knF4zGdNVSwnpU0hv22wE5jl9oDuCpooXhfA4HqeR1Qvfh1nLIJMeMJVDdzIrCHttngorHy6PUWShPFYb_lM8B2cCiishc81jdCt3wGqwwCfgCTMvYEKRjaGyDpqI4L4mmYQks6wezY6G6L4zbXxV719iui12vwJ83gnZawaNBtIvbKdW5sHacD2v7_r80NaGXZ__7pzgyFtxqj-txIO0RGNXqYQ00vxLZAVTuzcKeXiNRn7Q6GO7"/>
+</div>
+<div>
+<p class="text-xs font-bold text-on-surface uppercase">Integrity Lead</p>
+<p class="text-[10px] text-outline">Sarah Chen • <span class="text-secondary">ACTIVE</span></p>
+</div>
+</div>
+</div>
+</div>
+<!-- Integrity Desk Alerts -->
+<div class="bg-surface-container-low p-6 rounded-lg border-l border-error/30">
+<div class="flex items-center justify-between mb-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-error text-xl">report</span>
+<h3 class="font-headline font-bold text-sm uppercase tracking-widest text-error">Integrity Desk</h3>
+</div>
+<span class="bg-error/10 text-error px-2 py-0.5 text-[8px] font-bold rounded">2 ALERTS</span>
+</div>
+<div class="space-y-3">
+<div class="p-3 bg-surface-container rounded border border-outline-variant/10">
+<div class="flex justify-between items-start mb-1">
+<p class="text-[10px] font-bold text-on-surface uppercase">Flagged Participant</p>
+<p class="text-[8px] text-outline">2m ago</p>
+</div>
+<p class="text-[10px] text-outline leading-tight">User 'ShadowK' flagged for abnormal latency patterns in Circuit B.</p>
+</div>
+<div class="p-3 bg-surface-container rounded border border-outline-variant/10">
+<div class="flex justify-between items-start mb-1">
+<p class="text-[10px] font-bold text-on-surface uppercase">KYC Verification</p>
+<p class="text-[8px] text-outline">14m ago</p>
+</div>
+<p class="text-[10px] text-outline leading-tight">4 Pending athlete verifications require manual review.</p>
+</div>
+</div>
+</div>
+<!-- Strategic Promotion Card (Glassmorphism) -->
+<div class="bg-surface-variant/60 backdrop-blur-xl p-6 rounded-lg border border-white/5 relative overflow-hidden">
+<div class="absolute -bottom-4 -right-4 w-24 h-24 bg-secondary opacity-10 blur-2xl"></div>
+<h4 class="font-headline font-bold text-sm text-on-surface mb-2 uppercase italic tracking-tighter">Command Insight</h4>
+<p class="text-[11px] text-on-surface-variant leading-relaxed mb-4">
+                        Athlete engagement is up <span class="text-secondary">22%</span> since the Winter Cup launch. Consider early registration for the Spring Circuit.
+                    </p>
+<button class="w-full py-2 bg-secondary text-on-secondary font-label text-[10px] font-black uppercase rounded shadow-[0_0_15px_rgba(0,229,255,0.2)]">Expand Ecosystem</button>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center bg-[#131313] px-2 pb-6 pt-2 border-t-[4px] border-[#1C1B1B]">
+<div class="flex flex-col items-center justify-center bg-[#201F1F] text-[#00E5FF] rounded-md px-3 py-1">
+<span class="material-symbols-outlined text-xl">analytics</span>
+<span class="font-['Space_Grotesk'] text-[10px] font-bold tracking-[0.05em] uppercase mt-1">INSIGHTS</span>
+</div>
+<div class="flex flex-col items-center justify-center text-gray-500 opacity-60 hover:text-[#00E5FF] hover:opacity-100 transition-all active:translate-y-0.5 duration-200">
+<span class="material-symbols-outlined text-xl">emoji_events</span>
+<span class="font-['Space_Grotesk'] text-[10px] font-bold tracking-[0.05em] uppercase mt-1">COMPETITIONS</span>
+</div>
+<div class="flex flex-col items-center justify-center text-gray-500 opacity-60 hover:text-[#00E5FF] hover:opacity-100 transition-all active:translate-y-0.5 duration-200">
+<span class="material-symbols-outlined text-xl">account_balance_wallet</span>
+<span class="font-['Space_Grotesk'] text-[10px] font-bold tracking-[0.05em] uppercase mt-1">FINANCIALS</span>
+</div>
+<div class="flex flex-col items-center justify-center text-gray-500 opacity-60 hover:text-[#00E5FF] hover:opacity-100 transition-all active:translate-y-0.5 duration-200">
+<span class="material-symbols-outlined text-xl">badge</span>
+<span class="font-['Space_Grotesk'] text-[10px] font-bold tracking-[0.05em] uppercase mt-1">ORGANIZATION</span>
+</div>
+</nav>
+<!-- FAB (Contextual for Dashboard) -->
+<div class="fixed bottom-24 right-6 md:bottom-10 md:right-10 z-40">
+<button class="bg-[#00E5FF] text-[#001f24] w-14 h-14 rounded-md shadow-[0_0_20px_rgba(0,229,255,0.4)] flex items-center justify-center active:scale-90 transition-transform">
+<span class="material-symbols-outlined font-bold">add</span>
+</button>
+</div>
+</body></html>

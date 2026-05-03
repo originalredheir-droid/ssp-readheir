@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>APEX COMMAND - Training Planner</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "error-container": "#93000a",
+              "on-tertiary-fixed-variant": "#544600",
+              "inverse-surface": "#e5e2e1",
+              "surface-bright": "#393939",
+              "secondary": "#bdf4ff",
+              "on-tertiary-fixed": "#221b00",
+              "secondary-fixed-dim": "#00daf3",
+              "outline-variant": "#444748",
+              "on-tertiary-container": "#4c3f00",
+              "inverse-primary": "#5f5e5e",
+              "error": "#ffb4ab",
+              "surface-tint": "#c8c6c5",
+              "secondary-container": "#00e3fd",
+              "primary-fixed-dim": "#c8c6c5",
+              "on-surface": "#e5e2e1",
+              "on-background": "#e5e2e1",
+              "on-error-container": "#ffdad6",
+              "primary": "#c8c6c5",
+              "background": "#131313",
+              "on-primary": "#313030",
+              "tertiary": "#e9c400",
+              "on-error": "#690005",
+              "surface-container-high": "#2a2a2a",
+              "tertiary-fixed": "#ffe16d",
+              "surface-variant": "#353534",
+              "surface-container-lowest": "#0e0e0e",
+              "primary-container": "#121212",
+              "outline": "#8e9192",
+              "tertiary-container": "#c9a900",
+              "surface-container-highest": "#353534",
+              "on-surface-variant": "#c4c7c7",
+              "tertiary-fixed-dim": "#e9c400",
+              "on-tertiary": "#3a3000",
+              "inverse-on-surface": "#313030",
+              "surface": "#131313",
+              "surface-container-low": "#1c1b1b",
+              "on-secondary-container": "#00616d",
+              "primary-fixed": "#e5e2e1",
+              "on-secondary": "#00363d",
+              "on-primary-container": "#7e7d7d",
+              "on-secondary-fixed-variant": "#004f58",
+              "surface-dim": "#131313",
+              "secondary-fixed": "#9cf0ff",
+              "on-primary-fixed": "#1c1b1b",
+              "on-primary-fixed-variant": "#474646",
+              "surface-container": "#201f1f",
+              "on-secondary-fixed": "#001f24"
+            },
+            fontFamily: {
+              "headline": ["Space Grotesk"],
+              "body": ["Inter"],
+              "label": ["Space Grotesk"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3, .font-technical { font-family: 'Space Grotesk', sans-serif; }
+        .glass-panel {
+            background: rgba(53, 53, 52, 0.6);
+            backdrop-filter: blur(12px);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen pb-24 md:pb-0">
+<!-- TopAppBar -->
+<header class="bg-[#131313] dark:bg-[#131313] docked full-width top-0 sticky z-50 shadow-[0_0_20px_rgba(0,229,255,0.04)]">
+<div class="flex justify-between items-center w-full px-6 py-4 max-w-none">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center border border-secondary/20">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">person</span>
+</div>
+<div class="hidden md:block">
+<p class="font-['Space_Grotesk'] uppercase tracking-widest text-xs text-gray-500">OPERATOR</p>
+<p class="text-on-background font-bold text-sm tracking-tight">PRO ATHLETE PROFILE</p>
+</div>
+</div>
+<div class="text-2xl font-bold tracking-tighter text-[#00E5FF]">APEX COMMAND</div>
+<div class="flex items-center gap-6">
+<nav class="hidden md:flex gap-8">
+<a class="text-[#00E5FF] font-bold font-['Space_Grotesk'] uppercase tracking-widest text-sm hover:text-[#00DAF3] transition-colors duration-200" href="#">TRAINING</a>
+<a class="text-gray-500 font-['Space_Grotesk'] uppercase tracking-widest text-sm hover:text-[#00DAF3] transition-colors duration-200" href="#">VITALS</a>
+<a class="text-gray-500 font-['Space_Grotesk'] uppercase tracking-widest text-sm hover:text-[#00DAF3] transition-colors duration-200" href="#">INTEL</a>
+</nav>
+<button class="material-symbols-outlined text-[#00E5FF] active:scale-95 transition-transform" data-icon="settings">settings</button>
+</div>
+</div>
+<div class="bg-[#1C1B1B] h-[1px] w-full"></div>
+</header>
+<main class="max-w-[1600px] mx-auto p-4 md:p-8 grid grid-cols-1 lg:grid-cols-12 gap-6">
+<!-- Left Column: Tactical Calendar -->
+<section class="lg:col-span-8 space-y-6">
+<div class="flex items-center justify-between mb-2">
+<div>
+<h2 class="text-3xl font-bold tracking-tighter font-headline uppercase text-on-background">Operational Cycle</h2>
+<p class="text-secondary/60 text-xs font-label uppercase tracking-widest">Phase: Hypertrophy &amp; Neuromuscular Adaptation</p>
+</div>
+<div class="flex gap-2">
+<button class="p-2 bg-surface-container hover:bg-surface-container-high rounded text-on-surface transition-all">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<button class="p-2 bg-surface-container hover:bg-surface-container-high rounded text-on-surface transition-all">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+<!-- Bento Grid Calendar -->
+<div class="grid grid-cols-2 md:grid-cols-7 gap-3">
+<!-- Day Card (Active) -->
+<div class="bg-surface-container-low p-4 border-l-4 border-secondary min-h-[160px] flex flex-col justify-between group cursor-pointer hover:bg-surface-container transition-all">
+<div>
+<span class="font-label text-[10px] tracking-widest text-secondary font-bold uppercase">MON / 12</span>
+<h3 class="font-headline text-sm font-bold mt-1 text-on-surface">CENTRAL NERVOUS SYSTEM EXPLOITATION</h3>
+</div>
+<div class="space-y-2">
+<div class="flex items-center gap-2 text-[10px] text-on-surface-variant font-label">
+<span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">timer</span> 90 MIN
+                        </div>
+<div class="flex -space-x-2">
+<div class="w-6 h-6 rounded bg-secondary/20 border border-secondary/40 flex items-center justify-center">
+<span class="material-symbols-outlined text-[10px] text-secondary">fitness_center</span>
+</div>
+<div class="w-6 h-6 rounded bg-tertiary/20 border border-tertiary/40 flex items-center justify-center">
+<span class="material-symbols-outlined text-[10px] text-tertiary">bolt</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Day Card (Planned) -->
+<div class="bg-surface-container-lowest p-4 border-l-4 border-surface-container-highest min-h-[160px] flex flex-col justify-between group cursor-pointer hover:bg-surface-container-low transition-all">
+<div>
+<span class="font-label text-[10px] tracking-widest text-gray-500 uppercase">TUE / 13</span>
+<h3 class="font-headline text-sm font-bold mt-1 text-gray-400">STRUCTURAL INTEGRITY: LOWER</h3>
+</div>
+<div class="mt-auto opacity-50 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-sm text-gray-600">add_circle</span>
+</div>
+</div>
+<!-- Day Card (Rest) -->
+<div class="bg-surface-container-low/30 p-4 border-l-4 border-surface-container-low min-h-[160px] flex flex-col justify-between">
+<div>
+<span class="font-label text-[10px] tracking-widest text-gray-600 uppercase">WED / 14</span>
+<h3 class="font-headline text-sm font-bold mt-1 text-gray-600 italic">SYSTEM REBOOT (REST)</h3>
+</div>
+<div class="flex items-center gap-2 text-[10px] text-gray-600 font-label">
+<span class="material-symbols-outlined text-xs">spa</span> ACTIVE RECOVERY
+                    </div>
+</div>
+<!-- Thu -->
+<div class="bg-surface-container-lowest p-4 border-l-4 border-surface-container-highest min-h-[160px] flex flex-col justify-between">
+<div>
+<span class="font-label text-[10px] tracking-widest text-gray-500 uppercase">THU / 15</span>
+<h3 class="font-headline text-sm font-bold mt-1 text-gray-400">AEROBIC THRESHOLD WORK</h3>
+</div>
+<div class="mt-auto opacity-50">
+<span class="material-symbols-outlined text-sm text-gray-600">add_circle</span>
+</div>
+</div>
+<!-- Fri -->
+<div class="bg-surface-container-low p-4 border-l-4 border-secondary-container min-h-[160px] flex flex-col justify-between">
+<div>
+<span class="font-label text-[10px] tracking-widest text-secondary-container uppercase">FRI / 16</span>
+<h3 class="font-headline text-sm font-bold mt-1 text-on-surface">MAXIMAL STRENGTH OUTPUT</h3>
+</div>
+<div class="flex -space-x-2">
+<div class="w-6 h-6 rounded bg-secondary-container/20 border border-secondary-container/40 flex items-center justify-center">
+<span class="material-symbols-outlined text-[10px] text-secondary-container">weight</span>
+</div>
+</div>
+</div>
+<!-- Sat -->
+<div class="bg-surface-container-lowest p-4 border-l-4 border-surface-container-highest min-h-[160px] flex flex-col justify-between">
+<div>
+<span class="font-label text-[10px] tracking-widest text-gray-500 uppercase">SAT / 17</span>
+<h3 class="font-headline text-sm font-bold mt-1 text-gray-400">SKILL REFINEMENT</h3>
+</div>
+<div class="mt-auto opacity-50">
+<span class="material-symbols-outlined text-sm text-gray-600">add_circle</span>
+</div>
+</div>
+<!-- Sun -->
+<div class="bg-surface-container-low/30 p-4 border-l-4 border-surface-container-low min-h-[160px] flex flex-col justify-between">
+<div>
+<span class="font-label text-[10px] tracking-widest text-gray-600 uppercase">SUN / 18</span>
+<h3 class="font-headline text-sm font-bold mt-1 text-gray-600 italic">SYSTEM REBOOT (REST)</h3>
+</div>
+</div>
+</div>
+<!-- Session Detail / Drag-and-Drop Area -->
+<div class="bg-surface-container-low rounded-lg overflow-hidden">
+<div class="p-6 border-b border-surface-container">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-2 h-8 bg-secondary"></div>
+<h3 class="text-xl font-headline font-bold uppercase tracking-tight">Today's Protocol: CNS Exploitation</h3>
+</div>
+<button class="bg-secondary text-on-secondary px-4 py-2 font-label text-xs font-bold uppercase tracking-widest rounded-md hover:bg-secondary-fixed-dim transition-all active:scale-95 flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">play_arrow</span> INITIATE SESSION
+                        </button>
+</div>
+</div>
+<div class="p-6">
+<div class="space-y-4">
+<!-- Exercise Row -->
+<div class="grid grid-cols-12 gap-4 items-center group">
+<div class="col-span-1 flex items-center justify-center cursor-grab active:cursor-grabbing text-gray-600 group-hover:text-secondary transition-colors">
+<span class="material-symbols-outlined">drag_indicator</span>
+</div>
+<div class="col-span-5 flex items-center gap-4">
+<div class="w-12 h-12 bg-surface-container flex items-center justify-center rounded border border-outline-variant/20 overflow-hidden">
+<img class="w-full h-full object-cover grayscale" data-alt="Athlete performing a back squat with heavy weights" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBvbbOyY2Zg-_ezeFdGlMwkBCBVfhrnNP87-36LQCl5NQF1xksOqo3Ny8ItACPLiiiu77WicZ8q_GR7q_dz2A5DJEK-BYnX2CR22WbT3Jhs2Rdd9u-xeKcovrXjD_U7RBOX16YCFFVRAykG0erK48rCEWrPqxChOGYIN_TZeWbzM-QOxpP5cZKJLouHxL9JP1L38bldlQHD-ZnHfzdOy8Y1oM0bh9o-1aaDbs8FbEVlrnAoOWIg9MrML6JgKfcnFZls5QWqnqP8TBnQ"/>
+</div>
+<div>
+<p class="font-headline font-bold text-sm text-on-surface">BARBELL BACK SQUAT</p>
+<p class="text-[10px] text-gray-500 font-label uppercase">Compound / Explosive</p>
+</div>
+</div>
+<div class="col-span-2 text-center">
+<p class="text-[10px] text-gray-500 font-label uppercase">TARGET</p>
+<p class="text-lg font-headline font-bold text-secondary">5 <span class="text-xs text-gray-400">X</span> 5</p>
+</div>
+<div class="col-span-2 text-center">
+<p class="text-[10px] text-gray-500 font-label uppercase">LOAD</p>
+<p class="text-lg font-headline font-bold text-on-surface">140<span class="text-xs text-gray-400">KG</span></p>
+</div>
+<div class="col-span-2 text-right">
+<button class="text-gray-600 hover:text-tertiary transition-colors">
+<span class="material-symbols-outlined">analytics</span>
+</button>
+<button class="text-gray-600 hover:text-error transition-colors ml-2">
+<span class="material-symbols-outlined">delete</span>
+</button>
+</div>
+</div>
+<!-- Divider (Subtle tonal shift) -->
+<div class="h-px bg-surface-container"></div>
+<!-- Exercise Row -->
+<div class="grid grid-cols-12 gap-4 items-center group">
+<div class="col-span-1 flex items-center justify-center cursor-grab active:cursor-grabbing text-gray-600 group-hover:text-secondary">
+<span class="material-symbols-outlined">drag_indicator</span>
+</div>
+<div class="col-span-5 flex items-center gap-4">
+<div class="w-12 h-12 bg-surface-container flex items-center justify-center rounded border border-outline-variant/20 overflow-hidden">
+<img class="w-full h-full object-cover grayscale" data-alt="Close up of weighted pull up station" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCOOX9uWiyVFRkeOztxKBkjrZoFIBqx0-L0pt0GFavEwtYXaVXsBUH0fIEpKVa-hKFnDXZ1Sf4JG1eNOU-RBkjCPvHCyH6VCa9c4v22vGMXg06jEvmKyoNvY7hwYJErfaPZ-s2cBZmxSNXLzd1omzcO7M42rykGIE64NioDM9CkMotTcUMM4nAC1g9wm__lDtaMu7aI-fz1E38kbK_n4JQZtLx5sHGj7DU4kJnYTN2eH1hgbZ9wCxD8RVw9ma9eLxInXrPTKM05CH7T"/>
+</div>
+<div>
+<p class="font-headline font-bold text-sm text-on-surface">WEIGHTED PULL-UP</p>
+<p class="text-[10px] text-gray-500 font-label uppercase">Vertical Pull</p>
+</div>
+</div>
+<div class="col-span-2 text-center">
+<p class="text-[10px] text-gray-500 font-label uppercase">TARGET</p>
+<p class="text-lg font-headline font-bold text-secondary">4 <span class="text-xs text-gray-400">X</span> 8</p>
+</div>
+<div class="col-span-2 text-center">
+<p class="text-[10px] text-gray-500 font-label uppercase">LOAD</p>
+<p class="text-lg font-headline font-bold text-on-surface">+20<span class="text-xs text-gray-400">KG</span></p>
+</div>
+<div class="col-span-2 text-right">
+<button class="text-gray-600 hover:text-tertiary transition-colors">
+<span class="material-symbols-outlined">analytics</span>
+</button>
+<button class="text-gray-600 hover:text-error transition-colors ml-2">
+<span class="material-symbols-outlined">delete</span>
+</button>
+</div>
+</div>
+<!-- Empty Slot for D&D -->
+<div class="border-2 border-dashed border-outline-variant/30 rounded-lg p-6 flex flex-col items-center justify-center text-gray-600 hover:border-secondary/40 hover:text-secondary/60 transition-all group cursor-pointer">
+<span class="material-symbols-outlined text-4xl mb-2">add_task</span>
+<p class="font-label text-xs font-bold uppercase tracking-widest">Drop Exercise Here to Append</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Right Column: Exercise Library & Tactical Insights -->
+<aside class="lg:col-span-4 space-y-6">
+<!-- Exercise Library Search -->
+<div class="bg-surface-container rounded-lg p-6 space-y-4">
+<div class="flex items-center justify-between">
+<h3 class="font-headline font-bold text-lg uppercase tracking-tight text-on-surface">Library</h3>
+<span class="bg-surface-container-highest px-2 py-1 text-[9px] font-label font-bold text-secondary uppercase tracking-tighter rounded">1.2K UNITS</span>
+</div>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-gray-500 text-sm">search</span>
+<input class="w-full bg-surface-container-low border-none focus:ring-1 focus:ring-secondary text-xs font-label uppercase tracking-widest p-3 pl-10 rounded placeholder:text-gray-600" placeholder="FILTER BY BIO-MECHANICS..." type="text"/>
+</div>
+<div class="flex flex-wrap gap-2 mb-4">
+<span class="px-2 py-1 bg-secondary/10 border border-secondary/20 text-[9px] font-label font-bold text-secondary rounded uppercase">Legs</span>
+<span class="px-2 py-1 bg-surface-container-highest text-[9px] font-label font-bold text-gray-400 rounded uppercase">Chest</span>
+<span class="px-2 py-1 bg-surface-container-highest text-[9px] font-label font-bold text-gray-400 rounded uppercase">Core</span>
+<span class="px-2 py-1 bg-surface-container-highest text-[9px] font-label font-bold text-gray-400 rounded uppercase">Explosive</span>
+</div>
+<!-- Library List -->
+<div class="space-y-2 max-h-[400px] overflow-y-auto pr-2 custom-scrollbar">
+<!-- Library Item -->
+<div class="flex items-center justify-between p-3 bg-surface-container-low hover:bg-surface-container-high transition-all cursor-grab active:cursor-grabbing border-l-2 border-transparent hover:border-secondary group">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-gray-500 group-hover:text-secondary text-sm">fitness_center</span>
+<div>
+<p class="text-xs font-headline font-bold text-on-surface uppercase">Romanian Deadlift</p>
+<p class="text-[9px] text-gray-600 font-label uppercase">Posterior Chain</p>
+</div>
+</div>
+<button class="text-gray-600 hover:text-on-surface">
+<span class="material-symbols-outlined text-sm">info</span>
+</button>
+</div>
+<!-- Library Item -->
+<div class="flex items-center justify-between p-3 bg-surface-container-low hover:bg-surface-container-high transition-all cursor-grab active:cursor-grabbing border-l-2 border-transparent hover:border-secondary group">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-gray-500 group-hover:text-secondary text-sm">fitness_center</span>
+<div>
+<p class="text-xs font-headline font-bold text-on-surface uppercase">Bulgarian Split Squat</p>
+<p class="text-[9px] text-gray-600 font-label uppercase">Unilateral / Quads</p>
+</div>
+</div>
+<button class="text-gray-600 hover:text-on-surface">
+<span class="material-symbols-outlined text-sm">info</span>
+</button>
+</div>
+<!-- Library Item -->
+<div class="flex items-center justify-between p-3 bg-surface-container-low hover:bg-surface-container-high transition-all cursor-grab active:cursor-grabbing border-l-2 border-transparent hover:border-secondary group">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-gray-500 group-hover:text-secondary text-sm">fitness_center</span>
+<div>
+<p class="text-xs font-headline font-bold text-on-surface uppercase">Barbell Overhead Press</p>
+<p class="text-[9px] text-gray-600 font-label uppercase">Vertical Push</p>
+</div>
+</div>
+<button class="text-gray-600 hover:text-on-surface">
+<span class="material-symbols-outlined text-sm">info</span>
+</button>
+</div>
+<!-- Library Item -->
+<div class="flex items-center justify-between p-3 bg-surface-container-low hover:bg-surface-container-high transition-all cursor-grab active:cursor-grabbing border-l-2 border-transparent hover:border-secondary group">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-gray-500 group-hover:text-secondary text-sm">fitness_center</span>
+<div>
+<p class="text-xs font-headline font-bold text-on-surface uppercase">Incline DB Bench</p>
+<p class="text-[9px] text-gray-600 font-label uppercase">Horizontal Push</p>
+</div>
+</div>
+<button class="text-gray-600 hover:text-on-surface">
+<span class="material-symbols-outlined text-sm">info</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Coaching Intel / Progress -->
+<div class="bg-surface-container-lowest border border-outline-variant/10 rounded-lg p-6 space-y-6 relative overflow-hidden">
+<div class="absolute top-0 right-0 p-4 opacity-10">
+<span class="material-symbols-outlined text-7xl text-tertiary">analytics</span>
+</div>
+<div>
+<h3 class="font-headline font-bold text-lg uppercase tracking-tight text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-tertiary" style="font-variation-settings: 'FILL' 1;">verified</span> 
+                         Coach Insight
+                    </h3>
+<p class="text-xs text-gray-400 mt-2 leading-relaxed">System analysis indicates your CNS recovery is currently at <span class="text-secondary font-bold">88%</span>. Recommended load increase for Squats is <span class="text-tertiary font-bold">+2.5%</span>.</p>
+</div>
+<div class="space-y-4">
+<div>
+<div class="flex justify-between items-end mb-1">
+<span class="text-[10px] font-label text-gray-500 uppercase">Weekly Fatigue Load</span>
+<span class="text-xs font-headline font-bold text-on-surface">Moderate</span>
+</div>
+<div class="h-1 bg-surface-container-highest w-full rounded-full overflow-hidden">
+<div class="h-full bg-secondary w-[65%]"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between items-end mb-1">
+<span class="text-[10px] font-label text-gray-500 uppercase">Volume Compliance</span>
+<span class="text-xs font-headline font-bold text-on-surface">94%</span>
+</div>
+<div class="h-1 bg-surface-container-highest w-full rounded-full overflow-hidden">
+<div class="h-full bg-tertiary w-[94%] shadow-[0_0_8px_rgba(233,196,0,0.5)]"></div>
+</div>
+</div>
+</div>
+<button class="w-full py-3 bg-surface-container-high hover:bg-surface-container-highest text-on-surface text-[10px] font-label font-bold uppercase tracking-[0.2em] rounded border border-outline-variant/20 transition-all">
+                    Full Bio-Metric Report
+                </button>
+</div>
+</aside>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center px-4 pb-6 pt-3 bg-[#0E0E0E]/90 backdrop-blur-xl md:hidden z-50 border-t border-[#353534]/15">
+<a class="flex flex-col items-center justify-center bg-[#00E5FF]/10 text-[#00E5FF] rounded-lg px-4 py-1 border-b-2 border-[#00E5FF] transition-all" href="#">
+<span class="material-symbols-outlined text-2xl" data-icon="fitness_center" style="font-variation-settings: 'FILL' 1;">fitness_center</span>
+<span class="font-['Space_Grotesk'] text-[10px] font-bold uppercase tracking-wider mt-1">TRAINING</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#353534] px-4 py-1 hover:bg-[#1C1B1B] transition-all" href="#">
+<span class="material-symbols-outlined text-2xl" data-icon="monitor_heart">monitor_heart</span>
+<span class="font-['Space_Grotesk'] text-[10px] font-bold uppercase tracking-wider mt-1">VITALS</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#353534] px-4 py-1 hover:bg-[#1C1B1B] transition-all" href="#">
+<span class="material-symbols-outlined text-2xl" data-icon="rebase_edit">rebase_edit</span>
+<span class="font-['Space_Grotesk'] text-[10px] font-bold uppercase tracking-wider mt-1">RECOVERY</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#353534] px-4 py-1 hover:bg-[#1C1B1B] transition-all" href="#">
+<span class="material-symbols-outlined text-2xl" data-icon="analytics">analytics</span>
+<span class="font-['Space_Grotesk'] text-[10px] font-bold uppercase tracking-wider mt-1">INTEL</span>
+</a>
+</nav>
+<!-- FAB -->
+<button class="fixed bottom-24 right-6 md:bottom-8 md:right-8 w-14 h-14 bg-secondary text-on-secondary rounded-lg shadow-[0_0_20px_rgba(0,229,255,0.4)] flex items-center justify-center group active:scale-90 transition-all z-40">
+<span class="material-symbols-outlined text-3xl group-hover:rotate-90 transition-transform">add</span>
+</button>
+</body></html>

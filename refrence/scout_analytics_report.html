@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>TACTICAL_REPORT_08 - Scout Analytics</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;900&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "background": "#131313",
+                        "outline-variant": "#444748",
+                        "outline": "#8e9192",
+                        "on-secondary-fixed": "#001f24",
+                        "on-surface": "#e5e2e1",
+                        "inverse-primary": "#5f5e5e",
+                        "surface-dim": "#131313",
+                        "surface-container": "#201f1f",
+                        "on-error-container": "#ffdad6",
+                        "tertiary-container": "#c9a900",
+                        "surface": "#131313",
+                        "error": "#ffb4ab",
+                        "surface-variant": "#353534",
+                        "on-primary-container": "#7e7d7d",
+                        "secondary-container": "#00e3fd",
+                        "on-primary": "#313030",
+                        "surface-container-low": "#1c1b1b",
+                        "on-tertiary": "#3a3000",
+                        "on-primary-fixed": "#1c1b1b",
+                        "inverse-surface": "#e5e2e1",
+                        "primary-fixed-dim": "#c8c6c5",
+                        "inverse-on-surface": "#313030",
+                        "surface-container-high": "#2a2a2a",
+                        "tertiary-fixed-dim": "#e9c400",
+                        "surface-bright": "#393939",
+                        "primary-fixed": "#e5e2e1",
+                        "on-error": "#690005",
+                        "on-primary-fixed-variant": "#474646",
+                        "secondary-fixed-dim": "#00daf3",
+                        "secondary-fixed": "#9cf0ff",
+                        "on-tertiary-fixed-variant": "#544600",
+                        "on-tertiary-fixed": "#221b00",
+                        "on-tertiary-container": "#4c3f00",
+                        "primary": "#c8c6c5",
+                        "error-container": "#93000a",
+                        "on-secondary-fixed-variant": "#004f58",
+                        "primary-container": "#121212",
+                        "tertiary": "#e9c400",
+                        "surface-tint": "#c8c6c5",
+                        "secondary": "#bdf4ff",
+                        "on-secondary": "#00363d",
+                        "on-background": "#e5e2e1",
+                        "tertiary-fixed": "#ffe16d",
+                        "surface-container-highest": "#353534",
+                        "on-surface-variant": "#c4c7c7",
+                        "surface-container-lowest": "#0e0e0e",
+                        "on-secondary-container": "#00616d"
+                    },
+                    fontFamily: {
+                        "headline": ["Space Grotesk"],
+                        "body": ["Inter"],
+                        "label": ["Space Grotesk"]
+                    },
+                    borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #131313;
+            color: #e5e2e1;
+        }
+        .technical-border {
+            position: relative;
+        }
+        .technical-border::after {
+            content: '';
+            position: absolute;
+            top: 0; right: 0; width: 8px; height: 8px;
+            border-top: 2px solid #00E5FF; border-right: 2px solid #00E5FF;
+        }
+        .skill-radar-bg {
+            background-image: radial-gradient(circle, #353534 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface">
+<!-- TopAppBar -->
+<header class="fixed top-0 z-[60] w-full bg-neutral-900/90 backdrop-blur-xl border-none shadow-[0_0_20px_rgba(0,229,255,0.04)] flex justify-between items-center px-6 py-4 max-w-none">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[#00E5FF]">analytics</span>
+<h1 class="font-['Space_Grotesk'] uppercase tracking-[0.05em] font-bold text-[#00E5FF]">TACTICAL_REPORT_08</h1>
+</div>
+<div class="hidden md:flex gap-8">
+<a class="font-label text-[12px] font-bold tracking-widest text-[#00E5FF] border-b-2 border-[#00E5FF] pb-1" href="#">OVERVIEW</a>
+<a class="font-label text-[12px] font-bold tracking-widest text-neutral-500 hover:bg-[#2A2A2A] transition-colors px-2 py-1 rounded" href="#">METRICS</a>
+<a class="font-label text-[12px] font-bold tracking-widest text-neutral-500 hover:bg-[#2A2A2A] transition-colors px-2 py-1 rounded" href="#">COMPARISON</a>
+</div>
+<div class="w-10 h-10 rounded-full bg-surface-container overflow-hidden border border-outline-variant/20">
+<img alt="Scout Avatar" class="w-full h-full object-cover" data-alt="Close up profile of an elite scout professional" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAuq8IUtGlIF3KPqLNPtBwLbwGX707lcak8CZehiw9jOnE6j0OhWhCnwqd5EI-CqyAEbHycZwyPd1iK6WovDuqVmuc_cwpx-W_cXNvmobWrwgU9_a_gtskUBm8pnLv3MlA2Mh1qgiMKTZ5MNGxaRWtE11BJLg4Twhrf4v5fLOjbsxyR0VGKN8YvqIO3W-xiTu6hbESt5aiYhjgjjK4ruuJ5CAlksMvMBbLrtFLvjwgak7MyfR51JqnO_wUKW5aixd4faSM-wH2fht70"/>
+</div>
+</header>
+<main class="pt-24 pb-32 px-6 max-w-7xl mx-auto space-y-8">
+<!-- Hero Section: Profile & Star Potential -->
+<section class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+<div class="lg:col-span-8 bg-surface-container-low p-8 rounded-lg relative overflow-hidden flex flex-col md:flex-row gap-8 items-center border-l-4 border-secondary-container">
+<div class="relative">
+<div class="w-48 h-48 bg-surface-container-highest rounded-md overflow-hidden border-2 border-outline-variant/30">
+<img alt="Athlete" class="w-full h-full object-cover" data-alt="High quality athletic portrait of a focused young player" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAJOI5nGGsuEK6Fh8PxMZw7t2gdicceovwlP8W5IAuQViAgCXsrbf3HNO1_KuCzySOnRn_5oNMXDjvz3nx81Ew83parGkKleC7Wx34Yb7uk6VwFmfW427OsLm6IBmz4R55wUVvuZCOUA6kQ8n18zrcPrRw_WBvrydEcyaaueElq1CHjvH43zfKpCD2raL0cyrSlrqtx8sNumcvnse_FIG07NWib2XVJgDO4G2dG7tkbv9Kh6vYa8kkgcpsiRztKFzsyFSrpGN2h9b5p"/>
+</div>
+<div class="absolute -bottom-3 -right-3 bg-tertiary px-3 py-1 rounded text-on-tertiary font-label font-black text-xs">VERIFIED_PRO</div>
+</div>
+<div class="flex-1 text-center md:text-left">
+<div class="flex flex-col md:flex-row md:items-end gap-2 mb-4">
+<h2 class="font-headline text-5xl font-black tracking-tighter uppercase">K. Jørgensen</h2>
+<span class="font-label text-neutral-500 mb-1">DK-2004-992</span>
+</div>
+<div class="grid grid-cols-3 gap-4 border-t border-outline-variant/20 pt-4">
+<div>
+<p class="font-label text-[10px] text-neutral-500 uppercase tracking-widest">Position</p>
+<p class="font-body font-bold text-lg">Winger / AM</p>
+</div>
+<div>
+<p class="font-label text-[10px] text-neutral-500 uppercase tracking-widest">Height</p>
+<p class="font-body font-bold text-lg">182cm</p>
+</div>
+<div>
+<p class="font-label text-[10px] text-neutral-500 uppercase tracking-widest">Foot</p>
+<p class="font-body font-bold text-lg">Left (Dual)</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Star Potential Gauge -->
+<div class="lg:col-span-4 bg-surface-container-low p-8 rounded-lg flex flex-col justify-center items-center text-center space-y-4">
+<p class="font-label text-[10px] text-neutral-500 uppercase tracking-[0.2em]">Star Potential Score</p>
+<div class="relative flex items-center justify-center">
+<svg class="w-40 h-40 transform -rotate-90">
+<circle class="text-surface-container-highest" cx="80" cy="80" fill="transparent" r="70" stroke="currentColor" stroke-width="8"></circle>
+<circle class="text-secondary-fixed-dim" cx="80" cy="80" fill="transparent" r="70" stroke="currentColor" stroke-dasharray="440" stroke-dashoffset="44" stroke-width="8"></circle>
+</svg>
+<div class="absolute inset-0 flex flex-col items-center justify-center">
+<span class="font-headline text-5xl font-black text-secondary-fixed-dim">9.2</span>
+<span class="font-label text-[10px] text-neutral-400">CLASS: ELITE</span>
+</div>
+</div>
+<div class="flex gap-1 text-tertiary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0.5;">star_half</span>
+</div>
+</div>
+</section>
+<!-- Bento Grid Metrics -->
+<section class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
+<!-- Skill DNA Spider Chart -->
+<div class="md:col-span-2 lg:col-span-2 bg-surface-container-low p-6 rounded-lg flex flex-col">
+<div class="flex justify-between items-center mb-6">
+<h3 class="font-label text-sm font-bold tracking-widest">SKILL_DNA_MAPPING</h3>
+<span class="material-symbols-outlined text-neutral-500 text-sm">settings_input_component</span>
+</div>
+<div class="flex-1 skill-radar-bg relative flex items-center justify-center min-h-[300px]">
+<!-- Abstract Radar visualization representation -->
+<div class="absolute inset-0 flex items-center justify-center">
+<div class="w-48 h-48 border border-outline-variant/20 rounded-full"></div>
+<div class="absolute w-32 h-32 border border-outline-variant/40 rounded-full"></div>
+<div class="absolute w-16 h-16 border border-outline-variant/60 rounded-full"></div>
+<!-- Radar Shape -->
+<div class="w-full h-full flex items-center justify-center opacity-70">
+<svg class="w-56 h-56 text-[#00E5FF] drop-shadow-[0_0_8px_rgba(0,229,255,0.4)]" viewbox="0 0 100 100">
+<polygon fill="currentColor" fill-opacity="0.2" points="50,10 85,30 85,70 50,90 15,70 15,30" stroke="currentColor" stroke-width="1"></polygon>
+<polygon fill="currentColor" fill-opacity="0.4" points="50,20 75,35 80,60 50,80 25,65 20,40" stroke="currentColor" stroke-width="2"></polygon>
+</svg>
+</div>
+</div>
+<!-- Axis Labels -->
+<span class="absolute top-2 font-label text-[10px] text-neutral-400">PACE</span>
+<span class="absolute bottom-2 font-label text-[10px] text-neutral-400">DEFENDING</span>
+<span class="absolute left-0 top-1/2 -translate-y-1/2 font-label text-[10px] text-neutral-400 -rotate-90">TECHNICAL</span>
+<span class="absolute right-0 top-1/2 -translate-y-1/2 font-label text-[10px] text-neutral-400 rotate-90">VISION</span>
+</div>
+</div>
+<!-- Performance Deep Dive -->
+<div class="lg:col-span-2 space-y-6">
+<!-- Tactical Performance (Digital) -->
+<div class="bg-surface-container p-6 rounded-lg border-t border-outline-variant/10">
+<h3 class="font-label text-[10px] text-neutral-500 tracking-[0.2em] mb-4">TACTICAL_DIGITAL_EFFICIENCY</h3>
+<div class="space-y-4">
+<div class="flex justify-between items-end">
+<span class="text-sm font-body">XG Contribution</span>
+<span class="text-xl font-headline font-bold text-[#00E5FF]">0.84 <span class="text-[10px] text-neutral-500">/90</span></span>
+</div>
+<div class="h-1 bg-surface-container-highest w-full overflow-hidden">
+<div class="h-full bg-secondary-container" style="width: 84%"></div>
+</div>
+<div class="flex justify-between items-end">
+<span class="text-sm font-body">Progressive Carries</span>
+<span class="text-xl font-headline font-bold text-[#00E5FF]">12.4 <span class="text-[10px] text-neutral-500">/90</span></span>
+</div>
+<div class="h-1 bg-surface-container-highest w-full overflow-hidden">
+<div class="h-full bg-secondary-container" style="width: 72%"></div>
+</div>
+</div>
+</div>
+<!-- Physical Output -->
+<div class="bg-surface-container p-6 rounded-lg border-t border-outline-variant/10">
+<h3 class="font-label text-[10px] text-neutral-500 tracking-[0.2em] mb-4">PHYSICAL_METRICS</h3>
+<div class="grid grid-cols-2 gap-4">
+<div class="bg-surface-container-lowest p-3 rounded">
+<p class="font-label text-[9px] text-neutral-500">MAX SPEED</p>
+<p class="text-xl font-headline font-bold">34.2 <span class="text-xs font-label">KM/H</span></p>
+</div>
+<div class="bg-surface-container-lowest p-3 rounded">
+<p class="font-label text-[9px] text-neutral-500">DISTANCE/90</p>
+<p class="text-xl font-headline font-bold">11.8 <span class="text-xs font-label">KM</span></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Recommendation and Actions -->
+<section class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+<!-- Scout Note -->
+<div class="lg:col-span-2 bg-[#1C1B1B] p-8 rounded-lg relative technical-border">
+<div class="flex items-center gap-2 mb-4">
+<span class="material-symbols-outlined text-tertiary">history_edu</span>
+<h3 class="font-label text-sm font-bold tracking-widest text-on-surface">SCOUT_RECOMMENDATION_NOTE</h3>
+</div>
+<p class="font-body text-neutral-300 leading-relaxed italic text-sm border-l-2 border-outline-variant pl-4 py-2">
+                    "Jørgensen displays elite-level spatial awareness in transition. His technical ceiling remains exceptionally high compared to peers in the Nordic regional leagues. Recommendation: Immediate Tier-1 Recruitment Priority. Focus on ball-retention under high-press scenarios for further development. Value expected to triple within 12 months."
+                </p>
+<div class="mt-6 flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center font-bold text-xs">SL</div>
+<div>
+<p class="text-xs font-bold font-headline">SCOUT_LEAD_01</p>
+<p class="text-[10px] text-neutral-500 font-label">EUROPEAN_DIVISION_SCANDINAVIA</p>
+</div>
+</div>
+</div>
+<!-- Recruitment Actions -->
+<div class="bg-surface-container-low p-6 rounded-lg flex flex-col justify-between border-t-2 border-tertiary">
+<h3 class="font-label text-xs font-bold tracking-[0.2em] mb-6">TACTICAL_ACTIONS</h3>
+<div class="space-y-3">
+<button class="w-full bg-secondary-container text-on-secondary-fixed py-3 px-4 rounded-md flex justify-between items-center font-label font-bold text-xs hover:bg-[#00DAF3] transition-all group">
+<span>INITIATE CONTACT</span>
+<span class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">send</span>
+</button>
+<button class="w-full bg-surface-container-high text-on-surface py-3 px-4 rounded-md flex justify-between items-center font-label font-bold text-xs hover:bg-[#353534] transition-all">
+<span>ADD TO WATCHLIST</span>
+<span class="material-symbols-outlined text-sm">visibility</span>
+</button>
+<button class="w-full bg-surface-container-high text-on-surface py-3 px-4 rounded-md flex justify-between items-center font-label font-bold text-xs hover:bg-[#353534] transition-all">
+<span>FULL GAME FOOTAGE</span>
+<span class="material-symbols-outlined text-sm">smart_display</span>
+</button>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center px-4 pb-4 bg-[#131313] z-50 h-20">
+<div class="flex flex-col items-center justify-center text-neutral-600 hover:text-neutral-300 cursor-pointer transition-colors duration-150">
+<span class="material-symbols-outlined">grid_view</span>
+<span class="font-['Space_Grotesk'] text-[10px] font-bold tracking-widest mt-1">DASHBOARD</span>
+</div>
+<div class="flex flex-col items-center justify-center text-neutral-600 hover:text-neutral-300 cursor-pointer transition-colors duration-150">
+<span class="material-symbols-outlined">groups</span>
+<span class="font-['Space_Grotesk'] text-[10px] font-bold tracking-widest mt-1">ROSTER</span>
+</div>
+<div class="flex flex-col items-center justify-center bg-[#201F1F] text-[#00E5FF] rounded-md px-3 py-1 scale-105">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">query_stats</span>
+<span class="font-['Space_Grotesk'] text-[10px] font-bold tracking-widest mt-1">SCOUT</span>
+</div>
+<div class="flex flex-col items-center justify-center text-neutral-600 hover:text-neutral-300 cursor-pointer transition-colors duration-150">
+<span class="material-symbols-outlined">ads_click</span>
+<span class="font-['Space_Grotesk'] text-[10px] font-bold tracking-widest mt-1">STRATEGY</span>
+</div>
+<div class="flex flex-col items-center justify-center text-neutral-600 hover:text-neutral-300 cursor-pointer transition-colors duration-150">
+<span class="material-symbols-outlined">psychology</span>
+<span class="font-['Space_Grotesk'] text-[10px] font-bold tracking-widest mt-1">INTEL</span>
+</div>
+</nav>
+</body></html>

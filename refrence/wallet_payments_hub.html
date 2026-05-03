@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>TACTICAL_PAY | AGS Global Arena</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface": "#131313",
+                        "error": "#ffb4ab",
+                        "tertiary": "#e9c400",
+                        "on-surface": "#e5e2e1",
+                        "tertiary-fixed": "#ffe16d",
+                        "on-tertiary": "#3a3000",
+                        "surface-dim": "#131313",
+                        "surface-bright": "#393939",
+                        "primary-fixed": "#e5e2e1",
+                        "on-secondary-container": "#00616d",
+                        "primary": "#c8c6c5",
+                        "background": "#131313",
+                        "secondary-fixed-dim": "#00daf3",
+                        "on-primary": "#313030",
+                        "surface-container-low": "#1c1b1b",
+                        "tertiary-container": "#c9a900",
+                        "surface-container-highest": "#353534",
+                        "error-container": "#93000a",
+                        "surface-container-high": "#2a2a2a",
+                        "primary-fixed-dim": "#c8c6c5",
+                        "on-primary-fixed-variant": "#474646",
+                        "on-surface-variant": "#c4c7c7",
+                        "surface-tint": "#c8c6c5",
+                        "on-background": "#e5e2e1",
+                        "tertiary-fixed-dim": "#e9c400",
+                        "inverse-primary": "#5f5e5e",
+                        "secondary": "#bdf4ff",
+                        "on-secondary-fixed-variant": "#004f58",
+                        "on-secondary-fixed": "#001f24",
+                        "on-tertiary-fixed": "#221b00",
+                        "surface-container": "#201f1f",
+                        "on-tertiary-container": "#4c3f00",
+                        "on-error-container": "#ffdad6",
+                        "inverse-on-surface": "#313030",
+                        "on-error": "#690005",
+                        "inverse-surface": "#e5e2e1",
+                        "on-secondary": "#00363d",
+                        "outline": "#8e9192",
+                        "on-primary-fixed": "#1c1b1b",
+                        "on-primary-container": "#7e7d7d",
+                        "secondary-container": "#00e3fd",
+                        "surface-variant": "#353534",
+                        "outline-variant": "#444748",
+                        "surface-container-lowest": "#0e0e0e",
+                        "secondary-fixed": "#9cf0ff",
+                        "primary-container": "#121212",
+                        "on-tertiary-fixed-variant": "#544600"
+                    },
+                    fontFamily: {
+                        "headline": ["Space Grotesk"],
+                        "body": ["Inter"],
+                        "label": ["Space Grotesk"]
+                    },
+                    borderRadius: { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        body { font-family: 'Inter', sans-serif; background-color: #131313; color: #e5e2e1; }
+        .font-space { font-family: 'Space Grotesk', sans-serif; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface min-h-screen pb-24">
+<!-- TopAppBar -->
+<header class="w-full sticky top-0 z-50 flex justify-between items-center px-6 py-4 bg-[#131313] shadow-[0_4px_20px_rgba(0,229,255,0.04)]">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[#00E5FF]" data-icon="account_balance_wallet">account_balance_wallet</span>
+<h1 class="font-['Space_Grotesk'] uppercase tracking-widest text-sm text-[#00E5FF] font-bold tracking-tighter text-xl">TACTICAL_PAY</h1>
+</div>
+<div class="flex items-center gap-4">
+<button class="text-gray-500 hover:text-[#00DAF3] transition-colors duration-200 active:scale-95 duration-150">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+</div>
+</header>
+<div class="bg-[#1C1B1B] h-[1px] w-full opacity-20"></div>
+<main class="max-w-7xl mx-auto px-6 pt-8 pb-12">
+<!-- Bento Grid Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+<!-- Main Balance Hero Section (L-Shape Asymmetry) -->
+<section class="lg:col-span-8 bg-surface-container-low rounded-xl p-8 relative overflow-hidden border border-outline-variant/10">
+<div class="absolute top-0 right-0 p-6">
+<span class="font-label text-[10px] tracking-[0.2em] text-tertiary flex items-center gap-2">
+<span class="material-symbols-outlined text-sm" data-icon="verified" style="font-variation-settings: 'FILL' 1;">verified</span>
+                        VERIFIED_NODE
+                    </span>
+</div>
+<div class="space-y-2 mb-8">
+<p class="font-label text-xs tracking-widest text-on-surface-variant uppercase">Available Liquidity</p>
+<div class="flex items-baseline gap-4">
+<h2 class="font-headline text-6xl md:text-7xl font-bold text-secondary-container tracking-tighter">
+                            $42,850.00
+                        </h2>
+<span class="font-label text-secondary-container/60 text-xl">USD</span>
+</div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+<button class="bg-secondary-container text-on-secondary-fixed py-4 px-6 rounded-md font-label font-bold text-xs tracking-widest flex items-center justify-center gap-2 hover:bg-secondary-fixed-dim active:scale-95 transition-all">
+<span class="material-symbols-outlined text-sm" data-icon="add_circle">add_circle</span>
+                        ADD FUNDS
+                    </button>
+<button class="bg-surface-container text-on-surface py-4 px-6 rounded-md font-label font-bold text-xs tracking-widest flex items-center justify-center gap-2 hover:bg-surface-container-high active:scale-95 transition-all">
+<span class="material-symbols-outlined text-sm" data-icon="account_balance">account_balance</span>
+                        WITHDRAW
+                    </button>
+<button class="bg-surface-container-highest text-on-surface py-4 px-6 rounded-md font-label font-bold text-xs tracking-widest flex items-center justify-center gap-2 hover:bg-outline-variant active:scale-95 transition-all">
+<span class="material-symbols-outlined text-sm" data-icon="bolt">bolt</span>
+                        QUICK PAY
+                    </button>
+</div>
+<!-- Abstract Visual Element -->
+<div class="absolute -bottom-12 -right-12 w-64 h-64 bg-secondary-container/5 rounded-full blur-3xl"></div>
+</section>
+<!-- Escrow Status Card -->
+<section class="lg:col-span-4 bg-surface-container rounded-xl p-6 flex flex-col justify-between border border-outline-variant/10">
+<div class="flex justify-between items-start mb-6">
+<div>
+<p class="font-label text-xs tracking-widest text-on-surface-variant uppercase mb-1">Escrow Protection</p>
+<h3 class="font-headline text-2xl font-bold text-on-surface">Funds in Hold</h3>
+</div>
+<span class="material-symbols-outlined text-tertiary" data-icon="gavel" style="font-variation-settings: 'FILL' 1;">gavel</span>
+</div>
+<div class="space-y-4">
+<div class="flex justify-between items-end">
+<span class="font-headline text-4xl font-bold text-tertiary-fixed">$12,400.00</span>
+<span class="font-label text-[10px] text-on-surface-variant mb-1">8 ACTIVE DISPUTES</span>
+</div>
+<div class="w-full h-1.5 bg-surface-container-low rounded-full overflow-hidden">
+<div class="h-full bg-tertiary rounded-full w-[65%]"></div>
+</div>
+<p class="text-xs text-on-surface-variant font-body leading-relaxed">
+                        Prizes are held until match finalization by AGS official referees. Average release time: 14m.
+                    </p>
+</div>
+</section>
+<!-- Transaction Feed (Zebra Effect) -->
+<section class="lg:col-span-7 bg-surface-container-low rounded-xl overflow-hidden flex flex-col">
+<div class="p-6 flex justify-between items-center border-b border-outline-variant/5">
+<h3 class="font-headline text-lg font-bold tracking-tight uppercase">Recent Activity</h3>
+<button class="text-secondary-container font-label text-[10px] tracking-widest hover:underline">EXPORT_CSV</button>
+</div>
+<div class="flex-1">
+<!-- Transaction Row 1 -->
+<div class="flex items-center justify-between p-4 hover:bg-surface-container transition-colors">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded bg-error-container/20 flex items-center justify-center text-error">
+<span class="material-symbols-outlined" data-icon="sports_esports">sports_esports</span>
+</div>
+<div>
+<p class="text-sm font-bold font-headline">Tournament Entry Fee Paid</p>
+<p class="text-[10px] font-label text-on-surface-variant uppercase">TXID: #8829-AGS</p>
+</div>
+</div>
+<div class="text-right">
+<p class="text-sm font-bold text-error">-$250.00</p>
+<p class="text-[10px] font-label text-on-surface-variant">2M AGO</p>
+</div>
+</div>
+<!-- Transaction Row 2 (Zebra) -->
+<div class="flex items-center justify-between p-4 bg-surface-container/30 hover:bg-surface-container transition-colors">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded bg-secondary-container/10 flex items-center justify-center text-secondary-container">
+<span class="material-symbols-outlined" data-icon="emoji_events">emoji_events</span>
+</div>
+<div>
+<p class="text-sm font-bold font-headline">Prize Pool Payout Received</p>
+<p class="text-[10px] font-label text-on-surface-variant uppercase">Cyber-Strike Championship</p>
+</div>
+</div>
+<div class="text-right">
+<p class="text-sm font-bold text-secondary-container">+$1,200.00</p>
+<p class="text-[10px] font-label text-on-surface-variant">1H AGO</p>
+</div>
+</div>
+<!-- Transaction Row 3 -->
+<div class="flex items-center justify-between p-4 hover:bg-surface-container transition-colors">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded bg-tertiary-container/10 flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+</div>
+<div>
+<p class="text-sm font-bold font-headline">Platform Commission Split</p>
+<p class="text-[10px] font-label text-on-surface-variant uppercase">90/10 Distribution Rule</p>
+</div>
+</div>
+<div class="text-right">
+<p class="text-sm font-bold text-on-surface-variant">-$120.00</p>
+<p class="text-[10px] font-label text-on-surface-variant">4H AGO</p>
+</div>
+</div>
+<!-- Transaction Row 4 (Zebra) -->
+<div class="flex items-center justify-between p-4 bg-surface-container/30 hover:bg-surface-container transition-colors">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded bg-surface-container flex items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined" data-icon="account_balance_wallet">account_balance_wallet</span>
+</div>
+<div>
+<p class="text-sm font-bold font-headline">Razorpay Deposit</p>
+<p class="text-[10px] font-label text-on-surface-variant uppercase">Method: UPI_TRANSFER</p>
+</div>
+</div>
+<div class="text-right">
+<p class="text-sm font-bold text-secondary-container">+$5,000.00</p>
+<p class="text-[10px] font-label text-on-surface-variant">YESTERDAY</p>
+</div>
+</div>
+</div>
+<button class="w-full py-4 text-[10px] font-label tracking-[0.2em] uppercase text-on-surface-variant hover:text-on-surface transition-colors bg-surface-container-highest/20">
+                    VIEW_ALL_TRANSACTIONS
+                </button>
+</section>
+<!-- Revenue Split Model Visual -->
+<section class="lg:col-span-5 flex flex-col gap-6">
+<!-- 90/10 Split Display -->
+<div class="bg-surface-container rounded-xl p-6 border border-outline-variant/10 flex-1 flex flex-col">
+<div class="flex items-center justify-between mb-8">
+<h3 class="font-headline text-lg font-bold">Revenue Model</h3>
+<span class="bg-tertiary/10 text-tertiary text-[10px] font-label font-bold px-2 py-1 rounded">STANDARD_PROTOCOL</span>
+</div>
+<div class="flex-1 flex flex-col justify-center items-center text-center py-4">
+<div class="flex gap-1 w-full max-w-xs h-12 mb-6">
+<div class="h-full bg-secondary-container rounded-l flex items-center justify-center font-headline font-bold text-on-secondary-fixed w-[90%]">90%</div>
+<div class="h-full bg-surface-container-highest rounded-r flex items-center justify-center font-headline font-bold text-on-surface-variant w-[10%]">10%</div>
+</div>
+<div class="flex justify-between w-full max-w-xs text-[10px] font-label uppercase tracking-widest text-on-surface-variant">
+<span>Organizer Payout</span>
+<span>Platform Fee</span>
+</div>
+</div>
+<div class="mt-4 pt-4 border-t border-outline-variant/10">
+<p class="text-xs font-body text-on-surface-variant leading-relaxed">
+                            AGS Global Arena implements a pro-tier split. Tournament organizers retain <span class="text-secondary-container font-bold">90%</span> of all entry fees.
+                        </p>
+</div>
+</div>
+<!-- Asset Verification / Safety Card -->
+<div class="bg-[#1C1B1B] rounded-xl p-6 border border-tertiary/10 relative overflow-hidden">
+<div class="flex items-start gap-4">
+<div class="p-3 bg-tertiary/10 rounded-lg">
+<span class="material-symbols-outlined text-tertiary" data-icon="shield_person">shield_person</span>
+</div>
+<div>
+<h4 class="font-headline font-bold text-on-surface mb-1">Escrow Protection Active</h4>
+<p class="text-xs text-on-surface-variant font-body">Your funds are protected by the AGS Multi-Sig protocol. Every transaction is verifiable on-chain.</p>
+</div>
+</div>
+<!-- Safety Gold Accent -->
+<div class="absolute bottom-0 right-0 w-16 h-1 bg-tertiary shadow-[0_-4px_10px_rgba(233,196,0,0.3)]"></div>
+</div>
+</section>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center px-4 pb-6 pt-2 bg-[#131313] border-t border-[#2A2A2A]/20 z-50">
+<a class="flex flex-col items-center justify-center bg-[#201F1F] text-[#00E5FF] rounded-md px-3 py-1 active:scale-90 transition-all duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="payments">payments</span>
+<span class="font-['Space_Grotesk'] font-bold text-[10px] tracking-tight">WALLET</span>
+</a>
+<a class="flex flex-col items-center justify-center text-gray-500 py-1 hover:bg-[#2A2A2A] active:scale-90 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="sports_esports">sports_esports</span>
+<span class="font-['Space_Grotesk'] font-bold text-[10px] tracking-tight">MATCHES</span>
+</a>
+<a class="flex flex-col items-center justify-center text-gray-500 py-1 hover:bg-[#2A2A2A] active:scale-90 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="insights">insights</span>
+<span class="font-['Space_Grotesk'] font-bold text-[10px] tracking-tight">INTEL</span>
+</a>
+<a class="flex flex-col items-center justify-center text-gray-500 py-1 hover:bg-[#2A2A2A] active:scale-90 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="gavel">gavel</span>
+<span class="font-['Space_Grotesk'] font-bold text-[10px] tracking-tight">ESCROW</span>
+</a>
+</nav>
+</body></html>

@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>MATCH COMMAND - Live Referee Interface</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-error-container": "#ffdad6",
+              "on-secondary": "#00363d",
+              "primary-fixed": "#e5e2e1",
+              "on-surface-variant": "#c4c7c7",
+              "on-error": "#690005",
+              "surface-container-lowest": "#0e0e0e",
+              "tertiary": "#e9c400",
+              "on-tertiary": "#3a3000",
+              "error-container": "#93000a",
+              "background": "#131313",
+              "on-tertiary-container": "#4c3f00",
+              "on-background": "#e5e2e1",
+              "primary-fixed-dim": "#c8c6c5",
+              "on-primary-fixed-variant": "#474646",
+              "on-primary-container": "#7e7d7d",
+              "on-primary": "#313030",
+              "primary-container": "#121212",
+              "tertiary-container": "#c9a900",
+              "on-tertiary-fixed": "#221b00",
+              "on-surface": "#e5e2e1",
+              "tertiary-fixed-dim": "#e9c400",
+              "surface-container": "#201f1f",
+              "outline-variant": "#444748",
+              "secondary-fixed": "#9cf0ff",
+              "surface-container-highest": "#353534",
+              "primary": "#c8c6c5",
+              "secondary-container": "#00e3fd",
+              "error": "#ffb4ab",
+              "surface-container-low": "#1c1b1b",
+              "secondary": "#bdf4ff",
+              "surface": "#131313",
+              "on-secondary-fixed-variant": "#004f58",
+              "inverse-on-surface": "#313030",
+              "surface-bright": "#393939",
+              "on-secondary-fixed": "#001f24",
+              "tertiary-fixed": "#ffe16d",
+              "on-primary-fixed": "#1c1b1b",
+              "inverse-primary": "#5f5e5e",
+              "surface-tint": "#c8c6c5",
+              "secondary-fixed-dim": "#00daf3",
+              "surface-dim": "#131313",
+              "surface-container-high": "#2a2a2a",
+              "outline": "#8e9192",
+              "on-tertiary-fixed-variant": "#544600",
+              "surface-variant": "#353534",
+              "inverse-surface": "#e5e2e1",
+              "on-secondary-container": "#00616d"
+            },
+            fontFamily: {
+              "headline": ["Space Grotesk"],
+              "body": ["Inter"],
+              "label": ["Space Grotesk"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .press-down-effect:active {
+            transform: scale(0.95);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body selection:bg-secondary-container selection:text-on-secondary-container">
+<!-- Top Navigation Shell -->
+<header class="bg-[#131313] docked full-width top-0 z-50">
+<div class="flex justify-between items-center w-full px-6 h-16 bg-[#1C1B1B] p-1">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[#00E5FF]">timer</span>
+<h1 class="font-['Space_Grotesk'] uppercase tracking-wider text-sm font-bold text-[#00E5FF]">MATCH COMMAND</h1>
+</div>
+<div class="flex items-center gap-6">
+<div class="hidden md:flex gap-8">
+<span class="text-[#00E5FF] font-bold font-['Space_Grotesk'] text-sm tracking-wider cursor-pointer">SCORECARD</span>
+<span class="text-zinc-500 font-bold font-['Space_Grotesk'] text-sm tracking-wider cursor-pointer hover:bg-[#2A2A2A] transition-colors px-2 py-1 rounded">FOULS</span>
+<span class="text-zinc-500 font-bold font-['Space_Grotesk'] text-sm tracking-wider cursor-pointer hover:bg-[#2A2A2A] transition-colors px-2 py-1 rounded">SUBS</span>
+<span class="text-zinc-500 font-bold font-['Space_Grotesk'] text-sm tracking-wider cursor-pointer hover:bg-[#2A2A2A] transition-colors px-2 py-1 rounded">INTEL</span>
+</div>
+<span class="material-symbols-outlined text-[#00E5FF] cursor-pointer active:scale-95 duration-150">more_vert</span>
+</div>
+</div>
+</header>
+<main class="max-w-5xl mx-auto px-6 pt-24 pb-32">
+<!-- Match Header / Telemetry Section -->
+<section class="grid grid-cols-1 lg:grid-cols-12 gap-6 mb-8">
+<div class="lg:col-span-12 bg-surface-container-low p-8 rounded-lg flex flex-col items-center justify-center relative overflow-hidden border-b-4 border-secondary-fixed-dim">
+<div class="absolute top-4 left-6 flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-error animate-pulse"></span>
+<span class="font-label text-xs tracking-widest text-on-surface-variant uppercase">Live Match Stream</span>
+</div>
+<div class="absolute top-4 right-6 font-label text-xs tracking-widest text-tertiary uppercase flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">verified</span> Verified Session
+                </div>
+<div class="flex items-center justify-between w-full mt-4">
+<div class="text-center flex-1">
+<h2 class="font-headline font-black text-2xl lg:text-4xl tracking-tighter text-on-surface">NAVI TACTICAL</h2>
+<p class="font-label text-xs text-on-surface-variant mt-1">HOME SQUAD</p>
+</div>
+<div class="flex flex-col items-center px-12">
+<div class="font-headline font-black text-6xl lg:text-8xl tracking-tight text-secondary-fixed-dim mb-2">2 - 1</div>
+<div class="bg-surface-container-highest px-4 py-1 rounded font-label text-xl font-bold tracking-[0.2em] text-[#00E5FF]">78:42</div>
+</div>
+<div class="text-center flex-1">
+<h2 class="font-headline font-black text-2xl lg:text-4xl tracking-tighter text-on-surface">OMEGA OPS</h2>
+<p class="font-label text-xs text-on-surface-variant mt-1">AWAY SQUAD</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Command Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+<!-- Quick Score Entry -->
+<section class="lg:col-span-2 space-y-6">
+<div class="bg-surface-container p-6 rounded-lg">
+<h3 class="font-label text-xs font-bold tracking-widest text-on-surface-variant uppercase mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">edit_square</span> Score Management
+                    </h3>
+<div class="grid grid-cols-2 gap-8">
+<!-- Home Controls -->
+<div class="flex flex-col items-center gap-4">
+<span class="font-label text-[10px] tracking-widest text-zinc-500 uppercase">Navi Tactical</span>
+<div class="flex items-center gap-4">
+<button class="w-16 h-16 rounded bg-surface-container-high flex items-center justify-center text-on-surface hover:bg-surface-variant transition-colors active:scale-95">
+<span class="material-symbols-outlined">remove</span>
+</button>
+<span class="font-headline text-5xl font-bold text-on-surface">2</span>
+<button class="w-16 h-16 rounded bg-secondary-container flex items-center justify-center text-on-secondary hover:bg-secondary-fixed-dim transition-colors active:scale-95">
+<span class="material-symbols-outlined">add</span>
+</button>
+</div>
+</div>
+<!-- Away Controls -->
+<div class="flex flex-col items-center gap-4">
+<span class="font-label text-[10px] tracking-widest text-zinc-500 uppercase">Omega Ops</span>
+<div class="flex items-center gap-4">
+<button class="w-16 h-16 rounded bg-surface-container-high flex items-center justify-center text-on-surface hover:bg-surface-variant transition-colors active:scale-95">
+<span class="material-symbols-outlined">remove</span>
+</button>
+<span class="font-headline text-5xl font-bold text-on-surface">1</span>
+<button class="w-16 h-16 rounded bg-secondary-container flex items-center justify-center text-on-secondary hover:bg-secondary-fixed-dim transition-colors active:scale-95">
+<span class="material-symbols-outlined">add</span>
+</button>
+</div>
+</div>
+</div>
+<div class="mt-8 pt-6 border-t border-outline-variant/20 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="font-label text-xs text-on-surface-variant uppercase tracking-wider">Verified Result Mode</span>
+<div class="w-12 h-6 bg-tertiary rounded-full relative cursor-pointer">
+<div class="absolute right-1 top-1 w-4 h-4 bg-on-tertiary rounded-full"></div>
+</div>
+</div>
+<span class="font-label text-[10px] text-tertiary font-bold tracking-widest">ESCROW SECURED</span>
+</div>
+</div>
+<!-- Event Logger -->
+<div class="bg-surface-container p-6 rounded-lg">
+<h3 class="font-label text-xs font-bold tracking-widest text-on-surface-variant uppercase mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">history_edu</span> Tactical Event Logger
+                    </h3>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+<button class="flex flex-col items-center justify-center py-6 bg-surface-container-low rounded border-b-4 border-tertiary hover:bg-surface-container-high transition-colors active:scale-95">
+<span class="material-symbols-outlined text-tertiary mb-2" style="font-variation-settings: 'FILL' 1;">rectangle</span>
+<span class="font-label text-[10px] font-black tracking-widest">YELLOW CARD</span>
+</button>
+<button class="flex flex-col items-center justify-center py-6 bg-surface-container-low rounded border-b-4 border-error hover:bg-surface-container-high transition-colors active:scale-95">
+<span class="material-symbols-outlined text-error mb-2" style="font-variation-settings: 'FILL' 1;">rectangle</span>
+<span class="font-label text-[10px] font-black tracking-widest">RED CARD</span>
+</button>
+<button class="flex flex-col items-center justify-center py-6 bg-surface-container-low rounded border-b-4 border-outline hover:bg-surface-container-high transition-colors active:scale-95">
+<span class="material-symbols-outlined text-on-surface-variant mb-2">warning</span>
+<span class="font-label text-[10px] font-black tracking-widest">FOUL</span>
+</button>
+<button class="flex flex-col items-center justify-center py-6 bg-surface-container-low rounded border-b-4 border-secondary-fixed-dim hover:bg-surface-container-high transition-colors active:scale-95">
+<span class="material-symbols-outlined text-secondary-fixed-dim mb-2">sync_alt</span>
+<span class="font-label text-[10px] font-black tracking-widest">SUBSTITUTE</span>
+</button>
+</div>
+</div>
+</section>
+<!-- MVP Tagging & Intel -->
+<section class="lg:col-span-1 space-y-6">
+<div class="bg-surface-container p-6 rounded-lg h-full flex flex-col">
+<h3 class="font-label text-xs font-bold tracking-widest text-on-surface-variant uppercase mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">military_tech</span> MVP Nominations
+                    </h3>
+<div class="flex-grow space-y-3">
+<div class="p-4 bg-surface-container-lowest flex items-center justify-between group cursor-pointer hover:bg-surface-container-high transition-colors rounded">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 bg-secondary-container/10 flex items-center justify-center rounded overflow-hidden">
+<img alt="Player Avatar" class="w-8 h-8" data-alt="Avatar of player Maximus X" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC-lhHfPNp1DGh-uD0jIvwHhXy77GZlWyI-IeaGnoB9uzsaIs6S5PwCk9zakla-GyAYFD2A-O8obEbl4YY04YYDMHDq1uJz3RUzTEqbZuzWt9jkv8GEjZ_I0QGObq-oDQsOKeOf13yOs3KEi7HBemoAiqwGlmoziDf9rYF92u0zp-wMbbToH_G67NH7RhHfN94ve5myi_aDXzZ_LGrv0JC0-YPgNAQMDBpMcasT8VuTPOQf6vJK8r3FP9GanY1-JGgEvz1cAf5Jx_zF"/>
+</div>
+<div>
+<p class="font-headline font-bold text-sm tracking-wide text-on-surface">MAXIMUS_X</p>
+<p class="font-label text-[9px] text-zinc-500 uppercase">Forward • NAVI</p>
+</div>
+</div>
+<button class="bg-secondary-container/20 text-secondary-container px-3 py-1 rounded font-label text-[9px] font-black hover:bg-secondary-container hover:text-on-secondary transition-colors">TAG MVP</button>
+</div>
+<div class="p-4 bg-surface-container-lowest flex items-center justify-between group cursor-pointer hover:bg-surface-container-high transition-colors rounded">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 bg-secondary-container/10 flex items-center justify-center rounded overflow-hidden">
+<img alt="Player Avatar" class="w-8 h-8" data-alt="Avatar of player Void Runn3r" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBlv7na1HSsl0-qiVH80VE8yD6amkMjGW0dNunh0JSMC4Mn3KkbpS7IzFw2eJ4vZNpS2ecG_ov7xkHEhJLc_lL_S_yPiOmrKT0u8W6Eb-Xeb-CHZVO6zp9eXNDm8e3xxH4EdRt4PgqOhGKAaAUXp0uXp-OFnmhhl_kI_FfsIDldeMqilCqHNv49RLZ4tfmOkV8bRc3XJdrentHBIf5kpT2pDF9x2eQ82xjDWAukVeOTHZZ88rjdcAIzgH9rzer8XgcHDfcINnsAwbm5"/>
+</div>
+<div>
+<p class="font-headline font-bold text-sm tracking-wide text-on-surface">VOID_RUNN3R</p>
+<p class="font-label text-[9px] text-zinc-500 uppercase">Midfield • OMEGA</p>
+</div>
+</div>
+<button class="bg-secondary-container/20 text-secondary-container px-3 py-1 rounded font-label text-[9px] font-black hover:bg-secondary-container hover:text-on-secondary transition-colors">TAG MVP</button>
+</div>
+<div class="p-4 bg-surface-container-lowest/50 flex items-center justify-between opacity-60 rounded">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 bg-zinc-800 flex items-center justify-center rounded">
+<span class="material-symbols-outlined text-zinc-500 text-sm">person</span>
+</div>
+<div>
+<p class="font-headline font-bold text-sm tracking-wide text-zinc-500">CYPH3R_PK</p>
+<p class="font-label text-[9px] text-zinc-600 uppercase">Defense • NAVI</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-zinc-600">lock</span>
+</div>
+</div>
+<div class="mt-6 bg-surface-container-highest/30 p-4 rounded-lg">
+<div class="flex justify-between items-center mb-2">
+<span class="font-label text-[10px] text-on-surface-variant uppercase tracking-wider">Crowd Sentiment</span>
+<span class="font-headline text-xs font-bold text-secondary-fixed-dim">78% TACTICAL</span>
+</div>
+<div class="w-full h-1 bg-surface-container-high rounded-full overflow-hidden">
+<div class="h-full bg-secondary-fixed-dim w-[78%]"></div>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- Footer Action -->
+<div class="mt-12">
+<div class="bg-[#1C1B1B] p-2 rounded-xl flex items-center justify-between relative h-20 group">
+<div class="absolute inset-0 bg-gradient-to-r from-secondary/5 to-transparent rounded-xl pointer-events-none"></div>
+<div class="flex items-center gap-4 px-6">
+<div class="w-12 h-12 bg-surface-container-high flex items-center justify-center rounded-lg">
+<span class="material-symbols-outlined text-tertiary">key</span>
+</div>
+<div>
+<p class="font-headline font-bold text-lg text-on-surface tracking-wide">FINALIZE &amp; ESCROW RELEASE</p>
+<p class="font-label text-[10px] text-zinc-500 uppercase tracking-widest">Action cannot be reversed once broadcasted</p>
+</div>
+</div>
+<div class="flex items-center gap-4 px-2">
+<div class="flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary-fixed-dim animate-ping"></span>
+<span class="w-1.5 h-1.5 rounded-full bg-secondary-fixed-dim"></span>
+<span class="w-1.5 h-1.5 rounded-full bg-secondary-fixed-dim"></span>
+</div>
+<button class="bg-secondary-container h-16 px-8 rounded-lg flex items-center gap-3 text-on-secondary font-headline font-black uppercase tracking-widest hover:bg-secondary-fixed-dim transition-all active:scale-95 shadow-[0_0_20px_rgba(0,229,255,0.2)]">
+                        SLIDE TO END <span class="material-symbols-outlined">double_arrow</span>
+</button>
+</div>
+</div>
+</div>
+</main>
+<!-- Bottom Navigation Shell -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-4 pt-2 bg-[#1C1B1B] rounded-t-lg shadow-[0_-4px_20px_rgba(0,229,255,0.04)] md:hidden">
+<div class="flex flex-col items-center justify-center text-[#00E5FF] bg-[#201F1F] rounded-md px-3 py-1 press-down-effect transition-transform cursor-pointer">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">analytics</span>
+<span class="font-['Space_Grotesk'] text-[10px] font-bold tracking-[0.05em] mt-1">SCORECARD</span>
+</div>
+<div class="flex flex-col items-center justify-center text-zinc-500 hover:text-zinc-200 transition-transform cursor-pointer">
+<span class="material-symbols-outlined">warning</span>
+<span class="font-['Space_Grotesk'] text-[10px] font-bold tracking-[0.05em] mt-1">FOULS</span>
+</div>
+<div class="flex flex-col items-center justify-center text-zinc-500 hover:text-zinc-200 transition-transform cursor-pointer">
+<span class="material-symbols-outlined">groups</span>
+<span class="font-['Space_Grotesk'] text-[10px] font-bold tracking-[0.05em] mt-1">SUBS</span>
+</div>
+<div class="flex flex-col items-center justify-center text-zinc-500 hover:text-zinc-200 transition-transform cursor-pointer">
+<span class="material-symbols-outlined">query_stats</span>
+<span class="font-['Space_Grotesk'] text-[10px] font-bold tracking-[0.05em] mt-1">INTEL</span>
+</div>
+</nav>
+</body></html>

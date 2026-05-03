@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Tactical Command - Squad Selection</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;900&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "tertiary": "#e9c400",
+              "primary-fixed-dim": "#c8c6c5",
+              "surface-container-lowest": "#0e0e0e",
+              "surface-container-high": "#2a2a2a",
+              "on-tertiary": "#3a3000",
+              "on-secondary-container": "#00616d",
+              "on-primary-fixed": "#1c1b1b",
+              "on-error-container": "#ffdad6",
+              "surface-variant": "#353534",
+              "on-primary-container": "#7e7d7d",
+              "inverse-primary": "#5f5e5e",
+              "on-surface-variant": "#c4c7c7",
+              "on-secondary": "#00363d",
+              "primary": "#c8c6c5",
+              "on-background": "#e5e2e1",
+              "surface-container-highest": "#353534",
+              "primary-fixed": "#e5e2e1",
+              "error": "#ffb4ab",
+              "surface-dim": "#131313",
+              "on-secondary-fixed-variant": "#004f58",
+              "primary-container": "#121212",
+              "on-tertiary-fixed": "#221b00",
+              "error-container": "#93000a",
+              "inverse-surface": "#e5e2e1",
+              "outline": "#8e9192",
+              "on-secondary-fixed": "#001f24",
+              "secondary-container": "#00e3fd",
+              "inverse-on-surface": "#313030",
+              "tertiary-fixed": "#ffe16d",
+              "surface-container-low": "#1c1b1b",
+              "surface": "#131313",
+              "on-primary": "#313030",
+              "secondary-fixed": "#9cf0ff",
+              "secondary": "#bdf4ff",
+              "on-primary-fixed-variant": "#474646",
+              "secondary-fixed-dim": "#00daf3",
+              "surface-container": "#201f1f",
+              "tertiary-container": "#c9a900",
+              "surface-bright": "#393939",
+              "outline-variant": "#444748",
+              "on-surface": "#e5e2e1",
+              "surface-tint": "#c8c6c5",
+              "on-tertiary-container": "#4c3f00",
+              "tertiary-fixed-dim": "#e9c400",
+              "on-tertiary-fixed-variant": "#544600",
+              "on-error": "#690005",
+              "background": "#131313"
+            },
+            fontFamily: {
+              "headline": ["Space Grotesk"],
+              "body": ["Inter"],
+              "label": ["Space Grotesk"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      body {
+        background-color: #131313;
+        color: #e5e2e1;
+        font-family: 'Inter', sans-serif;
+      }
+      .glass-panel {
+        background: rgba(53, 53, 52, 0.6);
+        backdrop-filter: blur(12px);
+      }
+      .custom-scrollbar::-webkit-scrollbar {
+        width: 4px;
+      }
+      .custom-scrollbar::-webkit-scrollbar-track {
+        background: #0e0e0e;
+      }
+      .custom-scrollbar::-webkit-scrollbar-thumb {
+        background: #2a2a2a;
+      }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background antialiased overflow-hidden">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-[#131313] shadow-[0_4px_20px_rgba(0,229,255,0.05)]">
+<div class="flex justify-between items-center h-16 px-6">
+<div class="flex items-center gap-4">
+<button class="active:scale-95 transition-transform text-[#00E5FF]">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<h1 class="text-[#00E5FF] font-black italic tracking-tighter text-xl font-['Space_Grotesk'] uppercase">TACTICAL COMMAND</h1>
+</div>
+<div class="flex items-center gap-6">
+<nav class="hidden md:flex gap-8">
+<a class="text-zinc-500 font-['Space_Grotesk'] uppercase tracking-widest text-sm hover:text-[#00E5FF] transition-colors duration-200" href="#">DASHBOARD</a>
+<a class="text-zinc-500 font-['Space_Grotesk'] uppercase tracking-widest text-sm hover:text-[#00E5FF] transition-colors duration-200" href="#">TOURNAMENTS</a>
+<a class="text-[#00E5FF] font-['Space_Grotesk'] uppercase tracking-widest text-sm" href="#">SQUAD</a>
+<a class="text-zinc-500 font-['Space_Grotesk'] uppercase tracking-widest text-sm hover:text-[#00E5FF] transition-colors duration-200" href="#">INTEL</a>
+</nav>
+<div class="w-10 h-10 rounded-full bg-surface-container overflow-hidden border border-outline-variant/30">
+<img alt="User Pilot Avatar" class="w-full h-full object-cover" data-alt="Portrait of a modern tactical pilot operator" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDWRNOddmr0WqFl6lJN5BPO5pfbMF93QHVKM28ZpcJJuPOZVa1T5m038J8Pf8XFrJ0cHUo9TKpRr_3IJC3-B4NtrwOmr0KwfUCUPiFubuIAS7hGRIVHylQeluqm-lFNNOEcX3RPWS-I6u_GjwNaftHpyd4h1p0CAXI4VhCunR3VMaE1l00NVR4YKIlqZ-UWTWBKqlkjukI1KA6wgur4iH9H6gQaZxd18btfrjWd5kjzLgcVeIKnNKIDqeEU3Y3QDidK2_sicGvMXreQ"/>
+</div>
+</div>
+</div>
+<div class="bg-[#1C1B1B] h-[2px] w-full block"></div>
+</header>
+<main class="pt-20 pb-24 px-6 max-w-7xl mx-auto h-screen flex flex-col gap-8">
+<!-- Breadcrumb / Status -->
+<div class="flex justify-between items-end">
+<div class="flex flex-col">
+<span class="font-label text-[10px] tracking-[0.2em] text-secondary-fixed-dim uppercase mb-1">PHASE 02 // SELECTION</span>
+<h2 class="font-headline text-4xl font-bold tracking-tight text-on-surface">DEPLOYMENT PROTOCOL</h2>
+</div>
+<div class="hidden lg:flex flex-col items-end gap-1">
+<span class="font-label text-[10px] tracking-[0.2em] text-on-surface-variant uppercase">SYSTEM STATUS</span>
+<div class="flex gap-1">
+<div class="h-1 w-8 bg-secondary-fixed-dim"></div>
+<div class="h-1 w-8 bg-secondary-fixed-dim"></div>
+<div class="h-1 w-8 bg-surface-container-high"></div>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-8 flex-1 overflow-hidden">
+<!-- Left: Squad Selection (Asymmetric Focus) -->
+<section class="md:col-span-7 flex flex-col gap-4 overflow-hidden">
+<div class="flex items-center justify-between px-2">
+<span class="font-label text-xs tracking-widest text-outline">SELECT SQUADRON</span>
+<span class="font-label text-[10px] text-tertiary">AVAILABLE: 04</span>
+</div>
+<div class="flex-1 overflow-y-auto custom-scrollbar pr-2 space-y-4">
+<!-- Squad Card 01 -->
+<div class="group relative bg-surface-container-low p-6 transition-all duration-300 hover:bg-surface-container border-l-4 border-secondary-fixed-dim active:scale-[0.98]">
+<div class="flex justify-between items-start relative z-10">
+<div class="flex flex-col gap-1">
+<h3 class="font-headline text-2xl font-black italic tracking-tighter text-on-surface group-hover:text-secondary-fixed-dim transition-colors">TEAM STORM</h3>
+<p class="font-body text-sm text-on-surface-variant max-w-xs">High-mobility offensive unit specializing in rapid breach and atmospheric control.</p>
+</div>
+<div class="flex flex-col items-end">
+<span class="font-label text-xs font-bold text-on-surface">8/10</span>
+<span class="font-label text-[10px] text-outline">CAPACITY</span>
+</div>
+</div>
+<div class="mt-6 flex gap-4">
+<div class="flex -space-x-2">
+<img alt="Member" class="w-6 h-6 rounded-full border border-surface-container-low" data-alt="Small avatar of squad team member" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBGasViVFdqfC6CaqgdGMIhvYxplhyXDD97k0GGAY2Bvk0KDWeR4odL4trvz7marSMy7Wk5Dqu6O_qNrcnDJN62v_XakDrqNlffcUVWj5aRQEp5r-nMvAMgYjQRDM6xFEZqFy3TQlxafdlTPhulC4q7vRJNEdJnxD3npqoPD6UIZO-UU8GhbE2AOawdH70W2NFmreF25bx_C8sFj6UTBZuA4Q7Wc9ZL_M8Hnj6ajvXVFxujwukCT5j3rztVyHaPEvb0wzWAG-uriEow"/>
+<img alt="Member" class="w-6 h-6 rounded-full border border-surface-container-low" data-alt="Small avatar of squad team member" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDWpjqC-wJTMcxGQ_spWf80lHQ43ftjiues2oX1PgCEvblL_ocVUJX_mDpYy7-bwgpiizYh4luNhcw-egg5RcRAJqOX96cYzn5sApQy52jNVGxSgc5hQaCfENyt95Um-luDhlqhd-VcyXu7fF8XwWn7TOQdWIVPKsbFl4i0SEO8w9plFI4t0JLfj6zbGw7R0t-FEYG_bn4IdiMUKkf47z_6cRdhHY6cdQnF0WqB_AYVWWZhQllaCNdmV4XDLvvJKWyCBkBIBhJzawBw"/>
+<img alt="Member" class="w-6 h-6 rounded-full border border-surface-container-low" data-alt="Small avatar of squad team member" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBRFnQQl-89CqmnxuTlzGC0kJr9z45aTlfnTbDpyil47nB5vRuPL4i2-EJ0d0qQF46rcMniEuxGI6-iGFWbC_bO3yybJnTHlwNsu8ZM-OJW_GNXTU8Ybh_9WpBgerUqjmJeStDngy5mTqbMdRxZGG46_6zcsEMZU7kOI5T7hBQnqu0NS_99qzT3SwCJXy3sJCguQ2oY5nCpvp7oIMuIsshSDhNHSC6nqBtchRGpAbPq9SDBVByzW9gUcRmuBJKUnkjW4ZAvBq4MqwWj"/>
+<div class="w-6 h-6 rounded-full bg-surface-container-highest flex items-center justify-center text-[8px] font-bold text-secondary">+5</div>
+</div>
+<div class="flex-1 h-[2px] bg-surface-container-highest self-center">
+<div class="h-full bg-secondary-fixed-dim w-[80%]"></div>
+</div>
+</div>
+</div>
+<!-- Squad Card 02 -->
+<div class="group relative bg-surface-container-lowest p-6 transition-all duration-300 hover:bg-surface-container border-l-4 border-transparent hover:border-outline-variant active:scale-[0.98]">
+<div class="flex justify-between items-start relative z-10">
+<div class="flex flex-col gap-1">
+<h3 class="font-headline text-2xl font-black italic tracking-tighter text-on-surface/50 group-hover:text-on-surface transition-colors">ROGUE SQUAD</h3>
+<p class="font-body text-sm text-on-surface-variant max-w-xs">Stealth-focused intelligence gatherers. Minimal footprint, maximum impact.</p>
+</div>
+<div class="flex flex-col items-end">
+<span class="font-label text-xs font-bold text-on-surface/50">3/10</span>
+<span class="font-label text-[10px] text-outline">CAPACITY</span>
+</div>
+</div>
+<div class="mt-6 flex gap-4">
+<div class="flex -space-x-2">
+<img alt="Member" class="w-6 h-6 rounded-full border border-surface-container-low" data-alt="Small avatar of squad team member" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAiKX73-nsrMSUgIZigwJqXMY0hG_0ge4A7mHc9pTdSSl8bd8eLWAwHUYdndZE5DZRsWwu8dr8L2pEwGuMRP3QV8ZP0M0n4r-uybBW8_4-QVLXwRT6M13WzQ5xChdNOCU2bBEd4fQE1ooepkSQVgg4NyR9KLuXTa4emVg3L3_uCQwUjjnRkYBNjnSoUDYPJhEliEa1TfAIUGegLc8AS-3hiyujGLAZrI46V0BhVYY_5_Ti_AjSdeyyZp41XDbwUgO2QqmvPSLocl35u"/>
+<div class="w-6 h-6 rounded-full bg-surface-container-highest flex items-center justify-center text-[8px] font-bold text-secondary">+2</div>
+</div>
+<div class="flex-1 h-[2px] bg-surface-container-highest self-center">
+<div class="h-full bg-outline-variant w-[30%]"></div>
+</div>
+</div>
+</div>
+<!-- Squad Card 03 -->
+<div class="group relative bg-surface-container-lowest p-6 transition-all duration-300 hover:bg-surface-container border-l-4 border-transparent hover:border-outline-variant active:scale-[0.98]">
+<div class="flex justify-between items-start relative z-10">
+<div class="flex flex-col gap-1">
+<h3 class="font-headline text-2xl font-black italic tracking-tighter text-on-surface/50 group-hover:text-on-surface transition-colors">IRON BULWARK</h3>
+<p class="font-body text-sm text-on-surface-variant max-w-xs">Defensive heavyweights. Built to withstand sustained pressure in hostile zones.</p>
+</div>
+<div class="flex flex-col items-end">
+<span class="font-label text-xs font-bold text-on-surface/50">FULL</span>
+<span class="font-label text-[10px] text-error">DEPLOYED</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Right: Role Selection (High-Tech Grid) -->
+<section class="md:col-span-5 flex flex-col gap-4">
+<div class="flex items-center justify-between px-2">
+<span class="font-label text-xs tracking-widest text-outline">CHOOSE YOUR ROLE</span>
+<span class="material-symbols-outlined text-outline text-sm">info</span>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<!-- Role: Striker -->
+<button class="flex flex-col items-start p-5 bg-surface-container-low border border-outline-variant/10 hover:border-secondary-fixed-dim/50 group transition-all duration-200">
+<span class="material-symbols-outlined text-secondary-fixed-dim mb-4 group-hover:scale-110 transition-transform" style="font-variation-settings: 'FILL' 1;">target</span>
+<span class="font-headline font-bold text-lg text-on-surface uppercase tracking-tighter">STRIKER</span>
+<span class="font-label text-[9px] text-outline text-left mt-1">MAIN OFFENSE / TARGET ACQUISITION</span>
+</button>
+<!-- Role: Support -->
+<button class="flex flex-col items-start p-5 bg-surface-container-low border border-secondary-fixed-dim/40 relative overflow-hidden group">
+<div class="absolute top-0 right-0 p-1 bg-secondary-fixed-dim text-on-secondary-fixed font-label text-[8px] font-bold">SELECTED</div>
+<span class="material-symbols-outlined text-secondary-fixed-dim mb-4" style="font-variation-settings: 'FILL' 1;">medical_services</span>
+<span class="font-headline font-bold text-lg text-secondary-fixed-dim uppercase tracking-tighter">SUPPORT</span>
+<span class="font-label text-[9px] text-secondary-fixed-dim/60 text-left mt-1">LOGISTICS / REPAIR / SHIELDING</span>
+</button>
+<!-- Role: Captain -->
+<button class="flex flex-col items-start p-5 bg-surface-container-low border border-outline-variant/10 hover:border-tertiary/50 group transition-all duration-200">
+<span class="material-symbols-outlined text-tertiary mb-4 group-hover:scale-110 transition-transform" style="font-variation-settings: 'FILL' 1;">stars</span>
+<span class="font-headline font-bold text-lg text-on-surface uppercase tracking-tighter">CAPTAIN</span>
+<span class="font-label text-[9px] text-outline text-left mt-1">STRATEGIC COMMAND / RECON</span>
+</button>
+<!-- Role: Recon -->
+<button class="flex flex-col items-start p-5 bg-surface-container-low border border-outline-variant/10 hover:border-secondary-fixed-dim/50 group transition-all duration-200">
+<span class="material-symbols-outlined text-on-surface-variant mb-4 group-hover:scale-110 transition-transform">visibility</span>
+<span class="font-headline font-bold text-lg text-on-surface uppercase tracking-tighter">RECON</span>
+<span class="font-label text-[9px] text-outline text-left mt-1">INTEL / LONG-RANGE SCANNING</span>
+</button>
+</div>
+<!-- Tactical Preview Panel -->
+<div class="mt-auto bg-surface-container-lowest p-6 border-t-2 border-secondary-fixed-dim/20">
+<div class="flex items-center gap-4 mb-4">
+<div class="w-12 h-12 bg-surface-container flex items-center justify-center text-secondary-fixed-dim">
+<span class="material-symbols-outlined text-3xl">verified_user</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label text-[10px] text-secondary-fixed-dim">SYNERGY RATING</span>
+<span class="font-headline text-2xl font-black text-on-surface">94.2%</span>
+</div>
+</div>
+<button class="w-full bg-secondary-fixed-dim py-4 rounded-md font-headline font-black text-on-secondary-fixed uppercase tracking-widest hover:bg-[#00E5FF] active:scale-95 transition-all">
+                        CONFIRM DEPLOYMENT
+                    </button>
+</div>
+</section>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="md:hidden fixed bottom-0 w-full h-20 rounded-t-lg z-50 bg-[#131313]/95 backdrop-blur-md border-t border-zinc-800/50 shadow-[0_-4px_24px_rgba(0,0,0,0.8)] px-4 pb-safe flex justify-around items-center">
+<a class="flex flex-col items-center justify-center text-zinc-600 hover:text-zinc-300 transition-all active:translate-y-1 duration-150" href="#">
+<span class="material-symbols-outlined">grid_view</span>
+<span class="font-['Space_Grotesk'] font-bold text-[10px] tracking-widest mt-1">DASHBOARD</span>
+</a>
+<a class="flex flex-col items-center justify-center text-zinc-600 hover:text-zinc-300 transition-all active:translate-y-1 duration-150" href="#">
+<span class="material-symbols-outlined">emoji_events</span>
+<span class="font-['Space_Grotesk'] font-bold text-[10px] tracking-widest mt-1">TOURNAMENTS</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#00E5FF] relative after:content-[''] after:absolute after:-top-2 after:w-8 after:h-1 after:bg-[#00E5FF] after:rounded-full active:translate-y-1 duration-150" href="#">
+<span class="material-symbols-outlined">groups</span>
+<span class="font-['Space_Grotesk'] font-bold text-[10px] tracking-widest mt-1">SQUAD</span>
+</a>
+<a class="flex flex-col items-center justify-center text-zinc-600 hover:text-zinc-300 transition-all active:translate-y-1 duration-150" href="#">
+<span class="material-symbols-outlined">analytics</span>
+<span class="font-['Space_Grotesk'] font-bold text-[10px] tracking-widest mt-1">INTEL</span>
+</a>
+</nav>
+</body></html>

@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              colors: {
+                "outline-variant": "#444748",
+                "inverse-primary": "#5f5e5e",
+                "error-container": "#93000a",
+                "error": "#ffb4ab",
+                "surface-bright": "#393939",
+                "outline": "#8e9192",
+                "on-secondary-fixed-variant": "#004f58",
+                "on-primary-fixed": "#1c1b1b",
+                "surface-variant": "#353534",
+                "surface-container-lowest": "#0e0e0e",
+                "primary": "#c8c6c5",
+                "on-tertiary-fixed": "#221b00",
+                "on-tertiary": "#3a3000",
+                "surface": "#131313",
+                "secondary": "#bdf4ff",
+                "on-primary-fixed-variant": "#474646",
+                "surface-container-highest": "#353534",
+                "primary-container": "#121212",
+                "on-error-container": "#ffdad6",
+                "background": "#131313",
+                "surface-container-high": "#2a2a2a",
+                "primary-fixed": "#e5e2e1",
+                "tertiary-container": "#c9a900",
+                "surface-dim": "#131313",
+                "secondary-fixed": "#9cf0ff",
+                "on-surface-variant": "#c4c7c7",
+                "on-secondary-fixed": "#001f24",
+                "surface-tint": "#c8c6c5",
+                "inverse-surface": "#e5e2e1",
+                "on-tertiary-container": "#4c3f00",
+                "surface-container": "#201f1f",
+                "on-surface": "#e5e2e1",
+                "on-secondary": "#00363d",
+                "surface-container-low": "#1c1b1b",
+                "on-primary-container": "#7e7d7d",
+                "tertiary": "#e9c400",
+                "inverse-on-surface": "#313030",
+                "on-secondary-container": "#00616d",
+                "on-background": "#e5e2e1",
+                "on-error": "#690005",
+                "tertiary-fixed": "#ffe16d",
+                "secondary-container": "#00e3fd",
+                "tertiary-fixed-dim": "#e9c400",
+                "primary-fixed-dim": "#c8c6c5",
+                "on-primary": "#313030",
+                "on-tertiary-fixed-variant": "#544600",
+                "secondary-fixed-dim": "#00daf3"
+              },
+              fontFamily: {
+                "headline": ["Space Grotesk"],
+                "body": ["Inter"],
+                "label": ["Space Grotesk"]
+              },
+              borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+            },
+          },
+        }
+    </script>
+<style>
+        .tactical-grid {
+            background-image: radial-gradient(circle at 2px 2px, rgba(255,255,255,0.03) 1px, transparent 0);
+            background-size: 24px 24px;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body selection:bg-secondary-container selection:text-on-secondary-container min-h-screen flex flex-col overflow-hidden">
+<!-- Top Navigation Anchor (Shared Component) -->
+<header class="w-full top-0 sticky z-[70] bg-[#131313]">
+<div class="flex items-center justify-between px-6 py-4 w-full">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-cyan-400">leaderboard</span>
+<span class="text-cyan-400 font-bold tracking-tighter text-xl font-headline">MATCH CENTER</span>
+</div>
+<div class="flex items-center gap-4">
+<div class="hidden md:flex gap-8 px-4">
+<span class="text-cyan-400 font-headline uppercase tracking-widest text-sm cursor-pointer">ARENA</span>
+<span class="text-zinc-500 font-headline uppercase tracking-widest text-sm hover:bg-zinc-800 transition-colors cursor-pointer">SQUADS</span>
+<span class="text-zinc-500 font-headline uppercase tracking-widest text-sm hover:bg-zinc-800 transition-colors cursor-pointer">INTEL</span>
+<span class="text-zinc-500 font-headline uppercase tracking-widest text-sm hover:bg-zinc-800 transition-colors cursor-pointer">LIVE</span>
+</div>
+<span class="material-symbols-outlined text-zinc-500 cursor-pointer transition-colors active:scale-95 duration-150">account_circle</span>
+</div>
+</div>
+<div class="bg-[#1C1B1B] h-[1px] w-full"></div>
+</header>
+<main class="flex-grow relative flex flex-col items-center justify-center tactical-grid p-6 overflow-hidden">
+<!-- Tactical Glow Effects -->
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-secondary-container/5 rounded-full blur-[120px] pointer-events-none"></div>
+<div class="absolute top-20 right-20 w-64 h-64 bg-tertiary/5 rounded-full blur-[80px] pointer-events-none"></div>
+<!-- Mission Briefing Header -->
+<div class="relative z-10 mb-12 text-center">
+<div class="flex items-center justify-center gap-3 mb-2">
+<span class="w-2 h-2 bg-secondary-fixed-dim rounded-full animate-pulse"></span>
+<span class="font-label text-secondary-fixed-dim tracking-[0.3em] text-xs font-bold">UPLINK INITIALIZED</span>
+</div>
+<h1 class="font-headline text-2xl md:text-4xl font-extrabold tracking-tighter text-on-surface uppercase italic">
+                MISSION BRIEFING: <span class="text-secondary-fixed-dim">GLOBAL QUALIFIERS</span>
+</h1>
+</div>
+<!-- Main Content Area: Bento Layout for Matchup -->
+<div class="relative z-10 w-full max-w-5xl grid grid-cols-1 md:grid-cols-12 gap-6">
+<!-- Team A: NAVI TACTICAL -->
+<div class="md:col-span-4 bg-surface-container-low p-8 flex flex-col items-center justify-center gap-6 rounded-lg relative overflow-hidden group">
+<div class="absolute inset-0 bg-gradient-to-br from-secondary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<div class="w-24 h-24 md:w-32 md:h-32 bg-surface-container flex items-center justify-center rounded-lg shadow-2xl relative z-10">
+<img alt="NAVI TACTICAL LOGO" class="w-16 h-16 md:w-20 md:h-20 opacity-90" data-alt="Futuristic geometric team logo for Navi Tactical" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDGOJC0urhcBm48Ia0H6OqibLrEgObmEGeJv020Q6i1_7-1g3ex03pxACz96g-CiMXmWN5CkyStRlPiTv1cLBZj6oLIxdnUkdlSh1kfGT7ITKXpJt-xW2HSMNVrXdJMQwSV7NmVoj2QGh4tZBkxIwUJD3-oZE5STzm0jFkOvTfD5Chdpt8A6PEW32WA1engSfpIWie-ZsmBXxdUPIZ9p16UwZpBt20_aIhJqpvFGtyDDRxI_ET-SiyJ0MlFZon0MzAIvpcHdtlyPuG5"/>
+</div>
+<div class="text-center relative z-10">
+<h2 class="font-headline font-bold text-xl md:text-2xl text-on-surface tracking-tight mb-1 uppercase">NAVI TACTICAL</h2>
+<span class="font-label text-[10px] text-zinc-500 tracking-[0.2em] font-bold">REGION: NORTH AMERICA</span>
+</div>
+</div>
+<!-- Central Countdown Container -->
+<div class="md:col-span-4 bg-surface-container-lowest border border-white/5 p-8 flex flex-col items-center justify-center gap-4 rounded-lg shadow-[0_0_50px_rgba(0,229,255,0.05)] relative overflow-hidden">
+<div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-secondary-fixed-dim to-transparent opacity-50"></div>
+<span class="font-label text-zinc-500 text-[10px] tracking-widest font-bold">SYNCING TACTICAL CLOCK</span>
+<div class="font-headline text-4xl md:text-6xl font-black text-secondary-fixed-dim tracking-tighter tabular-nums drop-shadow-[0_0_15px_rgba(0,229,255,0.3)]">
+                    00:04:22:15
+                </div>
+<div class="flex items-center gap-2 mt-2">
+<span class="material-symbols-outlined text-tertiary text-lg" style="font-variation-settings: 'FILL' 1;">military_tech</span>
+<span class="font-label text-tertiary text-[10px] tracking-widest font-bold">BATTLE READY</span>
+</div>
+</div>
+<!-- Team B: OMEGA OPS -->
+<div class="md:col-span-4 bg-surface-container-low p-8 flex flex-col items-center justify-center gap-6 rounded-lg relative overflow-hidden group">
+<div class="absolute inset-0 bg-gradient-to-bl from-tertiary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<div class="w-24 h-24 md:w-32 md:h-32 bg-surface-container flex items-center justify-center rounded-lg shadow-2xl relative z-10">
+<img alt="OMEGA OPS LOGO" class="w-16 h-16 md:w-20 md:h-20 opacity-90" data-alt="Elite tactical operation logo for Omega Ops team" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCGB8FCg8IFGX8opbyfcjfjUq6hd-V72K6kfyla4vIwpRy0Smtbst-7jCJBT_kDojb8VXEQuUIJjPxqqrSLgKDl7lg93ITZZWoNSzoXa7qOX2wJqnHFPo9-NLHaCTZCxWKSl4oN3u4Q9CUm7TaBUOJBYcnpW5-j5kMzBYceaG1JKobFVgGR5mvpkupDYatqIvQ4v3VQ3Si5Rb9IHS06mhWvGSvn7VR1gL5Nq6aFO2MZbWDi4Jn9zSgZsATimk5IQ5qCWhlx1gTs2WbY"/>
+</div>
+<div class="text-center relative z-10">
+<h2 class="font-headline font-bold text-xl md:text-2xl text-on-surface tracking-tight mb-1 uppercase">OMEGA OPS</h2>
+<span class="font-label text-[10px] text-zinc-500 tracking-[0.2em] font-bold">REGION: EUROPE CENTRAL</span>
+</div>
+</div>
+</div>
+<!-- Call to Action Section -->
+<div class="relative z-10 mt-16 flex flex-col items-center gap-6 w-full">
+<button class="group relative px-12 py-4 bg-secondary-fixed-dim text-on-secondary-fixed font-headline font-bold text-lg tracking-widest rounded-lg transition-all active:scale-95 shadow-[0_0_30px_rgba(0,229,255,0.2)] hover:shadow-[0_0_50px_rgba(0,229,255,0.4)]">
+<span class="relative z-10">ENTER ARENA</span>
+<div class="absolute inset-0 bg-white opacity-0 group-hover:opacity-10 transition-opacity rounded-lg"></div>
+</button>
+<div class="flex gap-12 text-zinc-500 font-label text-[10px] tracking-[0.2em] font-bold">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">security</span>
+                    ENCRYPTED UPLINK
+                </div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">sensors</span>
+                    LATENCY: 12MS
+                </div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">verified_user</span>
+                    SECURE BOOT
+                </div>
+</div>
+</div>
+</main>
+<!-- Bottom Navigation Shell (Shared Component) -->
+<nav class="fixed bottom-0 left-0 w-full z-50 md:hidden">
+<div class="bg-[#131313]/90 backdrop-blur-xl flex justify-around items-center px-4 pb-6 pt-3 border-t border-white/5 shadow-[0_-8px_24px_rgba(0,229,255,0.04)]">
+<a class="flex flex-col items-center justify-center text-cyan-400 bg-cyan-400/10 rounded-lg py-1 px-3 active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined mb-1">sports_esports</span>
+<span class="font-['Space_Grotesk'] font-bold text-[10px] tracking-tight uppercase">ARENA</span>
+</a>
+<a class="flex flex-col items-center justify-center text-zinc-500 hover:text-cyan-300 active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined mb-1">groups</span>
+<span class="font-['Space_Grotesk'] font-bold text-[10px] tracking-tight uppercase">SQUADS</span>
+</a>
+<a class="flex flex-col items-center justify-center text-zinc-500 hover:text-cyan-300 active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined mb-1">analytics</span>
+<span class="font-['Space_Grotesk'] font-bold text-[10px] tracking-tight uppercase">INTEL</span>
+</a>
+<a class="flex flex-col items-center justify-center text-zinc-500 hover:text-cyan-300 active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined mb-1">sensors</span>
+<span class="font-['Space_Grotesk'] font-bold text-[10px] tracking-tight uppercase">LIVE</span>
+</a>
+</div>
+</nav>
+<!-- Navigation Drawer (Hidden by default, used for structural reference) -->
+<aside class="hidden fixed inset-y-0 left-0 z-[60] p-6 flex flex-col bg-[#0E0E0E] w-80 shadow-2xl shadow-cyan-500/5">
+<div class="mb-8">
+<span class="text-yellow-400 font-black tracking-tighter text-lg mb-8 uppercase block">AGS ARENA</span>
+<div class="flex items-center gap-4 p-4 bg-surface-container rounded-lg">
+<div class="w-12 h-12 bg-secondary-fixed-dim rounded flex items-center justify-center text-on-secondary-fixed font-black">C7</div>
+<div>
+<div class="font-headline text-sm font-bold text-on-surface uppercase tracking-tight">COMMANDER_7</div>
+<div class="font-body text-[10px] text-cyan-400 tracking-widest font-bold">VERIFIED OPERATOR</div>
+</div>
+</div>
+</div>
+<div class="space-y-2 flex-grow">
+<div class="flex items-center gap-4 px-4 py-3 bg-[#1C1B1B] text-cyan-400 border-l-4 border-cyan-400 cursor-pointer">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-body text-sm font-medium uppercase">COMMAND CENTER</span>
+</div>
+<div class="flex items-center gap-4 px-4 py-3 text-zinc-400 hover:bg-zinc-900 transition-all cursor-pointer">
+<span class="material-symbols-outlined">military_tech</span>
+<span class="font-body text-sm font-medium uppercase">LEAGUE TABLES</span>
+</div>
+<div class="flex items-center gap-4 px-4 py-3 text-zinc-400 hover:bg-zinc-900 transition-all cursor-pointer">
+<span class="material-symbols-outlined">videocam</span>
+<span class="font-body text-sm font-medium uppercase">REPLAYS</span>
+</div>
+</div>
+<div class="mt-auto space-y-2">
+<div class="flex items-center gap-4 px-4 py-3 text-zinc-400 hover:bg-zinc-900 transition-all cursor-pointer">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-body text-sm font-medium uppercase">SETTINGS</span>
+</div>
+</div>
+</aside>
+</body></html>

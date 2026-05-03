@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AGS Global Arena | Integrity Command</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;800;900&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "outline-variant": "#444748",
+              "inverse-primary": "#5f5e5e",
+              "primary-fixed-dim": "#c8c6c5",
+              "outline": "#8e9192",
+              "on-secondary": "#00363d",
+              "on-primary-fixed": "#1c1b1b",
+              "surface-container-low": "#1c1b1b",
+              "primary": "#c8c6c5",
+              "inverse-on-surface": "#313030",
+              "on-surface": "#e5e2e1",
+              "on-primary-fixed-variant": "#474646",
+              "on-tertiary-container": "#4c3f00",
+              "tertiary-fixed-dim": "#e9c400",
+              "on-error": "#690005",
+              "tertiary-fixed": "#ffe16d",
+              "surface-tint": "#c8c6c5",
+              "on-secondary-fixed-variant": "#004f58",
+              "on-primary-container": "#7e7d7d",
+              "tertiary-container": "#c9a900",
+              "surface-variant": "#353534",
+              "surface-container-high": "#2a2a2a",
+              "surface-container": "#201f1f",
+              "surface": "#131313",
+              "secondary-container": "#00e3fd",
+              "error-container": "#93000a",
+              "inverse-surface": "#e5e2e1",
+              "background": "#131313",
+              "on-tertiary-fixed": "#221b00",
+              "on-primary": "#313030",
+              "error": "#ffb4ab",
+              "surface-container-lowest": "#0e0e0e",
+              "on-secondary-fixed": "#001f24",
+              "secondary-fixed": "#9cf0ff",
+              "on-tertiary-fixed-variant": "#544600",
+              "primary-container": "#121212",
+              "secondary-fixed-dim": "#00daf3",
+              "surface-bright": "#393939",
+              "on-background": "#e5e2e1",
+              "surface-dim": "#131313",
+              "surface-container-highest": "#353534",
+              "on-surface-variant": "#c4c7c7",
+              "tertiary": "#e9c400",
+              "secondary": "#bdf4ff",
+              "on-error-container": "#ffdad6",
+              "primary-fixed": "#e5e2e1",
+              "on-tertiary": "#3a3000",
+              "on-secondary-container": "#00616d"
+            },
+            fontFamily: {
+              "headline": ["Space Grotesk"],
+              "body": ["Inter"],
+              "label": ["Space Grotesk"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      .no-scrollbar::-webkit-scrollbar { display: none; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface font-body selection:bg-secondary-container selection:text-on-secondary-container">
+<!-- TopAppBar -->
+<header class="fixed top-0 z-50 w-full bg-[#131313] shadow-[0_0_20px_rgba(0,229,255,0.04)] flex justify-between items-center px-6 py-4">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[#00E5FF]" data-icon="security">security</span>
+<h1 class="font-headline font-bold tracking-tight uppercase text-xl text-[#00E5FF] tracking-widest">INTEGRITY COMMAND</h1>
+</div>
+<div class="flex items-center gap-4">
+<div class="hidden md:flex gap-6 mr-8">
+<a class="font-headline text-sm uppercase tracking-wider text-[#00E5FF] transition-colors duration-200" href="#">Intelligence Feed</a>
+<a class="font-headline text-sm uppercase tracking-wider text-gray-400 hover:bg-[#2A2A2A] transition-colors duration-200" href="#">Report Incident</a>
+<a class="font-headline text-sm uppercase tracking-wider text-gray-400 hover:bg-[#2A2A2A] transition-colors duration-200" href="#">Secure Vault</a>
+</div>
+<div class="w-10 h-10 rounded-full bg-surface-container-high border border-outline-variant flex items-center justify-center overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Official Badge Operator Profile Avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC3aNXgofmMTNL7h9W08ZVWA4PROIG2h6kzk5Fbq8jRLKrbJguXHr0dCtu-0dik1M6htZikEWnNVQkYMpQcyY_gUUhUAcjJXwK9s3I7cXCyPJCeFgHEmahHcweAcWlYhtuMFUA5ozfs74HCKs-as7cruZ_cnKeEYyzsqpo7StgNnq7ECrSLwngD5DU0NOR43uOi0o3WEY5OHmLp4EiJqUrxGoloUHSCvRDu6DU550KbWAgF4ZKL1VLv7BbwYiRT7o_NrrSasqV7dX7c"/>
+</div>
+</div>
+</header>
+<div class="pt-20 pb-24 md:pb-8 flex min-h-screen">
+<!-- NavigationDrawer (Side) -->
+<aside class="hidden md:flex fixed inset-y-0 left-0 z-40 flex-col p-4 bg-[#1C1B1B] w-80 border-r border-[#2A2A2A] pt-24">
+<div class="mb-8 px-2 flex items-center gap-4">
+<div class="w-12 h-12 bg-surface-container-highest rounded flex items-center justify-center text-[#E9C400]">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">shield_person</span>
+</div>
+<div>
+<p class="font-headline text-sm font-bold uppercase tracking-wider text-[#00E5FF]">OPERATOR_082</p>
+<p class="text-[10px] text-gray-500 uppercase tracking-tighter">Verified Clearance</p>
+</div>
+</div>
+<nav class="flex-1 space-y-2">
+<a class="flex items-center gap-3 px-4 py-3 bg-[#201F1F] text-[#00E5FF] border-l-4 border-[#00E5FF] font-headline text-sm uppercase tracking-wider transition-all duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+                    Intelligence Feed
+                </a>
+<a class="flex items-center gap-3 px-4 py-3 text-gray-500 hover:text-gray-200 hover:bg-[#2A2A2A] font-headline text-sm uppercase tracking-wider transition-all duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="add_moderator">add_moderator</span>
+                    Report Incident
+                </a>
+<a class="flex items-center gap-3 px-4 py-3 text-gray-500 hover:text-gray-200 hover:bg-[#2A2A2A] font-headline text-sm uppercase tracking-wider transition-all duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="lock">lock</span>
+                    Secure Vault
+                </a>
+<a class="flex items-center gap-3 px-4 py-3 text-gray-500 hover:text-gray-200 hover:bg-[#2A2A2A] font-headline text-sm uppercase tracking-wider transition-all duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="history">history</span>
+                    Audit Log
+                </a>
+</nav>
+<div class="mt-auto p-4 bg-surface-container-lowest rounded-lg border border-outline-variant/10">
+<p class="text-[10px] font-headline font-bold text-[#E9C400] tracking-widest uppercase mb-1">SECURE SESSION</p>
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+<span class="text-[10px] text-on-surface-variant font-mono">NODE_774.AGS.INT</span>
+</div>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 md:ml-80 px-4 md:px-12 py-8 overflow-x-hidden">
+<!-- Dashboard Header & Emergency Action -->
+<div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-12 gap-6">
+<div>
+<div class="flex items-center gap-2 mb-2">
+<span class="bg-[#E9C400] text-black text-[10px] px-2 py-0.5 font-black tracking-widest uppercase">URGENT</span>
+<span class="text-on-surface-variant text-[10px] tracking-widest font-headline uppercase">Encryption: AES-256-GCM Active</span>
+</div>
+<h2 class="text-4xl md:text-5xl font-headline font-black tracking-tighter uppercase leading-none">Command Center</h2>
+</div>
+<button class="bg-[#E9C400] hover:bg-[#FFD700] text-[#0E0E0E] px-8 py-4 font-headline font-black tracking-widest uppercase flex items-center gap-3 transition-transform active:scale-95 shadow-[0_0_30px_rgba(233,196,0,0.15)]">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">emergency_home</span>
+                    FREEZE RESULT
+                </button>
+</div>
+<!-- Bento Grid Layout -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-4">
+<!-- Reporting Section -->
+<section class="md:col-span-8 bg-surface-container-low p-6 md:p-10 border-l-4 border-secondary-fixed-dim">
+<div class="flex items-center justify-between mb-8">
+<h3 class="font-headline text-2xl font-bold tracking-tight uppercase text-on-surface">ANONYMOUS INCIDENT REPORT</h3>
+<span class="material-symbols-outlined text-secondary-fixed-dim" data-icon="fingerprint">fingerprint</span>
+</div>
+<form class="space-y-6">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="space-y-2">
+<label class="font-headline text-xs font-bold uppercase tracking-widest text-on-surface-variant">Incident Type</label>
+<select class="w-full bg-surface-container border-none text-on-surface focus:ring-1 focus:ring-secondary py-4 px-4 font-headline uppercase tracking-wider text-sm">
+<option>MATCH FIXING</option>
+<option>AGE FRAUD</option>
+<option>DOPING VIOLATION</option>
+<option>INTERNAL CORRUPTION</option>
+<option>OTHER BREACH</option>
+</select>
+</div>
+<div class="space-y-2">
+<label class="font-headline text-xs font-bold uppercase tracking-widest text-on-surface-variant">Match ID / Event ID</label>
+<input class="w-full bg-surface-container border-none text-on-surface focus:ring-1 focus:ring-secondary py-4 px-4 font-headline uppercase tracking-wider text-sm placeholder:opacity-30" placeholder="AGS-LIVE-092283" type="text"/>
+</div>
+</div>
+<div class="space-y-2">
+<label class="font-headline text-xs font-bold uppercase tracking-widest text-on-surface-variant">Detailed Description</label>
+<textarea class="w-full bg-surface-container border-none text-on-surface focus:ring-1 focus:ring-secondary py-4 px-4 font-body tracking-wide text-sm placeholder:opacity-30" placeholder="PROVIDE CHRONOLOGICAL DATA, SPECIFIC NAMES, AND TELEMETRY DISCREPANCIES..." rows="6"></textarea>
+</div>
+<div class="flex flex-col md:flex-row items-center justify-between pt-4 gap-4">
+<div class="flex items-center gap-2 text-xs text-on-surface-variant uppercase tracking-tighter font-headline">
+<span class="material-symbols-outlined text-[16px]" data-icon="verified_user">verified_user</span>
+                                256-BIT ANONYMITY LAYER ACTIVE
+                            </div>
+<button class="w-full md:w-auto bg-secondary-fixed-dim hover:bg-secondary-container text-on-secondary font-headline font-black py-4 px-12 tracking-widest uppercase transition-colors active:translate-y-0.5" type="submit">
+                                TRANSMIT SECURE REPORT
+                            </button>
+</div>
+</form>
+</section>
+<!-- Sidebar Stats -->
+<div class="md:col-span-4 space-y-4">
+<!-- Arbiter Jury Status -->
+<div class="bg-surface-container p-6 border-b-2 border-tertiary">
+<div class="flex items-center gap-2 mb-6">
+<span class="material-symbols-outlined text-tertiary" data-icon="gavel">gavel</span>
+<h4 class="font-headline text-sm font-bold uppercase tracking-widest">ARBITER JURY STATUS</h4>
+</div>
+<div class="space-y-6">
+<div class="flex justify-between items-end">
+<div>
+<p class="text-3xl font-headline font-black text-on-surface leading-none">24</p>
+<p class="text-[10px] text-on-surface-variant font-headline uppercase tracking-widest mt-1">ACTIVE CASES</p>
+</div>
+<div class="text-right">
+<p class="text-3xl font-headline font-black text-on-surface leading-none">102</p>
+<p class="text-[10px] text-on-surface-variant font-headline uppercase tracking-widest mt-1">VERIFIED ARBITERS</p>
+</div>
+</div>
+<div class="space-y-2">
+<div class="flex justify-between text-[10px] font-headline font-bold uppercase tracking-tighter">
+<span>Clearance Load</span>
+<span>84%</span>
+</div>
+<div class="h-1 w-full bg-surface-container-highest">
+<div class="h-full bg-tertiary w-[84%]"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Secure Vault Status -->
+<div class="bg-surface-container-lowest p-6 border border-outline-variant/10">
+<div class="flex items-center gap-2 mb-6">
+<span class="material-symbols-outlined text-secondary-fixed-dim" data-icon="lock_reset">lock_reset</span>
+<h4 class="font-headline text-sm font-bold uppercase tracking-widest">SECURE VAULT</h4>
+</div>
+<div class="space-y-4">
+<div class="flex items-center gap-4 p-3 bg-surface-container-low">
+<span class="material-symbols-outlined text-green-500" data-icon="encrypted">encrypted</span>
+<div>
+<p class="text-[11px] font-bold text-on-surface uppercase tracking-wide">EU GDPR COMPLIANT</p>
+<p class="text-[9px] text-on-surface-variant uppercase">Local Data Sovereignty</p>
+</div>
+</div>
+<div class="flex items-center gap-4 p-3 bg-surface-container-low">
+<span class="material-symbols-outlined text-blue-400" data-icon="admin_panel_settings">admin_panel_settings</span>
+<div>
+<p class="text-[11px] font-bold text-on-surface uppercase tracking-wide">INDIA CERT-IN</p>
+<p class="text-[9px] text-on-surface-variant uppercase">Security Audit Passed</p>
+</div>
+</div>
+<div class="flex items-center gap-4 p-3 bg-surface-container-low">
+<span class="material-symbols-outlined text-[#E9C400]" data-icon="key_visualizer">key_visualizer</span>
+<div>
+<p class="text-[11px] font-bold text-on-surface uppercase tracking-wide">HSM ENCRYPTED</p>
+<p class="text-[9px] text-on-surface-variant uppercase">Hardware Module 102</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Live Telemetry (Asymmetry/Decoration) -->
+<div class="bg-surface p-4 border border-outline-variant/5">
+<img class="w-full h-24 object-cover grayscale opacity-20 mb-4 rounded" data-alt="Cybersecurity digital data abstract pattern" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAX148aNUkKX6gZENGGZsTlJoN39bAM4gf5nRZLLZLJZwlr4ve7M2VuyA8Kl9ZUr4k6eCvYIsRbed6emQgCDp30D8xm9Wqwtul5aKeZgqxb4BWGRXcz1EPBAHmdmSxoixAsuWb78p428ps30qOqgsgTlWXa7sGEBMQqq2dlj4wI_raRlwH37fDUEsnOzAcqCI1XrcyJupE06FaqlvLbColg7OpM7UGKKCzGxIrdv1s-sqJH63v-QjsPOoBTk9hlf-AYhFoEZNVI6uSE"/>
+<p class="font-mono text-[8px] text-secondary-fixed-dim/40 leading-relaxed uppercase">
+                            Tracing: packet_inspection_active<br/>
+                            Log: integrity_node_alpha_verified<br/>
+                            Target: [REDACTED]<br/>
+                            Status: monitoring_live_feed
+                        </p>
+</div>
+</div>
+</div>
+</main>
+</div>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full bg-[#0E0E0E]/90 backdrop-blur-xl flex justify-around items-center px-4 pb-6 pt-2 z-50 border-t border-[#1C1B1B]">
+<a class="flex flex-col items-center justify-center text-[#00E5FF] bg-[#201F1F] rounded-md py-1 px-3" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-headline text-[10px] font-bold uppercase tracking-tighter">Dashboard</span>
+</a>
+<a class="flex flex-col items-center justify-center text-gray-500 opacity-60 hover:opacity-100 transition-opacity" href="#">
+<span class="material-symbols-outlined" data-icon="description">description</span>
+<span class="font-headline text-[10px] font-bold uppercase tracking-tighter">Reports</span>
+</a>
+<a class="flex flex-col items-center justify-center text-gray-500 opacity-60 hover:opacity-100 transition-opacity" href="#">
+<span class="material-symbols-outlined" data-icon="warning">warning</span>
+<span class="font-headline text-[10px] font-bold uppercase tracking-tighter">Alerts</span>
+</a>
+<a class="flex flex-col items-center justify-center text-gray-500 opacity-60 hover:opacity-100 transition-opacity" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-headline text-[10px] font-bold uppercase tracking-tighter">Settings</span>
+</a>
+</nav>
+</body></html>

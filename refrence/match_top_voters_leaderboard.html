@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Tactical Command - Top Voters Leaderboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;900&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-primary-fixed-variant": "#474646",
+                        "secondary-fixed-dim": "#00daf3",
+                        "surface-container": "#201f1f",
+                        "tertiary-container": "#c9a900",
+                        "surface-bright": "#393939",
+                        "outline-variant": "#444748",
+                        "on-surface": "#e5e2e1",
+                        "surface-tint": "#c8c6c5",
+                        "on-tertiary-container": "#4c3f00",
+                        "tertiary-fixed-dim": "#e9c400",
+                        "on-tertiary-fixed-variant": "#544600",
+                        "on-error": "#690005",
+                        "background": "#131313",
+                        "surface-dim": "#131313",
+                        "on-secondary-fixed-variant": "#004f58",
+                        "primary-container": "#121212",
+                        "on-tertiary-fixed": "#221b00",
+                        "error-container": "#93000a",
+                        "inverse-surface": "#e5e2e1",
+                        "outline": "#8e9192",
+                        "on-secondary-fixed": "#001f24",
+                        "secondary-container": "#00e3fd",
+                        "inverse-on-surface": "#313030",
+                        "tertiary-fixed": "#ffe16d",
+                        "surface-container-low": "#1c1b1b",
+                        "surface": "#131313",
+                        "on-primary": "#313030",
+                        "secondary-fixed": "#9cf0ff",
+                        "secondary": "#bdf4ff",
+                        "on-surface-variant": "#c4c7c7",
+                        "on-secondary": "#00363d",
+                        "primary": "#c8c6c5",
+                        "on-background": "#e5e2e1",
+                        "surface-container-highest": "#353534",
+                        "primary-fixed": "#e5e2e1",
+                        "error": "#ffb4ab",
+                        "tertiary": "#e9c400",
+                        "primary-fixed-dim": "#c8c6c5",
+                        "surface-container-lowest": "#0e0e0e",
+                        "surface-container-high": "#2a2a2a",
+                        "on-tertiary": "#3a3000",
+                        "on-secondary-container": "#00616d",
+                        "on-primary-fixed": "#1c1b1b",
+                        "on-error-container": "#ffdad6",
+                        "surface-variant": "#353534",
+                        "on-primary-container": "#7e7d7d",
+                        "inverse-primary": "#5f5e5e"
+                    },
+                    fontFamily: {
+                        "headline": ["Space Grotesk"],
+                        "body": ["Inter"],
+                        "label": ["Space Grotesk"]
+                    },
+                    borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-panel {
+            background: rgba(53, 53, 52, 0.6);
+            backdrop-filter: blur(12px);
+        }
+        .scanline {
+            background: linear-gradient(to bottom, transparent 50%, rgba(0, 229, 255, 0.02) 50%);
+            background-size: 100% 4px;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface font-body selection:bg-secondary-container selection:text-on-secondary-container">
+<!-- Top Navigation Shell -->
+<nav class="flex justify-between items-center px-6 py-4 w-full fixed top-0 z-50 bg-[#131313] shadow-[0_4px_20px_rgba(0,229,255,0.05)]">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[#00E5FF] active:scale-95 duration-150 cursor-pointer">menu</span>
+<h1 class="font-['Space_Grotesk'] uppercase tracking-widest text-sm text-[#00E5FF]">TACTICAL COMMAND</h1>
+</div>
+<div class="flex items-center gap-6">
+<div class="hidden md:flex gap-8 font-['Space_Grotesk'] text-sm tracking-widest">
+<span class="text-[#00E5FF] cursor-pointer">INTEL</span>
+<span class="text-zinc-500 hover:text-zinc-200 transition-colors cursor-pointer">LIVE</span>
+<span class="text-zinc-500 hover:text-zinc-200 transition-colors cursor-pointer">RANKS</span>
+<span class="text-zinc-500 hover:text-zinc-200 transition-colors cursor-pointer">VAULT</span>
+</div>
+<div class="w-8 h-8 rounded-full bg-surface-container-high border border-outline-variant overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="User profile avatar circle" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC2-4qujmZGGRdOzMx47FLmdgmMOQOarwMGlrGQ0CHtLmWxOP__O8be0hbzYo9MXfsarsBMRqc8FMOc5kD7fGVP8rhy82MpsTZSFbhiTdfpzlH2y2Xc1vUSOq52hLARC3TQm6JUVPdulg_5CPB1Msjiw4mIexDosThwNLfat70OOsVyBBoqn9unxOC-4QWYpmBhat2vARB86mwqP-gC7qSANKu78KkSDMPA_smlb02MrItCT_2VATnecvEDg1ByTyQRZomIxGxOMbs0"/>
+</div>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="pt-24 pb-32 px-4 md:px-8 max-w-7xl mx-auto min-h-screen scanline">
+<!-- Header Info Panel -->
+<div class="mb-10 flex flex-col md:flex-row md:items-end justify-between gap-6">
+<div>
+<div class="flex items-center gap-2 mb-2">
+<span class="w-2 h-2 bg-tertiary rounded-full animate-pulse"></span>
+<span class="font-label text-tertiary text-[10px] tracking-[0.2em] uppercase">Active Engagement Session</span>
+</div>
+<h2 class="font-headline text-5xl md:text-7xl font-black tracking-tighter italic text-on-surface">
+                    MATCH ID: <span class="text-secondary-fixed-dim">882-QX</span>
+</h2>
+<p class="font-label text-zinc-500 mt-2 tracking-widest text-xs uppercase">Telemetry synchronized // Tactical voting active</p>
+</div>
+<!-- Stats Highlight Cards -->
+<div class="flex gap-4">
+<div class="bg-surface-container-low p-4 min-w-[140px] border-l-2 border-secondary">
+<div class="text-[10px] font-label text-secondary uppercase tracking-widest mb-1">Live Votes</div>
+<div class="text-2xl font-headline font-bold">14,208</div>
+</div>
+<div class="bg-surface-container-low p-4 min-w-[140px] border-l-2 border-tertiary">
+<div class="text-[10px] font-label text-tertiary uppercase tracking-widest mb-1">Prize Pool</div>
+<div class="text-2xl font-headline font-bold">50k AP</div>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+<!-- Leaderboard Column -->
+<div class="lg:col-span-8 space-y-4">
+<div class="flex justify-between items-center px-4 mb-2">
+<span class="font-label text-xs text-on-primary-container uppercase tracking-widest">TOP OPERATIVES</span>
+<span class="font-label text-xs text-on-primary-container uppercase tracking-widest">PERFORMANCE DATA</span>
+</div>
+<!-- Rank Items -->
+<div class="space-y-3">
+<!-- Rank 1 (Gold Accent) -->
+<div class="group flex items-center justify-between p-4 bg-surface-container hover:bg-surface-container-high transition-all duration-300 border-r-4 border-tertiary relative overflow-hidden">
+<div class="absolute inset-0 bg-tertiary/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<div class="flex items-center gap-6 z-10">
+<span class="font-headline text-2xl font-black italic text-tertiary w-8">01</span>
+<div class="relative">
+<img class="w-12 h-12 rounded-lg border-2 border-tertiary object-cover" data-alt="Pro avatar with gold border" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC-eMke_HwEIuF6IjZpC3aUq2NuZhuq-28zSvvRVE3MTvM1chqHe9jsDcOsQE8qUqusMDgeIkkSK4CG7kj_irIN5WVSGQ6NZfLl78-O6H8NT39z3qBIJzfdw3rpumoafWiTruiZlpvYFjVd7B7FbtoOpX3Nlw35qVX2D_xcekGmfif660fiTgNInA9DWFV4VuXY7HIWQEF2cKk3LpdcOMOol7n350VwjChIMv34cwrnLptdUQtYN76L9pu9txbGaji96jF6UaQPUeYq"/>
+<div class="absolute -top-2 -right-2 bg-tertiary text-on-tertiary p-0.5 rounded-full">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">military_tech</span>
+</div>
+</div>
+<div>
+<h3 class="font-headline font-bold tracking-tight text-lg">HYPER_VOID</h3>
+<div class="flex gap-3 mt-0.5">
+<span class="text-[10px] font-label text-zinc-500 uppercase">LVL 99 ELITE</span>
+<span class="text-[10px] font-label text-secondary-fixed-dim uppercase">VERIFIED FAN</span>
+</div>
+</div>
+</div>
+<div class="text-right z-10">
+<div class="font-headline text-xl font-bold text-on-surface">1,450 <span class="text-[10px] font-label text-zinc-500 uppercase">Votes</span></div>
+<div class="font-label text-xs text-tertiary font-bold">12,400 AP</div>
+</div>
+</div>
+<!-- Rank 2 -->
+<div class="group flex items-center justify-between p-4 bg-surface-container hover:bg-surface-container-high transition-all duration-300 border-r-4 border-zinc-700">
+<div class="flex items-center gap-6">
+<span class="font-headline text-2xl font-black italic text-zinc-600 w-8">02</span>
+<img class="w-12 h-12 rounded-lg border border-outline-variant object-cover grayscale group-hover:grayscale-0 transition-all" data-alt="Fan avatar with tactical gear" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBtnntzq6aR8a-Q6IBtBL6T_vWu1DixhlSjhfuJKiQbKam6C-7QnZ6ZhVYolsFnNPrdqgyI3v-E1ulfRinPy9vduAGXoe9NpsX9cDzwYnQSwGUjoCxQF7FoisliNEPwAInmaKxbHkIrCpmZiiNzE2ZEt0eQRTGI1FhSpJ7QaRc7jgQ6YqUBWVVLQQe2_ZyMEomGCr-Koy1C7Ejodq0IaiJmhZEG9dwSgXw9XQ7Cihs6Oc2gij0TPDdOoJY3YK0NVS5mz0MtmwWo1OTs"/>
+<div>
+<h3 class="font-headline font-bold tracking-tight text-lg">NEON_PULSE</h3>
+<div class="flex gap-3 mt-0.5 text-[10px] font-label text-zinc-500 uppercase">
+<span>LVL 84 OPERATIVE</span>
+</div>
+</div>
+</div>
+<div class="text-right">
+<div class="font-headline text-xl font-bold">1,210 <span class="text-[10px] font-label text-zinc-500 uppercase">Votes</span></div>
+<div class="font-label text-xs text-zinc-400">9,850 AP</div>
+</div>
+</div>
+<!-- Highlight: USER POSITION (Rank 3) -->
+<div class="group flex items-center justify-between p-4 bg-surface-container-high border-2 border-secondary shadow-[0_0_20px_rgba(0,229,255,0.1)] relative overflow-hidden">
+<div class="absolute left-0 top-0 bottom-0 w-1 bg-secondary"></div>
+<div class="flex items-center gap-6">
+<span class="font-headline text-2xl font-black italic text-secondary-fixed-dim w-8">03</span>
+<div class="relative">
+<img class="w-12 h-12 rounded-lg border-2 border-secondary object-cover shadow-[0_0_10px_rgba(0,229,255,0.3)]" data-alt="Primary user avatar highlight" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBZJHqre7Xjc_2flNVqlZZp62whdADGaVjT5TIJyOY9Yv3XKFEVbD1Dmtf-sz0SaighoXfqHUuEEtjvrVbIYIGhRc80jIoJ7eluOBHjJJbc-rFl-bM8pp6yhy5PDiY91yS3BpsO9d6IIZ1lyeGzljgbp9gPq-_8cuQ2C_1hec_vq4s7SJcUukTfvmHkYLAcVLAZbsjYNn1Re2seTEdHqgvt7kPczkQeA_EVmaIErE09G5-hcO9JJxq8Z7QhfexhQCewrxpiYwOGuA04"/>
+<div class="absolute -bottom-1 -right-1 bg-secondary text-on-secondary px-1 text-[8px] font-black uppercase tracking-tighter">YOU</div>
+</div>
+<div>
+<h3 class="font-headline font-bold tracking-tight text-lg text-secondary-fixed-dim">ZEN_COMMANDER</h3>
+<div class="flex gap-3 mt-0.5 text-[10px] font-label text-secondary uppercase">
+<span>LVL 72 COMMANDER</span>
+</div>
+</div>
+</div>
+<div class="text-right">
+<div class="font-headline text-xl font-bold text-secondary">984 <span class="text-[10px] font-label text-secondary/50 uppercase">Votes</span></div>
+<div class="font-label text-xs font-bold text-on-surface">8,120 AP</div>
+</div>
+</div>
+<!-- Ranks 4-10 (Condensed Tactical Grid) -->
+<div class="grid grid-cols-1 gap-2">
+<!-- Repeat Pattern for 4-10 -->
+<div class="flex items-center justify-between p-3 bg-surface-container-lowest/50 hover:bg-surface-container transition-colors">
+<div class="flex items-center gap-6">
+<span class="font-label text-sm font-bold text-zinc-700 w-8">04</span>
+<div class="flex items-center gap-4">
+<img class="w-8 h-8 rounded-md object-cover opacity-70" data-alt="Abstract player avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBnAx3m-xL9TIVugKCa2w6o3jq469Xki89s5qlsuVDKuiFFjS2Z2F-M33jzTDojv2ZoKUnQNi36_GiHdwKmGNysWtMPYiC9nA3ft8vwJyfCppTsJOTEDquXZYsLz2OtDqsXCyQCB4wQrV4MpHi0VVAvUfxAlUBt0ixgdJPz3LfDhLuK_PtbzK5TlAjRwPZn9rqqd7tmvZx4M0QvC_BfMyTwvf5m95qmEFr4icC7pkd75onQ4w2nYVVZi10dV5X_egMn0dDB0Ji4olYa"/>
+<span class="font-headline font-bold text-sm tracking-wide">PHANTOM_STRIDE</span>
+</div>
+</div>
+<div class="flex gap-8 text-right items-center">
+<span class="font-headline text-sm font-bold text-zinc-400">856 V</span>
+<span class="font-label text-[10px] font-bold text-zinc-500 w-16">7,050 AP</span>
+</div>
+</div>
+<div class="flex items-center justify-between p-3 bg-surface-container-lowest/30 hover:bg-surface-container transition-colors">
+<div class="flex items-center gap-6">
+<span class="font-label text-sm font-bold text-zinc-700 w-8">05</span>
+<div class="flex items-center gap-4">
+<img class="w-8 h-8 rounded-md object-cover opacity-70" data-alt="Abstract player avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDLnAo9gIt_smoAIPo01Ei_QCHWWPxCEx_t-VZcmbSxx65m6GkoVxWSMa_-dImwQeTcAdls4mBJVI3B-Iol2mKM50Ptvyigl0d0sIs-IhC0XBaRIgNUGWcqQBzKUcA9L5ToXjsR-aaE7UpwiKIUi5AACYqHMjYvVRviPdmGc6etEFwarOhCENRTQ49Pcy1lDJMQa2JTuPrEcJHPMR50Zax7h8BjB3ukaOjZi_nVXMIxd_hVA8gItZeQAhkoVuunpM2kiSvFhek0cfVb"/>
+<span class="font-headline font-bold text-sm tracking-wide">COBALT_RAID</span>
+</div>
+</div>
+<div class="flex gap-8 text-right items-center">
+<span class="font-headline text-sm font-bold text-zinc-400">792 V</span>
+<span class="font-label text-[10px] font-bold text-zinc-500 w-16">6,200 AP</span>
+</div>
+</div>
+<div class="flex items-center justify-between p-3 bg-surface-container-lowest/50 hover:bg-surface-container transition-colors">
+<div class="flex items-center gap-6">
+<span class="font-label text-sm font-bold text-zinc-700 w-8">06</span>
+<div class="flex items-center gap-4">
+<img class="w-8 h-8 rounded-md object-cover opacity-70" data-alt="Abstract player avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCOtP5Gd3OsO4PBm9kFmN_xdfD3XbfR6dvbc7jDBmzUhp5tJzD5gYpu6jej-zvwp3cYaiOzcbpjiLZU8Cp_uBaDCEVxQFZqWUD2LgXLNr6TlKmu35RMUOtPeNTvoYChxNN5ZRlvpzFhkEr1U2u2ihLTYkjfpDJg4t7KNByOx-qQO8zWVo_RdaeDDpCUv5qT07aDuNEAqO-kRSqEHJs8W7RypksKc7M7osXOiIFOGJvtxihyz2RKZT1azDPq_0vIAtUWpJxr4vMYWiL9"/>
+<span class="font-headline font-bold text-sm tracking-wide">SENTRY_POINT</span>
+</div>
+</div>
+<div class="flex gap-8 text-right items-center">
+<span class="font-headline text-sm font-bold text-zinc-400">744 V</span>
+<span class="font-label text-[10px] font-bold text-zinc-500 w-16">5,900 AP</span>
+</div>
+</div>
+<div class="flex items-center justify-between p-3 bg-surface-container-lowest/30 hover:bg-surface-container transition-colors">
+<div class="flex items-center gap-6">
+<span class="font-label text-sm font-bold text-zinc-700 w-8">07</span>
+<div class="flex items-center gap-4">
+<img class="w-8 h-8 rounded-md object-cover opacity-70" data-alt="Abstract player avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAgSpHimpBbMhfCd2xQOcQVgMFvA81fa-cgoYXHxCnWIQF1wjOwy0o3TN-yTsjCF2-4k4kr-rD7Bjl_QCWgJBJq3CXcQSlfwcc3FxyE3sFWLNM0ynaM7zisdojx7PtgXmYi8e0pF3v7mCJiSfZTH4Kqim3ihI5irXuC3cN0LknV34HG8BsjR9TkAbWckDoz8aheXhuDTsZf_IwlNdwftzqORinToar18c6dFCcpHdSW8I_cFJ2iW7LWRvg2FH6b71wwirueST_JU6uh"/>
+<span class="font-headline font-bold text-sm tracking-wide">DELTA_ZERO</span>
+</div>
+</div>
+<div class="flex gap-8 text-right items-center">
+<span class="font-headline text-sm font-bold text-zinc-400">610 V</span>
+<span class="font-label text-[10px] font-bold text-zinc-500 w-16">4,800 AP</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Sidebar / Info Panels -->
+<div class="lg:col-span-4 space-y-6">
+<!-- Engagement Rewards Section -->
+<div class="glass-panel p-6 border-t border-l border-white/5 relative group">
+<div class="absolute -top-px -left-px w-8 h-8 border-t-2 border-l-2 border-secondary"></div>
+<h3 class="font-headline text-xl font-bold tracking-tight mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">analytics</span>
+                        REWARD PROTOCOL
+                    </h3>
+<div class="space-y-6">
+<div class="flex gap-4">
+<div class="bg-surface-container-high p-2 h-fit">
+<span class="material-symbols-outlined text-secondary text-xl">generating_tokens</span>
+</div>
+<div>
+<h4 class="font-headline text-xs font-bold uppercase tracking-wider text-secondary-fixed-dim">Vote Conversion</h4>
+<p class="text-xs text-zinc-400 mt-1 leading-relaxed">Each vote cast during live match windows generates <span class="text-on-surface font-bold">5 Arena Points</span>. Multipliers apply during Overtime.</p>
+</div>
+</div>
+<div class="flex gap-4">
+<div class="bg-surface-container-high p-2 h-fit">
+<span class="material-symbols-outlined text-tertiary text-xl">military_tech</span>
+</div>
+<div>
+<h4 class="font-headline text-xs font-bold uppercase tracking-wider text-tertiary">Strategic Bonus</h4>
+<p class="text-xs text-zinc-400 mt-1 leading-relaxed">Voting on the winning team provides a <span class="text-on-surface font-bold">+20% AP yield</span> calculated at Match Close.</p>
+</div>
+</div>
+<div class="flex gap-4">
+<div class="bg-surface-container-high p-2 h-fit">
+<span class="material-symbols-outlined text-white text-xl">speed</span>
+</div>
+<div>
+<h4 class="font-headline text-xs font-bold uppercase tracking-wider text-zinc-200">Consistency Multiplier</h4>
+<p class="text-xs text-zinc-400 mt-1 leading-relaxed">Cast votes in 3 consecutive matches to unlock the <span class="text-secondary font-bold">1.5x Tactical Buff</span>.</p>
+</div>
+</div>
+</div>
+<button class="w-full mt-8 py-4 bg-secondary-container hover:bg-secondary-fixed-dim text-on-secondary-container font-headline font-bold text-sm tracking-widest uppercase transition-all flex items-center justify-center gap-2 rounded-lg">
+                        CAST TACTICAL VOTE
+                        <span class="material-symbols-outlined text-sm">rocket_launch</span>
+</button>
+</div>
+<!-- Match Feed / Event Log -->
+<div class="bg-surface-container-lowest p-6 border-l-2 border-outline-variant">
+<h3 class="font-headline text-[10px] font-bold text-zinc-500 tracking-[0.3em] uppercase mb-4">Live Command Log</h3>
+<div class="space-y-4 font-mono text-[10px] uppercase tracking-tighter">
+<div class="flex gap-3 text-secondary">
+<span class="text-zinc-600">14:02:11</span>
+<span>HYPER_VOID injected 250 votes</span>
+</div>
+<div class="flex gap-3 text-zinc-400">
+<span class="text-zinc-600">14:01:55</span>
+<span>System: Overtime Window Open</span>
+</div>
+<div class="flex gap-3 text-tertiary">
+<span class="text-zinc-600">14:01:22</span>
+<span>ZEN_COMMANDER earned 'Sharpshooter' badge</span>
+</div>
+<div class="flex gap-3 text-zinc-400">
+<span class="text-zinc-600">13:59:48</span>
+<span>Global participation +12%</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Bottom Navigation Shell -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-6 pt-3 bg-[#131313]/90 backdrop-blur-xl shadow-[0_-8px_32px_rgba(0,0,0,0.5)] rounded-t-xl md:hidden">
+<div class="flex flex-col items-center justify-center text-zinc-600 hover:text-zinc-200 active:translate-y-0.5 transition-transform">
+<span class="material-symbols-outlined">analytics</span>
+<span class="font-['Space_Grotesk'] font-bold text-[10px] tracking-tighter">INTEL</span>
+</div>
+<div class="flex flex-col items-center justify-center text-zinc-600 hover:text-zinc-200 active:translate-y-0.5 transition-transform">
+<span class="material-symbols-outlined">sensors</span>
+<span class="font-['Space_Grotesk'] font-bold text-[10px] tracking-tighter">LIVE</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#00E5FF] bg-[#1C1B1B] rounded-lg px-4 py-1 active:translate-y-0.5 transition-transform">
+<span class="material-symbols-outlined">leaderboard</span>
+<span class="font-['Space_Grotesk'] font-bold text-[10px] tracking-tighter">RANKS</span>
+</div>
+<div class="flex flex-col items-center justify-center text-zinc-600 hover:text-zinc-200 active:translate-y-0.5 transition-transform">
+<span class="material-symbols-outlined">military_tech</span>
+<span class="font-['Space_Grotesk'] font-bold text-[10px] tracking-tighter">VAULT</span>
+</div>
+</nav>
+<!-- Contextual FAB -->
+<button class="fixed bottom-24 right-6 w-14 h-14 bg-tertiary rounded-lg shadow-[0_8px_24px_rgba(233,196,0,0.2)] flex items-center justify-center group active:scale-95 transition-all z-40 md:hidden">
+<span class="material-symbols-outlined text-on-tertiary font-bold group-hover:rotate-12 transition-transform">how_to_vote</span>
+</button>
+</body></html>

@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AGS Global Arena - Tournament Directory</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-tertiary-fixed-variant": "#544600",
+                        "inverse-primary": "#5f5e5e",
+                        "secondary-fixed": "#9cf0ff",
+                        "on-surface": "#e5e2e1",
+                        "on-secondary": "#00363d",
+                        "inverse-surface": "#e5e2e1",
+                        "on-error": "#690005",
+                        "tertiary-fixed": "#ffe16d",
+                        "tertiary": "#e9c400",
+                        "surface-container": "#201f1f",
+                        "outline-variant": "#444748",
+                        "on-tertiary-fixed": "#221b00",
+                        "tertiary-container": "#c9a900",
+                        "on-primary-container": "#7e7d7d",
+                        "secondary-container": "#00e3fd",
+                        "on-surface-variant": "#c4c7c7",
+                        "surface-container-highest": "#353534",
+                        "on-secondary-fixed-variant": "#004f58",
+                        "on-primary": "#313030",
+                        "surface-tint": "#c8c6c5",
+                        "secondary": "#bdf4ff",
+                        "surface-container-lowest": "#0e0e0e",
+                        "surface-container-low": "#1c1b1b",
+                        "error": "#ffb4ab",
+                        "on-secondary-container": "#00616d",
+                        "error-container": "#93000a",
+                        "primary": "#c8c6c5",
+                        "on-tertiary": "#3a3000",
+                        "primary-fixed-dim": "#c8c6c5",
+                        "primary-container": "#121212",
+                        "on-secondary-fixed": "#001f24",
+                        "surface-bright": "#393939",
+                        "outline": "#8e9192",
+                        "surface-dim": "#131313",
+                        "tertiary-fixed-dim": "#e9c400",
+                        "secondary-fixed-dim": "#00daf3",
+                        "on-error-container": "#ffdad6",
+                        "surface-container-high": "#2a2a2a",
+                        "on-background": "#e5e2e1",
+                        "surface": "#131313",
+                        "inverse-on-surface": "#313030",
+                        "on-primary-fixed-variant": "#474646",
+                        "on-tertiary-container": "#4c3f00",
+                        "surface-variant": "#353534",
+                        "primary-fixed": "#e5e2e1",
+                        "on-primary-fixed": "#1c1b1b",
+                        "background": "#131313"
+                    },
+                    fontFamily: {
+                        "headline": ["Space Grotesk"],
+                        "body": ["Inter"],
+                        "label": ["Space Grotesk"]
+                    },
+                    borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #131313;
+            color: #e5e2e1;
+        }
+        .space-grotesk {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .glass-panel {
+            background: rgba(53, 53, 52, 0.6);
+            backdrop-filter: blur(12px);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface selection:bg-secondary-container selection:text-on-secondary-container">
+<!-- TopAppBar -->
+<header class="bg-[#131313] dark:bg-[#131313] docked full-width top-0 sticky z-50">
+<div class="flex items-center justify-between px-6 py-4 w-full">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[#00E5FF] text-2xl" data-icon="leaderboard">leaderboard</span>
+<h1 class="text-2xl font-bold tracking-tight text-white font-headline">Tournament Command</h1>
+</div>
+<div class="flex items-center gap-4">
+<div class="hidden md:flex items-center bg-surface-container-low px-4 py-2 rounded-md group focus-within:ring-1 ring-[#00E5FF]/50 transition-all">
+<span class="material-symbols-outlined text-gray-500 text-sm mr-2" data-icon="search">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-sm font-label uppercase tracking-wider text-on-surface placeholder:text-gray-600 w-64" placeholder="Search operations..." type="text"/>
+</div>
+<button class="p-2 hover:bg-[#2A2A2A] transition-colors duration-200 rounded-md relative group">
+<span class="material-symbols-outlined text-white" data-icon="notifications">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 bg-[#00E5FF] rounded-full shadow-[0_0_8px_rgba(0,229,255,0.6)]"></span>
+</button>
+<button class="p-2 hover:bg-[#2A2A2A] transition-colors duration-200 rounded-md">
+<span class="material-symbols-outlined text-white" data-icon="search">search</span>
+</button>
+</div>
+</div>
+<div class="bg-[#1C1B1B] h-[4px] w-full"></div>
+</header>
+<main class="pb-24 max-w-7xl mx-auto px-6 pt-8">
+<!-- Category Filters -->
+<section class="mb-8 overflow-x-auto no-scrollbar">
+<div class="flex gap-3 min-w-max pb-2">
+<button class="px-6 py-2 bg-[#1C1B1B] text-[#00E5FF] font-bold border border-[#00E5FF]/30 rounded-md font-label uppercase text-sm tracking-widest transition-all active:scale-95">All Units</button>
+<button class="px-6 py-2 bg-surface-container text-gray-400 font-label uppercase text-sm tracking-widest rounded-md hover:bg-surface-container-high hover:text-white transition-all">Physical</button>
+<button class="px-6 py-2 bg-surface-container text-gray-400 font-label uppercase text-sm tracking-widest rounded-md hover:bg-surface-container-high hover:text-white transition-all">eSports</button>
+<button class="px-6 py-2 bg-surface-container text-gray-400 font-label uppercase text-sm tracking-widest rounded-md hover:bg-surface-container-high hover:text-white transition-all">Hackathons</button>
+<button class="px-6 py-2 bg-surface-container text-gray-400 font-label uppercase text-sm tracking-widest rounded-md hover:bg-surface-container-high hover:text-white transition-all">Pro League</button>
+</div>
+</section>
+<!-- Featured Tournament Hero Card (Bento/Asymmetric Style) -->
+<section class="mb-12 relative group">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-0 overflow-hidden rounded-xl bg-surface-container-low border border-white/5">
+<div class="lg:col-span-7 relative h-[300px] lg:h-[450px]">
+<img alt="Cyberpunk Arena" class="absolute inset-0 w-full h-full object-cover" data-alt="Futuristic glowing purple and cyan digital gaming arena" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBbV9dnFRWh03L2YTN7gBKve-ZkHK7fF5IBtaTyS_ce81IA1QbICwWU6jtePXsPVb4dgAIsxocEJfQzvhLsfueCUiWpL5VURQfAGTnp5yzcdWopz1PAI3lQtiPZ1lrV1biyOMsljSZ1c1gIZYPbp2CU-AV-NHncxIoi-u9_xrteRbRJjYEFToJb1RUga97NrbhJ7LP6GNjuBDqcwDBONJTl5zkoNsDZ3Yd_itfMYnbduhZvfQw_eaAZM58RHmwBn6s3j3-yDSgTxFNn"/>
+<div class="absolute inset-0 bg-gradient-to-r from-surface-container-low via-surface-container-low/40 to-transparent"></div>
+<div class="absolute top-6 left-6">
+<span class="inline-flex items-center gap-2 px-3 py-1 bg-[#E9C400] text-on-tertiary-fixed font-label text-[10px] font-black uppercase tracking-[0.2em] rounded">
+<span class="material-symbols-outlined text-[12px]" data-icon="military_tech" style="font-variation-settings: 'FILL' 1;">military_tech</span>
+                            High Tier Event
+                        </span>
+</div>
+</div>
+<div class="lg:col-span-5 p-8 flex flex-col justify-center bg-gradient-to-br from-surface-container-low to-surface-container">
+<h2 class="font-headline text-4xl lg:text-5xl font-bold text-white mb-4 leading-tight tracking-tighter">Global Cyber Qualifier</h2>
+<p class="text-on-surface-variant font-body mb-8 max-w-md leading-relaxed">The pinnacle of tactical eSports. Engage in high-fidelity combat scenarios across three major sectors.</p>
+<div class="grid grid-cols-2 gap-6 mb-8">
+<div>
+<p class="font-label text-[10px] text-gray-500 uppercase tracking-widest mb-1">Prize Pool</p>
+<p class="font-headline text-2xl font-bold text-[#E9C400]">$250,000</p>
+</div>
+<div>
+<p class="font-label text-[10px] text-gray-500 uppercase tracking-widest mb-1">Status</p>
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 bg-[#00E5FF] rounded-full animate-pulse"></span>
+<p class="font-headline text-2xl font-bold text-[#00E5FF]">LIVE</p>
+</div>
+</div>
+</div>
+<button class="w-full lg:w-max px-10 py-4 bg-[#00E5FF] text-[#001f24] font-label font-bold uppercase tracking-widest rounded-md hover:bg-secondary-fixed-dim transition-all active:scale-95 shadow-[0_0_20px_rgba(0,229,255,0.2)]">
+                        Join Operation
+                    </button>
+</div>
+</div>
+</section>
+<!-- Tournament Grid / List -->
+<section>
+<div class="flex items-center justify-between mb-8 border-l-4 border-[#00E5FF] pl-4">
+<h3 class="font-headline text-xl font-bold text-white tracking-widest uppercase">Active Tournaments</h3>
+<span class="text-xs font-label text-gray-500 uppercase tracking-widest">Showing 24 Operations</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<!-- Card 1 -->
+<div class="bg-surface-container rounded-md overflow-hidden group hover:translate-y-[-4px] transition-transform duration-300">
+<div class="relative h-40">
+<img alt="Retro Hardware" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" data-alt="Monochromatic vintage computer hardware and technology setup" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCwak1Hzp-wZenoa2OB-Q6oP5FULJgFcZze1ul0hDLDRJOsatCw6DSVt4JLHhDGejpMDKgIiF45jNimQm4oXI_WlY0A_cVwRha70rU0H5VjZensQ9GY8IBnaC3u5nDFyVYr60_rQRUjhSaPMB1WiJPcWwQ4ksu1HDUqLVB-fyT5EMEpoIokzjL3pFYG8x6MU7aczKkugpYQi9jK67CML7lpCjRT6tTce7NgwlXGgIwB5Zz9CuyTUHm0ltzKdHYwRnckHjSbQjpmRGuD"/>
+<div class="absolute inset-0 bg-black/40"></div>
+<div class="absolute bottom-4 left-4">
+<span class="px-2 py-1 bg-[#00E5FF] text-[#001f24] font-label text-[10px] font-bold uppercase tracking-tighter">REGISTERING</span>
+</div>
+</div>
+<div class="p-5">
+<div class="flex justify-between items-start mb-3">
+<h4 class="font-headline font-bold text-lg text-white group-hover:text-[#00E5FF] transition-colors">Sector-7 Hackathon</h4>
+<span class="material-symbols-outlined text-[#E9C400] text-sm" data-icon="verified" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+<div class="space-y-3 mb-6">
+<div class="flex justify-between items-center text-xs">
+<span class="text-gray-500 font-label uppercase tracking-wider">Start Time</span>
+<span class="text-on-surface font-body">22 OCT, 14:00 GMT</span>
+</div>
+<div class="flex justify-between items-center text-xs">
+<span class="text-gray-500 font-label uppercase tracking-wider">Deployment</span>
+<span class="text-on-surface font-body">124/150 Teams</span>
+</div>
+</div>
+<div class="flex gap-2">
+<button class="flex-1 py-2 bg-surface-container-high text-white font-label text-xs font-bold uppercase tracking-widest rounded-md hover:bg-[#2A2A2A] transition-colors">Details</button>
+<button class="flex-1 py-2 border border-[#00E5FF]/20 text-[#00E5FF] font-label text-xs font-bold uppercase tracking-widest rounded-md hover:bg-[#00E5FF]/10 transition-colors">Register</button>
+</div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface-container rounded-md overflow-hidden group hover:translate-y-[-4px] transition-transform duration-300">
+<div class="relative h-40">
+<img alt="Gaming Setup" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" data-alt="Minimalist dark gaming setup with cyan LED lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBp2OZHxAyz3cEpprBm4iNZANrDDKhfEepcZns8btpzZgQZ3MKOklg2pqbAsANG24rXzvj-NxIIc1MwEpes3X5U_BY8dZSl6ANzYGU2PYFfyg8PsX9Vn0gFgMdj-RqFsHTPaDnMWX0w2jLrg6az9zJT583JDvOw6GcQojpsA0vAOTmqVAn6EQTIdQiSToT3__fO72qWaHyy_6XONjNDTec6ej2Y9ZhoNZUJNdRgQ_rZ4Ao72mkg8h21H801gIUUh4UV3YgWnO5s9zHI"/>
+<div class="absolute inset-0 bg-black/40"></div>
+<div class="absolute bottom-4 left-4">
+<span class="px-2 py-1 bg-surface-container-highest text-gray-400 font-label text-[10px] font-bold uppercase tracking-tighter">COMPLETED</span>
+</div>
+</div>
+<div class="p-5">
+<div class="flex justify-between items-start mb-3">
+<h4 class="font-headline font-bold text-lg text-white group-hover:text-[#00E5FF] transition-colors">Iron Grip Physicals</h4>
+</div>
+<div class="space-y-3 mb-6">
+<div class="flex justify-between items-center text-xs">
+<span class="text-gray-500 font-label uppercase tracking-wider">Winner</span>
+<span class="text-[#E9C400] font-body font-bold">ALPHA SQUAD</span>
+</div>
+<div class="flex justify-between items-center text-xs">
+<span class="text-gray-500 font-label uppercase tracking-wider">Deployment</span>
+<span class="text-on-surface font-body">64 Teams</span>
+</div>
+</div>
+<button class="w-full py-2 bg-surface-container-high text-white font-label text-xs font-bold uppercase tracking-widest rounded-md hover:bg-[#2A2A2A] transition-colors">View Bracket</button>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="bg-surface-container rounded-md overflow-hidden group hover:translate-y-[-4px] transition-transform duration-300">
+<div class="relative h-40">
+<img alt="Abstract Data" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" data-alt="Abstract dynamic dark blue digital waves and data flow" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAZTtLwhoJ8F1rv64sRPQFi_FJXjJd8GaPCkLY_1_sLK4wVocW3ZDTM3TRjBVLoLKg448P_N-ILSbi_UpY8-_kW07ztM8ofsqzIhrOL48NHBXyBf_YHwQ1vcYeXGwgbH6gYZrnMCWipuYvbQ9MaCu1rQTCPq4wqWByFFeUZ599IXHeeJbJFP8lI13wN1DOBjLn8-WnJ6VDgDlgg9vPXCtmEu5Q9Zgo0p4IzEGOJpmzMgSKVKCnCeNndIOajwOz2jg7bETBgre9qfnJy"/>
+<div class="absolute inset-0 bg-black/40"></div>
+<div class="absolute bottom-4 left-4">
+<span class="px-2 py-1 bg-red-600 text-white font-label text-[10px] font-bold uppercase tracking-tighter flex items-center gap-1">
+<span class="w-1.5 h-1.5 bg-white rounded-full animate-ping"></span>
+                                LIVE
+                            </span>
+</div>
+</div>
+<div class="p-5">
+<div class="flex justify-between items-start mb-3">
+<h4 class="font-headline font-bold text-lg text-white group-hover:text-[#00E5FF] transition-colors">Titan League Quals</h4>
+<span class="material-symbols-outlined text-[#E9C400] text-sm" data-icon="stars" style="font-variation-settings: 'FILL' 1;">stars</span>
+</div>
+<div class="space-y-3 mb-6">
+<div class="flex justify-between items-center text-xs">
+<span class="text-gray-500 font-label uppercase tracking-wider">Current Round</span>
+<span class="text-on-surface font-body">Quarter Finals</span>
+</div>
+<div class="flex justify-between items-center text-xs">
+<span class="text-gray-500 font-label uppercase tracking-wider">Viewers</span>
+<span class="text-[#00E5FF] font-body">42.8K Watching</span>
+</div>
+</div>
+<button class="w-full py-2 bg-[#00E5FF] text-[#001f24] font-label text-xs font-bold uppercase tracking-widest rounded-md hover:bg-secondary-fixed-dim transition-colors">Watch Live Feed</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Informational Strip -->
+<section class="mt-16 p-8 bg-surface-container-low rounded-xl border-l-8 border-[#E9C400]">
+<div class="flex flex-col md:flex-row items-center gap-8">
+<div class="flex-1">
+<h4 class="font-headline text-2xl font-bold text-white mb-2 uppercase tracking-tight">Verified Command Status</h4>
+<p class="text-on-surface-variant font-body leading-relaxed">Boost your squad's visibility and access elite-tier operations by completing the Command Verification protocol. Verified teams receive priority registration and official branding slots.</p>
+</div>
+<button class="px-8 py-3 border-2 border-[#E9C400] text-[#E9C400] font-label font-black uppercase tracking-[0.2em] rounded hover:bg-[#E9C400] hover:text-black transition-all active:scale-95">Verify Account</button>
+</div>
+</section>
+</main>
+<!-- NavigationDrawer (Web Sidebar) -->
+<aside class="hidden xl:flex fixed left-0 top-0 h-full z-40 bg-[#0E0E0E] dark:bg-[#0E0E0E] h-full w-72 border-r border-white/10 flex-col shadow-[0_0_32px_rgba(0,229,255,0.04)]">
+<div class="p-8">
+<h2 class="text-[#E9C400] font-black font-headline tracking-[0.2em] text-xs mb-10">TACTICAL MENU</h2>
+<nav class="space-y-4">
+<a class="bg-[#1C1B1B] text-[#00E5FF] rounded-md px-4 py-3 flex items-center gap-3 transition-colors cursor-pointer group" href="#">
+<span class="material-symbols-outlined" data-icon="explore">explore</span>
+<span class="font-headline font-medium uppercase tracking-widest text-sm">Discovery</span>
+</a>
+<a class="text-gray-400 px-4 py-3 flex items-center gap-3 hover:bg-[#201F1F] hover:text-white transition-colors cursor-pointer group" href="#">
+<span class="material-symbols-outlined" data-icon="sensors">sensors</span>
+<span class="font-headline font-medium uppercase tracking-widest text-sm">Live Events</span>
+</a>
+<a class="text-gray-400 px-4 py-3 flex items-center gap-3 hover:bg-[#201F1F] hover:text-white transition-colors cursor-pointer group" href="#">
+<span class="material-symbols-outlined" data-icon="military_tech">military_tech</span>
+<span class="font-headline font-medium uppercase tracking-widest text-sm">Pro Circuit</span>
+</a>
+<a class="text-gray-400 px-4 py-3 flex items-center gap-3 hover:bg-[#201F1F] hover:text-white transition-colors cursor-pointer group" href="#">
+<span class="material-symbols-outlined" data-icon="workspace_premium">workspace_premium</span>
+<span class="font-headline font-medium uppercase tracking-widest text-sm">My Leagues</span>
+</a>
+</nav>
+</div>
+<div class="mt-auto p-8">
+<div class="bg-surface-container rounded p-4 border border-white/5">
+<p class="text-[10px] font-label text-gray-500 uppercase tracking-widest mb-2">Connected Service</p>
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-[#00E5FF]/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-[#00E5FF] text-sm" data-icon="account_circle" style="font-variation-settings: 'FILL' 1;">account_circle</span>
+</div>
+<div>
+<p class="text-xs font-bold text-white uppercase tracking-tighter">AGS_COMMANDER_01</p>
+<p class="text-[10px] text-gray-500">Latency: 14ms</p>
+</div>
+</div>
+</div>
+</div>
+</aside>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full flex justify-around items-center px-4 pb-safe bg-[#131313]/90 backdrop-blur-xl border-t border-white/5 h-16 z-50">
+<button class="flex flex-col items-center justify-center text-[#00E5FF] scale-110 active:opacity-80 transition-all">
+<span class="material-symbols-outlined" data-icon="travel_explore">travel_explore</span>
+<span class="font-['Space_Grotesk'] text-[10px] uppercase tracking-wider">Explore</span>
+</button>
+<button class="flex flex-col items-center justify-center text-gray-500 hover:text-white active:opacity-80 transition-all">
+<span class="material-symbols-outlined" data-icon="manage_search">manage_search</span>
+<span class="font-['Space_Grotesk'] text-[10px] uppercase tracking-wider">Search</span>
+</button>
+<button class="flex flex-col items-center justify-center text-gray-500 hover:text-white active:opacity-80 transition-all">
+<span class="material-symbols-outlined" data-icon="filter_list">filter_list</span>
+<span class="font-['Space_Grotesk'] text-[10px] uppercase tracking-wider">Filters</span>
+</button>
+<button class="flex flex-col items-center justify-center text-gray-500 hover:text-white active:opacity-80 transition-all">
+<span class="material-symbols-outlined" data-icon="account_circle">account_circle</span>
+<span class="font-['Space_Grotesk'] text-[10px] uppercase tracking-wider">Profile</span>
+</button>
+</nav>
+</body></html>

@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AGS Global Arena | System Command</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "secondary": "#bdf4ff",
+                        "surface-container-high": "#2a2a2a",
+                        "on-primary-fixed": "#1c1b1b",
+                        "tertiary-fixed-dim": "#e9c400",
+                        "surface-container-lowest": "#0e0e0e",
+                        "error": "#ffb4ab",
+                        "inverse-primary": "#5f5e5e",
+                        "on-secondary": "#00363d",
+                        "tertiary": "#e9c400",
+                        "surface-tint": "#c8c6c5",
+                        "primary": "#c8c6c5",
+                        "surface-container-highest": "#353534",
+                        "primary-fixed-dim": "#c8c6c5",
+                        "secondary-fixed-dim": "#00daf3",
+                        "background": "#131313",
+                        "tertiary-container": "#c9a900",
+                        "surface-container": "#201f1f",
+                        "secondary-container": "#00e3fd",
+                        "on-surface": "#e5e2e1",
+                        "surface-container-low": "#1c1b1b",
+                        "on-primary-container": "#7e7d7d",
+                        "on-secondary-container": "#00616d",
+                        "error-container": "#93000a",
+                        "surface-variant": "#353534",
+                        "on-background": "#e5e2e1",
+                        "on-surface-variant": "#c4c7c7",
+                        "on-tertiary-fixed": "#221b00",
+                        "on-primary-fixed-variant": "#474646",
+                        "inverse-surface": "#e5e2e1",
+                        "on-error": "#690005",
+                        "primary-fixed": "#e5e2e1",
+                        "inverse-on-surface": "#313030",
+                        "on-secondary-fixed-variant": "#004f58",
+                        "on-secondary-fixed": "#001f24",
+                        "outline": "#8e9192",
+                        "tertiary-fixed": "#ffe16d",
+                        "primary-container": "#121212",
+                        "outline-variant": "#444748",
+                        "secondary-fixed": "#9cf0ff",
+                        "on-primary": "#313030",
+                        "on-error-container": "#ffdad6",
+                        "on-tertiary-fixed-variant": "#544600",
+                        "surface-dim": "#131313",
+                        "on-tertiary-container": "#4c3f00",
+                        "on-tertiary": "#3a3000",
+                        "surface-bright": "#393939",
+                        "surface": "#131313"
+                    },
+                    fontFamily: {
+                        "headline": ["Space Grotesk"],
+                        "body": ["Inter"],
+                        "label": ["Space Grotesk"]
+                    },
+                    borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Inter', sans-serif; }
+        .font-headline { font-family: 'Space Grotesk', sans-serif; }
+        .custom-glass {
+            background: rgba(53, 53, 52, 0.6);
+            backdrop-filter: blur(12px);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen pb-24 md:pb-0">
+<!-- TopAppBar -->
+<header class="fixed top-0 left-0 w-full z-[100] bg-[#131313] shadow-[0_0_20px_rgba(0,229,255,0.04)]">
+<div class="flex justify-between items-center w-full px-6 py-4">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[#00E5FF]">sensors</span>
+<h1 class="text-xl font-bold tracking-tighter text-[#00E5FF] font-headline uppercase">SYSTEM COMMAND</h1>
+</div>
+<div class="hidden md:flex items-center gap-8">
+<nav class="flex gap-6 font-['Space_Grotesk'] uppercase tracking-wider text-sm">
+<a class="text-[#00E5FF]" href="#">MONITOR</a>
+<a class="text-gray-500 hover:bg-[#2A2A2A] transition-colors duration-200 px-2 py-1 rounded" href="#">INCIDENTS</a>
+<a class="text-gray-500 hover:bg-[#2A2A2A] transition-colors duration-200 px-2 py-1 rounded" href="#">LATENCY</a>
+<a class="text-gray-500 hover:bg-[#2A2A2A] transition-colors duration-200 px-2 py-1 rounded" href="#">NODES</a>
+</nav>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[#00E5FF] cursor-pointer active:scale-95 duration-100">settings_input_component</span>
+</div>
+</div>
+</div>
+<div class="bg-[#1C1B1B] h-[2px] w-full"></div>
+</header>
+<main class="pt-24 px-6 max-w-[1600px] mx-auto grid grid-cols-1 md:grid-cols-12 gap-6 pb-12">
+<!-- Global Status Hero - Left Gutter Asymmetry -->
+<section class="md:col-span-4 space-y-6">
+<div class="bg-surface-container-low p-8 rounded-lg border-l-4 border-secondary shadow-lg relative overflow-hidden">
+<div class="absolute top-0 right-0 p-4 opacity-10">
+<span class="material-symbols-outlined text-9xl">language</span>
+</div>
+<label class="font-headline text-[10px] tracking-[0.2em] uppercase text-outline mb-2 block">Global Uptime Status</label>
+<div class="flex items-baseline gap-2">
+<h2 class="text-7xl font-headline font-bold text-secondary">99.99%</h2>
+<span class="text-secondary-fixed-dim font-headline text-xl">NOMINAL</span>
+</div>
+<p class="text-on-surface-variant text-sm mt-4 font-body max-w-xs">Global infrastructure is currently operating within optimal parameters. All multi-tenant shards are synchronized.</p>
+<div class="mt-8 flex gap-4">
+<div class="flex-1 bg-surface-container-lowest p-3 rounded border border-outline-variant/10">
+<span class="block font-headline text-[10px] text-outline uppercase">Active Sessions</span>
+<span class="text-xl font-headline font-bold text-on-surface">1.2M</span>
+</div>
+<div class="flex-1 bg-surface-container-lowest p-3 rounded border border-outline-variant/10">
+<span class="block font-headline text-[10px] text-outline uppercase">Requests/Sec</span>
+<span class="text-xl font-headline font-bold text-on-surface">42.8K</span>
+</div>
+</div>
+</div>
+<!-- Security Protocols -->
+<div class="bg-surface-container p-6 rounded-lg space-y-4">
+<h3 class="font-headline text-xs font-bold tracking-widest text-outline uppercase flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">shield</span> Security Protocols
+                </h3>
+<div class="space-y-3">
+<div class="flex justify-between items-center p-3 bg-surface-container-low rounded">
+<span class="font-body text-sm text-on-surface">Network Firewall</span>
+<span class="bg-secondary/10 text-secondary text-[10px] px-2 py-0.5 font-headline font-bold rounded">ACTIVE</span>
+</div>
+<div class="flex justify-between items-center p-3 bg-surface-container-low rounded">
+<span class="font-body text-sm text-on-surface">AES-256 Encryption</span>
+<span class="bg-secondary/10 text-secondary text-[10px] px-2 py-0.5 font-headline font-bold rounded">ENABLED</span>
+</div>
+<div class="flex justify-between items-center p-3 bg-surface-container-low rounded">
+<span class="font-body text-sm text-on-surface">Intrusion Detection</span>
+<span class="bg-tertiary/10 text-tertiary text-[10px] px-2 py-0.5 font-headline font-bold rounded">SCANNING</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Main Tactical Board - Center -->
+<section class="md:col-span-8 space-y-6">
+<!-- Regional Infrastructure Map (Visual Block) -->
+<div class="bg-surface-container-low rounded-lg p-6 relative min-h-[400px]">
+<div class="flex justify-between items-start mb-6">
+<div>
+<h3 class="font-headline text-lg font-bold text-on-surface uppercase tracking-tight">Infrastructure Topology</h3>
+<p class="text-xs text-outline font-body">Real-time node distribution and operational health.</p>
+</div>
+<div class="flex gap-2">
+<span class="flex items-center gap-1.5 text-[10px] font-headline text-secondary"><span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> ACTIVE</span>
+<span class="flex items-center gap-1.5 text-[10px] font-headline text-tertiary"><span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span> PENDING</span>
+<span class="flex items-center gap-1.5 text-[10px] font-headline text-error"><span class="w-1.5 h-1.5 rounded-full bg-error"></span> ALERT</span>
+</div>
+</div>
+<!-- Map Visualization Placeholder -->
+<div class="relative w-full h-[300px] bg-surface-container-lowest rounded overflow-hidden">
+<img class="w-full h-full object-cover opacity-20 grayscale" data-alt="Dark abstract world map with digital network nodes" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA7yHgQXvW0tIAmS4c1iPALI2of9J4tngy81DSLzlJH-EIRkxDUn4lJ5H7CLrAv1FcME9eCkJbgS3jRBoS8-y9gZ5zCwGYBwU9GIbY_S_TZr1eN7cy7HRep5mbtrtWQV_w5vF2uJ14NcKO7V2lWpDVjysyy0IXuGRTfDdjhpZPoefhIqWNJ7hbBI-7Vsq-gBLNFv1BgiPTnjAXfu74_XYzuZhl0Cg4j2ZEXL5WYYSvhwm7KkXX3KjhijLoTqv3CBsnnPBpHtRsu5Ynw"/>
+<!-- Node Badges - Absolute Positioned Tactical Chips -->
+<div class="absolute top-[30%] left-[20%] group">
+<div class="flex items-center gap-2 bg-surface-container-high/80 backdrop-blur px-2 py-1 rounded border border-secondary/20 cursor-crosshair">
+<span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
+<span class="font-headline text-[10px] font-bold text-secondary">US-EAST-01</span>
+</div>
+</div>
+<div class="absolute top-[25%] left-[45%] group">
+<div class="flex items-center gap-2 bg-surface-container-high/80 backdrop-blur px-2 py-1 rounded border border-secondary/20">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span class="font-headline text-[10px] font-bold text-secondary">EU-WEST-02</span>
+</div>
+</div>
+<div class="absolute bottom-[40%] right-[25%] group">
+<div class="flex items-center gap-2 bg-surface-container-high/80 backdrop-blur px-2 py-1 rounded border border-tertiary/20">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+<span class="font-headline text-[10px] font-bold text-tertiary">APAC-SOUTH-01</span>
+</div>
+</div>
+<div class="absolute top-[55%] left-[60%] group">
+<div class="flex items-center gap-2 bg-surface-container-high/80 backdrop-blur px-2 py-1 rounded border border-secondary/20">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span class="font-headline text-[10px] font-bold text-secondary">ME-CENTRAL-01</span>
+</div>
+</div>
+</div>
+<!-- Latency Grid Overlay -->
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-6">
+<div class="bg-surface-container p-3 rounded">
+<span class="block font-headline text-[10px] text-outline uppercase">EU-West</span>
+<span class="text-xl font-headline font-bold text-secondary">12ms</span>
+</div>
+<div class="bg-surface-container p-3 rounded">
+<span class="block font-headline text-[10px] text-outline uppercase">US-East</span>
+<span class="text-xl font-headline font-bold text-secondary">24ms</span>
+</div>
+<div class="bg-surface-container p-3 rounded">
+<span class="block font-headline text-[10px] text-outline uppercase">APAC-South</span>
+<span class="text-xl font-headline font-bold text-tertiary">142ms</span>
+</div>
+<div class="bg-surface-container p-3 rounded">
+<span class="block font-headline text-[10px] text-outline uppercase">SA-East</span>
+<span class="text-xl font-headline font-bold text-secondary">88ms</span>
+</div>
+</div>
+</div>
+<!-- Performance Meters - Bento Grid -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- CPU -->
+<div class="bg-surface-container p-5 rounded-lg border-t-2 border-secondary/30">
+<div class="flex justify-between items-center mb-4">
+<span class="font-headline text-[10px] font-bold text-outline uppercase tracking-widest">CPU LOAD</span>
+<span class="text-secondary font-headline font-bold text-sm">34%</span>
+</div>
+<div class="w-full h-1.5 bg-surface-container-lowest rounded-full overflow-hidden">
+<div class="h-full bg-secondary w-[34%]"></div>
+</div>
+<div class="mt-4 flex justify-between text-[9px] font-headline text-on-surface-variant/60">
+<span>CORE 0-31</span>
+<span>STABLE</span>
+</div>
+</div>
+<!-- Memory -->
+<div class="bg-surface-container p-5 rounded-lg border-t-2 border-secondary/30">
+<div class="flex justify-between items-center mb-4">
+<span class="font-headline text-[10px] font-bold text-outline uppercase tracking-widest">MEMORY</span>
+<span class="text-secondary font-headline font-bold text-sm">62%</span>
+</div>
+<div class="w-full h-1.5 bg-surface-container-lowest rounded-full overflow-hidden">
+<div class="h-full bg-secondary w-[62%]"></div>
+</div>
+<div class="mt-4 flex justify-between text-[9px] font-headline text-on-surface-variant/60">
+<span>128GB ECC</span>
+<span>CACHING</span>
+</div>
+</div>
+<!-- Database -->
+<div class="bg-surface-container p-5 rounded-lg border-t-2 border-tertiary/30">
+<div class="flex justify-between items-center mb-4">
+<span class="font-headline text-[10px] font-bold text-outline uppercase tracking-widest">DB LATENCY</span>
+<span class="text-tertiary font-headline font-bold text-sm">4.2ms</span>
+</div>
+<div class="w-full h-1.5 bg-surface-container-lowest rounded-full overflow-hidden">
+<div class="h-full bg-tertiary w-[15%]"></div>
+</div>
+<div class="mt-4 flex justify-between text-[9px] font-headline text-on-surface-variant/60">
+<span>PSQL-CLUSTER</span>
+<span>OPTIMIZED</span>
+</div>
+</div>
+</div>
+<!-- Incident Log -->
+<div class="bg-surface-container-low rounded-lg overflow-hidden">
+<div class="px-6 py-4 bg-surface-container-high/50 flex justify-between items-center">
+<h3 class="font-headline text-xs font-bold tracking-[0.2em] text-on-surface uppercase">Active Incident Log</h3>
+<span class="material-symbols-outlined text-outline text-lg">history</span>
+</div>
+<div class="divide-y divide-outline-variant/10">
+<!-- Log Item 1 -->
+<div class="px-6 py-4 flex flex-col md:flex-row md:items-center justify-between gap-4 hover:bg-surface-container transition-colors">
+<div class="flex items-center gap-4">
+<div class="bg-error/10 p-2 rounded">
+<span class="material-symbols-outlined text-error text-xl">warning</span>
+</div>
+<div>
+<span class="block text-xs font-headline font-bold text-on-surface uppercase">Connectivity Spike - EU North</span>
+<span class="text-[10px] font-mono text-outline">TXID: 8829-AF-001</span>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<div class="text-right">
+<span class="block text-[10px] font-headline text-outline uppercase">Severity</span>
+<span class="text-xs font-bold text-error uppercase">Critical</span>
+</div>
+<div class="text-right">
+<span class="block text-[10px] font-headline text-outline uppercase">Time</span>
+<span class="text-xs font-bold text-on-surface">14:22:01 UTC</span>
+</div>
+<span class="material-symbols-outlined text-outline cursor-pointer">chevron_right</span>
+</div>
+</div>
+<!-- Log Item 2 -->
+<div class="px-6 py-4 flex flex-col md:flex-row md:items-center justify-between gap-4 hover:bg-surface-container transition-colors">
+<div class="flex items-center gap-4">
+<div class="bg-tertiary/10 p-2 rounded">
+<span class="material-symbols-outlined text-tertiary text-xl">info</span>
+</div>
+<div>
+<span class="block text-xs font-headline font-bold text-on-surface uppercase">Sharding Maintenance Scheduled</span>
+<span class="text-[10px] font-mono text-outline">TXID: 9012-MA-042</span>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<div class="text-right">
+<span class="block text-[10px] font-headline text-outline uppercase">Severity</span>
+<span class="text-xs font-bold text-tertiary uppercase">Low</span>
+</div>
+<div class="text-right">
+<span class="block text-[10px] font-headline text-outline uppercase">Time</span>
+<span class="text-xs font-bold text-on-surface">11:05:44 UTC</span>
+</div>
+<span class="material-symbols-outlined text-outline cursor-pointer">chevron_right</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-6 pt-2 bg-[#131313]/90 backdrop-blur-xl border-t border-[#2A2A2A]/15">
+<a class="flex flex-col items-center justify-center text-[#00E5FF] bg-[#1C1B1B] rounded-md px-3 py-1 transition-all duration-300 ease-out" href="#">
+<span class="material-symbols-outlined">analytics</span>
+<span class="font-['Space_Grotesk'] font-bold text-[10px] tracking-[0.05em] uppercase">MONITOR</span>
+</a>
+<a class="flex flex-col items-center justify-center text-gray-400 opacity-60 hover:opacity-100 hover:text-[#00E5FF] transition-all duration-300 ease-out" href="#">
+<span class="material-symbols-outlined">warning</span>
+<span class="font-['Space_Grotesk'] font-bold text-[10px] tracking-[0.05em] uppercase">INCIDENTS</span>
+</a>
+<a class="flex flex-col items-center justify-center text-gray-400 opacity-60 hover:opacity-100 hover:text-[#00E5FF] transition-all duration-300 ease-out" href="#">
+<span class="material-symbols-outlined">speed</span>
+<span class="font-['Space_Grotesk'] font-bold text-[10px] tracking-[0.05em] uppercase">LATENCY</span>
+</a>
+<a class="flex flex-col items-center justify-center text-gray-400 opacity-60 hover:opacity-100 hover:text-[#00E5FF] transition-all duration-300 ease-out" href="#">
+<span class="material-symbols-outlined">hub</span>
+<span class="font-['Space_Grotesk'] font-bold text-[10px] tracking-[0.05em] uppercase">NODES</span>
+</a>
+</nav>
+<!-- Floating Background Elements -->
+<div class="fixed top-0 left-0 w-full h-full pointer-events-none z-[-1] opacity-20">
+<div class="absolute top-[-10%] right-[-10%] w-[500px] h-[500px] bg-secondary/5 rounded-full blur-[120px]"></div>
+<div class="absolute bottom-[-10%] left-[-10%] w-[400px] h-[400px] bg-tertiary/5 rounded-full blur-[100px]"></div>
+</div>
+</body></html>

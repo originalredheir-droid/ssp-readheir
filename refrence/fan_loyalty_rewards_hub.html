@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>REWARDS COMMAND | AGS Global Arena</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-tertiary-fixed": "#221b00",
+                        "on-tertiary-container": "#4c3f00",
+                        "primary": "#c8c6c5",
+                        "error-container": "#93000a",
+                        "on-secondary-fixed-variant": "#004f58",
+                        "primary-fixed-dim": "#c8c6c5",
+                        "inverse-on-surface": "#313030",
+                        "surface-container-high": "#2a2a2a",
+                        "tertiary-fixed-dim": "#e9c400",
+                        "surface-bright": "#393939",
+                        "primary-fixed": "#e5e2e1",
+                        "on-error": "#690005",
+                        "on-primary-fixed-variant": "#474646",
+                        "secondary-fixed-dim": "#00daf3",
+                        "secondary-fixed": "#9cf0ff",
+                        "on-tertiary-fixed-variant": "#544600",
+                        "on-background": "#e5e2e1",
+                        "tertiary-fixed": "#ffe16d",
+                        "surface-container-highest": "#353534",
+                        "on-surface-variant": "#c4c7c7",
+                        "surface-container-lowest": "#0e0e0e",
+                        "on-secondary-container": "#00616d",
+                        "primary-container": "#121212",
+                        "tertiary": "#e9c400",
+                        "surface-tint": "#c8c6c5",
+                        "secondary": "#bdf4ff",
+                        "on-secondary": "#00363d",
+                        "inverse-primary": "#5f5e5e",
+                        "surface-dim": "#131313",
+                        "surface-container": "#201f1f",
+                        "on-error-container": "#ffdad6",
+                        "tertiary-container": "#c9a900",
+                        "surface": "#131313",
+                        "error": "#ffb4ab",
+                        "background": "#131313",
+                        "outline-variant": "#444748",
+                        "outline": "#8e9192",
+                        "on-secondary-fixed": "#001f24",
+                        "on-surface": "#e5e2e1",
+                        "on-tertiary": "#3a3000",
+                        "on-primary-fixed": "#1c1b1b",
+                        "inverse-surface": "#e5e2e1",
+                        "surface-variant": "#353534",
+                        "on-primary-container": "#7e7d7d",
+                        "secondary-container": "#00e3fd",
+                        "on-primary": "#313030",
+                        "surface-container-low": "#1c1b1b"
+                    },
+                    fontFamily: {
+                        "headline": ["Space Grotesk"],
+                        "body": ["Inter"],
+                        "label": ["Space Grotesk"]
+                    },
+                    borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #131313;
+            color: #e5e2e1;
+            font-family: 'Inter', sans-serif;
+        }
+        .header-anchor {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+        .glass-panel {
+            background: rgba(53, 53, 52, 0.6);
+            backdrop-filter: blur(12px);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background min-h-screen pb-24">
+<!-- TopAppBar -->
+<header class="flex justify-between items-center px-6 py-4 w-full fixed top-0 z-50 bg-[#131313] dark:bg-[#131313] shadow-[0_0_32px_rgba(0,229,255,0.04)]">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-lg overflow-hidden border border-secondary-container/20">
+<img alt="User Avatar" class="w-full h-full object-cover" data-alt="User pro-tier avatar with neon accents" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAVMK9pBrw29FrK9cjFeIZ22jROtH4sQHfjxE8dbmzAZjm6yvjZxrAmSzMgaBfJYqV-qlZ9WqkYxU9LsUXv0QRtcu0wYRgthWr5MeNq84-oIZAmbB1SpikAs1Y23g1vZGxyEMqc6Xit0aNLZe4pV6AxQMjvVZIB_u3uur-3FCaTpMjPPC0HORqEO7tDnN5nnKFdBgBImukUIRGPFKdBh7W4FEJtBM6hnqVSWr3b90sYslPpwVBkOuTwdya72BCB2CnUe8IwBPGNo55J"/>
+</div>
+<h1 class="font-['Space_Grotesk'] uppercase tracking-[0.05em] font-bold text-[#00E5FF]">COMMAND CENTER</h1>
+</div>
+<div class="flex items-center gap-4">
+<button class="material-symbols-outlined text-[#00E5FF] hover:bg-[#2A2A2A] transition-colors duration-200 p-2 rounded-md active:scale-95 transition-transform">military_tech</button>
+</div>
+<div class="absolute bottom-0 left-0 bg-[#1C1B1B] h-[4px] w-full"></div>
+</header>
+<main class="pt-24 px-6 max-w-7xl mx-auto space-y-8">
+<!-- Hero: Arena Points & Loyalty Status -->
+<section class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+<!-- Point Balance Card -->
+<div class="lg:col-span-5 bg-surface-container-low p-8 rounded-lg flex flex-col justify-between border-l-4 border-secondary-container relative overflow-hidden group">
+<div class="relative z-10">
+<span class="font-label text-[10px] uppercase tracking-widest text-on-surface-variant mb-2 block">CURRENT ASSETS</span>
+<h2 class="font-headline text-5xl font-black text-secondary-container tracking-tighter">12,450</h2>
+<p class="font-label text-sm font-bold text-secondary-container/80 mt-1">ARENA POINTS</p>
+</div>
+<div class="mt-8 relative z-10">
+<button class="bg-secondary-container text-on-secondary-fixed font-label font-bold text-xs py-3 px-6 rounded-md hover:bg-secondary-fixed-dim transition-all active:scale-95 uppercase tracking-wider">Redeem Assets</button>
+</div>
+<!-- Tactical Decoration -->
+<div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+<span class="material-symbols-outlined text-9xl">analytics</span>
+</div>
+</div>
+<!-- Tier Status Card -->
+<div class="lg:col-span-7 bg-surface-container p-8 rounded-lg relative border border-outline-variant/15">
+<div class="flex justify-between items-start mb-6">
+<div>
+<span class="font-label text-[10px] uppercase tracking-widest text-tertiary mb-1 block">RANKING SYSTEM</span>
+<h3 class="font-headline text-3xl font-bold text-on-surface">LEGENDARY STATUS</h3>
+</div>
+<div class="bg-tertiary/10 p-3 rounded-lg border border-tertiary/30">
+<span class="material-symbols-outlined text-tertiary text-3xl" style="font-variation-settings: 'FILL' 1;">workspace_premium</span>
+</div>
+</div>
+<div class="space-y-3">
+<div class="flex justify-between items-end font-label text-[10px] tracking-widest uppercase">
+<span class="text-on-surface-variant">NEXT TIER: APEX COMMANDER</span>
+<span class="text-tertiary">2,550 PTS REMAINING</span>
+</div>
+<div class="h-2 w-full bg-surface-container-lowest rounded-full overflow-hidden">
+<div class="h-full bg-gradient-to-r from-tertiary to-tertiary-container w-[78%]"></div>
+</div>
+<p class="text-xs text-on-surface-variant font-body leading-relaxed max-w-md">
+                        Maintain legendary status to unlock exclusive match-day rewards and priority access to elite global brackets.
+                    </p>
+</div>
+</div>
+</section>
+<!-- Rewards Catalog (Bento Grid) -->
+<section>
+<div class="flex justify-between items-end mb-6">
+<div>
+<h4 class="font-headline text-2xl font-bold uppercase tracking-tight">REWARDS CATALOG</h4>
+<p class="text-xs text-on-surface-variant font-label tracking-wide">REQUISITION ELITE ASSETS</p>
+</div>
+<button class="text-secondary-container text-xs font-label font-bold uppercase hover:underline">View All Gear</button>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
+<!-- Large Featured Item -->
+<div class="col-span-2 row-span-2 bg-surface-container-lowest rounded-lg overflow-hidden group border border-outline-variant/10">
+<div class="aspect-square relative overflow-hidden bg-surface-container-highest">
+<img alt="Elite Jersey" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="Limited Edition tactical jersey with gold patterns" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAeq58cSX2rPHAKZBxxX0Kf5aLOp_i9FoU-GUVFTAQc2lVvBT-Y7bVetGSxHnGSEn0OOkAEnLFYRXg0Npt2hsU0Gqto4C1iIlxJ4d0y8PfwmZro0iKCjtUT9-vvss5CUFuwtZcki1WBDVUzptNpK09CxXwR9yAg5WeifFBEfP69GXnGZ-N8QopF1SHkgRboZd4oo23TvxnP0fe6kELa0jj52vVQCUBgiE3OkBrGEL6sAT20J40zdIs5Ht9WA8YM71SWhkh1LNe7lq_F"/>
+<div class="absolute top-3 left-3 bg-tertiary text-on-tertiary-fixed text-[10px] font-bold px-2 py-1 rounded-sm">LIMITED</div>
+</div>
+<div class="p-4 space-y-2">
+<h5 class="font-headline font-bold text-lg leading-tight">LIMITED EDITION JERSEYS</h5>
+<div class="flex items-center gap-2 text-tertiary">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">stars</span>
+<span class="font-label font-bold text-sm tracking-widest">8,500 PTS</span>
+</div>
+</div>
+</div>
+<!-- Reward Item 2 -->
+<div class="col-span-2 bg-surface-container rounded-lg p-4 flex gap-4 border border-outline-variant/10 hover:bg-surface-container-high transition-colors">
+<div class="w-20 h-20 bg-surface-container-lowest rounded overflow-hidden flex-shrink-0">
+<img alt="Match Pass" class="w-full h-full object-cover" data-alt="VIP match pass with glowing digital interface" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBsQ_SBRBAsWawrldVPN6FmIN9qso0v10S3eqdZ076sq-BNLrFCa0nT7I4jJVV3UON583Nh6JbuZPZdK7FLiEDFl-drzXnpFc6zeMYrm6bcYOia35LJ2pqRxQcs4FqdeDGXmZs5R-qeeDpkH8dtkT8GNfxElG13GB3-7CGzRmKrkWG_ayAfydmN85Bp9A2Wp6Mnz4zs2NVqqFS0tzgBYSSAtEVdj26xylzkLjo3JISYMflgHGgFFFzAWnmHoaNI5oAzQZ7YX3iENDly"/>
+</div>
+<div class="flex flex-col justify-center">
+<h5 class="font-headline font-bold text-sm uppercase">VIP MATCH PASSES</h5>
+<div class="flex items-center gap-1 text-tertiary mt-1">
+<span class="font-label font-bold text-xs">5,000 PTS</span>
+</div>
+<button class="mt-2 text-[10px] font-bold text-secondary-container uppercase tracking-widest w-fit">Redeem</button>
+</div>
+</div>
+<!-- Reward Item 3 -->
+<div class="col-span-2 bg-surface-container rounded-lg p-4 flex gap-4 border border-outline-variant/10 hover:bg-surface-container-high transition-colors">
+<div class="w-20 h-20 bg-surface-container-lowest rounded overflow-hidden flex-shrink-0">
+<img alt="Gear Skin" class="w-full h-full object-cover" data-alt="High-tech glowing equipment skin for in-game characters" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD_gwlaShWwfUsrTqoJWVHM6kqb-4IdNtliV92r-Z19uei9iytVJPn9OHnUG1GolsY2pSn6cuavA8i2QB6E1DoK51bLatajAJbDVFB-2nXPbxHZ0Yu9UDTqryYDoXt8dJo8LZ8Jyo1S4k4ZJCjesXYVf86pb1mP-lxl1YYDPtx_FxYOHJZJ5nUKLBhsHuVrOjlacSJRCia1Vvk7DTMmzpmYpu4xibJC4kp2iKHgbMjk0u0cJQhmNul6-5NlST6X2KyydDjJ9V68s4Vx"/>
+</div>
+<div class="flex flex-col justify-center">
+<h5 class="font-headline font-bold text-sm uppercase">ELITE GEAR SKINS</h5>
+<div class="flex items-center gap-1 text-tertiary mt-1">
+<span class="font-label font-bold text-xs">3,200 PTS</span>
+</div>
+<button class="mt-2 text-[10px] font-bold text-secondary-container uppercase tracking-widest w-fit">Redeem</button>
+</div>
+</div>
+<!-- Reward Item 4 (Small) -->
+<div class="col-span-1 bg-surface-container-low rounded-lg p-3 text-center border border-outline-variant/5">
+<span class="material-symbols-outlined text-on-surface-variant mb-2">confirmation_number</span>
+<h6 class="text-[10px] font-bold uppercase tracking-tight block mb-1">RAFFLE TICKET</h6>
+<span class="text-tertiary font-label font-bold text-xs">250 PTS</span>
+</div>
+<!-- Reward Item 5 (Small) -->
+<div class="col-span-1 bg-surface-container-low rounded-lg p-3 text-center border border-outline-variant/5">
+<span class="material-symbols-outlined text-on-surface-variant mb-2">bolt</span>
+<h6 class="text-[10px] font-bold uppercase tracking-tight block mb-1">XP BOOSTER</h6>
+<span class="text-tertiary font-label font-bold text-xs">750 PTS</span>
+</div>
+<!-- Reward Item 6 (Small) -->
+<div class="col-span-1 bg-surface-container-low rounded-lg p-3 text-center border border-outline-variant/5">
+<span class="material-symbols-outlined text-on-surface-variant mb-2">badge</span>
+<h6 class="text-[10px] font-bold uppercase tracking-tight block mb-1">CUSTOM TAG</h6>
+<span class="text-tertiary font-label font-bold text-xs">1,200 PTS</span>
+</div>
+<!-- Reward Item 7 (Small) -->
+<div class="col-span-1 bg-surface-container-low rounded-lg p-3 text-center border border-outline-variant/5">
+<span class="material-symbols-outlined text-on-surface-variant mb-2">celebration</span>
+<h6 class="text-[10px] font-bold uppercase tracking-tight block mb-1">EMOTE PACK</h6>
+<span class="text-tertiary font-label font-bold text-xs">1,500 PTS</span>
+</div>
+</div>
+</section>
+<!-- Operational Challenges -->
+<section class="pb-12">
+<div class="mb-6">
+<h4 class="font-headline text-2xl font-bold uppercase tracking-tight">OPERATIONAL CHALLENGES</h4>
+<p class="text-xs text-on-surface-variant font-label tracking-wide">ACTIVE MISSION PARAMETERS</p>
+</div>
+<div class="space-y-3">
+<!-- Challenge 1 -->
+<div class="bg-surface-container flex items-center justify-between p-4 rounded-md border-l-2 border-secondary-container/40">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 bg-surface-container-lowest rounded flex items-center justify-center text-secondary-container">
+<span class="material-symbols-outlined">live_tv</span>
+</div>
+<div>
+<h6 class="font-headline font-bold text-sm tracking-wide">WATCH 5 LIVE MATCHES</h6>
+<p class="text-xs text-on-surface-variant font-body">Current progress: 3/5</p>
+</div>
+</div>
+<div class="text-right">
+<span class="block font-label font-bold text-secondary-container text-xs tracking-widest">+500 PTS</span>
+<div class="w-24 h-1 bg-surface-container-lowest mt-1 rounded-full overflow-hidden">
+<div class="h-full bg-secondary-container w-3/5"></div>
+</div>
+</div>
+</div>
+<!-- Challenge 2 -->
+<div class="bg-surface-container flex items-center justify-between p-4 rounded-md border-l-2 border-outline-variant/40">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 bg-surface-container-lowest rounded flex items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined">person_add</span>
+</div>
+<div>
+<h6 class="font-headline font-bold text-sm tracking-wide">RECRUIT A FRIEND</h6>
+<p class="text-xs text-on-surface-variant font-body">Deployment successful upon verification</p>
+</div>
+</div>
+<div class="text-right">
+<span class="block font-label font-bold text-secondary-container text-xs tracking-widest">+1,200 PTS</span>
+<button class="mt-1 text-[10px] font-bold text-on-surface-variant uppercase border border-outline-variant px-2 py-0.5 rounded">Invite</button>
+</div>
+</div>
+<!-- Challenge 3 -->
+<div class="bg-surface-container flex items-center justify-between p-4 rounded-md border-l-2 border-outline-variant/40">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 bg-surface-container-lowest rounded flex items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined">inventory_2</span>
+</div>
+<div>
+<h6 class="font-headline font-bold text-sm tracking-wide">EQUIP ELITE GEAR</h6>
+<p class="text-xs text-on-surface-variant font-body">Customize avatar in Command Center</p>
+</div>
+</div>
+<div class="text-right">
+<span class="block font-label font-bold text-secondary-container text-xs tracking-widest">+300 PTS</span>
+<span class="material-symbols-outlined text-error text-lg mt-1">lock</span>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full z-50 flex justify-around items-center px-4 py-3 pb-safe bg-[#131313] dark:bg-[#131313] border-t border-[#2A2A2A]/15">
+<a class="flex flex-col items-center justify-center text-gray-400 hover:text-white transition-all active:opacity-80" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-['Space_Grotesk'] text-[10px] uppercase font-bold tracking-widest mt-1">HUB</span>
+</a>
+<a class="flex flex-col items-center justify-center text-gray-400 hover:text-white transition-all active:opacity-80" href="#">
+<span class="material-symbols-outlined">sports_kabaddi</span>
+<span class="font-['Space_Grotesk'] text-[10px] uppercase font-bold tracking-widest mt-1">MATCHES</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#00E5FF] bg-[#201F1F] rounded-md px-3 py-1 active:opacity-80" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">redeem</span>
+<span class="font-['Space_Grotesk'] text-[10px] uppercase font-bold tracking-widest mt-0.5">REWARDS</span>
+</a>
+<a class="flex flex-col items-center justify-center text-gray-400 hover:text-white transition-all active:opacity-80" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="font-['Space_Grotesk'] text-[10px] uppercase font-bold tracking-widest mt-1">PROFILE</span>
+</a>
+</nav>
+</body></html>

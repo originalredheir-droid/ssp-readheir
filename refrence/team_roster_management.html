@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AGS Global Arena - Roster Command</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;900&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              colors: {
+                "tertiary-container": "#c9a900",
+                "surface-tint": "#c8c6c5",
+                "on-primary-container": "#7e7d7d",
+                "inverse-on-surface": "#313030",
+                "outline": "#8e9192",
+                "on-error": "#690005",
+                "tertiary": "#e9c400",
+                "error": "#ffb4ab",
+                "tertiary-fixed": "#ffe16d",
+                "on-surface": "#e5e2e1",
+                "error-container": "#93000a",
+                "on-secondary-fixed": "#001f24",
+                "on-tertiary-fixed-variant": "#544600",
+                "surface-variant": "#353534",
+                "on-primary-fixed": "#1c1b1b",
+                "outline-variant": "#444748",
+                "on-primary-fixed-variant": "#474646",
+                "secondary-fixed-dim": "#00daf3",
+                "secondary-fixed": "#9cf0ff",
+                "primary": "#c8c6c5",
+                "on-tertiary": "#3a3000",
+                "surface-container-lowest": "#0e0e0e",
+                "background": "#131313",
+                "primary-fixed-dim": "#c8c6c5",
+                "surface-container-low": "#1c1b1b",
+                "primary-container": "#121212",
+                "surface-dim": "#131313",
+                "primary-fixed": "#e5e2e1",
+                "tertiary-fixed-dim": "#e9c400",
+                "on-secondary-container": "#00616d",
+                "on-primary": "#313030",
+                "on-tertiary-fixed": "#221b00",
+                "surface-container-highest": "#353534",
+                "secondary-container": "#00e3fd",
+                "on-error-container": "#ffdad6",
+                "surface-bright": "#393939",
+                "secondary": "#bdf4ff",
+                "inverse-surface": "#e5e2e1",
+                "surface-container": "#201f1f",
+                "inverse-primary": "#5f5e5e",
+                "on-secondary-fixed-variant": "#004f58",
+                "surface-container-high": "#2a2a2a",
+                "surface": "#131313",
+                "on-background": "#e5e2e1",
+                "on-secondary": "#00363d",
+                "on-tertiary-container": "#4c3f00",
+                "on-surface-variant": "#c4c7c7"
+              },
+              fontFamily: {
+                "headline": ["Space Grotesk"],
+                "body": ["Inter"],
+                "label": ["Space Grotesk"]
+              },
+              borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+            },
+          },
+        }
+      </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        body {
+            background-color: #131313;
+            color: #e5e2e1;
+            font-family: 'Inter', sans-serif;
+        }
+        .technical-gradient {
+            background: linear-gradient(135deg, #121212 0%, #353534 100%);
+        }
+        .cyan-glow {
+            text-shadow: 0 0 10px rgba(0, 229, 255, 0.4);
+        }
+      </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="flex flex-col min-h-screen">
+<!-- TopAppBar -->
+<header class="w-full sticky top-0 z-50 flex items-center justify-between px-6 py-4 bg-[#131313] shadow-[0_4px_20px_rgba(0,229,255,0.03)]">
+<div class="flex items-center gap-4">
+<button class="text-[#00E5FF] hover:bg-[#2A2A2A] transition-colors duration-200 p-2 active:scale-95 transition-transform">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<h1 class="text-[#00E5FF] font-black tracking-tighter text-xl font-['Space_Grotesk'] uppercase">ROSTER COMMAND</h1>
+</div>
+<div class="flex items-center gap-6">
+<nav class="hidden md:flex items-center gap-8 font-['Space_Grotesk'] font-bold tracking-tight uppercase text-sm">
+<a class="text-gray-500 hover:text-gray-300 transition-colors" href="#">DASHBOARD</a>
+<a class="text-[#00E5FF]" href="#">ROSTER</a>
+<a class="text-gray-500 hover:text-gray-300 transition-colors" href="#">MATCHES</a>
+<a class="text-gray-500 hover:text-gray-300 transition-colors" href="#">ANALYTICS</a>
+</nav>
+<div class="w-10 h-10 rounded-lg bg-surface-container-high border border-outline-variant flex items-center justify-center overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="User profile avatar of the commander" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBTX0MJ2527vmYuu1ol897o91dxHxadl4bddIOpJNCzJsz77XMSR1pUzcDOOWP6PH6xraom1Z8UAJVKq_qG6EU2uv3pVsF8jFPZ55sUy9Xt7i2hshjZYgqdHUDsX1VIdotR3Q0oO-Xwp4W1tZ0craFm4vBdEQDrqEBNaZxgjiJZXiuoGWRSY8F6XI1hfkFO2oDOD96XKd0KgdYLsZPI18xsVJmC8ojveS9GA4sU6UwQ7IN6j5T4kJiTiOLWBr2Yo7ZLZfNwTTNwjneQ"/>
+</div>
+</div>
+<div class="bg-[#1C1B1B] h-[2px] w-full mt-auto absolute bottom-0 left-0"></div>
+</header>
+<main class="flex-1 max-w-7xl mx-auto w-full px-6 py-12 pb-32">
+<!-- Brand Header Section -->
+<section class="mb-12">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+<div>
+<h2 class="font-headline font-black text-6xl tracking-tighter text-on-surface mb-2">AGS GLOBAL ARENA</h2>
+<p class="font-label text-secondary-fixed-dim tracking-[0.2em] text-sm uppercase">Tactical Operations / Squad Management</p>
+</div>
+<div class="flex gap-4">
+<button class="bg-secondary-container text-on-secondary-container px-6 py-3 rounded-lg font-label font-bold text-xs tracking-widest uppercase hover:bg-secondary-fixed-dim transition-all active:scale-95 flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">person_add</span>
+                        Add New Player
+                    </button>
+<button class="bg-surface-container-high text-on-surface px-6 py-3 rounded-lg font-label font-bold text-xs tracking-widest uppercase hover:bg-surface-variant transition-all active:scale-95 flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">picture_as_pdf</span>
+                        Export Roster PDF
+                    </button>
+</div>
+</div>
+</section>
+<!-- Squad Readiness Overview (Bento Grid Style) -->
+<section class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-12">
+<div class="md:col-span-1 bg-surface-container-low p-6 rounded-lg relative overflow-hidden group">
+<div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+<span class="material-symbols-outlined text-6xl">groups</span>
+</div>
+<p class="font-label text-on-surface-variant text-xs tracking-widest mb-1">TOTAL PLAYERS</p>
+<h3 class="font-headline font-bold text-5xl text-on-surface">24</h3>
+<div class="mt-4 h-1 w-full bg-surface-container">
+<div class="h-full bg-on-surface" style="width: 100%"></div>
+</div>
+</div>
+<div class="md:col-span-1 bg-surface-container-low p-6 rounded-lg relative overflow-hidden group">
+<div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+<span class="material-symbols-outlined text-6xl text-secondary-container">bolt</span>
+</div>
+<p class="font-label text-secondary-fixed-dim text-xs tracking-widest mb-1 uppercase">Active Units</p>
+<h3 class="font-headline font-bold text-5xl text-secondary-container cyan-glow">18</h3>
+<div class="mt-4 h-1 w-full bg-surface-container">
+<div class="h-full bg-secondary-container shadow-[0_0_8px_rgba(0,229,255,0.5)]" style="width: 75%"></div>
+</div>
+</div>
+<div class="md:col-span-1 bg-surface-container-low p-6 rounded-lg relative overflow-hidden group">
+<div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+<span class="material-symbols-outlined text-6xl text-error">emergency</span>
+</div>
+<p class="font-label text-on-surface-variant text-xs tracking-widest mb-1">INJURED</p>
+<h3 class="font-headline font-bold text-5xl text-error">2</h3>
+<div class="mt-4 h-1 w-full bg-surface-container">
+<div class="h-full bg-error" style="width: 8%"></div>
+</div>
+</div>
+<div class="md:col-span-1 bg-surface-container-low p-6 rounded-lg relative overflow-hidden group border border-tertiary/10">
+<div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+<span class="material-symbols-outlined text-6xl text-tertiary">swap_horiz</span>
+</div>
+<p class="font-label text-tertiary text-xs tracking-widest mb-1 uppercase">Reserves</p>
+<h3 class="font-headline font-bold text-5xl text-tertiary">4</h3>
+<div class="mt-4 h-1 w-full bg-surface-container">
+<div class="h-full bg-tertiary" style="width: 16%"></div>
+</div>
+</div>
+</section>
+<!-- Core Roster List -->
+<section>
+<div class="flex items-center justify-between mb-6">
+<h3 class="font-label font-bold text-lg tracking-widest text-on-surface flex items-center gap-3">
+<span class="w-2 h-6 bg-secondary-container"></span>
+                    CORE_ROSTER_LIST
+                </h3>
+<div class="flex items-center bg-surface-container-low rounded-lg px-4 py-2 border border-outline-variant/20">
+<span class="material-symbols-outlined text-sm text-on-surface-variant mr-2">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-xs font-label uppercase tracking-widest w-48 placeholder:text-on-primary-container" placeholder="FILTER BY UNIT ID..." type="text"/>
+</div>
+</div>
+<div class="space-y-4">
+<!-- Player Card: MAXIMUS_X -->
+<div class="bg-surface-container-low hover:bg-surface-container-high transition-colors p-1 flex flex-col md:flex-row items-center gap-6 group">
+<div class="w-full md:w-24 h-24 bg-surface-container flex-shrink-0 relative overflow-hidden">
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" data-alt="Portrait of professional gamer Maximus X" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDMtOhCKl798SbAK6hcBazs2TBZzBkBQ9G4zwsqOsT1ZUqqhHXoGHPVtKnOgcw1j97OLGGwXI_Z190fZ-1xn_Z6-Mxes99DKTle66O-6Tz9VST90ec5N2doa65SP9yYdATD0Y11lVEGUw3_G_wKBXmcW2puWCh4LJq-zTvSlhDd70wg6D3BSBgMwna61ESDCHPKY4KDiCVNg-yJYNibk4VnOhC2w-EEIHH_fhWP7LeZlu8v0jVRHw5W_XlyUDrPdzBfjxurQpMNRKom"/>
+<div class="absolute bottom-0 left-0 bg-secondary-container text-on-secondary-container text-[8px] font-black px-1">UNIT_042</div>
+</div>
+<div class="flex-1 grid grid-cols-1 md:grid-cols-4 gap-4 w-full p-4">
+<div class="flex flex-col justify-center">
+<span class="font-label text-[10px] text-on-surface-variant tracking-widest">DESIGNATION</span>
+<span class="font-headline font-bold text-xl text-on-surface group-hover:text-secondary-fixed-dim transition-colors">MAXIMUS_X</span>
+</div>
+<div class="flex flex-col justify-center">
+<span class="font-label text-[10px] text-on-surface-variant tracking-widest">TACTICAL_ROLE</span>
+<span class="font-body font-medium text-sm text-primary uppercase">Forward / Striker</span>
+</div>
+<div class="flex flex-col justify-center">
+<span class="font-label text-[10px] text-on-surface-variant tracking-widest mb-1">UNIT_STATUS</span>
+<div class="flex">
+<span class="bg-secondary-container/10 text-secondary-container text-[10px] font-bold px-2 py-0.5 rounded border border-secondary-container/30 uppercase tracking-tighter flex items-center gap-1">
+<span class="w-1 h-1 rounded-full bg-secondary-container animate-pulse"></span>
+                                    ACTIVE_DEPLOYMENT
+                                </span>
+</div>
+</div>
+<div class="flex flex-col justify-center">
+<span class="font-label text-[10px] text-on-surface-variant tracking-widest">GLOBAL_RANK</span>
+<span class="font-headline font-black text-2xl text-on-surface">#42</span>
+</div>
+</div>
+<div class="p-4 w-full md:w-auto">
+<button class="w-full md:w-auto border border-outline-variant hover:border-secondary-container hover:text-secondary-container transition-all px-6 py-2 rounded-lg font-label font-bold text-[10px] tracking-[0.2em] uppercase active:scale-95">
+                            MANAGE_UNIT
+                        </button>
+</div>
+</div>
+<!-- Player Card: VOID_RUNN3R -->
+<div class="bg-surface-container p-1 flex flex-col md:flex-row items-center gap-6 group hover:bg-surface-container-high transition-colors">
+<div class="w-full md:w-24 h-24 bg-surface-container flex-shrink-0 relative overflow-hidden">
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" data-alt="Portrait of professional gamer Void Runner" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAEq1AI0xlSu7RMSAFauGxlrHJeHQRix_p9wJ_jryNnma1TM5kYLRe6i-cGV4ztatLQm7D5C-X3D1lHaIMJKE4oM9uIt5tpDUfr3UCcn_Ft7MRmiI__lbCERNK5di3qR8FrhesVfQogCSr2OyViX8nSIobuNGmtL3dp5YR4pW2zekZS08d74uSf7hiaNLDoCpk6buWE68guFEG34rdW-oSW4iuPNg63IpSf5YobuB9TeiYxJIdw40aRkY2ZsBjMduhbM8s2azHYiFlk"/>
+<div class="absolute bottom-0 left-0 bg-secondary-container text-on-secondary-container text-[8px] font-black px-1">UNIT_013</div>
+</div>
+<div class="flex-1 grid grid-cols-1 md:grid-cols-4 gap-4 w-full p-4">
+<div class="flex flex-col justify-center">
+<span class="font-label text-[10px] text-on-surface-variant tracking-widest">DESIGNATION</span>
+<span class="font-headline font-bold text-xl text-on-surface group-hover:text-secondary-fixed-dim transition-colors">VOID_RUNN3R</span>
+</div>
+<div class="flex flex-col justify-center">
+<span class="font-label text-[10px] text-on-surface-variant tracking-widest">TACTICAL_ROLE</span>
+<span class="font-body font-medium text-sm text-primary uppercase">Midfield / Tactical</span>
+</div>
+<div class="flex flex-col justify-center">
+<span class="font-label text-[10px] text-on-surface-variant tracking-widest mb-1">UNIT_STATUS</span>
+<div class="flex">
+<span class="bg-secondary-container/10 text-secondary-container text-[10px] font-bold px-2 py-0.5 rounded border border-secondary-container/30 uppercase tracking-tighter flex items-center gap-1">
+<span class="w-1 h-1 rounded-full bg-secondary-container animate-pulse"></span>
+                                    ACTIVE_DEPLOYMENT
+                                </span>
+</div>
+</div>
+<div class="flex flex-col justify-center">
+<span class="font-label text-[10px] text-on-surface-variant tracking-widest">GLOBAL_RANK</span>
+<span class="font-headline font-black text-2xl text-on-surface">#13</span>
+</div>
+</div>
+<div class="p-4 w-full md:w-auto">
+<button class="w-full md:w-auto border border-outline-variant hover:border-secondary-container hover:text-secondary-container transition-all px-6 py-2 rounded-lg font-label font-bold text-[10px] tracking-[0.2em] uppercase active:scale-95">
+                            MANAGE_UNIT
+                        </button>
+</div>
+</div>
+<!-- Player Card: CYPH3R_PK -->
+<div class="bg-surface-container-low p-1 flex flex-col md:flex-row items-center gap-6 group hover:bg-surface-container-high transition-colors">
+<div class="w-full md:w-24 h-24 bg-surface-container flex-shrink-0 relative overflow-hidden">
+<img class="w-full h-full object-cover grayscale opacity-50 group-hover:grayscale-0 transition-all duration-500" data-alt="Portrait of professional gamer Cypher PK" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC3ezkZAN1hcDUuhISj9JHsx-HXvqFnP3pTwIO3RMqyag59wheS_JSxqiPHHhplNL9XqkJQTlQe17qHyuXZQ3ZjVbb4busjvzKXK6gLHkC-afHAp_lpQDg18I7mgwcqAnASwMAwqOOnggN6R_tCEDSjrxrtR3KmST8c8DgKVv_UJ_DEYxwCO3takS3lTktFUqIv7U-bm8DtUk3xgAkXt9iVhfO-ukdvocd7kWKx9SKpceMt5ORmsleX9RKBDNJHeQFaLLkXEKhP1fcU"/>
+<div class="absolute bottom-0 left-0 bg-error text-on-error text-[8px] font-black px-1">UNIT_088</div>
+</div>
+<div class="flex-1 grid grid-cols-1 md:grid-cols-4 gap-4 w-full p-4">
+<div class="flex flex-col justify-center">
+<span class="font-label text-[10px] text-on-surface-variant tracking-widest">DESIGNATION</span>
+<span class="font-headline font-bold text-xl text-on-surface group-hover:text-error transition-colors">CYPH3R_PK</span>
+</div>
+<div class="flex flex-col justify-center">
+<span class="font-label text-[10px] text-on-surface-variant tracking-widest">TACTICAL_ROLE</span>
+<span class="font-body font-medium text-sm text-primary uppercase">Defense / Tank</span>
+</div>
+<div class="flex flex-col justify-center">
+<span class="font-label text-[10px] text-on-surface-variant tracking-widest mb-1">UNIT_STATUS</span>
+<div class="flex">
+<span class="bg-error/10 text-error text-[10px] font-bold px-2 py-0.5 rounded border border-error/30 uppercase tracking-tighter flex items-center gap-1">
+<span class="w-1 h-1 rounded-full bg-error"></span>
+                                    INJURED_STATUS
+                                </span>
+</div>
+</div>
+<div class="flex flex-col justify-center">
+<span class="font-label text-[10px] text-on-surface-variant tracking-widest">GLOBAL_RANK</span>
+<span class="font-headline font-black text-2xl text-on-surface">#88</span>
+</div>
+</div>
+<div class="p-4 w-full md:w-auto">
+<button class="w-full md:w-auto border border-outline-variant hover:border-error hover:text-error transition-all px-6 py-2 rounded-lg font-label font-bold text-[10px] tracking-[0.2em] uppercase active:scale-95">
+                            MANAGE_UNIT
+                        </button>
+</div>
+</div>
+</div>
+</section>
+<!-- Legend/Footer Metadata -->
+<section class="mt-12 pt-8 border-t border-outline-variant/10 flex flex-col md:flex-row justify-between items-center gap-6">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-secondary-container"></span>
+<span class="font-label text-[10px] tracking-widest uppercase text-on-surface-variant">Active Deployment</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-error"></span>
+<span class="font-label text-[10px] tracking-widest uppercase text-on-surface-variant">Medical Leave</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+<span class="font-label text-[10px] tracking-widest uppercase text-on-surface-variant">Reserve Status</span>
+</div>
+</div>
+<p class="font-label text-[10px] text-on-primary-container tracking-[0.3em] uppercase">SYSTEM_TIME: 2024.11.08 // AUTH_CODE: AGS-A1</p>
+</section>
+</main>
+<!-- NavigationDrawer (Mobile Sidebar Mock - Hidden by Default) -->
+<aside class="fixed inset-0 bg-background/80 backdrop-blur-md z-50 pointer-events-none opacity-0 transition-opacity">
+<div class="h-full w-72 bg-[#131313] shadow-[12px_0_40px_rgba(0,0,0,0.6)] rounded-r-md flex flex-col p-6 space-y-4">
+<div class="flex items-center gap-4 mb-8">
+<div class="w-12 h-12 rounded-full bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Commander avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAKSijSXU3Snvtn5GtoZXhqb5DTTbNYPiYk1ATPTRRNYue3h5csLcE4FwYGlHHolhXs1LdQ-e0CSZV2dmUF4P7Bt920F0scRtAPFZrnuJa_EmsdyVM9oYTvab0lPxKbKk6o2cLo9ZQv2v6zUlS_gIaE1mtvbVPVYGg1H3VRLA1nH0em3lDJoFJkGuk-92q-IZQYOhxETKf3Vwm_wZLQIN1vaQ0xgBhrkhA0Ax_4sEmu0LQmQezTwFlVrvb0zw8zYZOT8NLg2W-28DGV"/>
+</div>
+<div>
+<h4 class="font-headline font-black text-on-surface text-sm uppercase">COMMANDER UNIT</h4>
+<p class="font-label text-[10px] text-tertiary tracking-widest">LEAGUE VERIFIED</p>
+</div>
+</div>
+<nav class="space-y-2">
+<a class="flex items-center gap-3 p-3 text-gray-400 hover:text-white hover:bg-[#1C1B1B] transition-all duration-300 font-['Space_Grotesk'] font-medium uppercase tracking-wider text-xs" href="#">
+<span class="material-symbols-outlined text-sm">grid_view</span> OVERVIEW
+                </a>
+<a class="flex items-center gap-3 p-3 bg-[#1C1B1B] text-[#00E5FF] border-l-4 border-[#00E5FF] transition-all duration-300 font-['Space_Grotesk'] font-medium uppercase tracking-wider text-xs" href="#">
+<span class="material-symbols-outlined text-sm">shield</span> TEAM ALPHA
+                </a>
+<a class="flex items-center gap-3 p-3 text-gray-400 hover:text-white hover:bg-[#1C1B1B] transition-all duration-300 font-['Space_Grotesk'] font-medium uppercase tracking-wider text-xs" href="#">
+<span class="material-symbols-outlined text-sm">shield</span> TEAM OMEGA
+                </a>
+<a class="flex items-center gap-3 p-3 text-gray-400 hover:text-white hover:bg-[#1C1B1B] transition-all duration-300 font-['Space_Grotesk'] font-medium uppercase tracking-wider text-xs" href="#">
+<span class="material-symbols-outlined text-sm">history</span> ARCHIVE
+                </a>
+</nav>
+</div>
+</aside>
+<!-- BottomNavBar -->
+<nav class="md:hidden fixed bottom-0 w-full rounded-t-lg z-50 flex justify-around items-center h-20 px-4 pb-safe bg-[#1C1B1B] shadow-[0_-8px_32px_rgba(0,0,0,0.4)]">
+<a class="flex flex-col items-center justify-center text-gray-500 hover:text-gray-300 transition-all active:scale-90" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-['Space_Grotesk'] text-[10px] font-bold tracking-widest mt-1">DASHBOARD</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#00E5FF] bg-[#2A2A2A] rounded-md px-4 py-1.5 active:scale-90" href="#">
+<span class="material-symbols-outlined">groups</span>
+<span class="font-['Space_Grotesk'] text-[10px] font-bold tracking-widest mt-1">ROSTER</span>
+</a>
+<a class="flex flex-col items-center justify-center text-gray-500 hover:text-gray-300 transition-all active:scale-90" href="#">
+<span class="material-symbols-outlined">sports_esports</span>
+<span class="font-['Space_Grotesk'] text-[10px] font-bold tracking-widest mt-1">MATCHES</span>
+</a>
+<a class="flex flex-col items-center justify-center text-gray-500 hover:text-gray-300 transition-all active:scale-90" href="#">
+<span class="material-symbols-outlined">query_stats</span>
+<span class="font-['Space_Grotesk'] text-[10px] font-bold tracking-widest mt-1">ANALYTICS</span>
+</a>
+</nav>
+</body></html>

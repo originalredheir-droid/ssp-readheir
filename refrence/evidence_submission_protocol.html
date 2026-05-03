@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AGS Global Arena - Evidence Protocol</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-container-highest": "#353534",
+                        "primary-fixed-dim": "#c8c6c5",
+                        "tertiary": "#e9c400",
+                        "surface-tint": "#c8c6c5",
+                        "primary": "#c8c6c5",
+                        "on-secondary": "#00363d",
+                        "error": "#ffb4ab",
+                        "inverse-primary": "#5f5e5e",
+                        "on-primary-fixed": "#1c1b1b",
+                        "tertiary-fixed-dim": "#e9c400",
+                        "surface-container-lowest": "#0e0e0e",
+                        "secondary": "#bdf4ff",
+                        "surface-container-high": "#2a2a2a",
+                        "on-surface-variant": "#c4c7c7",
+                        "on-secondary-container": "#00616d",
+                        "error-container": "#93000a",
+                        "surface-variant": "#353534",
+                        "on-background": "#e5e2e1",
+                        "surface-container-low": "#1c1b1b",
+                        "on-primary-container": "#7e7d7d",
+                        "secondary-container": "#00e3fd",
+                        "on-surface": "#e5e2e1",
+                        "tertiary-container": "#c9a900",
+                        "surface-container": "#201f1f",
+                        "background": "#131313",
+                        "secondary-fixed-dim": "#00daf3",
+                        "outline": "#8e9192",
+                        "on-secondary-fixed": "#001f24",
+                        "on-secondary-fixed-variant": "#004f58",
+                        "inverse-on-surface": "#313030",
+                        "on-error": "#690005",
+                        "primary-fixed": "#e5e2e1",
+                        "on-primary-fixed-variant": "#474646",
+                        "inverse-surface": "#e5e2e1",
+                        "on-tertiary-fixed": "#221b00",
+                        "surface-bright": "#393939",
+                        "surface": "#131313",
+                        "on-tertiary-container": "#4c3f00",
+                        "on-tertiary": "#3a3000",
+                        "on-tertiary-fixed-variant": "#544600",
+                        "surface-dim": "#131313",
+                        "on-error-container": "#ffdad6",
+                        "secondary-fixed": "#9cf0ff",
+                        "on-primary": "#313030",
+                        "outline-variant": "#444748",
+                        "tertiary-fixed": "#ffe16d",
+                        "primary-container": "#121212"
+                    },
+                    fontFamily: {
+                        "headline": ["Space Grotesk"],
+                        "body": ["Inter"],
+                        "label": ["Space Grotesk"]
+                    },
+                    borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-panel {
+            background: rgba(53, 53, 52, 0.6);
+            backdrop-filter: blur(12px);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface font-body selection:bg-secondary-container selection:text-on-secondary-container">
+<!-- Top Navigation Anchor (Based on Shared Components) -->
+<nav class="bg-[#131313] shadow-[0_0_15px_rgba(0,229,255,0.05)] flex justify-between items-center px-6 py-4 w-full docked full-width top-0 z-50">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[#00E5FF]">security</span>
+<h1 class="font-['Space_Grotesk'] font-bold tracking-tight uppercase text-lg text-[#00E5FF]">SECURE UPLINK: E-204</h1>
+</div>
+<div class="flex items-center gap-6">
+<div class="hidden md:flex gap-4 font-label text-xs tracking-widest text-[#353534]">
+<span class="hover:text-[#00DAF3] transition-colors cursor-pointer">DIAGNOSTICS</span>
+<span class="hover:text-[#00DAF3] transition-colors cursor-pointer">PROTOCOL_V3</span>
+</div>
+<span class="material-symbols-outlined text-[#00E5FF]">verified_user</span>
+</div>
+</nav>
+<div class="bg-[#1C1B1B] h-[2px] w-full"></div>
+<main class="max-w-7xl mx-auto px-6 pt-12 pb-32">
+<!-- Header Section -->
+<header class="mb-12 flex flex-col md:flex-row md:items-end justify-between gap-6">
+<div class="space-y-2">
+<div class="flex items-center gap-2 text-tertiary font-label text-xs tracking-[0.2em] font-bold">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">shield_with_heart</span>
+                    ANTI-CORRUPTION TASK FORCE
+                </div>
+<h2 class="font-headline text-5xl font-bold tracking-tighter uppercase">EVIDENCE PROTOCOL</h2>
+<div class="flex items-center gap-4 pt-2">
+<div class="flex items-center gap-2 bg-surface-container-high px-3 py-1 rounded-sm">
+<span class="w-2 h-2 rounded-full bg-secondary shadow-[0_0_8px_#00E5FF]"></span>
+<span class="font-label text-[10px] tracking-widest text-on-surface">ENCRYPTION: AES-256-GCM ACTIVE</span>
+</div>
+</div>
+</div>
+<div class="text-right">
+<div class="font-headline text-3xl font-bold text-on-surface-variant">
+<span class="text-secondary">02</span> <span class="text-[#353534]">/</span> 03
+                </div>
+<div class="font-label text-[10px] tracking-[0.3em] text-on-surface-variant uppercase">Incident Phase</div>
+</div>
+</header>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+<!-- Left Column: Upload and Preview (Bento Style) -->
+<div class="lg:col-span-8 space-y-8">
+<!-- File Upload Node -->
+<section class="bg-surface-container-low p-8 rounded-lg relative overflow-hidden group">
+<div class="absolute top-0 right-0 p-4 opacity-10">
+<span class="material-symbols-outlined text-8xl">cloud_upload</span>
+</div>
+<div class="relative z-10">
+<h3 class="font-headline text-lg font-bold tracking-tight mb-6 flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary">database</span>
+                            TECHNICAL TELEMETRY INGESTION
+                        </h3>
+<div class="border-2 border-dashed border-outline-variant/30 hover:border-secondary/40 transition-colors bg-surface-container-lowest flex flex-col items-center justify-center py-16 px-6 cursor-pointer rounded-md">
+<span class="material-symbols-outlined text-5xl text-on-surface-variant mb-4">upload_file</span>
+<p class="font-headline text-sm font-medium tracking-wide mb-2">DRAG AND DROP TELEMETRY PACKETS</p>
+<p class="text-on-surface-variant text-xs mb-8">MAX SIZE: 500MB per file (.JSON, .MP4, .PDF, .LOGS)</p>
+<button class="bg-surface-container-high hover:bg-surface-container-highest text-secondary font-label text-xs font-bold py-3 px-8 tracking-widest transition-all active:scale-95 border border-secondary/20">
+                                SELECT FILE FROM LOCAL STORAGE
+                            </button>
+</div>
+</div>
+</section>
+<!-- Telemetry Preview -->
+<section class="bg-surface-container-low p-8 rounded-lg">
+<h3 class="font-headline text-lg font-bold tracking-tight mb-6 flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary">list_alt</span>
+                        QUEUE: ENCRYPTED ARTIFACTS
+                    </h3>
+<div class="space-y-4">
+<!-- File Entry 1 -->
+<div class="bg-surface-container p-4 flex items-center justify-between group hover:bg-surface-container-high transition-colors">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 bg-surface-container-lowest flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined">movie</span>
+</div>
+<div>
+<div class="font-headline text-sm font-bold tracking-tight">MATCH_LOG_7721_POV.MP4</div>
+<div class="font-mono text-[10px] text-on-surface-variant uppercase tracking-tighter">SHA-256: 4e3b...a1f9</div>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<div class="flex flex-col items-end">
+<div class="text-[10px] text-tertiary font-bold tracking-widest flex items-center gap-1">
+<span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">verified</span>
+                                        VERIFIED
+                                    </div>
+<div class="text-[9px] text-on-surface-variant uppercase">142.5 MB</div>
+</div>
+<button class="text-on-surface-variant hover:text-error transition-colors">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+</div>
+<!-- File Entry 2 -->
+<div class="bg-surface-container p-4 flex items-center justify-between group hover:bg-surface-container-high transition-colors">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 bg-surface-container-lowest flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined">description</span>
+</div>
+<div>
+<div class="font-headline text-sm font-bold tracking-tight">CONTRACT_AMENDMENT_04.PDF</div>
+<div class="font-mono text-[10px] text-on-surface-variant uppercase tracking-tighter">SHA-256: 8c12...f931</div>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<div class="flex flex-col items-end">
+<div class="text-[10px] text-tertiary font-bold tracking-widest flex items-center gap-1">
+<span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">verified</span>
+                                        VERIFIED
+                                    </div>
+<div class="text-[9px] text-on-surface-variant uppercase">2.1 MB</div>
+</div>
+<button class="text-on-surface-variant hover:text-error transition-colors">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+</div>
+<!-- Empty State Slot -->
+<div class="border border-outline-variant/10 p-4 border-dashed flex items-center justify-center text-on-surface-variant/40 text-[10px] font-label tracking-widest uppercase">
+                            awaiting further telemetry...
+                        </div>
+</div>
+</section>
+</div>
+<!-- Right Column: Sidebar Actions -->
+<div class="lg:col-span-4 space-y-8">
+<!-- Digital Signature Section -->
+<section class="bg-surface-container p-6 border-l-2 border-tertiary/40">
+<h3 class="font-label text-xs font-bold tracking-[0.2em] text-tertiary mb-4 uppercase">Integrity Certification</h3>
+<p class="text-xs leading-relaxed text-on-surface-variant mb-6">
+                        I, the undersigned official, hereby certify under the penalties of the AGS Charter that this evidence is authentic, untampered, and was collected according to protocol.
+                    </p>
+<div class="space-y-4">
+<div class="relative">
+<label class="font-label text-[10px] text-on-surface-variant uppercase tracking-widest mb-1 block">Full Legal Digital ID</label>
+<input class="w-full bg-surface-container-lowest border-none focus:ring-1 focus:ring-secondary text-sm font-mono p-3 uppercase tracking-widest text-secondary placeholder:text-on-surface-variant/20" placeholder="OPERATOR_082_SIGNATURE" type="text"/>
+</div>
+<div class="flex items-start gap-3">
+<input class="mt-1 w-4 h-4 bg-surface-container-lowest border-none rounded-sm text-secondary focus:ring-0" id="certify" type="checkbox"/>
+<label class="text-[10px] text-on-surface-variant uppercase leading-tight cursor-pointer" for="certify">
+                                Confirm cryptographic binding to match identity 4410-X
+                            </label>
+</div>
+</div>
+</section>
+<!-- Transmission Status -->
+<section class="bg-surface-container-lowest p-6 rounded-lg space-y-6">
+<div>
+<div class="flex justify-between items-center mb-2">
+<span class="font-label text-[10px] text-on-surface-variant uppercase tracking-widest">Uplink Stability</span>
+<span class="font-label text-[10px] text-secondary font-bold tracking-widest">98.4%</span>
+</div>
+<div class="w-full h-1 bg-surface-container-highest">
+<div class="w-[98%] h-full bg-secondary shadow-[0_0_8px_#00E5FF]"></div>
+</div>
+</div>
+<div class="bg-surface-container-low p-4 space-y-3">
+<div class="flex items-center justify-between text-[10px] font-label">
+<span class="text-on-surface-variant uppercase">Protocol:</span>
+<span class="text-on-surface font-bold uppercase">UDP_STUN_HIGH</span>
+</div>
+<div class="flex items-center justify-between text-[10px] font-label">
+<span class="text-on-surface-variant uppercase">Nodes:</span>
+<span class="text-on-surface font-bold uppercase">4/4 ACTIVE</span>
+</div>
+</div>
+<button class="w-full bg-secondary-container hover:bg-secondary-fixed-dim text-on-secondary-fixed font-headline font-bold text-sm py-5 tracking-[0.15em] transition-all active:translate-y-0.5 flex items-center justify-center gap-3">
+<span class="material-symbols-outlined text-lg">rocket_launch</span>
+                        TRANSMIT SECURE UPLINK
+                    </button>
+<button class="w-full text-on-surface-variant hover:text-on-surface font-label text-[10px] tracking-widest uppercase transition-colors">
+                        Save local archive
+                    </button>
+</section>
+<!-- Warning Advisory -->
+<div class="flex gap-4 p-4 border border-tertiary/10 bg-tertiary/5">
+<span class="material-symbols-outlined text-tertiary">warning</span>
+<div class="text-[10px] leading-relaxed text-on-surface-variant uppercase tracking-wide">
+<strong class="text-tertiary">ADVISORY:</strong> Attempting to upload manipulated telemetry will result in immediate decommissioning and permanent ban from the AGS Arena network.
+                    </div>
+</div>
+</div>
+</div>
+</main>
+<!-- Bottom Nav Bar (Based on Shared Components) -->
+<div class="fixed bottom-0 w-full z-50 rounded-t-lg bg-[#1C1B1B] border-t border-[#353534]/15 shadow-[0_-4px_20px_rgba(0,0,0,0.5)]">
+<div class="flex justify-around items-center w-full h-20 px-4 pb-safe">
+<div class="flex flex-col items-center justify-center text-[#353534] hover:text-[#00DAF3] transition-transform active:translate-y-0.5 cursor-pointer">
+<span class="material-symbols-outlined">terminal</span>
+<span class="font-['Space_Grotesk'] text-[10px] font-bold uppercase tracking-widest">COMMAND</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#00E5FF] bg-[#2A2A2A] rounded-md px-3 py-1 transition-transform active:translate-y-0.5 cursor-pointer">
+<span class="material-symbols-outlined">cloud_upload</span>
+<span class="font-['Space_Grotesk'] text-[10px] font-bold uppercase tracking-widest">EVIDENCE</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#353534] hover:text-[#00DAF3] transition-transform active:translate-y-0.5 cursor-pointer">
+<span class="material-symbols-outlined">analytics</span>
+<span class="font-['Space_Grotesk'] text-[10px] font-bold uppercase tracking-widest">INTEL</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#353534] hover:text-[#00DAF3] transition-transform active:translate-y-0.5 cursor-pointer">
+<span class="material-symbols-outlined">encrypted</span>
+<span class="font-['Space_Grotesk'] text-[10px] font-bold uppercase tracking-widest">VAULT</span>
+</div>
+</div>
+</div>
+<!-- Background Decal for Aesthetic Depth -->
+<div class="fixed bottom-24 right-12 pointer-events-none opacity-5 -z-10 select-none">
+<h2 class="text-[12rem] font-headline font-black leading-none m-0 p-0 text-secondary">AGS</h2>
+</div>
+</body></html>

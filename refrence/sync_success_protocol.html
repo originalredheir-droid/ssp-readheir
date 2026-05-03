@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Sync Success | Referee Hub</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-tertiary-fixed": "#221b00",
+                        "on-tertiary": "#3a3000",
+                        "on-secondary-fixed": "#001f24",
+                        "primary-fixed-dim": "#c8c6c5",
+                        "outline": "#8e9192",
+                        "surface-container-highest": "#353534",
+                        "on-error": "#690005",
+                        "on-tertiary-fixed-variant": "#544600",
+                        "on-primary-fixed": "#1c1b1b",
+                        "inverse-surface": "#e5e2e1",
+                        "tertiary-fixed": "#ffe16d",
+                        "on-error-container": "#ffdad6",
+                        "tertiary-fixed-dim": "#e9c400",
+                        "secondary-fixed-dim": "#00daf3",
+                        "surface-dim": "#131313",
+                        "surface": "#131313",
+                        "on-primary-fixed-variant": "#474646",
+                        "outline-variant": "#444748",
+                        "primary-fixed": "#e5e2e1",
+                        "on-background": "#e5e2e1",
+                        "surface-tint": "#c8c6c5",
+                        "inverse-primary": "#5f5e5e",
+                        "tertiary-container": "#c9a900",
+                        "on-secondary": "#00363d",
+                        "tertiary": "#e9c400",
+                        "inverse-on-surface": "#313030",
+                        "error": "#ffb4ab",
+                        "surface-container": "#201f1f",
+                        "secondary": "#bdf4ff",
+                        "surface-container-high": "#2a2a2a",
+                        "primary-container": "#121212",
+                        "error-container": "#93000a",
+                        "background": "#131313",
+                        "secondary-fixed": "#9cf0ff",
+                        "on-tertiary-container": "#4c3f00",
+                        "on-surface-variant": "#c4c7c7",
+                        "on-secondary-fixed-variant": "#004f58",
+                        "on-primary-container": "#7e7d7d",
+                        "surface-variant": "#353534",
+                        "primary": "#c8c6c5",
+                        "on-primary": "#313030",
+                        "secondary-container": "#00e3fd",
+                        "on-surface": "#e5e2e1",
+                        "surface-container-low": "#1c1b1b",
+                        "surface-bright": "#393939",
+                        "surface-container-lowest": "#0e0e0e",
+                        "on-secondary-container": "#00616d"
+                    },
+                    fontFamily: {
+                        "headline": ["Space Grotesk"],
+                        "body": ["Inter"],
+                        "label": ["Space Grotesk"]
+                    },
+                    borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        body {
+            background-color: #131313;
+            color: #e5e2e1;
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface overflow-x-hidden">
+<!-- TopAppBar -->
+<header class="w-full sticky top-0 z-50 bg-[#131313] shadow-[0_0_32px_rgba(0,229,255,0.04)]">
+<div class="flex items-center justify-between px-6 py-4 w-full">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[#00E5FF]">grid_view</span>
+<span class="text-lg font-bold tracking-tighter text-white font-headline">COMMAND CENTER</span>
+</div>
+<div class="hidden md:flex gap-8">
+<span class="font-['Space_Grotesk'] uppercase tracking-[0.05em] text-sm font-bold text-[#00E5FF]">DASHBOARD</span>
+<span class="font-['Space_Grotesk'] uppercase tracking-[0.05em] text-sm font-bold text-gray-500 hover:bg-[#2A2A2A] transition-colors duration-200 p-1">MATCHES</span>
+<span class="font-['Space_Grotesk'] uppercase tracking-[0.05em] text-sm font-bold text-gray-500 hover:bg-[#2A2A2A] transition-colors duration-200 p-1">HISTORY</span>
+<span class="font-['Space_Grotesk'] uppercase tracking-[0.05em] text-sm font-bold text-gray-500 hover:bg-[#2A2A2A] transition-colors duration-200 p-1">SETTINGS</span>
+</div>
+<div class="flex items-center gap-3">
+<div class="h-2 w-2 rounded-full bg-secondary-container animate-pulse"></div>
+<span class="font-label text-[10px] tracking-widest text-secondary-container">UPLINK ACTIVE</span>
+</div>
+</div>
+<div class="bg-[#1C1B1B] h-[4px] w-full"></div>
+</header>
+<main class="max-w-7xl mx-auto px-6 py-12 mb-24">
+<div class="flex flex-col gap-12">
+<!-- Success Header Hero -->
+<section class="flex flex-col md:flex-row items-end justify-between gap-8">
+<div class="flex flex-col gap-2 max-w-2xl">
+<span class="font-label text-sm tracking-[0.3em] text-tertiary uppercase">Transaction Terminal V4.2</span>
+<h1 class="font-headline text-5xl md:text-7xl font-bold text-secondary-container leading-none tracking-tighter">UPLINK_SUCCESSFUL</h1>
+<p class="text-on-surface-variant text-lg font-light mt-4 leading-relaxed">Local referee cache has been successfully committed to the primary ledger. All tactical logs are now verified and synchronized with regional servers.</p>
+</div>
+<div class="bg-surface-container-low p-8 rounded-lg flex flex-col items-center gap-2 min-w-[240px] shadow-[0_0_40px_rgba(0,227,253,0.05)] border-l-4 border-secondary-container">
+<span class="font-label text-[10px] text-on-surface-variant uppercase tracking-widest">Global Sync Status</span>
+<span class="font-headline text-4xl font-bold text-white">100%</span>
+<div class="w-full h-1 bg-surface-container-highest mt-2">
+<div class="bg-secondary-container h-full w-full"></div>
+</div>
+</div>
+</section>
+<!-- Data Summary & Integrity Verified (Bento Style) -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-4">
+<!-- Summary Card -->
+<div class="md:col-span-4 bg-surface-container-low p-8 rounded-lg flex flex-col justify-between group hover:bg-surface-container-high transition-all">
+<div class="flex flex-col gap-6">
+<span class="material-symbols-outlined text-secondary-container text-4xl">cloud_upload</span>
+<div>
+<h3 class="font-headline text-2xl font-bold text-white uppercase tracking-tight">Sync Summary</h3>
+<div class="mt-6 flex flex-col gap-4">
+<div class="flex justify-between items-center border-b border-outline-variant/10 pb-2">
+<span class="text-on-surface-variant font-label text-xs">Match Logs</span>
+<span class="text-white font-headline font-bold">3 Uploaded</span>
+</div>
+<div class="flex justify-between items-center border-b border-outline-variant/10 pb-2">
+<span class="text-on-surface-variant font-label text-xs">Data Transferred</span>
+<span class="text-white font-headline font-bold">8.1MB</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="text-on-surface-variant font-label text-xs">Latency</span>
+<span class="text-white font-headline font-bold">42ms</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Integrity Card (Safety Gold) -->
+<div class="md:col-span-8 bg-surface-container p-8 rounded-lg relative overflow-hidden border border-tertiary/10">
+<div class="relative z-10 flex flex-col md:flex-row items-center gap-10 h-full">
+<div class="p-6 bg-tertiary/5 rounded-full border border-tertiary/20">
+<span class="material-symbols-outlined text-tertiary text-7xl" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+<div class="flex flex-col gap-3">
+<span class="font-label text-xs text-tertiary tracking-[0.2em] uppercase font-bold">Protocol Alpha-7</span>
+<h2 class="font-headline text-3xl font-bold text-white uppercase italic tracking-tighter">Data Integrity Verified</h2>
+<p class="text-on-surface-variant text-sm max-w-md">Cryptographic handshake completed. The match ledger has been updated and hashed for permanent archival. No discrepancies detected in local vs remote datasets.</p>
+<div class="flex gap-4 mt-4">
+<span class="px-3 py-1 bg-surface-container-highest text-[10px] font-label text-tertiary border border-tertiary/30 rounded-sm">LEDGER_LOCKED</span>
+<span class="px-3 py-1 bg-surface-container-highest text-[10px] font-label text-tertiary border border-tertiary/30 rounded-sm">SHA-256_HASHED</span>
+</div>
+</div>
+</div>
+<!-- Background aesthetic -->
+<div class="absolute -right-10 -bottom-10 opacity-5">
+<span class="material-symbols-outlined text-[200px] text-tertiary">security</span>
+</div>
+</div>
+</div>
+<!-- Synced Matches List (Tactical Detail) -->
+<section class="flex flex-col gap-6">
+<div class="flex items-center justify-between">
+<div class="flex flex-col gap-1">
+<h4 class="font-headline text-xl font-bold text-white tracking-widest uppercase italic">Committed Transactions</h4>
+<div class="h-0.5 w-16 bg-secondary-container"></div>
+</div>
+<span class="text-[10px] font-label text-on-surface-variant">SESSION ID: 992-TX-SYNC</span>
+</div>
+<div class="flex flex-col gap-2">
+<!-- Match Item 1 -->
+<div class="grid grid-cols-1 md:grid-cols-12 items-center bg-surface-container-low p-6 rounded-lg hover:bg-surface-container transition-all border-l-2 border-secondary-container/30">
+<div class="md:col-span-2 flex flex-col gap-1">
+<span class="font-label text-[10px] text-on-surface-variant">TIMESTAMP</span>
+<span class="text-xs font-headline font-bold text-white">14:22:09 GMT</span>
+</div>
+<div class="md:col-span-5 flex flex-col gap-1 mt-4 md:mt-0">
+<span class="font-label text-[10px] text-on-surface-variant">MATCH ENTITY</span>
+<span class="text-lg font-headline font-bold text-white tracking-tight">Navi Tactical <span class="text-secondary mx-2 font-light">vs</span> Omega Ops</span>
+</div>
+<div class="md:col-span-3 flex flex-col gap-1 mt-4 md:mt-0">
+<span class="font-label text-[10px] text-on-surface-variant">STATUS</span>
+<div class="flex items-center gap-2">
+<div class="h-1.5 w-1.5 rounded-full bg-secondary"></div>
+<span class="text-xs font-label text-secondary uppercase font-bold">Full Sync Complete</span>
+</div>
+</div>
+<div class="md:col-span-2 flex justify-end mt-4 md:mt-0">
+<button class="text-on-surface-variant hover:text-white transition-colors">
+<span class="material-symbols-outlined">receipt_long</span>
+</button>
+</div>
+</div>
+<!-- Match Item 2 -->
+<div class="grid grid-cols-1 md:grid-cols-12 items-center bg-surface-container p-6 rounded-lg hover:bg-surface-container-high transition-all border-l-2 border-secondary-container/10">
+<div class="md:col-span-2 flex flex-col gap-1">
+<span class="font-label text-[10px] text-on-surface-variant">TIMESTAMP</span>
+<span class="text-xs font-headline font-bold text-white">15:45:12 GMT</span>
+</div>
+<div class="md:col-span-5 flex flex-col gap-1 mt-4 md:mt-0">
+<span class="font-label text-[10px] text-on-surface-variant">MATCH ENTITY</span>
+<span class="text-lg font-headline font-bold text-white tracking-tight">Titan Division <span class="text-secondary mx-2 font-light">vs</span> Void Squad</span>
+</div>
+<div class="md:col-span-3 flex flex-col gap-1 mt-4 md:mt-0">
+<span class="font-label text-[10px] text-on-surface-variant">STATUS</span>
+<div class="flex items-center gap-2">
+<div class="h-1.5 w-1.5 rounded-full bg-secondary"></div>
+<span class="text-xs font-label text-secondary uppercase font-bold">Full Sync Complete</span>
+</div>
+</div>
+<div class="md:col-span-2 flex justify-end mt-4 md:mt-0">
+<button class="text-on-surface-variant hover:text-white transition-colors">
+<span class="material-symbols-outlined">receipt_long</span>
+</button>
+</div>
+</div>
+<!-- Match Item 3 -->
+<div class="grid grid-cols-1 md:grid-cols-12 items-center bg-surface-container-low p-6 rounded-lg hover:bg-surface-container transition-all border-l-2 border-secondary-container/30">
+<div class="md:col-span-2 flex flex-col gap-1">
+<span class="font-label text-[10px] text-on-surface-variant">TIMESTAMP</span>
+<span class="text-xs font-headline font-bold text-white">18:10:55 GMT</span>
+</div>
+<div class="md:col-span-5 flex flex-col gap-1 mt-4 md:mt-0">
+<span class="font-label text-[10px] text-on-surface-variant">MATCH ENTITY</span>
+<span class="text-lg font-headline font-bold text-white tracking-tight">Apex Raptors <span class="text-secondary mx-2 font-light">vs</span> Neon Ghost</span>
+</div>
+<div class="md:col-span-3 flex flex-col gap-1 mt-4 md:mt-0">
+<span class="font-label text-[10px] text-on-surface-variant">STATUS</span>
+<div class="flex items-center gap-2">
+<div class="h-1.5 w-1.5 rounded-full bg-secondary"></div>
+<span class="text-xs font-label text-secondary uppercase font-bold">Full Sync Complete</span>
+</div>
+</div>
+<div class="md:col-span-2 flex justify-end mt-4 md:mt-0">
+<button class="text-on-surface-variant hover:text-white transition-colors">
+<span class="material-symbols-outlined">receipt_long</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Actions Footer -->
+<section class="flex flex-col md:flex-row gap-4 mt-12 justify-center">
+<button class="bg-secondary-container text-on-secondary-container px-10 py-4 font-headline font-bold uppercase tracking-widest text-sm rounded-md active:scale-95 transition-transform shadow-[0_4px_20px_rgba(0,227,253,0.3)]">
+                    VIEW LIVE LEDGER
+                </button>
+<button class="bg-surface-container-high text-white px-10 py-4 font-headline font-bold uppercase tracking-widest text-sm rounded-md active:scale-95 transition-transform border border-outline-variant/30 hover:bg-surface-bright">
+                    RETURN TO COMMAND HUB
+                </button>
+</section>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="md:hidden fixed bottom-0 w-full z-50 bg-[#131313] border-t border-[#353534]/15">
+<div class="flex justify-around items-center px-4 pb-6 pt-2 w-full">
+<div class="flex flex-col items-center justify-center text-[#00E5FF] bg-[#1C1B1B] rounded-md px-4 py-1">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-['Space_Grotesk'] text-[10px] uppercase tracking-widest font-bold">DASHBOARD</span>
+</div>
+<div class="flex flex-col items-center justify-center text-gray-500 px-4 py-1 hover:text-white transition-all active:opacity-80">
+<span class="material-symbols-outlined">sports_soccer</span>
+<span class="font-['Space_Grotesk'] text-[10px] uppercase tracking-widest font-bold">MATCHES</span>
+</div>
+<div class="flex flex-col items-center justify-center text-gray-500 px-4 py-1 hover:text-white transition-all active:opacity-80">
+<span class="material-symbols-outlined">history</span>
+<span class="font-['Space_Grotesk'] text-[10px] uppercase tracking-widest font-bold">HISTORY</span>
+</div>
+<div class="flex flex-col items-center justify-center text-gray-500 px-4 py-1 hover:text-white transition-all active:opacity-80">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-['Space_Grotesk'] text-[10px] uppercase tracking-widest font-bold">SETTINGS</span>
+</div>
+</div>
+</nav>
+</body></html>

@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AGS Global Arena - Payout Protocol</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-secondary-fixed": "#001f24",
+              "on-secondary": "#00363d",
+              "surface-container-low": "#1c1b1b",
+              "primary-container": "#121212",
+              "outline-variant": "#444748",
+              "on-error": "#690005",
+              "secondary-fixed": "#9cf0ff",
+              "secondary-fixed-dim": "#00daf3",
+              "on-tertiary": "#3a3000",
+              "on-primary": "#313030",
+              "on-tertiary-fixed": "#221b00",
+              "primary": "#c8c6c5",
+              "surface-bright": "#393939",
+              "on-surface-variant": "#c4c7c7",
+              "error": "#ffb4ab",
+              "tertiary-fixed": "#ffe16d",
+              "surface-container": "#201f1f",
+              "background": "#131313",
+              "on-tertiary-fixed-variant": "#544600",
+              "surface-container-high": "#2a2a2a",
+              "primary-fixed-dim": "#c8c6c5",
+              "surface-variant": "#353534",
+              "surface-dim": "#131313",
+              "on-secondary-fixed-variant": "#004f58",
+              "surface": "#131313",
+              "on-tertiary-container": "#4c3f00",
+              "inverse-on-surface": "#313030",
+              "surface-container-highest": "#353534",
+              "on-primary-container": "#7e7d7d",
+              "on-primary-fixed": "#1c1b1b",
+              "secondary-container": "#00e3fd",
+              "on-secondary-container": "#00616d",
+              "surface-tint": "#c8c6c5",
+              "surface-container-lowest": "#0e0e0e",
+              "on-primary-fixed-variant": "#474646",
+              "tertiary-fixed-dim": "#e9c400",
+              "inverse-surface": "#e5e2e1",
+              "on-surface": "#e5e2e1",
+              "on-background": "#e5e2e1",
+              "on-error-container": "#ffdad6",
+              "inverse-primary": "#5f5e5e",
+              "primary-fixed": "#e5e2e1",
+              "outline": "#8e9192",
+              "tertiary-container": "#c9a900",
+              "secondary": "#bdf4ff",
+              "tertiary": "#e9c400",
+              "error-container": "#93000a"
+            },
+            fontFamily: {
+              "headline": ["Space Grotesk"],
+              "body": ["Inter"],
+              "label": ["Space Grotesk"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      body {
+        background-color: #131313;
+        color: #e5e2e1;
+        font-family: 'Inter', sans-serif;
+      }
+      .glass-panel {
+        background: rgba(53, 53, 52, 0.6);
+        backdrop-filter: blur(12px);
+      }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="min-h-screen pb-24">
+<!-- TopAppBar -->
+<header class="w-full sticky top-0 z-50 bg-[#131313] shadow-[0_0_32px_rgba(0,229,255,0.04)]">
+<div class="flex items-center justify-between px-6 py-4 w-full">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[#00E5FF]">arrow_back</span>
+<div class="flex flex-col">
+<h1 class="text-xl font-bold text-white tracking-tight font-['Space_Grotesk']">PAYOUT PROTOCOL</h1>
+<div class="flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-[#00E5FF] shadow-[0_0_8px_#00E5FF]"></span>
+<span class="font-['Space_Grotesk'] uppercase tracking-[0.1em] text-[10px] font-bold text-[#00E5FF]">Active Uplink</span>
+</div>
+</div>
+</div>
+<span class="material-symbols-outlined text-[#00E5FF]">help_outline</span>
+</div>
+<div class="bg-[#1C1B1B] h-[4px] w-full"></div>
+</header>
+<main class="max-w-5xl mx-auto px-6 pt-8 space-y-10">
+<!-- SECTION 3: FINANCIAL DATA STREAM (Bento Header) -->
+<section class="grid grid-cols-1 md:grid-cols-3 gap-4">
+<div class="md:col-span-2 bg-surface-container-low p-6 rounded-lg flex flex-col justify-between border-l-4 border-secondary-fixed-dim">
+<div>
+<p class="font-label text-[10px] uppercase tracking-[0.2em] text-on-primary-container mb-2">Escrow Holding</p>
+<h2 class="font-headline text-5xl font-bold text-white tabular-nums tracking-tighter">$1.2M</h2>
+</div>
+<div class="mt-8 flex items-center justify-between">
+<div class="flex gap-4">
+<div class="flex flex-col">
+<span class="font-label text-[9px] uppercase text-outline">Yield</span>
+<span class="text-secondary-fixed-dim font-medium">+4.2%</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label text-[9px] uppercase text-outline">Status</span>
+<span class="text-tertiary font-medium">Secured</span>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-surface-container p-6 rounded-lg flex flex-col justify-between">
+<div>
+<p class="font-label text-[10px] uppercase tracking-[0.2em] text-on-primary-container mb-2">Next Deployment</p>
+<h3 class="font-headline text-2xl font-bold text-white uppercase italic">24 OCT 2024</h3>
+</div>
+<div class="mt-4 bg-surface-container-lowest p-3 rounded">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary-fixed-dim text-sm">schedule</span>
+<span class="font-label text-xs text-on-surface-variant uppercase">T-Minus 14:02:44</span>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 1: PRIMARY DISBURSEMENT NODE -->
+<section>
+<div class="flex items-center gap-4 mb-4">
+<div class="h-[1px] flex-grow bg-surface-container-highest"></div>
+<h3 class="font-label text-xs font-bold uppercase tracking-[0.3em] text-on-primary-container">Primary Disbursement Node</h3>
+<div class="h-[1px] w-12 bg-surface-container-highest"></div>
+</div>
+<div class="bg-surface-container-low p-1 rounded-xl">
+<div class="bg-surface-container p-6 rounded-lg flex flex-col md:flex-row md:items-center justify-between gap-6 border border-outline-variant/10">
+<div class="flex items-center gap-6">
+<div class="w-16 h-10 bg-surface-container-lowest rounded border border-outline-variant/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-on-surface-variant">account_balance</span>
+</div>
+<div>
+<p class="text-white font-headline font-bold text-lg tracking-wide uppercase">Global Commercial Bank</p>
+<div class="flex items-center gap-3 mt-1">
+<span class="font-mono text-sm text-on-surface-variant tracking-widest">**** 9012</span>
+<div class="px-2 py-0.5 bg-tertiary/10 border border-tertiary/20 rounded">
+<span class="font-label text-[9px] font-black text-tertiary tracking-widest uppercase">Verified</span>
+</div>
+</div>
+</div>
+</div>
+<button class="bg-surface-container-high hover:bg-surface-container-highest transition-colors px-6 py-3 rounded-md border border-outline-variant/20 group">
+<span class="font-label text-xs font-bold text-secondary-fixed-dim tracking-widest uppercase flex items-center gap-2">
+                            Switch Account
+                            <span class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">sync_alt</span>
+</span>
+</button>
+</div>
+</div>
+</section>
+<!-- SECTION 2: SETTLEMENT CYCLE CONFIG -->
+<section>
+<div class="flex items-center gap-4 mb-4">
+<div class="h-[1px] w-12 bg-surface-container-highest"></div>
+<h3 class="font-label text-xs font-bold uppercase tracking-[0.3em] text-on-primary-container">Settlement Cycle Config</h3>
+<div class="h-[1px] flex-grow bg-surface-container-highest"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+<!-- Option 1 -->
+<label class="relative cursor-pointer group">
+<input checked="" class="peer sr-only" name="cycle" type="radio"/>
+<div class="h-full bg-surface-container-low border border-transparent peer-checked:border-secondary-fixed-dim/40 peer-checked:bg-secondary-fixed-dim/5 p-6 rounded-lg transition-all duration-300">
+<div class="flex justify-between items-start mb-4">
+<span class="material-symbols-outlined text-on-surface-variant peer-checked:text-secondary-fixed-dim">bolt</span>
+<div class="w-4 h-4 rounded-full border-2 border-outline-variant peer-checked:border-secondary-fixed-dim flex items-center justify-center">
+<div class="w-2 h-2 rounded-full bg-secondary-fixed-dim opacity-0 peer-checked:opacity-100 transition-opacity"></div>
+</div>
+</div>
+<h4 class="font-headline font-bold text-white uppercase tracking-wider">Daily Pulse</h4>
+<p class="text-xs text-on-surface-variant mt-2 leading-relaxed">Aggregated daily transfers. 0.5% protocol fee.</p>
+</div>
+</label>
+<!-- Option 2 -->
+<label class="relative cursor-pointer group">
+<input class="peer sr-only" name="cycle" type="radio"/>
+<div class="h-full bg-surface-container-low border border-transparent peer-checked:border-secondary-fixed-dim/40 peer-checked:bg-secondary-fixed-dim/5 p-6 rounded-lg transition-all duration-300">
+<div class="flex justify-between items-start mb-4">
+<span class="material-symbols-outlined text-on-surface-variant">sync_saved_locally</span>
+<div class="w-4 h-4 rounded-full border-2 border-outline-variant flex items-center justify-center">
+<div class="w-2 h-2 rounded-full bg-secondary-fixed-dim opacity-0 transition-opacity"></div>
+</div>
+</div>
+<h4 class="font-headline font-bold text-white uppercase tracking-wider">Weekly Sync</h4>
+<p class="text-xs text-on-surface-variant mt-2 leading-relaxed">Automated Monday settlement. 0% protocol fee.</p>
+</div>
+</label>
+<!-- Option 3 -->
+<label class="relative cursor-pointer group">
+<input class="peer sr-only" name="cycle" type="radio"/>
+<div class="h-full bg-surface-container-low border border-transparent peer-checked:border-secondary-fixed-dim/40 peer-checked:bg-secondary-fixed-dim/5 p-6 rounded-lg transition-all duration-300">
+<div class="flex justify-between items-start mb-4">
+<span class="material-symbols-outlined text-on-surface-variant">request_quote</span>
+<div class="w-4 h-4 rounded-full border-2 border-outline-variant flex items-center justify-center">
+<div class="w-2 h-2 rounded-full bg-secondary-fixed-dim opacity-0 transition-opacity"></div>
+</div>
+</div>
+<h4 class="font-headline font-bold text-white uppercase tracking-wider">On-Demand</h4>
+<p class="text-xs text-on-surface-variant mt-2 leading-relaxed">Instant manual requisition. Fixed $5.00 gas fee.</p>
+</div>
+</label>
+</div>
+</section>
+<!-- SECTION 4: RECENT PAYOUT LOG -->
+<section class="pb-8">
+<div class="flex items-center justify-between mb-6">
+<h3 class="font-label text-xs font-bold uppercase tracking-[0.3em] text-on-primary-container">Recent Payout Log</h3>
+<button class="text-[10px] font-bold uppercase tracking-widest text-secondary-fixed-dim border-b border-secondary-fixed-dim/30 hover:border-secondary-fixed-dim transition-all">View All Archives</button>
+</div>
+<div class="space-y-3">
+<!-- Log Item 1 -->
+<div class="bg-surface-container-low hover:bg-surface-container transition-colors p-4 rounded-md grid grid-cols-2 md:grid-cols-4 items-center gap-4">
+<div class="flex flex-col">
+<span class="font-label text-[9px] uppercase text-outline mb-1">Transaction ID</span>
+<span class="font-mono text-xs text-white">AGS-8821-X9</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label text-[9px] uppercase text-outline mb-1">Settlement Date</span>
+<span class="font-body text-xs text-white">Oct 17, 2024</span>
+</div>
+<div class="flex flex-col items-start md:items-center">
+<span class="font-label text-[9px] uppercase text-outline mb-1">Status</span>
+<div class="flex items-center gap-1.5">
+<span class="w-1 h-1 rounded-full bg-secondary-fixed-dim"></span>
+<span class="font-label text-[10px] text-secondary-fixed-dim uppercase font-bold">Fulfilled</span>
+</div>
+</div>
+<div class="flex flex-col items-end">
+<span class="font-label text-[9px] uppercase text-outline mb-1">Amount</span>
+<span class="font-headline font-bold text-white text-sm tracking-tight">$42,800.00</span>
+</div>
+</div>
+<!-- Log Item 2 -->
+<div class="bg-surface-container-low hover:bg-surface-container transition-colors p-4 rounded-md grid grid-cols-2 md:grid-cols-4 items-center gap-4">
+<div class="flex flex-col">
+<span class="font-label text-[9px] uppercase text-outline mb-1">Transaction ID</span>
+<span class="font-mono text-xs text-white">AGS-7901-K4</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label text-[9px] uppercase text-outline mb-1">Settlement Date</span>
+<span class="font-body text-xs text-white">Oct 10, 2024</span>
+</div>
+<div class="flex flex-col items-start md:items-center">
+<span class="font-label text-[9px] uppercase text-outline mb-1">Status</span>
+<div class="flex items-center gap-1.5">
+<span class="w-1 h-1 rounded-full bg-secondary-fixed-dim"></span>
+<span class="font-label text-[10px] text-secondary-fixed-dim uppercase font-bold">Fulfilled</span>
+</div>
+</div>
+<div class="flex flex-col items-end">
+<span class="font-label text-[9px] uppercase text-outline mb-1">Amount</span>
+<span class="font-headline font-bold text-white text-sm tracking-tight">$125,400.00</span>
+</div>
+</div>
+<!-- Log Item 3 (Safety Gold Accent for high tier) -->
+<div class="bg-surface-container-low hover:bg-surface-container transition-colors p-4 rounded-md grid grid-cols-2 md:grid-cols-4 items-center gap-4 border-r-2 border-tertiary">
+<div class="flex flex-col">
+<span class="font-label text-[9px] uppercase text-outline mb-1">Transaction ID</span>
+<span class="font-mono text-xs text-white">AGS-6221-M2</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label text-[9px] uppercase text-outline mb-1">Settlement Date</span>
+<span class="font-body text-xs text-white">Oct 03, 2024</span>
+</div>
+<div class="flex flex-col items-start md:items-center">
+<span class="font-label text-[9px] uppercase text-outline mb-1">Status</span>
+<div class="flex items-center gap-1.5">
+<span class="w-1 h-1 rounded-full bg-tertiary"></span>
+<span class="font-label text-[10px] text-tertiary uppercase font-bold">High Tier Arc</span>
+</div>
+</div>
+<div class="flex flex-col items-end">
+<span class="font-label text-[9px] uppercase text-outline mb-1">Amount</span>
+<span class="font-headline font-bold text-tertiary text-sm tracking-tight">$850,000.00</span>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full z-50 border-t border-[#353534]/15 bg-[#131313]">
+<div class="flex justify-around items-center h-16 w-full px-4 pb-safe">
+<button class="flex flex-col items-center justify-center text-gray-500 hover:text-gray-300 hover:bg-[#2A2A2A] transition-all active:scale-90 duration-100">
+<span class="material-symbols-outlined">emoji_events</span>
+<span class="font-['Space_Grotesk'] text-[10px] uppercase tracking-wider font-medium">Tournaments</span>
+</button>
+<button class="flex flex-col items-center justify-center text-gray-500 hover:text-gray-300 hover:bg-[#2A2A2A] transition-all active:scale-90 duration-100">
+<span class="material-symbols-outlined">leaderboard</span>
+<span class="font-['Space_Grotesk'] text-[10px] uppercase tracking-wider font-medium">Analytics</span>
+</button>
+<button class="flex flex-col items-center justify-center text-[#00E5FF] bg-[#201F1F] rounded-md px-3 py-1 transition-all active:scale-90 duration-100">
+<span class="material-symbols-outlined">payments</span>
+<span class="font-['Space_Grotesk'] text-[10px] uppercase tracking-wider font-bold">Payouts</span>
+</button>
+<button class="flex flex-col items-center justify-center text-gray-500 hover:text-gray-300 hover:bg-[#2A2A2A] transition-all active:scale-90 duration-100">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-['Space_Grotesk'] text-[10px] uppercase tracking-wider font-medium">Settings</span>
+</button>
+</div>
+</nav>
+</body></html>

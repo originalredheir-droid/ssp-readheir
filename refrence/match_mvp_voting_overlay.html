@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>MVP COMMAND | AGS Global Arena</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-container-lowest": "#0e0e0e",
+                        "outline-variant": "#444748",
+                        "surface": "#131313",
+                        "surface-tint": "#c8c6c5",
+                        "secondary-container": "#00e3fd",
+                        "on-error-container": "#ffdad6",
+                        "background": "#131313",
+                        "tertiary": "#e9c400",
+                        "surface-container-low": "#1c1b1b",
+                        "surface-container-high": "#2a2a2a",
+                        "on-primary": "#313030",
+                        "primary-container": "#121212",
+                        "on-tertiary-fixed": "#221b00",
+                        "tertiary-fixed-dim": "#e9c400",
+                        "inverse-on-surface": "#313030",
+                        "secondary": "#bdf4ff",
+                        "on-tertiary-fixed-variant": "#544600",
+                        "on-surface": "#e5e2e1",
+                        "on-secondary": "#00363d",
+                        "inverse-primary": "#5f5e5e",
+                        "tertiary-container": "#c9a900",
+                        "error": "#ffb4ab",
+                        "primary": "#c8c6c5",
+                        "on-secondary-fixed-variant": "#004f58",
+                        "on-secondary-container": "#00616d",
+                        "surface-dim": "#131313",
+                        "outline": "#8e9192",
+                        "primary-fixed-dim": "#c8c6c5",
+                        "inverse-surface": "#e5e2e1",
+                        "surface-variant": "#353534",
+                        "on-secondary-fixed": "#001f24",
+                        "on-surface-variant": "#c4c7c7",
+                        "surface-container": "#201f1f",
+                        "on-primary-container": "#7e7d7d",
+                        "error-container": "#93000a",
+                        "on-tertiary": "#3a3000",
+                        "on-primary-fixed-variant": "#474646",
+                        "secondary-fixed": "#9cf0ff",
+                        "on-error": "#690005",
+                        "surface-container-highest": "#353534",
+                        "tertiary-fixed": "#ffe16d",
+                        "on-tertiary-container": "#4c3f00",
+                        "on-background": "#e5e2e1",
+                        "primary-fixed": "#e5e2e1",
+                        "secondary-fixed-dim": "#00daf3",
+                        "surface-bright": "#393939",
+                        "on-primary-fixed": "#1c1b1b"
+                    },
+                    fontFamily: {
+                        "headline": ["Space Grotesk"],
+                        "body": ["Inter"],
+                        "label": ["Space Grotesk"]
+                    },
+                    borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .scanline {
+            background: linear-gradient(to bottom, transparent 50%, rgba(0, 229, 255, 0.02) 50%);
+            background-size: 100% 4px;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface font-body selection:bg-secondary-fixed-dim selection:text-on-secondary">
+<!-- TopAppBar Anchor -->
+<header class="w-full sticky top-0 z-50 bg-[#131313] flex items-center justify-between px-6 h-16 w-full">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[#00E5FF]">analytics</span>
+<h1 class="text-xl font-bold tracking-tighter text-[#00E5FF] font-headline uppercase">MVP COMMAND</h1>
+</div>
+<div class="flex items-center gap-6">
+<div class="flex items-center gap-2 px-3 py-1 bg-surface-container-high rounded-md border border-secondary/10">
+<span class="relative flex h-2 w-2">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary-fixed-dim opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-secondary-fixed-dim"></span>
+</span>
+<span class="font-label text-[10px] font-bold tracking-[0.1em] text-secondary-fixed-dim">LIVE VOTE ACTIVE</span>
+</div>
+<span class="material-symbols-outlined text-gray-500 hover:text-[#00DAF3] transition-colors cursor-pointer">close</span>
+</div>
+</header>
+<div class="bg-[#1C1B1B] h-[1px] w-full"></div>
+<main class="min-h-screen p-6 md:p-12 max-w-7xl mx-auto scanline">
+<!-- Header Section: Tactical Overview -->
+<section class="mb-12 flex flex-col md:flex-row md:items-end justify-between gap-6">
+<div class="space-y-2">
+<p class="font-label text-xs font-bold tracking-widest text-tertiary uppercase">Global Arena Event // Match ID: 882-QX</p>
+<h2 class="text-4xl md:text-6xl font-headline font-bold tracking-tight uppercase leading-none">Select Match <span class="text-outline">MVP</span></h2>
+</div>
+<div class="bg-surface-container p-4 border-l-2 border-tertiary flex flex-col gap-1">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-tertiary text-sm" data-weight="fill" style="font-variation-settings: 'FILL' 1;">stars</span>
+<span class="font-headline font-bold text-tertiary text-sm tracking-widest uppercase">Participation Reward</span>
+</div>
+<p class="text-on-surface-variant text-sm font-medium uppercase tracking-tight">+50 AP for participating</p>
+</div>
+</section>
+<!-- Main Content: Bento Grid of Candidates -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+<!-- Primary Candidate Highlight (Asymmetric Focus) -->
+<div class="lg:col-span-7 group relative overflow-hidden bg-surface-container-low rounded-lg p-1 transition-all hover:bg-surface-container">
+<div class="absolute inset-0 bg-gradient-to-tr from-secondary/5 to-transparent pointer-events-none"></div>
+<div class="relative p-6 h-full flex flex-col">
+<div class="flex justify-between items-start mb-8">
+<div>
+<span class="px-2 py-1 bg-secondary-fixed-dim text-on-secondary text-[10px] font-bold font-label tracking-widest uppercase mb-2 inline-block">Current Leader</span>
+<h3 class="text-5xl font-headline font-extrabold uppercase tracking-tighter">ZENITH</h3>
+<p class="font-label text-secondary-fixed-dim tracking-widest text-sm font-bold opacity-80 uppercase">TEAM ALPHA</p>
+</div>
+<div class="text-right">
+<span class="block font-headline text-4xl font-bold text-secondary-fixed-dim">42%</span>
+<span class="block font-label text-[10px] text-outline uppercase tracking-widest">Global Consensus</span>
+</div>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10">
+<div class="bg-surface-container-lowest p-3 border-b-2 border-secondary/20">
+<span class="text-[10px] font-label text-outline uppercase block mb-1">K/D Ratio</span>
+<span class="text-2xl font-headline font-bold">4.2</span>
+</div>
+<div class="bg-surface-container-lowest p-3 border-b-2 border-secondary/20">
+<span class="text-[10px] font-label text-outline uppercase block mb-1">Assists</span>
+<span class="text-2xl font-headline font-bold">18</span>
+</div>
+<div class="bg-surface-container-lowest p-3 border-b-2 border-secondary/20">
+<span class="text-[10px] font-label text-outline uppercase block mb-1">Impact</span>
+<span class="text-2xl font-headline font-bold">94%</span>
+</div>
+<div class="bg-surface-container-lowest p-3 border-b-2 border-secondary/20">
+<span class="text-[10px] font-label text-outline uppercase block mb-1">DMG/min</span>
+<span class="text-2xl font-headline font-bold">842</span>
+</div>
+</div>
+<div class="mt-auto pt-6 flex flex-col md:flex-row gap-4 items-center">
+<div class="w-full bg-surface-container-highest h-3 rounded-full overflow-hidden">
+<div class="h-full bg-secondary-fixed-dim w-[42%] shadow-[0_0_12px_rgba(0,229,255,0.4)]"></div>
+</div>
+<button class="w-full md:w-auto px-8 py-4 bg-secondary-fixed-dim text-on-secondary font-headline font-bold uppercase tracking-widest text-sm rounded-md transition-all active:scale-95 hover:bg-[#00DAF3] whitespace-nowrap">
+                            VOTE FOR MVP
+                        </button>
+</div>
+</div>
+<!-- Abstract Decorative Player Silhouette Placeholders -->
+<div class="absolute right-0 bottom-0 w-1/3 h-2/3 opacity-20 pointer-events-none grayscale brightness-50 contrast-125">
+<img alt="Cyberpunk professional gamer aesthetic portrait" class="w-full h-full object-cover object-top" data-alt="Cyberpunk professional gamer aesthetic portrait" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA7IPD35QbmKsRMdOI4kUGLz2bQhwKPHBsCu8flIDhef6e4YY4I0oQ96onuYKEqlqUyfCttSfd2fddP2O6d_f-6iFpc3T0MSGxgaW_mOcf2lIsLU8xhsaLrCJFRjicpp1vcIuDq1eqll4pCcXlXCbq5nEj0VNrXanb3Yy1Ow7DGmtMe0E-7TIFf-xzi2AoT3sZIBf9aDbNP5ml9ElC_sRzqpsz2ki-FxzlwEl5SHWJ3fk3wJCumh_vE-2lIW55knzquv5MJe_UjIxhd"/>
+</div>
+</div>
+<!-- Secondary Candidates List -->
+<div class="lg:col-span-5 flex flex-col gap-4">
+<!-- Candidate: VOID_WALKER -->
+<div class="bg-surface-container-low p-5 rounded-lg border-l-4 border-outline-variant hover:border-secondary transition-all cursor-pointer group">
+<div class="flex items-center gap-5">
+<div class="w-16 h-16 bg-surface-container-highest rounded-md overflow-hidden flex-shrink-0 border border-outline/10">
+<img alt="Tactical focus player headshot portrait" class="w-full h-full object-cover" data-alt="Tactical focus player headshot portrait" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDutCbWUkIOJCrE3zYuhrhZbJw5wJKs-UgMdCx4IQeKZB-oRr1m4emjo9gE722NHUhq0PiA5YTjerxHH9x9udbDF51zHoFoEO96AVErmbIJROwd5A27QdOBVZ0WEzI50-WfkoEoGOiGbOxc0-DRjCQGQIT-rGHLJm-PE3iyf8tD9Mcl3rpsh4IxuN4WzHtMEoTzesr6_eENbpsH9GkdC8KNmmfZRKjGoI5j7nn_G2f0gkvUqURJScbsJyXXRh73IwttStJfzEEJuF0d"/>
+</div>
+<div class="flex-grow">
+<div class="flex justify-between items-center mb-1">
+<h4 class="font-headline font-bold text-xl uppercase tracking-tighter group-hover:text-secondary transition-colors">VOID_WALKER</h4>
+<span class="font-headline font-bold text-secondary text-lg">31%</span>
+</div>
+<p class="text-[10px] font-label text-outline uppercase tracking-widest mb-3">OMEGA OPS</p>
+<div class="flex gap-4 text-[10px] font-label text-on-surface-variant">
+<span>K/D: 2.8</span>
+<span>AST: 12</span>
+<span>OBJ: 88%</span>
+</div>
+</div>
+</div>
+<div class="mt-4 w-full bg-surface-container-lowest h-1.5 rounded-full overflow-hidden">
+<div class="h-full bg-secondary w-[31%] opacity-60"></div>
+</div>
+</div>
+<!-- Candidate: KORTEX_X -->
+<div class="bg-surface-container-low p-5 rounded-lg border-l-4 border-outline-variant hover:border-secondary transition-all cursor-pointer group">
+<div class="flex items-center gap-5">
+<div class="w-16 h-16 bg-surface-container-highest rounded-md overflow-hidden flex-shrink-0 border border-outline/10">
+<img alt="High performance esports athlete portrait" class="w-full h-full object-cover" data-alt="High performance esports athlete portrait" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDtbE4Sj1Y2Tw4AjgS5K2i_ZVp5Zg54ZpyFnos9e35bKjO5zqOyZ6XYx7qbq5wfogLTJ5OqvTfPZzmdq20DL3MrCGoVZO4vlXVbHvWQCsNY8xUhKi47ogiCi_SoSf3hXdWPq93vU3B5twfT-aY0mGR9u3owi3NvKJKjJRu02DFnbawBAneDycDD6w7BzWz1QyhBFd1VHK0lo76kkhVPc6p69wMd5zWqKGBjmanFz4WuRbljRarA8WuntvsYaYHSatZ8vcE8_GBjCbpw"/>
+</div>
+<div class="flex-grow">
+<div class="flex justify-between items-center mb-1">
+<h4 class="font-headline font-bold text-xl uppercase tracking-tighter group-hover:text-secondary transition-colors">KORTEX_X</h4>
+<span class="font-headline font-bold text-secondary text-lg">27%</span>
+</div>
+<p class="text-[10px] font-label text-outline uppercase tracking-widest mb-3">TEAM ALPHA</p>
+<div class="flex gap-4 text-[10px] font-label text-on-surface-variant">
+<span>K/D: 3.1</span>
+<span>AST: 9</span>
+<span>OBJ: 74%</span>
+</div>
+</div>
+</div>
+<div class="mt-4 w-full bg-surface-container-lowest h-1.5 rounded-full overflow-hidden">
+<div class="h-full bg-secondary w-[27%] opacity-60"></div>
+</div>
+</div>
+<!-- Interaction Hint -->
+<div class="mt-2 p-4 bg-surface-container-highest/30 rounded-lg flex items-start gap-3">
+<span class="material-symbols-outlined text-outline text-lg">info</span>
+<p class="text-[10px] font-label text-outline uppercase leading-relaxed tracking-wider">
+                        Voting closes at match conclusion. arena points are credited instantly upon submission. multi-vote detection active.
+                    </p>
+</div>
+</div>
+</div>
+<!-- Tactical Telemetry Overlay elements (Asymmetry) -->
+<div class="hidden lg:block fixed left-12 top-1/2 -translate-y-1/2 w-px h-64 bg-gradient-to-b from-transparent via-secondary/20 to-transparent"></div>
+<div class="hidden lg:block fixed right-12 top-1/2 -translate-y-1/2 text-outline/20 font-headline text-[120px] font-black rotate-90 origin-center select-none pointer-events-none">
+            COMMAND
+        </div>
+</main>
+<!-- BottomNavBar Anchor -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center px-4 pb-6 pt-2 bg-[#131313]/90 backdrop-blur-xl border-t border-[#353534]/15 z-50">
+<div class="flex flex-col items-center justify-center text-gray-500 py-1.5 hover:bg-[#2A2A2A] transition-all cursor-pointer">
+<span class="material-symbols-outlined mb-1">sports_soccer</span>
+<span class="font-headline text-[10px] uppercase font-bold tracking-widest">MATCH</span>
+</div>
+<div class="flex flex-col items-center justify-center text-gray-500 py-1.5 hover:bg-[#2A2A2A] transition-all cursor-pointer">
+<span class="material-symbols-outlined mb-1">groups</span>
+<span class="font-headline text-[10px] uppercase font-bold tracking-widest">SQUAD</span>
+</div>
+<div class="flex flex-col items-center justify-center bg-[#201F1F] text-[#00E5FF] rounded-lg px-3 py-1.5 transition-all active:scale-90 duration-200 cursor-pointer">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 1;">stars</span>
+<span class="font-headline text-[10px] uppercase font-bold tracking-widest">VOTE</span>
+</div>
+<div class="flex flex-col items-center justify-center text-gray-500 py-1.5 hover:bg-[#2A2A2A] transition-all cursor-pointer">
+<span class="material-symbols-outlined mb-1">query_stats</span>
+<span class="font-headline text-[10px] uppercase font-bold tracking-widest">INTEL</span>
+</div>
+</nav>
+<!-- Background Elements -->
+<div class="fixed inset-0 -z-10 pointer-events-none">
+<div class="absolute top-0 right-0 w-[500px] h-[500px] bg-secondary/5 blur-[120px] rounded-full"></div>
+<div class="absolute bottom-0 left-0 w-[300px] h-[300px] bg-tertiary/5 blur-[100px] rounded-full"></div>
+</div>
+</body></html>

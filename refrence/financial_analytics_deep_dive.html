@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Financial Analytics Deep-Dive | AGS Global Arena</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-dim": "#131313",
+                        "on-secondary-fixed-variant": "#004f58",
+                        "on-primary-fixed": "#1c1b1b",
+                        "secondary-fixed": "#9cf0ff",
+                        "on-secondary-fixed": "#001f24",
+                        "surface-container": "#201f1f",
+                        "on-primary-fixed-variant": "#474646",
+                        "surface-container-high": "#2a2a2a",
+                        "tertiary-fixed-dim": "#e9c400",
+                        "tertiary-container": "#c9a900",
+                        "surface-container-highest": "#353534",
+                        "on-surface-variant": "#c4c7c7",
+                        "surface-variant": "#353534",
+                        "surface-container-lowest": "#0e0e0e",
+                        "primary-container": "#121212",
+                        "outline": "#8e9192",
+                        "tertiary-fixed": "#ffe16d",
+                        "surface": "#131313",
+                        "inverse-on-surface": "#313030",
+                        "on-tertiary": "#3a3000",
+                        "on-primary-container": "#7e7d7d",
+                        "primary-fixed": "#e5e2e1",
+                        "on-secondary": "#00363d",
+                        "surface-container-low": "#1c1b1b",
+                        "on-secondary-container": "#00616d",
+                        "primary-fixed-dim": "#c8c6c5",
+                        "secondary-container": "#00e3fd",
+                        "on-background": "#e5e2e1",
+                        "on-surface": "#e5e2e1",
+                        "on-primary": "#313030",
+                        "primary": "#c8c6c5",
+                        "background": "#131313",
+                        "on-error-container": "#ffdad6",
+                        "on-error": "#690005",
+                        "tertiary": "#e9c400",
+                        "surface-bright": "#393939",
+                        "secondary": "#bdf4ff",
+                        "on-tertiary-fixed-variant": "#544600",
+                        "inverse-surface": "#e5e2e1",
+                        "error-container": "#93000a",
+                        "on-tertiary-fixed": "#221b00",
+                        "on-tertiary-container": "#4c3f00",
+                        "inverse-primary": "#5f5e5e",
+                        "secondary-fixed-dim": "#00daf3",
+                        "outline-variant": "#444748",
+                        "surface-tint": "#c8c6c5",
+                        "error": "#ffb4ab"
+                    },
+                    fontFamily: {
+                        "headline": ["Space Grotesk"],
+                        "body": ["Inter"],
+                        "label": ["Space Grotesk"]
+                    },
+                    borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #131313;
+            color: #e5e2e1;
+            font-family: 'Inter', sans-serif;
+        }
+        .text-cyan { color: #00E5FF; }
+        .bg-cyan { background-color: #00E5FF; }
+        .border-cyan { border-color: #00E5FF; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="min-h-screen pb-20 md:pb-0">
+<!-- TopAppBar -->
+<header class="w-full sticky top-0 z-50 bg-[#131313] shadow-[0_0_20px_rgba(0,229,255,0.04)]">
+<div class="flex justify-between items-center px-6 py-4 w-full">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[#00E5FF]" data-icon="analytics">analytics</span>
+<h1 class="font-['Space_Grotesk'] tracking-tight font-bold uppercase text-xl font-black text-[#00E5FF] tracking-widest">COMMAND CENTER</h1>
+</div>
+<div class="flex items-center gap-6">
+<nav class="hidden md:flex gap-8">
+<a class="font-['Space_Grotesk'] text-sm font-bold tracking-tight text-gray-500 hover:bg-[#2A2A2A] transition-colors duration-200 px-2 py-1" href="#">DASHBOARD</a>
+<a class="font-['Space_Grotesk'] text-sm font-bold tracking-tight text-[#00E5FF] border-b-2 border-[#00E5FF] px-2 py-1" href="#">REPORTS</a>
+<a class="font-['Space_Grotesk'] text-sm font-bold tracking-tight text-gray-500 hover:bg-[#2A2A2A] transition-colors duration-200 px-2 py-1" href="#">MARKETS</a>
+</nav>
+<div class="w-10 h-10 rounded-full bg-surface-container-high border border-outline-variant/20 flex items-center justify-center overflow-hidden">
+<img alt="User Profile" class="w-full h-full object-cover" data-alt="User profile avatar with professional tech appearance" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDwdEuPPnAOz0JLoZFjjFpCfdure6RevoLUhRfGtkrTzRpFCwXcMEdgyepaW6HwSNA2l3wbQoGTZfWNloUda6QaJD4P2ntEwlPRnJ6sRBc4Ucw5JIocZ4w7fDjcSOfVOSipopRKYJxi0DVXc03wlpBZKpqGxCWzeIasj6ANK2JQZHbEOHXk0QXr0gjY5EkdTni0Ii5YOTJl25p2lnvN46XnjIH1H47w0caYm_9NdVP_eL3pPcNueOGz1wjWEf7stj5tWdwTm3yz6Qn8"/>
+</div>
+</div>
+</div>
+<div class="bg-[#1C1B1B] h-[4px] w-full"></div>
+</header>
+<main class="max-w-[1440px] mx-auto p-6 space-y-8">
+<!-- Financial Command Header: Overall Metrics -->
+<section class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="bg-surface-container-low p-6 flex flex-col justify-between h-40 relative overflow-hidden">
+<div class="absolute top-0 right-0 p-4 opacity-10">
+<span class="material-symbols-outlined text-6xl" data-icon="payments">payments</span>
+</div>
+<span class="font-label text-xs font-bold tracking-widest text-on-surface-variant uppercase">Gross Revenue (YTD)</span>
+<div>
+<span class="font-headline text-4xl font-bold text-white">$2,484,290</span>
+<div class="flex items-center gap-1 text-secondary-fixed-dim mt-1">
+<span class="material-symbols-outlined text-sm" data-icon="trending_up">trending_up</span>
+<span class="text-[10px] font-bold">+12.4% FROM LAST QUARTER</span>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-low p-6 flex flex-col justify-between h-40 relative overflow-hidden">
+<div class="absolute top-0 right-0 p-4 opacity-10">
+<span class="material-symbols-outlined text-6xl text-[#00E5FF]" data-icon="account_balance_wallet">account_balance_wallet</span>
+</div>
+<span class="font-label text-xs font-bold tracking-widest text-on-surface-variant uppercase">Net Yield</span>
+<div>
+<span class="font-headline text-4xl font-bold text-[#00E5FF]">$2,235,861</span>
+<div class="flex items-center gap-1 text-[#00E5FF] mt-1">
+<span class="material-symbols-outlined text-sm" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="text-[10px] font-bold">OPTIMIZED ALLOCATION</span>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-low p-6 flex flex-col justify-between h-40 relative overflow-hidden">
+<div class="absolute top-0 right-0 p-4 opacity-10">
+<span class="material-symbols-outlined text-6xl text-tertiary" data-icon="security">security</span>
+</div>
+<span class="font-label text-xs font-bold tracking-widest text-on-surface-variant uppercase">Platform Fees (10%)</span>
+<div>
+<span class="font-headline text-4xl font-bold text-tertiary">$248,429</span>
+<div class="flex items-center gap-1 text-tertiary mt-1">
+<span class="material-symbols-outlined text-sm" data-icon="verified_user">verified_user</span>
+<span class="text-[10px] font-bold">AGS INFRASTRUCTURE FEE</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Main Bento Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+<!-- The 90/10 Split Protocol -->
+<section class="lg:col-span-8 bg-surface-container p-8 rounded-lg border-l-4 border-[#00E5FF]">
+<div class="flex justify-between items-start mb-10">
+<div>
+<h2 class="font-headline text-2xl font-bold text-white mb-1">90/10 SPLIT PROTOCOL</h2>
+<p class="text-on-surface-variant text-sm font-medium">Automated revenue distribution engine active.</p>
+</div>
+<div class="bg-surface-container-highest px-3 py-1 rounded text-[10px] font-bold tracking-tighter text-[#00E5FF] border border-[#00E5FF]/20">
+                        SYSTEM STATUS: NOMINAL
+                    </div>
+</div>
+<div class="flex flex-col gap-8">
+<!-- Visual Breakdown Bar -->
+<div class="h-24 w-full flex bg-surface-container-lowest overflow-hidden rounded-md border border-outline-variant/10">
+<div class="h-full bg-gradient-to-r from-[#00E5FF]/20 to-[#00E5FF]/40 flex flex-col justify-center px-6 relative group transition-all hover:to-[#00E5FF]/60" style="width: 90%;">
+<span class="font-headline text-2xl font-black text-[#00E5FF]">90%</span>
+<span class="font-label text-[10px] font-bold text-[#00E5FF] tracking-widest uppercase">ORGANIZER YIELD</span>
+<div class="absolute top-0 left-0 w-full h-1 bg-[#00E5FF]"></div>
+</div>
+<div class="h-full bg-surface-container-highest flex flex-col justify-center px-6 border-l border-outline-variant/30" style="width: 10%;">
+<span class="font-headline text-2xl font-black text-tertiary">10%</span>
+<span class="font-label text-[10px] font-bold text-tertiary tracking-widest uppercase">AGS</span>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+<div class="space-y-4">
+<div class="flex items-center gap-3">
+<div class="w-2 h-10 bg-[#00E5FF]"></div>
+<div>
+<p class="text-[10px] font-bold text-on-surface-variant tracking-widest">ORGANIZER ALLOCATION</p>
+<p class="font-headline text-xl font-bold text-white">$2,235,861.00</p>
+</div>
+</div>
+<p class="text-xs text-on-surface-variant leading-relaxed">Direct deposit to verified liquidity pool. Funds are processed through the automated smart contract V4.2.</p>
+</div>
+<div class="space-y-4">
+<div class="flex items-center gap-3">
+<div class="w-2 h-10 bg-tertiary"></div>
+<div>
+<p class="text-[10px] font-bold text-on-surface-variant tracking-widest">AGS INFRASTRUCTURE</p>
+<p class="font-headline text-xl font-bold text-white">$248,429.00</p>
+</div>
+</div>
+<p class="text-xs text-on-surface-variant leading-relaxed">System maintenance, escrow protection, and cloud scaling fees automatically deducted per transaction.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Command Actions -->
+<section class="lg:col-span-4 space-y-6">
+<div class="bg-surface-container p-6 rounded-lg border-t-4 border-tertiary">
+<h3 class="font-headline text-lg font-bold text-white mb-6 uppercase tracking-tight">Command Actions</h3>
+<div class="space-y-4">
+<button class="w-full bg-[#00E5FF] hover:bg-[#00DAF3] text-[#001f24] font-label font-bold py-4 rounded-md transition-all active:scale-95 flex items-center justify-center gap-2 group">
+<span class="material-symbols-outlined text-xl group-hover:rotate-12 transition-transform" data-icon="bolt">bolt</span>
+                            INITIATE WITHDRAWAL
+                        </button>
+<button class="w-full bg-surface-container-high hover:bg-surface-container-highest text-white border border-outline-variant/30 font-label font-bold py-4 rounded-md transition-all active:scale-95 flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-xl" data-icon="add_card">add_card</span>
+                            REFUEL CAPITAL
+                        </button>
+</div>
+<div class="mt-8 pt-8 border-t border-outline-variant/10">
+<div class="flex justify-between items-center mb-4">
+<span class="text-[10px] font-bold text-on-surface-variant tracking-widest uppercase">Withdrawal Limit</span>
+<span class="text-[10px] font-bold text-white">$500,000 / Day</span>
+</div>
+<div class="w-full h-1 bg-surface-container-lowest rounded-full overflow-hidden">
+<div class="h-full bg-tertiary" style="width: 45%;"></div>
+</div>
+</div>
+</div>
+<!-- Escrow & Liquidity Monitor -->
+<div class="bg-surface-container-low p-6 rounded-lg">
+<h3 class="font-headline text-sm font-bold text-on-surface-variant mb-4 uppercase tracking-widest">Liquidity Monitor</h3>
+<div class="space-y-4">
+<div class="flex justify-between items-center">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[#00E5FF] text-lg" data-icon="lock_open">lock_open</span>
+<span class="text-xs font-bold text-white">Available Liquidity</span>
+</div>
+<span class="font-headline text-lg font-bold text-white">$842,000</span>
+</div>
+<div class="flex justify-between items-center">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-gray-500 text-lg" data-icon="lock">lock</span>
+<span class="text-xs font-bold text-on-surface-variant">Held in Escrow</span>
+</div>
+<span class="font-headline text-lg font-bold text-on-surface-variant">$1,393,861</span>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- Revenue by Domain & Transactional Ledger -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+<!-- Revenue by Domain -->
+<section class="lg:col-span-4 bg-surface-container p-6 rounded-lg">
+<h3 class="font-headline text-lg font-bold text-white mb-6 uppercase tracking-tight">Revenue by Domain</h3>
+<div class="space-y-6">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded bg-surface-container-high flex items-center justify-center border border-outline-variant/10">
+<span class="material-symbols-outlined text-[#00E5FF]" data-icon="sports_esports">sports_esports</span>
+</div>
+<div class="flex-1">
+<div class="flex justify-between mb-1">
+<span class="text-xs font-bold text-white">eSports Circuits</span>
+<span class="text-xs font-bold text-[#00E5FF]">$1.2M</span>
+</div>
+<div class="w-full h-1 bg-surface-container-lowest rounded-full">
+<div class="h-full bg-[#00E5FF]" style="width: 48%;"></div>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded bg-surface-container-high flex items-center justify-center border border-outline-variant/10">
+<span class="material-symbols-outlined text-[#00E5FF]" data-icon="sports_kabaddi">sports_kabaddi</span>
+</div>
+<div class="flex-1">
+<div class="flex justify-between mb-1">
+<span class="text-xs font-bold text-white">Physical Sports</span>
+<span class="text-xs font-bold text-[#00E5FF]">$894K</span>
+</div>
+<div class="w-full h-1 bg-surface-container-lowest rounded-full">
+<div class="h-full bg-[#00E5FF]" style="width: 36%;"></div>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded bg-surface-container-high flex items-center justify-center border border-outline-variant/10">
+<span class="material-symbols-outlined text-[#00E5FF]" data-icon="terminal">terminal</span>
+</div>
+<div class="flex-1">
+<div class="flex justify-between mb-1">
+<span class="text-xs font-bold text-white">Hackathons</span>
+<span class="text-xs font-bold text-[#00E5FF]">$390K</span>
+</div>
+<div class="w-full h-1 bg-surface-container-lowest rounded-full">
+<div class="h-full bg-[#00E5FF]" style="width: 16%;"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-8 p-4 bg-surface-container-lowest border border-outline-variant/10 rounded">
+<div class="flex items-center gap-2 mb-2">
+<span class="material-symbols-outlined text-tertiary text-sm" data-icon="info">info</span>
+<span class="text-[10px] font-bold text-on-surface-variant uppercase tracking-widest">Analytics Insight</span>
+</div>
+<p class="text-xs text-on-surface-variant leading-tight">eSports revenue saw a 24% spike during the Neon-Prime tournament series.</p>
+</div>
+</section>
+<!-- Transactional Ledger -->
+<section class="lg:col-span-8 bg-surface-container p-6 rounded-lg overflow-hidden flex flex-col">
+<div class="flex justify-between items-center mb-6">
+<h3 class="font-headline text-lg font-bold text-white uppercase tracking-tight">Transactional Ledger</h3>
+<div class="flex gap-2">
+<button class="bg-surface-container-high p-2 rounded hover:bg-surface-container-highest transition-colors">
+<span class="material-symbols-outlined text-sm" data-icon="filter_list">filter_list</span>
+</button>
+<button class="bg-surface-container-high p-2 rounded hover:bg-surface-container-highest transition-colors">
+<span class="material-symbols-outlined text-sm" data-icon="download">download</span>
+</button>
+</div>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead>
+<tr class="bg-surface-container-lowest">
+<th class="px-4 py-3 text-[10px] font-bold text-on-surface-variant uppercase tracking-widest">Transaction ID</th>
+<th class="px-4 py-3 text-[10px] font-bold text-on-surface-variant uppercase tracking-widest">Type</th>
+<th class="px-4 py-3 text-[10px] font-bold text-on-surface-variant uppercase tracking-widest">Domain</th>
+<th class="px-4 py-3 text-[10px] font-bold text-on-surface-variant uppercase tracking-widest text-right">Amount</th>
+<th class="px-4 py-3 text-[10px] font-bold text-on-surface-variant uppercase tracking-widest text-center">Status</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant/5">
+<tr class="hover:bg-surface-container-high transition-colors">
+<td class="px-4 py-4 font-mono text-xs text-white">#TX-8821094</td>
+<td class="px-4 py-4">
+<div class="flex flex-col">
+<span class="text-xs font-bold text-white uppercase">Entry Fee Batch</span>
+<span class="text-[10px] text-on-surface-variant uppercase">Global Arena V3</span>
+</div>
+</td>
+<td class="px-4 py-4">
+<span class="text-[10px] px-2 py-0.5 bg-surface-container-highest text-white rounded">PHYSICAL</span>
+</td>
+<td class="px-4 py-4 text-right font-headline font-bold text-[#00E5FF]">+$14,200.00</td>
+<td class="px-4 py-4 text-center">
+<span class="inline-flex items-center gap-1 text-[10px] font-bold text-tertiary border border-tertiary/20 px-2 py-0.5 rounded">
+<span class="material-symbols-outlined text-[12px]" data-icon="verified" style="font-variation-settings: 'FILL' 1;">verified</span>
+                                        VERIFIED
+                                    </span>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-high transition-colors">
+<td class="px-4 py-4 font-mono text-xs text-white">#TX-8821102</td>
+<td class="px-4 py-4">
+<div class="flex flex-col">
+<span class="text-xs font-bold text-white uppercase">Prize Dist.</span>
+<span class="text-[10px] text-on-surface-variant uppercase">Cyber-Strike Final</span>
+</div>
+</td>
+<td class="px-4 py-4">
+<span class="text-[10px] px-2 py-0.5 bg-surface-container-highest text-white rounded">ESPORTS</span>
+</td>
+<td class="px-4 py-4 text-right font-headline font-bold text-error">-$50,000.00</td>
+<td class="px-4 py-4 text-center">
+<span class="inline-flex items-center gap-1 text-[10px] font-bold text-tertiary border border-tertiary/20 px-2 py-0.5 rounded">
+<span class="material-symbols-outlined text-[12px]" data-icon="verified" style="font-variation-settings: 'FILL' 1;">verified</span>
+                                        VERIFIED
+                                    </span>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-high transition-colors">
+<td class="px-4 py-4 font-mono text-xs text-white">#TX-8821105</td>
+<td class="px-4 py-4">
+<div class="flex flex-col">
+<span class="text-xs font-bold text-white uppercase">Merch Sales</span>
+<span class="text-[10px] text-on-surface-variant uppercase">Drop #04 Liquidity</span>
+</div>
+</td>
+<td class="px-4 py-4">
+<span class="text-[10px] px-2 py-0.5 bg-surface-container-highest text-white rounded">PHYSICAL</span>
+</td>
+<td class="px-4 py-4 text-right font-headline font-bold text-[#00E5FF]">+$3,140.50</td>
+<td class="px-4 py-4 text-center">
+<span class="inline-flex items-center gap-1 text-[10px] font-bold text-tertiary border border-tertiary/20 px-2 py-0.5 rounded">
+<span class="material-symbols-outlined text-[12px]" data-icon="verified" style="font-variation-settings: 'FILL' 1;">verified</span>
+                                        VERIFIED
+                                    </span>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-high transition-colors">
+<td class="px-4 py-4 font-mono text-xs text-white">#TX-8821118</td>
+<td class="px-4 py-4">
+<div class="flex flex-col">
+<span class="text-xs font-bold text-white uppercase">Ticket Sales</span>
+<span class="text-[10px] text-on-surface-variant uppercase">Bio-Hack Summit</span>
+</div>
+</td>
+<td class="px-4 py-4">
+<span class="text-[10px] px-2 py-0.5 bg-surface-container-highest text-white rounded">HACKATHON</span>
+</td>
+<td class="px-4 py-4 text-right font-headline font-bold text-[#00E5FF]">+$42,900.00</td>
+<td class="px-4 py-4 text-center">
+<span class="inline-flex items-center gap-1 text-[10px] font-bold text-tertiary border border-tertiary/20 px-2 py-0.5 rounded">
+<span class="material-symbols-outlined text-[12px]" data-icon="verified" style="font-variation-settings: 'FILL' 1;">verified</span>
+                                        VERIFIED
+                                    </span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="mt-auto pt-6 flex justify-between items-center">
+<span class="text-[10px] font-bold text-on-surface-variant uppercase tracking-widest">Displaying 1-4 of 1,240 events</span>
+<div class="flex gap-1">
+<button class="w-8 h-8 flex items-center justify-center bg-surface-container-high rounded text-on-surface-variant hover:text-white transition-all"><span class="material-symbols-outlined text-sm" data-icon="chevron_left">chevron_left</span></button>
+<button class="w-8 h-8 flex items-center justify-center bg-[#00E5FF] rounded text-[#001f24] font-bold text-xs">1</button>
+<button class="w-8 h-8 flex items-center justify-center bg-surface-container-high rounded text-on-surface-variant hover:text-white transition-all"><span class="material-symbols-outlined text-sm" data-icon="chevron_right">chevron_right</span></button>
+</div>
+</div>
+</section>
+</div>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full flex justify-around items-center h-16 px-4 pb-safe bg-[#131313] border-t border-[#2A2A2A]/15 z-50">
+<div class="flex flex-col items-center justify-center text-gray-500 px-3 py-1 hover:text-white transition-all">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-['Space_Grotesk'] text-[10px] font-bold tracking-tighter uppercase">DASHBOARD</span>
+</div>
+<div class="flex flex-col items-center justify-center text-gray-500 px-3 py-1 hover:text-white transition-all">
+<span class="material-symbols-outlined" data-icon="leaderboard">leaderboard</span>
+<span class="font-['Space_Grotesk'] text-[10px] font-bold tracking-tighter uppercase">MARKETS</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#00E5FF] bg-[#2A2A2A] rounded-md px-3 py-1">
+<span class="material-symbols-outlined" data-icon="query_stats">query_stats</span>
+<span class="font-['Space_Grotesk'] text-[10px] font-bold tracking-tighter uppercase">REPORTS</span>
+</div>
+<div class="flex flex-col items-center justify-center text-gray-500 px-3 py-1 hover:text-white transition-all">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-['Space_Grotesk'] text-[10px] font-bold tracking-tighter uppercase">SETTINGS</span>
+</div>
+</nav>
+</body></html>

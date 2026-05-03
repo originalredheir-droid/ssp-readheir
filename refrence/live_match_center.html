@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Live Match Center - AGS Arena</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "outline-variant": "#444748",
+                        "surface-container": "#201f1f",
+                        "secondary-fixed-dim": "#00daf3",
+                        "on-secondary-fixed": "#001f24",
+                        "primary": "#c8c6c5",
+                        "secondary-container": "#00e3fd",
+                        "outline": "#8e9192",
+                        "on-primary": "#313030",
+                        "on-error": "#690005",
+                        "background": "#131313",
+                        "surface-container-lowest": "#0e0e0e",
+                        "error": "#ffb4ab",
+                        "surface-dim": "#131313",
+                        "surface-bright": "#393939",
+                        "on-tertiary-fixed": "#221b00",
+                        "surface-container-low": "#1c1b1b",
+                        "surface-tint": "#c8c6c5",
+                        "tertiary": "#e9c400",
+                        "inverse-on-surface": "#313030",
+                        "secondary": "#bdf4ff",
+                        "surface": "#131313",
+                        "primary-fixed-dim": "#c8c6c5",
+                        "on-surface-variant": "#c4c7c7",
+                        "on-background": "#e5e2e1",
+                        "on-secondary-container": "#00616d",
+                        "surface-variant": "#353534",
+                        "tertiary-fixed": "#ffe16d",
+                        "on-tertiary": "#3a3000",
+                        "error-container": "#93000a",
+                        "on-tertiary-fixed-variant": "#544600",
+                        "on-error-container": "#ffdad6",
+                        "inverse-primary": "#5f5e5e",
+                        "secondary-fixed": "#9cf0ff",
+                        "surface-container-high": "#2a2a2a",
+                        "on-tertiary-container": "#4c3f00",
+                        "primary-fixed": "#e5e2e1",
+                        "tertiary-fixed-dim": "#e9c400",
+                        "on-primary-container": "#7e7d7d",
+                        "inverse-surface": "#e5e2e1",
+                        "on-primary-fixed": "#1c1b1b",
+                        "on-secondary": "#00363d",
+                        "on-primary-fixed-variant": "#474646",
+                        "on-surface": "#e5e2e1",
+                        "surface-container-highest": "#353534",
+                        "on-secondary-fixed-variant": "#004f58",
+                        "tertiary-container": "#c9a900",
+                        "primary-container": "#121212"
+                    },
+                    fontFamily: {
+                        "headline": ["Space Grotesk"],
+                        "body": ["Inter"],
+                        "label": ["Space Grotesk"]
+                    },
+                    borderRadius: { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .technical-gradient {
+            background: linear-gradient(135deg, #121212 0%, #353534 100%);
+        }
+        .glow-cyan {
+            text-shadow: 0 0 10px rgba(0, 229, 255, 0.4);
+        }
+        .glass-panel {
+            background: rgba(53, 53, 52, 0.6);
+            backdrop-filter: blur(12px);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body selection:bg-secondary-container selection:text-on-secondary-container">
+<!-- TopAppBar -->
+<header class="bg-[#131313] docked full-width top-0 z-50">
+<div class="flex justify-between items-center w-full px-6 py-4">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 bg-surface-container rounded-lg flex items-center justify-center border border-outline-variant/20">
+<span class="material-symbols-outlined text-[#00E5FF]">grid_view</span>
+</div>
+<h1 class="font-['Space_Grotesk'] uppercase tracking-[0.05em] text-sm text-[#00E5FF]">TACTICAL COMMAND</h1>
+</div>
+<div class="flex items-center gap-6">
+<div class="hidden md:flex items-center gap-8 font-label text-xs tracking-widest uppercase">
+<a class="text-[#A0A0A0] hover:text-white transition-colors" href="#">LIVE FEED</a>
+<a class="text-[#00E5FF]" href="#">MATCH CENTER</a>
+<a class="text-[#A0A0A0] hover:text-white transition-colors" href="#">ANALYTICS</a>
+</div>
+<button class="active:scale-95 transition-transform text-[#00E5FF] hover:bg-[#2A2A2A] p-2 rounded-md">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+</div>
+</div>
+<div class="bg-[#1C1B1B] h-[1px] w-full"></div>
+</header>
+<main class="min-h-screen pt-20 pb-32 px-4 md:px-8 max-w-7xl mx-auto">
+<!-- Live Score Hero Section -->
+<section class="mb-12">
+<div class="technical-gradient rounded-xl border border-outline-variant/10 overflow-hidden shadow-2xl relative">
+<!-- Status Bar -->
+<div class="flex justify-between items-center px-6 py-3 bg-surface-container-lowest/50 border-b border-outline-variant/10">
+<div class="flex items-center gap-3">
+<span class="flex h-2 w-2 rounded-full bg-secondary animate-pulse"></span>
+<span class="font-label text-[10px] tracking-widest uppercase text-secondary">LIVE: SECOND HALF</span>
+</div>
+<div class="font-headline font-bold text-2xl tracking-tighter glow-cyan text-secondary">64:12</div>
+<div class="flex items-center gap-2 font-label text-[10px] tracking-widest uppercase text-tertiary">
+<span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">emoji_events</span>
+                        AGS PRO LEAGUE • SEASON 4
+                    </div>
+</div>
+<!-- Main Scoreboard -->
+<div class="flex flex-col md:flex-row items-center justify-around py-12 px-8 gap-8">
+<!-- Team A -->
+<div class="flex flex-col items-center text-center">
+<div class="w-24 h-24 mb-4 rounded-full bg-surface-container flex items-center justify-center border-4 border-surface-container-highest shadow-inner">
+<img alt="Team A Logo" class="w-16 h-16 object-contain" data-alt="Futuristic geometric blue wolf esports logo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDXQYmPZl-WllrewEofhJ6TxKHdIGceD6OzjFTcAcgQUwe8RHm_HcdBNaAuVyPhvSXm0O7q-sG6ZLNoyCqTxQPmRealQjuldHF0Y73zAqhmO6lb_fvFjUhnpv4vHSg9x0rcQgiatpm0LWVw7QXP1NV7xEYY_iU086VjLbTRGqsHntp_CvE16s6BgjRy6FATpxiOpNXitlYZzpira8E3JbFuTFdFyyFV6wrqIQu-mk3xfH-Xo0RgMEmneJT4BtgnH3Tym3tKRLVucqSY"/>
+</div>
+<h2 class="font-headline font-bold text-2xl tracking-tight mb-1">TITAN STRIKE</h2>
+<span class="font-label text-xs text-outline tracking-widest uppercase">HOME (3-1-0)</span>
+</div>
+<!-- Score -->
+<div class="flex items-center gap-8">
+<span class="font-headline font-bold text-8xl md:text-9xl tracking-tighter">2</span>
+<div class="flex flex-col items-center gap-2">
+<div class="w-px h-12 bg-outline-variant/30"></div>
+<span class="font-label text-sm text-outline tracking-widest uppercase">VS</span>
+<div class="w-px h-12 bg-outline-variant/30"></div>
+</div>
+<span class="font-headline font-bold text-8xl md:text-9xl tracking-tighter">1</span>
+</div>
+<!-- Team B -->
+<div class="flex flex-col items-center text-center">
+<div class="w-24 h-24 mb-4 rounded-full bg-surface-container flex items-center justify-center border-4 border-surface-container-highest shadow-inner">
+<img alt="Team B Logo" class="w-16 h-16 object-contain" data-alt="Sleek orange falcon geometric sports logo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBf-TradHg-rIR_WYxZiGO2s-UppbU9LpioW8X3u_HeOLnhVuQGOe2z7soloYnp4jvE5WvqSyt3nl5zt7otosvZ09OsMk5KinXZ2wEJgsSausBTmj8TA2JI-KZdetqpwlAfJamE69EKYlh5d3C5zJPaMIQbG5OEq_4z9Yq1mD8nK490ZrO1jIj8J0lo_byFZKxZ7XKkkg9UonJK-kloCEgqEhy6J8Y5Hc89BQ6JhOg0Q81DT0vp3rVMX5feb6iLoRN4QuH2A-Tfbu5P"/>
+</div>
+<h2 class="font-headline font-bold text-2xl tracking-tight mb-1">VECTOR ZERO</h2>
+<span class="font-label text-xs text-outline tracking-widest uppercase">AWAY (2-0-2)</span>
+</div>
+</div>
+<!-- Tactical Quick Actions -->
+<div class="absolute bottom-6 right-6">
+<button class="bg-secondary text-on-secondary-fixed px-6 py-3 rounded-md font-label font-bold text-sm uppercase tracking-wider flex items-center gap-3 active:scale-95 transition-transform shadow-[0_0_20px_rgba(0,229,255,0.3)]">
+<span class="material-symbols-outlined text-xl">strategy</span>
+                        OPEN TACTICAL BOARD
+                    </button>
+</div>
+</div>
+</section>
+<!-- Command Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+<!-- Left Column: Rule Engine & Officials -->
+<div class="lg:col-span-4 flex flex-col gap-6">
+<!-- Infinite Rule Engine -->
+<div class="bg-surface-container-low p-6 rounded-lg border-l-2 border-secondary/30">
+<div class="flex items-center justify-between mb-6">
+<h3 class="font-headline font-bold text-sm tracking-widest uppercase text-outline">Rule Engine</h3>
+<span class="material-symbols-outlined text-secondary text-sm">settings_input_component</span>
+</div>
+<div class="space-y-4">
+<div class="flex justify-between items-center group">
+<span class="text-xs font-label uppercase text-on-surface/80">Active Modifier</span>
+<span class="text-xs font-label font-bold text-secondary px-2 py-1 bg-secondary/10 rounded">HYPER-DRIVE 2.0</span>
+</div>
+<div class="flex justify-between items-center group">
+<span class="text-xs font-label uppercase text-on-surface/80">Offside Protocol</span>
+<span class="text-xs font-label font-bold text-on-surface">VAR SEMI-AUTO</span>
+</div>
+<div class="flex justify-between items-center group">
+<span class="text-xs font-label uppercase text-on-surface/80">Substitution Limit</span>
+<span class="text-xs font-label font-bold text-on-surface">2/5 REMAINING</span>
+</div>
+<div class="pt-4 border-t border-outline-variant/10">
+<div class="flex items-center gap-3 mb-2">
+<span class="material-symbols-outlined text-tertiary text-xs" style="font-variation-settings: 'FILL' 1;">warning</span>
+<p class="text-[10px] font-label text-tertiary uppercase leading-tight">Overtime rule enabled: golden goal active.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Match Official Status -->
+<div class="bg-surface-container-low p-6 rounded-lg">
+<div class="flex items-center justify-between mb-6">
+<h3 class="font-headline font-bold text-sm tracking-widest uppercase text-outline">Match Command</h3>
+<span class="material-symbols-outlined text-outline text-sm">verified_user</span>
+</div>
+<div class="flex items-center gap-4 p-3 bg-surface-container rounded-md">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">person</span>
+</div>
+<div>
+<p class="text-xs font-bold font-headline uppercase">Lead Arbiter: Marcus Vance</p>
+<div class="flex items-center gap-1 mt-1">
+<span class="w-2 h-2 rounded-full bg-green-500"></span>
+<span class="text-[9px] font-label uppercase text-outline tracking-widest">Connected • Low Latency</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Center Column: Live Event Ticker -->
+<div class="lg:col-span-8">
+<div class="bg-surface-container-low rounded-lg overflow-hidden flex flex-col h-full min-h-[500px]">
+<div class="px-6 py-4 bg-surface-container flex justify-between items-center border-b border-outline-variant/10">
+<h3 class="font-headline font-bold text-sm tracking-widest uppercase">Live Tactical Feed</h3>
+<div class="flex gap-2">
+<span class="text-[10px] font-label font-bold bg-secondary/10 text-secondary px-2 py-0.5 rounded">ALL</span>
+<span class="text-[10px] font-label font-bold text-outline px-2 py-0.5 rounded hover:bg-surface-container-high cursor-pointer">GOALS</span>
+<span class="text-[10px] font-label font-bold text-outline px-2 py-0.5 rounded hover:bg-surface-container-high cursor-pointer">FOULS</span>
+</div>
+</div>
+<!-- Timeline Scroll -->
+<div class="flex-grow p-6 space-y-8 overflow-y-auto">
+<!-- Goal Event -->
+<div class="flex gap-6 relative">
+<div class="flex flex-col items-center">
+<div class="w-8 h-8 rounded-full bg-secondary flex items-center justify-center text-on-secondary-fixed z-10">
+<span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;">sports_soccer</span>
+</div>
+<div class="w-px h-full bg-outline-variant/20 absolute top-8"></div>
+</div>
+<div class="flex-grow pb-2">
+<div class="flex justify-between items-start mb-1">
+<h4 class="font-headline font-bold text-lg uppercase leading-none text-secondary">GOAL SCORED</h4>
+<span class="font-label text-xs text-outline">58'</span>
+</div>
+<p class="text-sm font-label text-on-background/80 mb-2">A. Sterling finds the bottom corner after a clinical solo run.</p>
+<div class="flex items-center gap-4">
+<div class="flex items-center gap-2 px-2 py-1 bg-surface-container rounded border border-outline-variant/10">
+<span class="material-symbols-outlined text-xs text-tertiary" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="text-[10px] font-label uppercase tracking-wider text-outline">Assisted by: L. Rossi</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Foul/Card Event -->
+<div class="flex gap-6 relative">
+<div class="flex flex-col items-center">
+<div class="w-8 h-8 rounded-full bg-error flex items-center justify-center text-on-error z-10">
+<span class="material-symbols-outlined text-lg">style</span>
+</div>
+<div class="w-px h-full bg-outline-variant/20 absolute top-8"></div>
+</div>
+<div class="flex-grow pb-2">
+<div class="flex justify-between items-start mb-1">
+<h4 class="font-headline font-bold text-lg uppercase leading-none text-error">CAUTION: YELLOW</h4>
+<span class="font-label text-xs text-outline">49'</span>
+</div>
+<p class="text-sm font-label text-on-background/80">K. Jordon penalised for a reckless tactical challenge in midfield.</p>
+</div>
+</div>
+<!-- MVP / Status Change -->
+<div class="flex gap-6 relative">
+<div class="flex flex-col items-center">
+<div class="w-8 h-8 rounded-full bg-surface-container-highest flex items-center justify-center text-secondary z-10 border border-secondary/50">
+<span class="material-symbols-outlined text-lg">trending_up</span>
+</div>
+<div class="w-px h-full bg-outline-variant/20 absolute top-8"></div>
+</div>
+<div class="flex-grow pb-2">
+<div class="flex justify-between items-start mb-1">
+<h4 class="font-headline font-bold text-lg uppercase leading-none">MVP PREDICTION UPDATED</h4>
+<span class="font-label text-xs text-outline">42'</span>
+</div>
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-md overflow-hidden grayscale hover:grayscale-0 transition-all">
+<img alt="Player Image" class="w-full h-full object-cover" data-alt="Close up of a professional esport player in dark jersey" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDrF9ODX6dgvQHbG7STPWP418HmDNV4f3-txN5FJxEgRbM7RQyMfg_U1YhjA6pZrKw4amUMXancZAUYvYqig0z1Dp7wC9gDB41sO8jQQ16VVVacMF4DXPEsGFBcM0kIPZVNPewWSxiu99N7IY7GYU0jVR69jhRjWaIrGe-OThBHbW2dMdvb1BdgqMfSBbfjsYRtwqY5vz9vb6_Qr2FV14O8G1b_g0Oophll2QPbYx5vTNtPgTzJ9DU_cfgcXthoHJhDwcWcesYNdFgE"/>
+</div>
+<div>
+<p class="text-sm font-bold font-headline uppercase">A. STERLING (TS)</p>
+<div class="flex items-center gap-2">
+<div class="w-24 h-1.5 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-secondary w-4/5"></div>
+</div>
+<span class="text-[10px] font-label text-secondary">88% CONFIDENCE</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Substitution -->
+<div class="flex gap-6 relative">
+<div class="flex flex-col items-center">
+<div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-primary z-10">
+<span class="material-symbols-outlined text-lg">sync</span>
+</div>
+</div>
+<div class="flex-grow">
+<div class="flex justify-between items-start mb-1">
+<h4 class="font-headline font-bold text-lg uppercase leading-none text-outline">SUBSTITUTION</h4>
+<span class="font-label text-xs text-outline">35'</span>
+</div>
+<div class="flex items-center gap-2 text-sm font-label">
+<span class="text-error">OUT: T. MULLER</span>
+<span class="material-symbols-outlined text-xs">arrow_forward</span>
+<span class="text-secondary">IN: J. PARK</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 bg-[#131313] shadow-[0_-4px_24px_rgba(0,229,255,0.04)] border-t border-[#353534]/15">
+<div class="flex justify-around items-center px-4 pb-6 pt-2">
+<a class="flex flex-col items-center justify-center text-[#A0A0A0] px-3 py-1 hover:text-white transition-all active:opacity-80" href="#">
+<span class="material-symbols-outlined">explore</span>
+<span class="font-['Space_Grotesk'] font-bold text-[10px] tracking-wider uppercase">Explore</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#A0A0A0] px-3 py-1 hover:text-white transition-all active:opacity-80" href="#">
+<span class="material-symbols-outlined">emoji_events</span>
+<span class="font-['Space_Grotesk'] font-bold text-[10px] tracking-wider uppercase">Competitions</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#00E5FF] bg-[#201F1F] rounded-md px-3 py-1 active:opacity-80" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">strategy</span>
+<span class="font-['Space_Grotesk'] font-bold text-[10px] tracking-wider uppercase">Tactical</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#A0A0A0] px-3 py-1 hover:text-white transition-all active:opacity-80" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="font-['Space_Grotesk'] font-bold text-[10px] tracking-wider uppercase">Profile</span>
+</a>
+</div>
+</nav>
+</body></html>

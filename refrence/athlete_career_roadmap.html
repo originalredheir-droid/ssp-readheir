@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AGS Global Arena - Career Roadmap</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;900&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-container-high": "#2a2a2a",
+              "primary-fixed": "#e5e2e1",
+              "secondary-fixed-dim": "#00daf3",
+              "on-secondary-fixed-variant": "#004f58",
+              "tertiary": "#e9c400",
+              "surface": "#131313",
+              "on-tertiary-fixed-variant": "#544600",
+              "background": "#131313",
+              "inverse-primary": "#5f5e5e",
+              "on-primary": "#313030",
+              "on-error": "#690005",
+              "surface-container-lowest": "#0e0e0e",
+              "inverse-on-surface": "#313030",
+              "surface-container": "#201f1f",
+              "surface-bright": "#393939",
+              "tertiary-container": "#c9a900",
+              "on-surface": "#e5e2e1",
+              "outline-variant": "#444748",
+              "on-secondary-fixed": "#001f24",
+              "on-primary-fixed-variant": "#474646",
+              "primary-fixed-dim": "#c8c6c5",
+              "secondary-container": "#00e3fd",
+              "error-container": "#93000a",
+              "surface-variant": "#353534",
+              "on-primary-container": "#7e7d7d",
+              "on-secondary-container": "#00616d",
+              "on-primary-fixed": "#1c1b1b",
+              "on-error-container": "#ffdad6",
+              "surface-tint": "#c8c6c5",
+              "on-tertiary-container": "#4c3f00",
+              "inverse-surface": "#e5e2e1",
+              "on-tertiary": "#3a3000",
+              "surface-container-highest": "#353534",
+              "on-background": "#e5e2e1",
+              "on-tertiary-fixed": "#221b00",
+              "tertiary-fixed": "#ffe16d",
+              "secondary-fixed": "#9cf0ff",
+              "outline": "#8e9192",
+              "surface-container-low": "#1c1b1b",
+              "primary-container": "#121212",
+              "secondary": "#bdf4ff",
+              "on-secondary": "#00363d",
+              "surface-dim": "#131313",
+              "tertiary-fixed-dim": "#e9c400",
+              "error": "#ffb4ab",
+              "primary": "#c8c6c5",
+              "on-surface-variant": "#c4c7c7"
+            },
+            fontFamily: {
+              "headline": ["Space Grotesk"],
+              "body": ["Inter"],
+              "label": ["Space Grotesk"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      .bg-glass {
+        background: rgba(53, 53, 52, 0.6);
+        backdrop-filter: blur(12px);
+      }
+      .road-line {
+        background: linear-gradient(180deg, #00E5FF 0%, #00E5FF 65%, #2A2A2A 65%, #2A2A2A 100%);
+      }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body selection:bg-secondary-container selection:text-on-secondary-container">
+<!-- TopAppBar -->
+<header class="docked w-full top-0 z-50 bg-[#131313] shadow-[0_4px_20px_rgba(0,229,255,0.04)]">
+<div class="flex justify-between items-center px-6 py-4 w-full max-w-screen-2xl mx-auto">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center border border-outline-variant/20">
+<span class="material-symbols-outlined text-[#00E5FF]">account_circle</span>
+</div>
+<div class="hidden sm:block">
+<span class="block font-headline text-[10px] tracking-[0.2em] text-on-surface-variant uppercase">Player Rank Profile</span>
+<h1 class="font-headline uppercase tracking-[0.05em] font-bold text-[#00E5FF] leading-none">AGS GLOBAL ARENA</h1>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<div class="hidden md:flex gap-8">
+<a class="font-label text-sm font-bold tracking-widest text-[#353534] hover:text-[#00DAF3] transition-colors duration-200" href="#">ARENA</a>
+<a class="font-label text-sm font-bold tracking-widest text-[#00E5FF] hover:text-[#00DAF3] transition-colors duration-200" href="#">ROADMAP</a>
+<a class="font-label text-sm font-bold tracking-widest text-[#353534] hover:text-[#00DAF3] transition-colors duration-200" href="#">SQUADS</a>
+<a class="font-label text-sm font-bold tracking-widest text-[#353534] hover:text-[#00DAF3] transition-colors duration-200" href="#">INTEL</a>
+</div>
+<div class="px-3 py-1 bg-surface-container-high border border-tertiary/30 rounded-md">
+<span class="font-label text-[10px] font-black text-tertiary tracking-tighter uppercase">ELITE TIER</span>
+</div>
+</div>
+</div>
+<div class="bg-[#1C1B1B] h-[2px] w-full"></div>
+</header>
+<main class="max-w-screen-2xl mx-auto px-6 pt-24 pb-32">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+<!-- LEFT COLUMN: Career Progression Protocol -->
+<div class="lg:col-span-5 xl:col-span-4 order-2 lg:order-1">
+<div class="bg-surface-container-low p-8 rounded-lg relative overflow-hidden">
+<div class="flex items-center justify-between mb-10">
+<h2 class="font-headline text-xl font-bold tracking-tight text-on-surface uppercase italic">Career Protocol</h2>
+<span class="font-label text-[10px] text-on-surface-variant tracking-[0.3em] uppercase">V_4.02 // ARCHIVE</span>
+</div>
+<div class="relative pl-12">
+<!-- Vertical Roadmap Line -->
+<div class="absolute left-[1.15rem] top-2 bottom-2 w-[2px] road-line"></div>
+<!-- Roadmap Nodes -->
+<div class="space-y-16">
+<!-- PRO-VERIFIED (Locked) -->
+<div class="relative group">
+<div class="absolute -left-[3.15rem] top-1 w-6 h-6 rounded-full bg-surface-container-high border-2 border-outline-variant flex items-center justify-center z-10">
+<span class="material-symbols-outlined text-[14px] text-outline">lock</span>
+</div>
+<div class="opacity-40">
+<p class="font-label text-[10px] tracking-widest text-outline uppercase mb-1">Phase 04</p>
+<h3 class="font-headline text-2xl font-black text-on-surface uppercase leading-none">PRO-VERIFIED</h3>
+<p class="text-xs text-on-surface-variant mt-2 max-w-xs">Restricted access. Achieve Elite I status and complete regional qualifiers to unlock the global pro circuit.</p>
+</div>
+</div>
+<!-- ELITE (Active) -->
+<div class="relative group">
+<div class="absolute -left-[3.15rem] top-1 w-6 h-6 rounded-full bg-surface-container border-2 border-[#00E5FF] shadow-[0_0_12px_rgba(0,229,255,0.4)] flex items-center justify-center z-10">
+<div class="w-2 h-2 rounded-full bg-[#00E5FF] animate-pulse"></div>
+</div>
+<div>
+<div class="flex items-center justify-between mb-1">
+<p class="font-label text-[10px] tracking-widest text-[#00E5FF] uppercase">Phase 03 // ACTIVE</p>
+<span class="font-label text-[10px] text-[#00E5FF]">65% COMPLETE</span>
+</div>
+<h3 class="font-headline text-2xl font-black text-on-surface uppercase leading-none">ELITE COMMAND</h3>
+<div class="mt-4 space-y-3">
+<div class="flex items-center gap-3 bg-surface-container p-3 rounded-md border-l-2 border-[#00E5FF]">
+<span class="material-symbols-outlined text-sm text-[#00E5FF]">verified</span>
+<span class="text-xs font-label tracking-wide">REGIONAL QUALIFIER ACCESS</span>
+</div>
+</div>
+</div>
+</div>
+<!-- CHALLENGER (Complete) -->
+<div class="relative group">
+<div class="absolute -left-[3.15rem] top-1 w-6 h-6 rounded-full bg-[#00E5FF] flex items-center justify-center z-10">
+<span class="material-symbols-outlined text-[14px] text-surface font-bold">check</span>
+</div>
+<div>
+<p class="font-label text-[10px] tracking-widest text-on-surface-variant uppercase mb-1">Phase 02 // ARCHIVED</p>
+<h3 class="font-headline text-2xl font-black text-on-surface/60 uppercase leading-none">CHALLENGER</h3>
+<p class="text-[10px] font-label text-tertiary mt-2 tracking-widest uppercase">100% COMPLETE</p>
+</div>
+</div>
+<!-- GRASSROOTS (Complete) -->
+<div class="relative group">
+<div class="absolute -left-[3.15rem] top-1 w-6 h-6 rounded-full bg-[#00E5FF] flex items-center justify-center z-10">
+<span class="material-symbols-outlined text-[14px] text-surface font-bold">check</span>
+</div>
+<div>
+<p class="font-label text-[10px] tracking-widest text-on-surface-variant uppercase mb-1">Phase 01 // ARCHIVED</p>
+<h3 class="font-headline text-2xl font-black text-on-surface/60 uppercase leading-none">GRASSROOTS</h3>
+<p class="text-[10px] font-label text-tertiary mt-2 tracking-widest uppercase">100% COMPLETE</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- RIGHT COLUMN: Dashboard & Tactics -->
+<div class="lg:col-span-7 xl:col-span-8 space-y-8 order-1 lg:order-2">
+<!-- Rank Status Node -->
+<section class="bg-surface-container p-8 rounded-lg relative overflow-hidden border-t-4 border-[#00E5FF]">
+<div class="flex flex-col md:flex-row justify-between md:items-end gap-6 mb-8">
+<div class="space-y-2">
+<span class="font-label text-xs tracking-[0.4em] text-on-surface-variant uppercase">Current Status Matrix</span>
+<div class="flex items-baseline gap-4">
+<h2 class="font-headline text-6xl font-black text-on-surface leading-none tracking-tighter italic">ELITE_I</h2>
+<span class="font-headline text-xl text-[#00E5FF] font-bold">TOP 4%</span>
+</div>
+</div>
+<div class="text-right">
+<span class="font-label text-[10px] text-on-surface-variant tracking-widest uppercase block mb-1">Arena Points Pool</span>
+<div class="flex items-center justify-end gap-2">
+<span class="material-symbols-outlined text-tertiary">diamond</span>
+<span class="font-headline text-3xl font-bold text-on-surface">12,450 AP</span>
+</div>
+</div>
+</div>
+<div class="space-y-2">
+<div class="flex justify-between items-end font-label text-[10px] tracking-widest">
+<span class="text-on-surface-variant uppercase">PROGRESS TO ELITE_II</span>
+<span class="text-[#00E5FF] font-bold">8,550 / 15,000 XP</span>
+</div>
+<div class="h-3 w-full bg-surface-container-lowest rounded-sm overflow-hidden p-[2px]">
+<div class="h-full bg-gradient-to-r from-[#00E5FF] to-[#009FB1] rounded-sm relative" style="width: 65%;">
+<div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-20"></div>
+</div>
+</div>
+</div>
+</section>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<!-- Milestone Targets -->
+<section class="bg-surface-container-low p-6 rounded-lg">
+<div class="flex items-center gap-3 mb-6">
+<span class="material-symbols-outlined text-secondary-fixed-dim">radar</span>
+<h3 class="font-headline text-sm font-bold tracking-widest uppercase">Next Tier Objectives</h3>
+</div>
+<div class="space-y-4">
+<div class="group flex items-center justify-between p-4 bg-surface-container rounded-md border-l-4 border-tertiary">
+<div>
+<p class="text-xs font-bold text-on-surface uppercase mb-1">Win 5 Verified Matches</p>
+<p class="text-[10px] text-on-surface-variant uppercase">3 / 5 COMPLETED</p>
+</div>
+<div class="w-10 h-10 rounded-full border-2 border-outline-variant flex items-center justify-center text-[10px] font-black">60%</div>
+</div>
+<div class="group flex items-center justify-between p-4 bg-surface-container rounded-md border-l-4 border-[#00E5FF]">
+<div>
+<p class="text-xs font-bold text-on-surface uppercase mb-1">Maintain 4.5+ Rating</p>
+<p class="text-[10px] text-on-surface-variant uppercase">CURRENT: 4.82</p>
+</div>
+<span class="material-symbols-outlined text-[#00E5FF]">task_alt</span>
+</div>
+<div class="group flex items-center justify-between p-4 bg-surface-container-lowest opacity-60 rounded-md">
+<div>
+<p class="text-xs font-bold text-on-surface uppercase mb-1">Top 10 Finalist</p>
+<p class="text-[10px] text-on-surface-variant uppercase">PENDING TOURNAMENT</p>
+</div>
+<span class="material-symbols-outlined text-outline">pending</span>
+</div>
+</div>
+</section>
+<!-- Verified Highlights -->
+<section class="bg-surface-container-low p-6 rounded-lg">
+<div class="flex items-center gap-3 mb-6">
+<span class="material-symbols-outlined text-tertiary">military_tech</span>
+<h3 class="font-headline text-sm font-bold tracking-widest uppercase">Secure Achievements</h3>
+</div>
+<div class="grid grid-cols-1 gap-4">
+<div class="relative bg-surface-container-lowest p-4 rounded-md overflow-hidden border border-outline-variant/10">
+<div class="absolute top-0 right-0 w-16 h-16 bg-tertiary/10 rotate-45 translate-x-8 -translate-y-8"></div>
+<p class="font-label text-[10px] text-tertiary font-bold tracking-widest uppercase mb-1">LEGACY BADGE</p>
+<h4 class="font-headline text-lg font-black text-on-surface italic uppercase">Regional Champion 2024</h4>
+<div class="flex items-center gap-2 mt-4 text-[10px] text-on-surface-variant font-medium tracking-wide">
+<span class="material-symbols-outlined text-[12px]">calendar_today</span>
+<span>AUGUST 14, 2024</span>
+<span class="mx-1">•</span>
+<span>TIER II CIRCUIT</span>
+</div>
+</div>
+<div class="bg-surface-container p-4 rounded-md flex items-center gap-4">
+<div class="w-12 h-12 bg-surface-container-high rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary text-2xl" data-weight="fill">workspace_premium</span>
+</div>
+<div>
+<h5 class="text-xs font-black text-on-surface uppercase italic">UNDESPUTED_STRK</h5>
+<p class="text-[10px] text-on-surface-variant uppercase">15 Match Unbeaten Run</p>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- Tactical Action Command -->
+<div class="pt-4">
+<button class="w-full bg-tertiary hover:bg-tertiary-container text-on-tertiary-fixed py-6 rounded-md flex items-center justify-center gap-4 transition-all active:scale-[0.98] group shadow-[0_10px_30px_rgba(233,196,0,0.15)]">
+<span class="font-headline text-xl font-black italic tracking-widest uppercase">ENGAGE QUALIFIER</span>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined font-bold group-hover:translate-x-1 transition-transform">double_arrow</span>
+</div>
+</button>
+<p class="text-center mt-4 font-label text-[10px] tracking-[0.3em] text-on-surface-variant uppercase">System Warning: High-tier match entry consumes 500 AP</p>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-2 py-3 bg-[#131313] md:hidden">
+<div class="bg-[#1C1B1B] h-[4px] w-full absolute top-0"></div>
+<a class="flex flex-col items-center justify-center text-[#353534] px-4 py-2 hover:bg-[#1C1B1B] hover:text-white transition-all" href="#">
+<span class="material-symbols-outlined">sports_esports</span>
+<span class="font-['Space_Grotesk'] text-[10px] font-bold tracking-widest mt-1 uppercase">ARENA</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#00E5FF] bg-[#201F1F] rounded-md px-4 py-2 shadow-[0_0_12px_rgba(0,229,255,0.15)] transition-all" href="#">
+<span class="material-symbols-outlined">route</span>
+<span class="font-['Space_Grotesk'] text-[10px] font-bold tracking-widest mt-1 uppercase">ROADMAP</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#353534] px-4 py-2 hover:bg-[#1C1B1B] hover:text-white transition-all" href="#">
+<span class="material-symbols-outlined">groups</span>
+<span class="font-['Space_Grotesk'] text-[10px] font-bold tracking-widest mt-1 uppercase">SQUADS</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#353534] px-4 py-2 hover:bg-[#1C1B1B] hover:text-white transition-all" href="#">
+<span class="material-symbols-outlined">query_stats</span>
+<span class="font-['Space_Grotesk'] text-[10px] font-bold tracking-widest mt-1 uppercase">INTEL</span>
+</a>
+</nav>
+<!-- Background Decoration Grid -->
+<div class="fixed inset-0 -z-50 pointer-events-none opacity-[0.03]">
+<div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]"></div>
+<div class="absolute inset-0" style="background-image: radial-gradient(circle at 2px 2px, rgba(255,255,255,0.1) 1px, transparent 0); background-size: 40px 40px;"></div>
+</div>
+</body></html>

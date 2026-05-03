@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AGS Global Arena | Staff Permission Matrix</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-surface": "#e5e2e1",
+                        "on-secondary-fixed": "#001f24",
+                        "secondary-fixed-dim": "#00daf3",
+                        "error-container": "#93000a",
+                        "surface-container-lowest": "#0e0e0e",
+                        "on-tertiary-fixed-variant": "#544600",
+                        "error": "#ffb4ab",
+                        "primary": "#c8c6c5",
+                        "on-error-container": "#ffdad6",
+                        "on-tertiary-fixed": "#221b00",
+                        "on-background": "#e5e2e1",
+                        "primary-container": "#121212",
+                        "on-secondary-fixed-variant": "#004f58",
+                        "surface-tint": "#c8c6c5",
+                        "surface": "#131313",
+                        "surface-container": "#201f1f",
+                        "surface-container-highest": "#353534",
+                        "tertiary": "#e9c400",
+                        "on-primary-fixed-variant": "#474646",
+                        "on-error": "#690005",
+                        "inverse-on-surface": "#313030",
+                        "inverse-primary": "#5f5e5e",
+                        "surface-container-high": "#2a2a2a",
+                        "primary-fixed-dim": "#c8c6c5",
+                        "outline": "#8e9192",
+                        "outline-variant": "#444748",
+                        "surface-dim": "#131313",
+                        "tertiary-container": "#c9a900",
+                        "surface-container-low": "#1c1b1b",
+                        "secondary-fixed": "#9cf0ff",
+                        "on-tertiary": "#3a3000",
+                        "background": "#131313",
+                        "surface-variant": "#353534",
+                        "primary-fixed": "#e5e2e1",
+                        "on-secondary": "#00363d",
+                        "on-primary": "#313030",
+                        "tertiary-fixed": "#ffe16d",
+                        "surface-bright": "#393939",
+                        "on-tertiary-container": "#4c3f00",
+                        "on-primary-fixed": "#1c1b1b",
+                        "tertiary-fixed-dim": "#e9c400",
+                        "on-secondary-container": "#00616d",
+                        "inverse-surface": "#e5e2e1",
+                        "secondary": "#bdf4ff",
+                        "on-surface-variant": "#c4c7c7",
+                        "secondary-container": "#00e3fd",
+                        "on-primary-container": "#7e7d7d"
+                    },
+                    fontFamily: {
+                        "headline": ["Space Grotesk"],
+                        "body": ["Inter"],
+                        "label": ["Space Grotesk"]
+                    },
+                    borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        body {
+            background-color: #131313;
+            color: #e5e2e1;
+            font-family: 'Inter', sans-serif;
+        }
+        .technical-grid {
+            background-image: radial-gradient(circle, #1C1B1B 1px, transparent 1px);
+            background-size: 24px 24px;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="min-h-screen pb-24">
+<!-- TopAppBar -->
+<header class="bg-[#131313] dark:bg-[#131313] flex justify-between items-center px-6 py-4 w-full docked full-width top-0 z-50">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[#00E5FF]">grid_view</span>
+<h1 class="font-['Space_Grotesk'] font-bold tracking-tight uppercase text-xl font-black text-white tracking-[0.05em]">COMMAND CENTER</h1>
+</div>
+<div class="flex items-center gap-3">
+<div class="text-right hidden md:block">
+<p class="font-label text-[10px] text-gray-500 tracking-widest">SESSION_ACTIVE</p>
+<p class="font-headline text-xs font-bold text-[#00E5FF]">LEAGUE_ADMIN_01</p>
+</div>
+<div class="w-10 h-10 rounded-full border border-[#00E5FF]/20 overflow-hidden">
+<img alt="Admin User Profile" data-alt="Abstract tactical user profile avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAcec7fphBdstxjYBbUVzKD-wfygBJz7M1aOR-sOME--BLg9dXYQGOnHZM-Zt_uUCRKp-YjBC0qnsdz6Cz-B2dvu1iqurOqOtBlD1xG606dh3qmvYwa63Oo-H1gJNvFjff6Y6_TMkkFPjXfByKBUEMaUwYkjjiE0FS9nqk0tQAMDKuHzhNfMbLj2pT13QQKaiwAfd9IQrHl9b1E2sy_CYaobY_m6FrR0W07k63198KW8UUOC5jl_-igHu0E5rk6fIpPYjs4t_Yi1dJv"/>
+</div>
+</div>
+</header>
+<div class="bg-[#1C1B1B] h-[4px] w-full"></div>
+<main class="max-w-[1600px] mx-auto p-6 grid grid-cols-1 lg:grid-cols-12 gap-6">
+<!-- Left Column: Staff Directory (Bento Style) -->
+<aside class="lg:col-span-3 space-y-6">
+<div class="bg-surface-container-low p-4 rounded-lg">
+<div class="flex justify-between items-center mb-4">
+<h2 class="font-headline text-sm font-bold tracking-wider text-on-surface">STAFF DIRECTORY</h2>
+<span class="font-label text-[10px] text-secondary">LIVE_SYNC</span>
+</div>
+<div class="relative mb-6">
+<input class="w-full bg-surface-container border-none text-xs font-label p-3 rounded focus:ring-1 focus:ring-secondary text-on-surface" placeholder="SEARCH_UID..." type="text"/>
+<span class="material-symbols-outlined absolute right-3 top-2.5 text-gray-500 text-sm">search</span>
+</div>
+<div class="space-y-2">
+<!-- Staff Item Active -->
+<div class="bg-surface-container-high p-3 rounded-md border-l-2 border-secondary group cursor-pointer transition-all">
+<div class="flex justify-between items-start">
+<div>
+<p class="font-headline text-xs font-bold text-white">COMMANDER_01</p>
+<p class="font-label text-[10px] text-secondary">LEAGUE OWNER</p>
+</div>
+<span class="material-symbols-outlined text-tertiary text-sm" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+</div>
+<!-- Staff Item -->
+<div class="bg-surface-container p-3 rounded-md hover:bg-surface-container-high transition-colors cursor-pointer group">
+<div class="flex justify-between items-start">
+<div>
+<p class="font-headline text-xs font-bold text-gray-400 group-hover:text-white transition-colors">OPERATOR_08</p>
+<p class="font-label text-[10px] text-gray-600">SENIOR REFEREE</p>
+</div>
+<span class="material-symbols-outlined text-gray-700 text-sm">verified</span>
+</div>
+</div>
+<!-- Staff Item -->
+<div class="bg-surface-container p-3 rounded-md hover:bg-surface-container-high transition-colors cursor-pointer group">
+<div class="flex justify-between items-start">
+<div>
+<p class="font-headline text-xs font-bold text-gray-400 group-hover:text-white transition-colors">REFRE_04</p>
+<p class="font-label text-[10px] text-gray-600">MATCH OFFICIAL</p>
+</div>
+<span class="material-symbols-outlined text-gray-700 text-sm">verified</span>
+</div>
+</div>
+<!-- Staff Item -->
+<div class="bg-surface-container p-3 rounded-md hover:bg-surface-container-high transition-colors cursor-pointer group">
+<div class="flex justify-between items-start">
+<div>
+<p class="font-headline text-xs font-bold text-gray-400 group-hover:text-white transition-colors">AUDIT_K2</p>
+<p class="font-label text-[10px] text-gray-600">FINANCIAL AUDITOR</p>
+</div>
+<span class="material-symbols-outlined text-gray-700 text-sm">verified</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Activity Log -->
+<div class="bg-surface-container-lowest p-4 rounded-lg border border-outline-variant/10">
+<h2 class="font-headline text-[10px] font-bold tracking-widest text-gray-500 mb-4 uppercase">ACTIVITY_LOG</h2>
+<div class="space-y-4">
+<div class="flex gap-3">
+<div class="w-1 bg-tertiary/40 h-auto rounded-full"></div>
+<div>
+<p class="text-[10px] text-on-surface font-medium leading-tight">PERM_CHANGE: COMMANDER_01 modified AUDIT_K2 permissions</p>
+<p class="text-[9px] text-gray-600 mt-1 font-label">T: 14:02:44 | 05.OCT.24</p>
+</div>
+</div>
+<div class="flex gap-3">
+<div class="w-1 bg-secondary/40 h-auto rounded-full"></div>
+<div>
+<p class="text-[10px] text-on-surface font-medium leading-tight">AUTH_SUCCESS: REFRE_04 initialized MATCH_CENTER</p>
+<p class="text-[9px] text-gray-600 mt-1 font-label">T: 13:58:12 | 05.OCT.24</p>
+</div>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Content Column: Matrix & Presets -->
+<div class="lg:col-span-9 space-y-6">
+<!-- Matrix Header & Presets -->
+<div class="bg-surface-container-low p-6 rounded-lg technical-grid">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+<div>
+<div class="flex items-center gap-2 mb-2">
+<span class="bg-secondary/10 text-secondary text-[10px] px-2 py-0.5 font-bold tracking-tighter">TARGET: COMMANDER_01</span>
+<span class="bg-tertiary/10 text-tertiary text-[10px] px-2 py-0.5 font-bold tracking-tighter">RANK: S-TIER ADMIN</span>
+</div>
+<h2 class="font-headline text-3xl font-extrabold tracking-tighter text-white">PERMISSION_MATRIX</h2>
+</div>
+<div class="space-y-2">
+<p class="font-label text-[10px] text-gray-500 tracking-widest text-right">APPLY_ROLE_PRESET</p>
+<div class="flex gap-2">
+<button class="bg-surface-container-high px-3 py-2 rounded text-[10px] font-bold font-headline hover:bg-secondary hover:text-on-secondary transition-all">LEAGUE_COORD</button>
+<button class="bg-surface-container-high px-3 py-2 rounded text-[10px] font-bold font-headline hover:bg-secondary hover:text-on-secondary transition-all">FIN_AUDITOR</button>
+<button class="bg-surface-container-high px-3 py-2 rounded text-[10px] font-bold font-headline hover:bg-secondary hover:text-on-secondary transition-all border border-secondary/30">SENIOR_REF</button>
+</div>
+</div>
+</div>
+<!-- Matrix Interface -->
+<div class="mt-10 overflow-x-auto">
+<table class="w-full text-left border-separate border-spacing-y-3">
+<thead>
+<tr class="font-label text-[10px] text-gray-500 tracking-[0.2em] uppercase">
+<th class="pb-4 pl-4">PLATFORM_MODULE</th>
+<th class="pb-4 text-center">READ_ONLY</th>
+<th class="pb-4 text-center">WRITE_ACCESS</th>
+<th class="pb-4 text-center">FULL_ADMIN</th>
+<th class="pb-4 text-right pr-4">STATUS_FLAG</th>
+</tr>
+</thead>
+<tbody class="font-body text-xs">
+<!-- Row 1 -->
+<tr class="bg-surface-container group hover:bg-surface-container-high transition-colors">
+<td class="py-4 pl-4 rounded-l-md">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-gray-600 text-lg">scoreboard</span>
+<div>
+<p class="font-bold text-white">MATCH_CENTER</p>
+<p class="text-[9px] text-gray-500 uppercase tracking-tighter">Scoring, Rulesets, Live Logs</p>
+</div>
+</div>
+</td>
+<td class="text-center">
+<input checked="" class="rounded bg-surface-container-low border-outline-variant text-secondary focus:ring-0 focus:ring-offset-0" type="checkbox"/>
+</td>
+<td class="text-center">
+<input checked="" class="rounded bg-surface-container-low border-outline-variant text-secondary focus:ring-0 focus:ring-offset-0" type="checkbox"/>
+</td>
+<td class="text-center">
+<input checked="" class="rounded bg-surface-container-low border-outline-variant text-secondary focus:ring-0 focus:ring-offset-0" type="checkbox"/>
+</td>
+<td class="text-right pr-4 rounded-r-md">
+<span class="text-[9px] font-bold text-secondary bg-secondary/10 px-2 py-0.5">ELEVATED</span>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="bg-surface-container-lowest group hover:bg-surface-container-high transition-colors">
+<td class="py-4 pl-4 rounded-l-md border-l border-outline-variant/5">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-gray-600 text-lg">payments</span>
+<div>
+<p class="font-bold text-white">FINANCIALS_HUB</p>
+<p class="text-[9px] text-gray-500 uppercase tracking-tighter">Escrow, Payouts, Ledger</p>
+</div>
+</div>
+</td>
+<td class="text-center">
+<input checked="" class="rounded bg-surface-container-low border-outline-variant text-secondary focus:ring-0 focus:ring-offset-0" type="checkbox"/>
+</td>
+<td class="text-center">
+<input class="rounded bg-surface-container-low border-outline-variant text-secondary focus:ring-0 focus:ring-offset-0" type="checkbox"/>
+</td>
+<td class="text-center">
+<input class="rounded bg-surface-container-low border-outline-variant text-secondary focus:ring-0 focus:ring-offset-0" type="checkbox"/>
+</td>
+<td class="text-right pr-4 rounded-r-md">
+<span class="text-[9px] font-bold text-gray-500 bg-gray-500/10 px-2 py-0.5">RESTRICTED</span>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="bg-surface-container group hover:bg-surface-container-high transition-colors">
+<td class="py-4 pl-4 rounded-l-md">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-gray-600 text-lg">gavel</span>
+<div>
+<p class="font-bold text-white">INTEGRITY_DESK</p>
+<p class="text-[9px] text-gray-500 uppercase tracking-tighter">Incident Reports, Bans</p>
+</div>
+</div>
+</td>
+<td class="text-center">
+<input checked="" class="rounded bg-surface-container-low border-outline-variant text-secondary focus:ring-0 focus:ring-offset-0" type="checkbox"/>
+</td>
+<td class="text-center">
+<input checked="" class="rounded bg-surface-container-low border-outline-variant text-secondary focus:ring-0 focus:ring-offset-0" type="checkbox"/>
+</td>
+<td class="text-center">
+<input class="rounded bg-surface-container-low border-outline-variant text-secondary focus:ring-0 focus:ring-offset-0" type="checkbox"/>
+</td>
+<td class="text-right pr-4 rounded-r-md">
+<span class="text-[9px] font-bold text-tertiary bg-tertiary/10 px-2 py-0.5">OPERATIONAL</span>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="bg-surface-container-lowest group hover:bg-surface-container-high transition-colors">
+<td class="py-4 pl-4 rounded-l-md border-l border-outline-variant/5">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-gray-600 text-lg">group_add</span>
+<div>
+<p class="font-bold text-white">ROSTER_MGMT</p>
+<p class="text-[9px] text-gray-500 uppercase tracking-tighter">Player Eligibility, Transfers</p>
+</div>
+</div>
+</td>
+<td class="text-center">
+<input checked="" class="rounded bg-surface-container-low border-outline-variant text-secondary focus:ring-0 focus:ring-offset-0" type="checkbox"/>
+</td>
+<td class="text-center">
+<input checked="" class="rounded bg-surface-container-low border-outline-variant text-secondary focus:ring-0 focus:ring-offset-0" type="checkbox"/>
+</td>
+<td class="text-center">
+<input checked="" class="rounded bg-surface-container-low border-outline-variant text-secondary focus:ring-0 focus:ring-offset-0" type="checkbox"/>
+</td>
+<td class="text-right pr-4 rounded-r-md">
+<span class="text-[9px] font-bold text-secondary bg-secondary/10 px-2 py-0.5">ELEVATED</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="mt-8 pt-8 border-t border-outline-variant/20 flex flex-col md:flex-row justify-between items-center gap-4">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-tertiary">info</span>
+<p class="text-[10px] text-gray-400 font-medium max-w-sm">Changes to PERMISSION_MATRIX require high-level audit logging. All modifications are permanent once committed to the ledger.</p>
+</div>
+<button class="w-full md:w-auto px-8 py-4 bg-tertiary text-on-tertiary font-headline font-black text-sm tracking-widest rounded-md active:scale-95 transition-all shadow-[0_0_20px_rgba(233,196,0,0.15)]">
+                        COMMIT PERMISSION CHANGES
+                    </button>
+</div>
+</div>
+<!-- Dashboard Stats Row -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="bg-surface-container-low p-5 rounded-lg border-b-2 border-secondary/20">
+<p class="font-label text-[10px] text-gray-500 tracking-widest mb-1">TOTAL_STAFF_ACTIVE</p>
+<div class="flex items-end justify-between">
+<p class="font-headline text-4xl font-bold text-white">42</p>
+<span class="text-secondary text-[10px] font-bold">+3 THIS_MONTH</span>
+</div>
+</div>
+<div class="bg-surface-container-low p-5 rounded-lg border-b-2 border-tertiary/20">
+<p class="font-label text-[10px] text-gray-500 tracking-widest mb-1">AUDIT_FLAGS_PENDING</p>
+<div class="flex items-end justify-between">
+<p class="font-headline text-4xl font-bold text-white">07</p>
+<span class="text-tertiary text-[10px] font-bold">ATTENTION_REQ</span>
+</div>
+</div>
+<div class="bg-surface-container-low p-5 rounded-lg border-b-2 border-outline/20">
+<p class="font-label text-[10px] text-gray-500 tracking-widest mb-1">SYSTEM_LATENCY</p>
+<div class="flex items-end justify-between">
+<p class="font-headline text-4xl font-bold text-white">12ms</p>
+<span class="text-gray-500 text-[10px] font-bold">OPTIMIZED</span>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-6 pt-2 bg-[#131313] dark:bg-[#131313] shadow-[0_-4px_20px_rgba(0,229,255,0.04)] tonal-shift bg-[#1C1B1B] border-t border-white/10">
+<a class="flex flex-col items-center justify-center text-gray-500 hover:text-gray-300 active:scale-90 transition-all hover:bg-[#2A2A2A]" href="#">
+<span class="material-symbols-outlined mb-1">analytics</span>
+<span class="font-['Space_Grotesk'] text-[10px] font-bold tracking-[0.05em] uppercase">DASHBOARD</span>
+</a>
+<a class="flex flex-col items-center justify-center text-gray-500 hover:text-gray-300 active:scale-90 transition-all hover:bg-[#2A2A2A]" href="#">
+<span class="material-symbols-outlined mb-1">group</span>
+<span class="font-['Space_Grotesk'] text-[10px] font-bold tracking-[0.05em] uppercase">STAFF</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#00E5FF] bg-[#1C1B1B] rounded-md px-3 py-1 active:scale-90 transition-all" href="#">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 1;">admin_panel_settings</span>
+<span class="font-['Space_Grotesk'] text-[10px] font-bold tracking-[0.05em] uppercase">PERMISSIONS</span>
+</a>
+<a class="flex flex-col items-center justify-center text-gray-500 hover:text-gray-300 active:scale-90 transition-all hover:bg-[#2A2A2A]" href="#">
+<span class="material-symbols-outlined mb-1">history_edu</span>
+<span class="font-['Space_Grotesk'] text-[10px] font-bold tracking-[0.05em] uppercase">AUDIT</span>
+</a>
+<a class="flex flex-col items-center justify-center text-gray-500 hover:text-gray-300 active:scale-90 transition-all hover:bg-[#2A2A2A]" href="#">
+<span class="material-symbols-outlined mb-1">settings</span>
+<span class="font-['Space_Grotesk'] text-[10px] font-bold tracking-[0.05em] uppercase">SETTINGS</span>
+</a>
+</nav>
+</body></html>

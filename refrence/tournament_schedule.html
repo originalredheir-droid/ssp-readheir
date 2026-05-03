@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AGS Global Arena - Tactical Command</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-primary": "#313030",
+              "on-surface-variant": "#c4c7c7",
+              "surface-dim": "#131313",
+              "primary-container": "#121212",
+              "error": "#ffb4ab",
+              "outline": "#8e9192",
+              "tertiary-fixed": "#ffe16d",
+              "on-tertiary-fixed-variant": "#544600",
+              "on-error": "#690005",
+              "surface-container-highest": "#353534",
+              "on-secondary-fixed": "#001f24",
+              "on-secondary-container": "#00616d",
+              "on-primary-fixed-variant": "#474646",
+              "surface": "#131313",
+              "on-error-container": "#ffdad6",
+              "surface-container-high": "#2a2a2a",
+              "secondary-fixed-dim": "#00daf3",
+              "on-tertiary-fixed": "#221b00",
+              "tertiary-fixed-dim": "#e9c400",
+              "on-surface": "#e5e2e1",
+              "secondary": "#bdf4ff",
+              "on-primary-container": "#7e7d7d",
+              "error-container": "#93000a",
+              "primary-fixed-dim": "#c8c6c5",
+              "inverse-primary": "#5f5e5e",
+              "surface-variant": "#353534",
+              "primary": "#c8c6c5",
+              "inverse-surface": "#e5e2e1",
+              "surface-bright": "#393939",
+              "on-primary-fixed": "#1c1b1b",
+              "tertiary-container": "#c9a900",
+              "outline-variant": "#444748",
+              "secondary-container": "#00e3fd",
+              "surface-container-lowest": "#0e0e0e",
+              "on-secondary": "#00363d",
+              "primary-fixed": "#e5e2e1",
+              "inverse-on-surface": "#313030",
+              "background": "#131313",
+              "surface-tint": "#c8c6c5",
+              "on-secondary-fixed-variant": "#004f58",
+              "surface-container-low": "#1c1b1b",
+              "tertiary": "#e9c400",
+              "secondary-fixed": "#9cf0ff",
+              "surface-container": "#201f1f",
+              "on-tertiary-container": "#4c3f00",
+              "on-background": "#e5e2e1",
+              "on-tertiary": "#3a3000"
+            },
+            fontFamily: {
+              "headline": ["Space Grotesk"],
+              "body": ["Inter"],
+              "label": ["Space Grotesk"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      body {
+        background-color: #131313;
+        color: #e5e2e1;
+        font-family: 'Inter', sans-serif;
+      }
+      .no-scrollbar::-webkit-scrollbar {
+        display: none;
+      }
+      .no-scrollbar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background selection:bg-secondary-container selection:text-on-secondary-fixed">
+<!-- TopAppBar -->
+<header class="w-full sticky top-0 z-50 bg-[#131313] dark:bg-neutral-950 shadow-[0_8px_32px_rgba(0,229,255,0.04)]">
+<div class="flex justify-between items-center px-6 py-4 w-full">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[#00E5FF] dark:text-cyan-400 cursor-pointer active:scale-95 transition-transform" data-icon="grid_view">grid_view</span>
+<h1 class="text-xl font-bold tracking-widest text-neutral-100 dark:text-white uppercase font-['Space_Grotesk']">TACTICAL COMMAND</h1>
+</div>
+<div class="hidden md:flex gap-8 items-center">
+<nav class="flex gap-6">
+<a class="font-['Space_Grotesk'] tracking-tight uppercase text-neutral-500 hover:bg-neutral-800 transition-colors duration-200 px-2 py-1" href="#">Dashboard</a>
+<a class="font-['Space_Grotesk'] tracking-tight uppercase text-[#00E5FF] border-b-2 border-[#00E5FF] px-2 py-1" href="#">Matches</a>
+<a class="font-['Space_Grotesk'] tracking-tight uppercase text-neutral-500 hover:bg-neutral-800 transition-colors duration-200 px-2 py-1" href="#">Intel</a>
+<a class="font-['Space_Grotesk'] tracking-tight uppercase text-neutral-500 hover:bg-neutral-800 transition-colors duration-200 px-2 py-1" href="#">Settings</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<div class="flex items-center gap-2 px-3 py-1 bg-surface-container-low rounded-md border border-outline-variant/20">
+<img alt="League Logo" class="w-5 h-5 object-contain" data-alt="Official League Partner AIFF Brand Logo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDSu5mQMFcw_FIUBuGV-WoQKPTc2mJIkEabI4vklS8VzpKVRD7OXo6yHLk3utwAPFnvI--4EOzQ7pDo7gtne_CMo37vC_lyvH0AboYiUgWtxEeXFHeNiqpmLmbcK5z4MbLymz4YcCEAfF5z4la300-XUgK-rpDckfZUYXsrfjuSvk9ZGY5JNvaIvzX7b2FrjRmxTB5AIKPGgFbrT6aNHO772CT_RvC56irHylW1W4AGgSi1XDsINaQippCqDJZdIPRDZlq0VRRPcaaI"/>
+<span class="font-label text-[10px] tracking-widest font-bold text-tertiary">AIFF OFFICIAL</span>
+</div>
+<div class="w-8 h-8 rounded-full overflow-hidden border border-[#00E5FF]/30">
+<img alt="User Profile" class="w-full h-full object-cover" data-alt="User profile avatar close up" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDkTTbBR09KSCHoCxDekQqDnGBuC3qHxXP2hiGUtVBzcvDZcd0Q9fdqSZxUMfJ0M4sIMj83TZF0O_8LiVMzeEBJ9jTKkhQQeTMW4Q_GTFcVPNmSWbgXZkVyBUC30t2n-pn_sUbzRPt19JHhSNIXAUlcgHQT6yby4JhkLvqepgtdpg81MQHeLHGz1oYJ2K4ZnwEojoZFDJW6j0dc2NxgyuYyDulJcwJ5tyzoE0rcqPizUX0NowVM-MNM6k2hz-qPqtWiYt1ZOMek1cUc"/>
+</div>
+</div>
+</div>
+<div class="bg-[#1C1B1B] h-[1px] w-full"></div>
+</header>
+<main class="max-w-5xl mx-auto px-4 pt-6 pb-24 md:pb-12">
+<!-- Date Scroller -->
+<section class="mb-8">
+<div class="flex items-center justify-between mb-4">
+<h2 class="font-headline text-sm font-bold tracking-[0.2em] text-on-surface-variant uppercase">Temporal Grid</h2>
+<span class="font-label text-[10px] text-outline uppercase tracking-tighter">Region: GMT+5:30</span>
+</div>
+<div class="flex gap-2 overflow-x-auto no-scrollbar pb-2">
+<button class="flex flex-col items-center min-w-[70px] py-3 bg-surface-container-low rounded-md border border-outline-variant/10 hover:bg-surface-container transition-all">
+<span class="font-label text-[10px] text-outline uppercase">Oct 24</span>
+<span class="font-headline text-lg font-bold">24</span>
+</button>
+<button class="flex flex-col items-center min-w-[70px] py-3 bg-surface-container-low rounded-md border border-outline-variant/10 hover:bg-surface-container transition-all">
+<span class="font-label text-[10px] text-outline uppercase">Oct 25</span>
+<span class="font-headline text-lg font-bold">25</span>
+</button>
+<button class="flex flex-col items-center min-w-[80px] py-3 bg-secondary-container text-on-secondary-fixed rounded-md shadow-[0_0_15px_rgba(0,229,255,0.3)] ring-1 ring-secondary/50">
+<span class="font-label text-[10px] uppercase font-bold tracking-widest">Today</span>
+<span class="font-headline text-xl font-extrabold">26</span>
+</button>
+<button class="flex flex-col items-center min-w-[70px] py-3 bg-surface-container-low rounded-md border border-outline-variant/10 hover:bg-surface-container transition-all">
+<span class="font-label text-[10px] text-outline uppercase">Oct 27</span>
+<span class="font-headline text-lg font-bold">27</span>
+</button>
+<button class="flex flex-col items-center min-w-[70px] py-3 bg-surface-container-low rounded-md border border-outline-variant/10 hover:bg-surface-container transition-all">
+<span class="font-label text-[10px] text-outline uppercase">Oct 28</span>
+<span class="font-headline text-lg font-bold">28</span>
+</button>
+<button class="flex flex-col items-center min-w-[70px] py-3 bg-surface-container-low rounded-md border border-outline-variant/10 hover:bg-surface-container transition-all">
+<span class="font-label text-[10px] text-outline uppercase">Oct 29</span>
+<span class="font-headline text-lg font-bold">29</span>
+</button>
+<button class="flex flex-col items-center min-w-[70px] py-3 bg-surface-container-low rounded-md border border-outline-variant/10 hover:bg-surface-container transition-all">
+<span class="font-label text-[10px] text-outline uppercase">Oct 30</span>
+<span class="font-headline text-lg font-bold">30</span>
+</button>
+</div>
+</section>
+<!-- Category Toggles -->
+<section class="mb-10">
+<div class="flex flex-wrap gap-3">
+<button class="px-6 py-2 bg-surface-container-high rounded-md border border-[#00E5FF]/40 text-[#00E5FF] font-label text-xs font-bold tracking-widest uppercase flex items-center gap-2">
+<span class="material-symbols-outlined text-sm" data-icon="all_inclusive">all_inclusive</span>
+                    All Ops
+                </button>
+<button class="px-6 py-2 bg-surface-container-low hover:bg-surface-container rounded-md border border-outline-variant/20 text-on-surface-variant font-label text-xs font-medium tracking-widest uppercase flex items-center gap-2 transition-all">
+<span class="material-symbols-outlined text-sm" data-icon="sports_kabaddi">sports_kabaddi</span>
+                    Physical
+                </button>
+<button class="px-6 py-2 bg-surface-container-low hover:bg-surface-container rounded-md border border-outline-variant/20 text-on-surface-variant font-label text-xs font-medium tracking-widest uppercase flex items-center gap-2 transition-all">
+<span class="material-symbols-outlined text-sm" data-icon="sports_esports">sports_esports</span>
+                    eSports
+                </button>
+<button class="px-6 py-2 bg-surface-container-low hover:bg-surface-container rounded-md border border-outline-variant/20 text-on-surface-variant font-label text-xs font-medium tracking-widest uppercase flex items-center gap-2 transition-all">
+<span class="material-symbols-outlined text-sm" data-icon="terminal">terminal</span>
+                    Hackathons
+                </button>
+</div>
+</section>
+<!-- Match Cards List -->
+<section class="space-y-6">
+<!-- LIVE MATCH CARD -->
+<div class="relative overflow-hidden bg-surface-container-low rounded-lg group transition-all duration-300 hover:shadow-[0_8px_32px_rgba(0,0,0,0.4)] border-l-4 border-error">
+<div class="p-5 flex flex-col md:flex-row md:items-center gap-6">
+<!-- Left Tech Stack -->
+<div class="flex flex-col justify-center items-center md:items-start min-w-[100px]">
+<span class="font-headline text-2xl font-black tracking-tighter">21:30</span>
+<div class="flex items-center gap-1.5 mt-1">
+<span class="relative flex h-2 w-2">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-error opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-error"></span>
+</span>
+<span class="font-label text-[10px] font-bold text-error tracking-[0.2em] uppercase">Live Ops</span>
+</div>
+</div>
+<!-- Teams Display -->
+<div class="flex-grow flex items-center justify-between md:justify-center gap-8 md:gap-16">
+<div class="flex flex-col items-center gap-2 group/team cursor-pointer">
+<div class="w-14 h-14 bg-surface-container-high rounded-md flex items-center justify-center border border-outline-variant/30 group-hover/team:border-secondary transition-colors">
+<img alt="Alpha Team" class="w-10 h-10 object-contain" data-alt="Cybernetic stylized skull logo for Alpha Team" src="https://lh3.googleusercontent.com/aida-public/AB6AXuADmdGsuuhnDUI4V3SAfSVmB7ZTgnZJR6rIk3NyYMONPPWzX4e4faM0STpCjH_tBrHJUfoWRdjZmMjmNg3Dc8y0VE47FA-8X7mYW-7VvGwqvRDFUKqACrO62ur-mui0ntfjZXu_VXQkm8wbzhQ7UUDNwExcU0DZl17ppfap0ctLfn-1U4Iq7szDjua5JMF_YoG-z4bla1YbghfmDdil22ESj6wm1N97Vlt_jMwbL3MI4jEULihlwGQAcz1cstB1OUoz0DIahgm8kEUt"/>
+</div>
+<span class="font-label text-[10px] font-bold tracking-widest text-on-surface uppercase">Titan Apex</span>
+</div>
+<div class="flex flex-col items-center">
+<span class="font-headline text-3xl font-black italic text-outline/30 select-none">VS</span>
+<div class="mt-2 px-3 py-0.5 bg-surface-container-highest rounded text-[10px] font-bold font-label text-tertiary">MAP: FRAG_CITY</div>
+</div>
+<div class="flex flex-col items-center gap-2 group/team cursor-pointer">
+<div class="w-14 h-14 bg-surface-container-high rounded-md flex items-center justify-center border border-outline-variant/30 group-hover/team:border-secondary transition-colors">
+<img alt="Omega Team" class="w-10 h-10 object-contain" data-alt="Electric lightning bolt logo for Omega Team" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBmQB6lUqjjwx-J0zL_8fqPscdOV73jQgSNZM26JJWfzMYc5IND3QS_xfoBb-awvBBFWc4JChmI17uZM7MgDlKkhmH9iB8C9kZBXEqopugm4lyzGHU83WBDLu-8g-3KNxtCnf3Z0TNtgmtsNa7Ibph4F4Hyl2nwv8OoVJtzkjGs3fWoCHDJJ5oAmR5zcoqzG10yhU8SqWgu6sdvTtqgNHVyfDAAbgR4I3UJJ9hV6LznKjc4lMGrIATSErq_erkKFgSWgk9mWh2Ya16H"/>
+</div>
+<span class="font-label text-[10px] font-bold tracking-widest text-on-surface uppercase">Neon Viper</span>
+</div>
+</div>
+<!-- CTA Action -->
+<div class="flex flex-col gap-2 md:w-48">
+<div class="font-label text-[10px] text-outline text-right mb-1 hidden md:block">APEX PRO LEAGUE S4</div>
+<button class="w-full bg-secondary-container text-on-secondary-fixed py-2.5 rounded-md font-label text-[11px] font-bold tracking-widest uppercase hover:bg-secondary-fixed-dim transition-all flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-sm" data-icon="monitoring" style="font-variation-settings: 'FILL' 1;">monitoring</span>
+                            Tactical Board
+                        </button>
+</div>
+</div>
+<!-- Ambient Background Glow -->
+<div class="absolute top-0 right-0 w-32 h-32 bg-error/5 blur-3xl rounded-full -mr-16 -mt-16 pointer-events-none"></div>
+</div>
+<!-- UPCOMING MATCH CARD -->
+<div class="relative overflow-hidden bg-surface-container rounded-lg group transition-all duration-300 hover:shadow-[0_8px_32px_rgba(0,0,0,0.4)] border-l-4 border-outline-variant/40">
+<div class="p-5 flex flex-col md:flex-row md:items-center gap-6">
+<div class="flex flex-col justify-center items-center md:items-start min-w-[100px]">
+<span class="font-headline text-2xl font-black tracking-tighter text-on-surface-variant">23:00</span>
+<div class="flex items-center gap-1.5 mt-1">
+<span class="font-label text-[10px] font-bold text-outline uppercase tracking-[0.2em]">Upcoming</span>
+</div>
+</div>
+<div class="flex-grow flex items-center justify-between md:justify-center gap-8 md:gap-16 opacity-80 group-hover:opacity-100 transition-opacity">
+<div class="flex flex-col items-center gap-2">
+<div class="w-14 h-14 bg-surface-container-low rounded-md flex items-center justify-center border border-outline-variant/20">
+<img alt="Team 3" class="w-10 h-10 object-contain grayscale" data-alt="Minimalist geometric bird logo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBeVFFW0WDVcsJJ5NGEVOFDafk6QSJP1UbzvZzNeWhih20IQOSm3MGCLZVyWyxai3suBGfoknQ8AqH4G6XUOtKEbtE0gGEHHCcOMj0jfnxWnPkHVUU0a7Ary3y6R-5dJZ7f8iZTZItYL2mCGj5TyZEVtaIclSH0XDw2lfwOkBAKP0Bc3-16pFqBKYr1c3vJq_yC8Tn96HF8w_D1zAsaFDZJWeqDji2GkQv4nCmfrtb3YeYjmbYes-jMnjZ3OgmUqqOnDSKL7BvHgUFB"/>
+</div>
+<span class="font-label text-[10px] font-bold tracking-widest text-on-surface uppercase">Falcon AI</span>
+</div>
+<div class="flex flex-col items-center">
+<span class="font-headline text-3xl font-black italic text-outline/20">VS</span>
+</div>
+<div class="flex flex-col items-center gap-2">
+<div class="w-14 h-14 bg-surface-container-low rounded-md flex items-center justify-center border border-outline-variant/20">
+<img alt="Team 4" class="w-10 h-10 object-contain grayscale" data-alt="Digital hexagon pulse logo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAY4esVTu1jgWdwVSQWQ-vNamqpYqkc6NZtFzj0H0oHvCQXesxWVEMruiWWXbOb4eCbUE3pbsBTuHLg73Kp3YzdVyHf3GVeT-ISwbMwXuZ5QbKTPpPt4v9x70tHYtN5jdsUXhCdVdwga1T1zGZewO5U5iJOgUyfKI2SZINuu63_YQyhTN2mUbL-gLrrTvXj0GHuRsYudiPEbaWC6OYqBo3rMooYw469DnIlU1S9fjpzPUzXtZMz2ke4aViAEdDBuVdq2jQc8_3upYn2"/>
+</div>
+<span class="font-label text-[10px] font-bold tracking-widest text-on-surface uppercase">Hex Grid</span>
+</div>
+</div>
+<div class="flex flex-col gap-2 md:w-48">
+<div class="font-label text-[10px] text-outline text-right mb-1 hidden md:block">CYBER SPRINT 2024</div>
+<button class="w-full bg-surface-container-highest text-on-surface py-2.5 rounded-md font-label text-[11px] font-bold tracking-widest uppercase hover:bg-neutral-700 transition-all flex items-center justify-center gap-2 border border-outline-variant/20">
+<span class="material-symbols-outlined text-sm" data-icon="notifications">notifications</span>
+                            Set Reminder
+                        </button>
+</div>
+</div>
+</div>
+<!-- OFFICIAL/GOLD MATCH CARD -->
+<div class="relative overflow-hidden bg-surface-container-low rounded-lg group transition-all duration-300 hover:shadow-[0_8px_32px_rgba(233,196,0,0.05)] border-l-4 border-tertiary">
+<div class="p-5 flex flex-col md:flex-row md:items-center gap-6">
+<div class="flex flex-col justify-center items-center md:items-start min-w-[100px]">
+<span class="font-headline text-2xl font-black tracking-tighter">01:15</span>
+<div class="flex items-center gap-1.5 mt-1">
+<span class="material-symbols-outlined text-[12px] text-tertiary" data-icon="verified" style="font-variation-settings: 'FILL' 1;">verified</span>
+<span class="font-label text-[10px] font-bold text-tertiary uppercase tracking-[0.2em]">Championship</span>
+</div>
+</div>
+<div class="flex-grow flex items-center justify-between md:justify-center gap-8 md:gap-16">
+<div class="flex flex-col items-center gap-2">
+<div class="w-14 h-14 bg-surface-container-high rounded-md flex items-center justify-center border border-tertiary/20">
+<img alt="Team 5" class="w-10 h-10 object-contain" data-alt="Gold lion crest logo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDvGKRXBNkvyF4ICPvffnU7oYHOqib5bCT5OW4M9FUbBHTF2JYNsNRWNiWYm4nhYWXxYHYsQfed6osXunzJoFpoG7ccuQGJjZRqRegsiMrY55FmBTAdEonYWqZiHfYxm_AlJhuTiiL7BcLzhapz-Kt88etoROqSpQOHKFXLBHTCz4DEH5IWjZyWCkGNwI2FX_dvmgE3dIa3Oso0ELB0LKyX_xttZi5Axv1xeFh2au9uPYyBlmFCOrnizEm9kr36Lbz94ueD5PzNn3i-"/>
+</div>
+<span class="font-label text-[10px] font-bold tracking-widest text-on-surface uppercase">Royal Legion</span>
+</div>
+<div class="flex flex-col items-center">
+<span class="font-headline text-3xl font-black italic text-outline/30">VS</span>
+</div>
+<div class="flex flex-col items-center gap-2">
+<div class="w-14 h-14 bg-surface-container-high rounded-md flex items-center justify-center border border-tertiary/20">
+<img alt="Team 6" class="w-10 h-10 object-contain" data-alt="Silver wolf profile logo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC-h08qXVxJqSscDfp2k_aLprpYrn4HKhYFEKh9WeIp5gbSI6BjjvVHAQQfAoqFGcKHxbXOudxkRHFSx5V0V5DJgMUbiZT7YYxZ2ygMThwfisGn5z-CnCtQBBdiDGGCtEE_CDcxAsTaNt5mQL2QT-o195WDjUp1r1q0WfUCRmoozkfKjhuXJ23iCEpiSvZ4IMZK64ElZCls41UKHxUcdrnSScPyCRjBJE5c3r6azDGDJk6SmSkGOF1heedp7kSO8K1kavfgyBkjJFAZ"/>
+</div>
+<span class="font-label text-[10px] font-bold tracking-widest text-on-surface uppercase">Iron Wolves</span>
+</div>
+</div>
+<div class="flex flex-col gap-2 md:w-48">
+<div class="font-label text-[10px] text-tertiary text-right mb-1 hidden md:block">AIFF PREMIER LEAGUE</div>
+<button class="w-full bg-surface-container-highest text-on-surface py-2.5 rounded-md font-label text-[11px] font-bold tracking-widest uppercase hover:bg-neutral-700 transition-all flex items-center justify-center gap-2 border border-tertiary/30">
+<span class="material-symbols-outlined text-sm" data-icon="info">info</span>
+                            View Intel
+                        </button>
+</div>
+</div>
+<!-- Gold Accent Glow -->
+<div class="absolute top-0 right-0 w-32 h-32 bg-tertiary/5 blur-3xl rounded-full -mr-16 -mt-16 pointer-events-none"></div>
+</div>
+<!-- FINALIZED MATCH CARD (COMPACT) -->
+<div class="relative overflow-hidden bg-surface-container-lowest/50 rounded-lg group border border-outline-variant/10">
+<div class="px-5 py-4 flex flex-col md:flex-row md:items-center gap-4">
+<div class="flex flex-col justify-center items-center md:items-start min-w-[100px] opacity-50">
+<span class="font-headline text-lg font-bold tracking-tighter">19:00</span>
+<span class="font-label text-[9px] font-bold text-outline uppercase tracking-widest">Finalized</span>
+</div>
+<div class="flex-grow flex items-center justify-between px-4 md:px-12 opacity-50">
+<div class="flex items-center gap-3">
+<span class="font-label text-[10px] font-bold tracking-widest uppercase">GHOST PROTOCOL</span>
+<span class="font-headline text-lg font-black">2</span>
+</div>
+<div class="w-[1px] h-4 bg-outline-variant/30 mx-4"></div>
+<div class="flex items-center gap-3">
+<span class="font-headline text-lg font-black text-secondary">4</span>
+<span class="font-label text-[10px] font-bold tracking-widest uppercase text-secondary">ZERO POINT</span>
+</div>
+</div>
+<div class="flex items-center gap-2 md:w-48 justify-end">
+<span class="font-label text-[9px] text-outline uppercase tracking-tighter mr-2">Ended 2h ago</span>
+<button class="p-2 bg-surface-container-low rounded-md text-on-surface-variant hover:text-secondary transition-colors border border-outline-variant/10">
+<span class="material-symbols-outlined text-sm" data-icon="history">history</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center px-4 py-3 pb-safe bg-[#131313]/90 backdrop-blur-xl dark:bg-neutral-950/90 z-50 border-t border-neutral-800/20 md:hidden">
+<a class="flex flex-col items-center justify-center text-neutral-500 hover:text-neutral-200 transition-all active:translate-y-0.5 duration-150" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="dashboard">dashboard</span>
+<span class="font-['Space_Grotesk'] text-[10px] uppercase tracking-wider font-bold">Dashboard</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#00E5FF] bg-[#1C1B1B] rounded-md px-4 py-1 shadow-[0_0_10px_rgba(0,229,255,0.2)] active:translate-y-0.5 duration-150" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="sports_esports" style="font-variation-settings: 'FILL' 1;">sports_esports</span>
+<span class="font-['Space_Grotesk'] text-[10px] uppercase tracking-wider font-bold">Matches</span>
+</a>
+<a class="flex flex-col items-center justify-center text-neutral-500 hover:text-neutral-200 transition-all active:translate-y-0.5 duration-150" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="insights">insights</span>
+<span class="font-['Space_Grotesk'] text-[10px] uppercase tracking-wider font-bold">Intel</span>
+</a>
+<a class="flex flex-col items-center justify-center text-neutral-500 hover:text-neutral-200 transition-all active:translate-y-0.5 duration-150" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="settings">settings</span>
+<span class="font-['Space_Grotesk'] text-[10px] uppercase tracking-wider font-bold">Settings</span>
+</a>
+</nav>
+<!-- Contextual FAB for Top-Level Filter Focus (Suppressed if on focused detail but active here for main schedule view) -->
+<div class="fixed bottom-24 right-6 md:bottom-8 md:right-8 z-40 md:hidden">
+<button class="w-14 h-14 bg-secondary-container text-on-secondary-fixed rounded-full shadow-[0_8px_24px_rgba(0,227,253,0.4)] flex items-center justify-center active:scale-95 transition-transform ring-4 ring-[#131313]">
+<span class="material-symbols-outlined text-3xl" data-icon="filter_list">filter_list</span>
+</button>
+</div>
+</body></html>

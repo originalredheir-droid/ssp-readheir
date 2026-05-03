@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AGS Global Arena - Match Intel</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-tint": "#c8c6c5",
+                        "primary": "#c8c6c5",
+                        "on-primary": "#313030",
+                        "secondary-fixed": "#9cf0ff",
+                        "on-surface-variant": "#c4c7c7",
+                        "primary-container": "#121212",
+                        "background": "#131313",
+                        "on-secondary": "#00363d",
+                        "on-primary-fixed": "#1c1b1b",
+                        "surface-container": "#201f1f",
+                        "secondary": "#bdf4ff",
+                        "tertiary": "#e9c400",
+                        "surface-dim": "#131313",
+                        "primary-fixed-dim": "#c8c6c5",
+                        "on-error": "#690005",
+                        "inverse-primary": "#5f5e5e",
+                        "surface-bright": "#393939",
+                        "on-tertiary-container": "#4c3f00",
+                        "surface-container-high": "#2a2a2a",
+                        "on-secondary-fixed-variant": "#004f58",
+                        "surface-container-lowest": "#0e0e0e",
+                        "surface-container-low": "#1c1b1b",
+                        "secondary-fixed-dim": "#00daf3",
+                        "on-secondary-container": "#00616d",
+                        "surface-variant": "#353534",
+                        "on-error-container": "#ffdad6",
+                        "surface": "#131313",
+                        "on-tertiary-fixed-variant": "#544600",
+                        "on-tertiary-fixed": "#221b00",
+                        "on-background": "#e5e2e1",
+                        "primary-fixed": "#e5e2e1",
+                        "outline-variant": "#444748",
+                        "error-container": "#93000a",
+                        "on-primary-fixed-variant": "#474646",
+                        "surface-container-highest": "#353534",
+                        "outline": "#8e9192",
+                        "on-surface": "#e5e2e1",
+                        "on-secondary-fixed": "#001f24",
+                        "error": "#ffb4ab",
+                        "on-tertiary": "#3a3000",
+                        "on-primary-container": "#7e7d7d",
+                        "tertiary-fixed-dim": "#e9c400",
+                        "inverse-on-surface": "#313030",
+                        "secondary-container": "#00e3fd",
+                        "inverse-surface": "#e5e2e1",
+                        "tertiary-fixed": "#ffe16d",
+                        "tertiary-container": "#c9a900"
+                    },
+                    fontFamily: {
+                        "headline": ["Space Grotesk"],
+                        "body": ["Inter"],
+                        "label": ["Space Grotesk"]
+                    },
+                    borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Inter', sans-serif; }
+        .font-space { font-family: 'Space Grotesk', sans-serif; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen pb-32">
+<!-- TopAppBar Execution -->
+<header class="bg-[#131313] dark:bg-[#131313] docked full-width top-0 sticky z-50">
+<div class="flex justify-between items-center w-full px-6 py-4 max-w-full">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[#00E5FF]">analytics</span>
+<h1 class="text-xl font-bold tracking-tighter text-[#00E5FF] font-headline uppercase">TACTICAL COMMAND</h1>
+</div>
+<div class="w-10 h-10 rounded-full border border-outline-variant/30 flex items-center justify-center overflow-hidden bg-surface-container">
+<img alt="User Profile" class="w-full h-full object-cover" data-alt="Cybernetic styled user avatar profile" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBWM6ka_RlUbOfiMnX-kdh-Hfj4pNzOnCaMwUBJq1RYTLCGmm4Vcqpmp6yZ_8iXua1GjVIe4F605nUkmCn6UEFLo372NYG0jER2upHtQnX61qy9TxC1qVwIW292F-pe8LLhmMq1OVK2IeEqvGzLQvg5z9gmzL7ziEgc_Vpwk3ogbs-1qMYeoBXgXBl5kok5HKpYTt4mKAo_A1H4HXw6iH3YIC4oRz_4IR0Yhk5BmOYsHStsM9LjFuIP3i8W-rRZ9-rYP5LGem7rwNr6"/>
+</div>
+</div>
+<div class="bg-[#1C1B1B] h-[4px] w-full"></div>
+</header>
+<main class="max-w-md mx-auto px-4 pt-6 space-y-6">
+<!-- Match Identity Anchor -->
+<section class="space-y-2">
+<div class="flex items-center justify-between">
+<span class="font-headline text-[10px] uppercase tracking-[0.15em] text-secondary-fixed-dim">SESSION_ID: AGS-992-K</span>
+<span class="font-headline text-[10px] uppercase tracking-[0.15em] text-tertiary">FINAL_STAMP</span>
+</div>
+<div class="bg-surface-container-low p-6 rounded-lg relative overflow-hidden">
+<div class="absolute top-0 right-0 w-32 h-32 bg-secondary-fixed-dim/5 blur-3xl rounded-full"></div>
+<div class="flex justify-between items-center relative z-10">
+<div class="text-center">
+<div class="w-12 h-12 bg-surface-container mb-2 flex items-center justify-center rounded">
+<span class="material-symbols-outlined text-secondary text-3xl">security</span>
+</div>
+<h2 class="font-headline font-bold text-sm tracking-tight">NAVI TACTICAL</h2>
+</div>
+<div class="text-center">
+<div class="font-headline text-5xl font-extrabold tracking-tighter text-on-background">4 - 0</div>
+<div class="font-headline text-[10px] uppercase tracking-widest text-secondary-fixed-dim mt-1">DOMINATION</div>
+</div>
+<div class="text-center">
+<div class="w-12 h-12 bg-surface-container mb-2 flex items-center justify-center rounded">
+<span class="material-symbols-outlined text-tertiary text-3xl">bolt</span>
+</div>
+<h2 class="font-headline font-bold text-sm tracking-tight">OMEGA OPS</h2>
+</div>
+</div>
+</div>
+</section>
+<!-- Win Probability Tracker -->
+<section class="space-y-3">
+<h3 class="font-headline text-[10px] uppercase tracking-widest text-on-primary-container">PROBABILITY_FLUX (LIVE_TIME)</h3>
+<div class="bg-surface-container p-5 rounded-lg border-l-2 border-secondary-fixed-dim">
+<div class="flex items-end gap-1 h-24 mb-4">
+<!-- Probability Bar Visualization -->
+<div class="flex-1 bg-secondary-fixed-dim/10 h-8 rounded-t-sm"></div>
+<div class="flex-1 bg-secondary-fixed-dim/20 h-12 rounded-t-sm"></div>
+<div class="flex-1 bg-secondary-fixed-dim/30 h-16 rounded-t-sm"></div>
+<div class="flex-1 bg-secondary-fixed-dim/50 h-20 rounded-t-sm"></div>
+<div class="flex-1 bg-secondary-fixed-dim h-full rounded-t-sm shadow-[0_0_12px_rgba(0,229,255,0.2)]"></div>
+<div class="flex-1 bg-secondary-fixed-dim/80 h-20 rounded-t-sm"></div>
+<div class="flex-1 bg-secondary-fixed-dim/60 h-14 rounded-t-sm"></div>
+<div class="flex-1 bg-secondary-fixed-dim/40 h-10 rounded-t-sm"></div>
+</div>
+<div class="flex justify-between items-center">
+<div>
+<span class="block font-headline text-2xl font-bold text-secondary-fixed-dim">92.4%</span>
+<span class="font-headline text-[10px] text-zinc-500 uppercase">WIN_CONFIDENCE</span>
+</div>
+<div class="text-right">
+<span class="material-symbols-outlined text-secondary-fixed-dim" style="font-variation-settings: 'FILL' 1;">trending_up</span>
+<span class="block font-headline text-[10px] text-zinc-500 uppercase">+14.2 Δ</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Tactical Heatmap -->
+<section class="space-y-3">
+<div class="flex justify-between items-center">
+<h3 class="font-headline text-[10px] uppercase tracking-widest text-on-primary-container">ACTIVITY_DENSITY_MAP</h3>
+<span class="font-headline text-[10px] text-secondary uppercase font-bold px-2 py-1 bg-secondary/10 rounded">BETA_SENSORS</span>
+</div>
+<div class="bg-surface-container-lowest aspect-[4/3] rounded-lg relative overflow-hidden border border-white/5">
+<!-- Arena Pitch Background -->
+<div class="absolute inset-4 border border-white/10 rounded-sm"></div>
+<div class="absolute left-1/2 top-4 bottom-4 w-px bg-white/10"></div>
+<div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-16 h-16 border border-white/10 rounded-full"></div>
+<!-- Heatmap Overlays -->
+<div class="absolute top-[20%] left-[60%] w-24 h-24 bg-secondary-fixed-dim/30 blur-2xl rounded-full"></div>
+<div class="absolute top-[40%] left-[70%] w-16 h-16 bg-secondary-fixed-dim/40 blur-xl rounded-full"></div>
+<div class="absolute top-[10%] left-[80%] w-12 h-12 bg-secondary-fixed-dim/20 blur-xl rounded-full"></div>
+<!-- Indicators -->
+<div class="absolute top-[45%] left-[75%]">
+<span class="material-symbols-outlined text-secondary-fixed-dim text-sm animate-pulse" style="font-variation-settings: 'FILL' 1;">location_on</span>
+</div>
+<div class="absolute bottom-4 left-4 font-headline text-[9px] text-zinc-500 uppercase tracking-widest bg-black/60 px-2 py-1 backdrop-blur-sm">
+                    MAP_CONTROL: ZONE_D_SECTOR_4
+                </div>
+</div>
+</section>
+<!-- Core Performance KPIs - Bento Grid Style -->
+<section class="grid grid-cols-2 gap-3">
+<div class="bg-surface-container p-4 rounded-lg space-y-4">
+<span class="font-headline text-[10px] text-zinc-500 uppercase tracking-widest">MAP_CONTROL</span>
+<div class="relative h-1 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="absolute left-0 h-full bg-secondary-fixed-dim w-[68%]"></div>
+</div>
+<div class="flex justify-between items-baseline">
+<span class="font-headline text-2xl font-bold">68%</span>
+<span class="font-headline text-[10px] text-secondary">V_DOMINANT</span>
+</div>
+</div>
+<div class="bg-surface-container p-4 rounded-lg space-y-4">
+<span class="font-headline text-[10px] text-zinc-500 uppercase tracking-widest">EXPECTED_WIN_SHARE</span>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-tertiary text-lg" style="font-variation-settings: 'FILL' 1;">stars</span>
+<span class="font-headline text-2xl font-bold">4.82</span>
+</div>
+<span class="font-headline text-[10px] text-tertiary uppercase">ELITE_TIER_THREAT</span>
+</div>
+<div class="col-span-2 bg-surface-container p-4 rounded-lg flex justify-between items-center">
+<div class="space-y-1">
+<span class="font-headline text-[10px] text-zinc-500 uppercase tracking-widest">CRITICAL_INCIDENTS</span>
+<div class="flex gap-4">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-error text-sm">warning</span>
+<span class="font-headline text-sm font-bold">02</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-secondary text-sm">target</span>
+<span class="font-headline text-sm font-bold">14</span>
+</div>
+</div>
+</div>
+<div class="h-10 w-px bg-white/5 mx-4"></div>
+<div class="flex -space-x-2">
+<div class="w-8 h-8 rounded bg-surface-container-highest border border-white/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-[12px] text-zinc-400">group</span>
+</div>
+<div class="w-8 h-8 rounded bg-surface-container-highest border border-white/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-[12px] text-zinc-400">timer</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Player Impact Matrix -->
+<section class="space-y-3">
+<h3 class="font-headline text-[10px] uppercase tracking-widest text-on-primary-container">MVP_SYNC_MATRIX</h3>
+<div class="flex overflow-x-auto pb-4 gap-4 no-scrollbar">
+<!-- Player Card 1 -->
+<div class="min-w-[200px] bg-surface-container-high p-4 rounded-lg border-t-2 border-secondary-fixed-dim">
+<div class="flex justify-between items-start mb-4">
+<div class="w-10 h-10 rounded bg-surface-container overflow-hidden">
+<img alt="Player Avatar" class="w-full h-full object-cover" data-alt="Futuristic esports player profile photo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDxsTZM0bUK2_gPkUkR5mL4yZCmKpS8kT-eJtv2ugnSqIzdAn-GB2QbLalFXqXzGFXwfdYwJYZyYyHrX6jtBBMfSGtUGIXL-lzvj0NtiVZthc7-Fgnkco2ZERZqTm1n21nZc6BdZ1y08x0febzo5iD_33dSBIpg_NIoMIL2cB6lJifEKS1pOGD3J8ZKMHl7QABpdultRPc4hqfXXJbBpCvLoVAgu5Zs9sDNF-ZpUaAFE1nSP9VMFCUuQR4d_6I7cVaQYHFGy2qCn3Ja"/>
+</div>
+<div class="text-right">
+<span class="block font-headline text-xs font-bold text-secondary">X_CYPHER</span>
+<span class="block font-headline text-[8px] text-zinc-500">SQUAD_LEADER</span>
+</div>
+</div>
+<div class="space-y-2">
+<div class="flex justify-between items-center text-[10px]">
+<span class="font-headline text-zinc-400">ACCURACY</span>
+<span class="font-headline font-bold">98%</span>
+</div>
+<div class="h-1 bg-surface-container-lowest rounded-full overflow-hidden">
+<div class="h-full bg-secondary-fixed-dim w-[98%]"></div>
+</div>
+<div class="flex justify-between items-center text-[10px] pt-2">
+<span class="font-headline text-zinc-400">TACTICS</span>
+<span class="font-headline font-bold">Elite</span>
+</div>
+</div>
+</div>
+<!-- Player Card 2 -->
+<div class="min-w-[200px] bg-surface-container-high p-4 rounded-lg border-t-2 border-tertiary">
+<div class="flex justify-between items-start mb-4">
+<div class="w-10 h-10 rounded bg-surface-container overflow-hidden">
+<img alt="Player Avatar" class="w-full h-full object-cover" data-alt="Professional gamer avatar with gold accents" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBMrgAnqcI2E38DTTGeusObjmC2zCaKN7BYwIo3M6RAaiQXfIpi8bd4utdBzeHNiMLkgEaeqiw28TVIGnbGhhd7pk50QtCi8wc-3diVoqKdejRpqZexH-cEz1Lpq4rIf-X8Op-yl8rCMmWU80zsWIp7HYRIvUb4oWKLhDTqXiS2XO1EIkrSZRKO_qru1XCjVjXw6wJjQTyApqn_iSyrJhHALy2oV72TsYnUoBrX7jl5Ir57p3KOsp_Mz0RwQpn2iERtZYEEuXmVjzXC"/>
+</div>
+<div class="text-right">
+<span class="block font-headline text-xs font-bold text-tertiary">OMEGA_PRIME</span>
+<span class="block font-headline text-[8px] text-zinc-500">DEFENDER</span>
+</div>
+</div>
+<div class="space-y-2">
+<div class="flex justify-between items-center text-[10px]">
+<span class="font-headline text-zinc-400">STAMINA</span>
+<span class="font-headline font-bold">84%</span>
+</div>
+<div class="h-1 bg-surface-container-lowest rounded-full overflow-hidden">
+<div class="h-full bg-tertiary w-[84%]"></div>
+</div>
+<div class="flex justify-between items-center text-[10px] pt-2">
+<span class="font-headline text-zinc-400">SPEED</span>
+<span class="font-headline font-bold">High</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Commander Insight Banner -->
+<section class="bg-surface-container-low p-5 rounded-lg border border-secondary-fixed-dim/20 relative">
+<div class="absolute top-0 right-0 p-3">
+<span class="material-symbols-outlined text-secondary-fixed-dim text-lg">psychology</span>
+</div>
+<h3 class="font-headline text-[10px] uppercase tracking-widest text-secondary-fixed-dim mb-3">COMMANDER_INSIGHT</h3>
+<p class="font-body text-sm text-zinc-300 leading-relaxed italic">
+                "NAVI tactical repositioning at 65' countered Omega's aggressive mid-lane push. The saturation of map control in Sector 4 rendered the Omega defensive protocols obsolete. High-fidelity execution confirmed."
+            </p>
+<div class="mt-4 pt-4 border-t border-white/5 flex items-center justify-between">
+<span class="font-headline text-[9px] text-zinc-500 uppercase">A.G.S. INTELLIGENCE ENGINE V4.2</span>
+<span class="font-headline text-[9px] text-secondary font-bold">ANALYSIS_COMPLETE</span>
+</div>
+</section>
+</main>
+<!-- BottomNavBar Execution -->
+<nav class="fixed bottom-0 left-0 w-full z-50 bg-[#131313]/90 backdrop-blur-xl shadow-[0_-4px_24px_rgba(0,229,255,0.04)] border-t border-white/5 flex justify-around items-center px-4 pb-6 pt-3">
+<!-- Dashboard -->
+<a class="flex flex-col items-center justify-center text-zinc-500 hover:text-zinc-300 hover:bg-[#1C1B1B]" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-['Space_Grotesk'] text-[10px] font-bold uppercase tracking-wider mt-1">DASHBOARD</span>
+</a>
+<!-- Live -->
+<a class="flex flex-col items-center justify-center text-zinc-500 hover:text-zinc-300 hover:bg-[#1C1B1B]" href="#">
+<span class="material-symbols-outlined">sensors</span>
+<span class="font-['Space_Grotesk'] text-[10px] font-bold uppercase tracking-wider mt-1">LIVE</span>
+</a>
+<!-- Analytics (ACTIVE) -->
+<a class="flex flex-col items-center justify-center text-[#00E5FF] bg-[#201F1F] rounded-lg px-3 py-1.5 transition-transform duration-150 scale-90" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">query_stats</span>
+<span class="font-['Space_Grotesk'] text-[10px] font-bold uppercase tracking-wider mt-1">ANALYTICS</span>
+</a>
+<!-- Squad -->
+<a class="flex flex-col items-center justify-center text-zinc-500 hover:text-zinc-300 hover:bg-[#1C1B1B]" href="#">
+<span class="material-symbols-outlined">groups</span>
+<span class="font-['Space_Grotesk'] text-[10px] font-bold uppercase tracking-wider mt-1">SQUAD</span>
+</a>
+<!-- Reports -->
+<a class="flex flex-col items-center justify-center text-zinc-500 hover:text-zinc-300 hover:bg-[#1C1B1B]" href="#">
+<span class="material-symbols-outlined">description</span>
+<span class="font-['Space_Grotesk'] text-[10px] font-bold uppercase tracking-wider mt-1">REPORTS</span>
+</a>
+</nav>
+</body></html>

@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+
+<html class="dark"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "tertiary-container": "#c9a900",
+              "outline": "#8e9192",
+              "inverse-surface": "#e5e2e1",
+              "inverse-on-surface": "#313030",
+              "on-background": "#e5e2e1",
+              "surface-dim": "#131313",
+              "primary-container": "#121212",
+              "surface-tint": "#c8c6c5",
+              "on-tertiary-container": "#4c3f00",
+              "on-primary-fixed-variant": "#474646",
+              "on-primary-fixed": "#1c1b1b",
+              "on-secondary-container": "#00616d",
+              "primary-fixed": "#e5e2e1",
+              "on-tertiary": "#3a3000",
+              "on-secondary-fixed-variant": "#004f58",
+              "secondary": "#bdf4ff",
+              "on-tertiary-fixed-variant": "#544600",
+              "on-secondary-fixed": "#001f24",
+              "on-secondary": "#00363d",
+              "tertiary-fixed": "#ffe16d",
+              "on-error": "#690005",
+              "on-surface-variant": "#c4c7c7",
+              "surface-variant": "#353534",
+              "primary-fixed-dim": "#c8c6c5",
+              "outline-variant": "#444748",
+              "on-primary": "#313030",
+              "primary": "#c8c6c5",
+              "on-surface": "#e5e2e1",
+              "on-error-container": "#ffdad6",
+              "tertiary-fixed-dim": "#e9c400",
+              "surface-container-highest": "#353534",
+              "tertiary": "#e9c400",
+              "surface-container-low": "#1c1b1b",
+              "surface": "#131313",
+              "surface-container-lowest": "#0e0e0e",
+              "surface-container": "#201f1f",
+              "secondary-fixed-dim": "#00daf3",
+              "surface-container-high": "#2a2a2a",
+              "on-primary-container": "#7e7d7d",
+              "error": "#ffb4ab",
+              "surface-bright": "#393939",
+              "background": "#131313",
+              "secondary-fixed": "#9cf0ff",
+              "secondary-container": "#00e3fd",
+              "on-tertiary-fixed": "#221b00",
+              "inverse-primary": "#5f5e5e",
+              "error-container": "#93000a"
+            },
+            fontFamily: {
+              "headline": ["Space Grotesk"],
+              "body": ["Inter"],
+              "label": ["Space Grotesk"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #131313;
+            color: #e5e2e1;
+            font-family: 'Inter', sans-serif;
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 flex items-center px-6 h-16 bg-[#131313] shadow-none">
+<div class="flex items-center gap-4 w-full justify-between">
+<div class="flex items-center gap-4">
+<button class="text-cyan-400 hover:bg-zinc-800 transition-colors p-2 active:scale-95 duration-150">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<h1 class="text-cyan-400 font-['Space_Grotesk'] font-bold tracking-tighter text-xl">RULES_ENGINE</h1>
+</div>
+<div class="flex items-center gap-2">
+<span class="font-['Space_Grotesk'] uppercase tracking-widest text-sm text-zinc-500 mr-4 hidden md:block">SESSION: ALPHA_V2</span>
+<button class="text-cyan-400 hover:bg-zinc-800 transition-colors p-2 active:scale-95 duration-150">
+<span class="material-symbols-outlined">save</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Sidebar (Desktop) -->
+<nav class="fixed left-0 top-0 h-full w-72 z-40 flex flex-col pt-20 bg-[#131313] shadow-[4px_0_24px_rgba(0,229,255,0.02)] hidden lg:flex">
+<div class="px-6 mb-8 flex items-center gap-3">
+<div class="w-10 h-10 bg-surface-container border border-outline-variant flex items-center justify-center">
+<span class="material-symbols-outlined text-cyan-400" style="font-variation-settings: 'FILL' 1;">shield_with_heart</span>
+</div>
+<div>
+<p class="font-['Space_Grotesk'] font-black text-cyan-400 leading-none">OPERATOR_01</p>
+<p class="text-[10px] text-zinc-500 font-['Space_Grotesk'] tracking-widest uppercase mt-1">Lead Strategist • <span class="text-tertiary">VERIFIED</span></p>
+</div>
+</div>
+<div class="flex flex-col space-y-1">
+<a class="text-zinc-400 px-6 py-3 hover:bg-zinc-800/50 transition-all font-['Space_Grotesk'] font-medium flex items-center gap-4" href="#">
+<span class="material-symbols-outlined">dashboard</span> Tactical Dashboard
+            </a>
+<a class="text-zinc-400 px-6 py-3 hover:bg-zinc-800/50 transition-all font-['Space_Grotesk'] font-medium flex items-center gap-4" href="#">
+<span class="material-symbols-outlined">sports_score</span> Match Center
+            </a>
+<a class="bg-zinc-900 text-cyan-400 border-l-4 border-cyan-400 px-6 py-3 transition-all font-['Space_Grotesk'] font-medium flex items-center gap-4" href="#">
+<span class="material-symbols-outlined">settings_input_component</span> Rules Engine
+            </a>
+<a class="text-zinc-400 px-6 py-3 hover:bg-zinc-800/50 transition-all font-['Space_Grotesk'] font-medium flex items-center gap-4" href="#">
+<span class="material-symbols-outlined">monitoring</span> Roster Analytics
+            </a>
+<a class="text-zinc-400 px-6 py-3 hover:bg-zinc-800/50 transition-all font-['Space_Grotesk'] font-medium flex items-center gap-4" href="#">
+<span class="material-symbols-outlined">settings</span> System Settings
+            </a>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="lg:pl-72 pt-20 pb-24 px-4 md:px-8 max-w-[1400px] mx-auto min-h-screen">
+<!-- Rule Templates: Horizontal Scrolling Bento-ish cards -->
+<section class="mb-12">
+<div class="flex justify-between items-end mb-4">
+<h2 class="font-['Space_Grotesk'] uppercase tracking-[0.2em] text-xs text-zinc-500">CONFIGURATION TEMPLATES</h2>
+<div class="text-[10px] font-['Space_Grotesk'] text-zinc-600">4 TEMPLATES AVAILABLE</div>
+</div>
+<div class="flex gap-4 overflow-x-auto pb-4 hide-scrollbar">
+<!-- FIFA Template -->
+<div class="flex-shrink-0 w-64 p-6 bg-surface-container-low border-t-2 border-tertiary group hover:bg-surface-container transition-colors cursor-pointer">
+<div class="flex justify-between items-start mb-6">
+<span class="material-symbols-outlined text-tertiary">verified</span>
+<span class="text-[10px] font-['Space_Grotesk'] bg-tertiary/10 text-tertiary px-2 py-0.5">OFFICIAL</span>
+</div>
+<h3 class="font-['Space_Grotesk'] font-bold text-lg mb-1">Official FIFA</h3>
+<p class="text-xs text-zinc-500 font-body leading-relaxed">Standard 11-a-side professional league regulations.</p>
+</div>
+<!-- Custom 6-a-side -->
+<div class="flex-shrink-0 w-64 p-6 bg-surface-container-low border-t-2 border-zinc-700 group hover:bg-surface-container transition-colors cursor-pointer">
+<div class="flex justify-between items-start mb-6">
+<span class="material-symbols-outlined text-zinc-500">groups</span>
+</div>
+<h3 class="font-['Space_Grotesk'] font-bold text-lg mb-1">Custom 6-a-side</h3>
+<p class="text-xs text-zinc-500 font-body leading-relaxed">High-intensity street rules for small-pitch matches.</p>
+</div>
+<!-- eSports Standard -->
+<div class="flex-shrink-0 w-64 p-6 bg-surface-container-low border-t-2 border-cyan-400 group hover:bg-surface-container transition-colors cursor-pointer">
+<div class="flex justify-between items-start mb-6">
+<span class="material-symbols-outlined text-cyan-400">sports_esports</span>
+</div>
+<h3 class="font-['Space_Grotesk'] font-bold text-lg mb-1">eSports Standard</h3>
+<p class="text-xs text-zinc-500 font-body leading-relaxed">Optimized latency and overtime logic for virtual play.</p>
+</div>
+<!-- Hackathon Merit -->
+<div class="flex-shrink-0 w-64 p-6 bg-surface-container-low border-t-2 border-zinc-700 group hover:bg-surface-container transition-colors cursor-pointer">
+<div class="flex justify-between items-start mb-6">
+<span class="material-symbols-outlined text-zinc-500">code</span>
+</div>
+<h3 class="font-['Space_Grotesk'] font-bold text-lg mb-1">Hackathon Merit</h3>
+<p class="text-xs text-zinc-500 font-body leading-relaxed">Score based on technical execution and speed.</p>
+</div>
+</div>
+</section>
+<!-- Main Configuration Grid -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-8">
+<!-- Scoring Logic Section -->
+<section class="md:col-span-7 bg-surface-container-low p-8">
+<div class="flex items-center gap-3 mb-8">
+<span class="material-symbols-outlined text-cyan-400">calculate</span>
+<h2 class="font-['Space_Grotesk'] font-bold text-lg tracking-tight">SCORING LOGIC</h2>
+</div>
+<div class="space-y-6">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-4 p-4 bg-surface-container-lowest">
+<div>
+<label class="block font-['Space_Grotesk'] uppercase text-[10px] tracking-widest text-zinc-500 mb-1">Points per Goal/Kill</label>
+<p class="text-xs text-zinc-600">Base value for primary objective completion.</p>
+</div>
+<input class="w-24 bg-surface-container border-none text-cyan-400 font-['Space_Grotesk'] font-bold text-right focus:ring-1 focus:ring-cyan-400" type="number" value="100"/>
+</div>
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-4 p-4 bg-surface-container-lowest">
+<div>
+<label class="block font-['Space_Grotesk'] uppercase text-[10px] tracking-widest text-zinc-500 mb-1">Win/Draw/Loss Points</label>
+<p class="text-xs text-zinc-600">Standard league ladder distribution (W/D/L).</p>
+</div>
+<div class="flex gap-2">
+<input class="w-24 bg-surface-container border-none text-cyan-400 font-['Space_Grotesk'] font-bold text-center focus:ring-1 focus:ring-cyan-400" type="text" value="3/1/0"/>
+</div>
+</div>
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-4 p-4 bg-surface-container-lowest">
+<div>
+<label class="block font-['Space_Grotesk'] uppercase text-[10px] tracking-widest text-zinc-500 mb-1">MVP Weighting</label>
+<p class="text-xs text-zinc-600">Multiplier for standout tactical performance.</p>
+</div>
+<div class="flex items-center gap-3">
+<span class="text-[10px] text-zinc-500 font-['Space_Grotesk']">1.0x</span>
+<input class="accent-cyan-400 w-32" max="5" min="1" step="0.5" type="range"/>
+<span class="text-[10px] text-cyan-400 font-['Space_Grotesk']">2.5x</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Penalty & Disqualification Rules -->
+<section class="md:col-span-5 bg-surface-container-low p-8">
+<div class="flex items-center gap-3 mb-8">
+<span class="material-symbols-outlined text-cyan-400">gavel</span>
+<h2 class="font-['Space_Grotesk'] font-bold text-lg tracking-tight">ENFORCEMENT</h2>
+</div>
+<div class="space-y-4">
+<div class="flex items-center justify-between p-4 bg-surface-container">
+<span class="font-['Space_Grotesk'] uppercase text-[10px] tracking-widest text-zinc-300">Instant DQ on Foul</span>
+<div class="relative inline-flex items-center cursor-pointer">
+<input class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-zinc-700 peer-focus:outline-none rounded-none peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-zinc-300 after:border-zinc-300 after:border after:h-5 after:w-5 after:transition-all peer-checked:bg-cyan-400"></div>
+</div>
+</div>
+<div class="flex items-center justify-between p-4 bg-surface-container">
+<span class="font-['Space_Grotesk'] uppercase text-[10px] tracking-widest text-zinc-300">Yellow Card Timer</span>
+<select class="bg-surface-container-lowest border-none text-[10px] font-['Space_Grotesk'] text-cyan-400 focus:ring-0">
+<option>DISABLED</option>
+<option>2 MIN COOLDOWN</option>
+<option selected="">5 MIN COOLDOWN</option>
+</select>
+</div>
+<div class="p-4 bg-surface-container mt-6">
+<label class="block font-['Space_Grotesk'] uppercase text-[10px] tracking-widest text-zinc-500 mb-4">Anti-Cheat Level</label>
+<div class="grid grid-cols-3 gap-2">
+<button class="py-2 text-[10px] font-['Space_Grotesk'] border border-zinc-700 text-zinc-500 hover:bg-zinc-800 transition-colors">LOW</button>
+<button class="py-2 text-[10px] font-['Space_Grotesk'] bg-zinc-800 text-zinc-300 border border-zinc-700">MED</button>
+<button class="py-2 text-[10px] font-['Space_Grotesk'] bg-cyan-400/10 text-cyan-400 border border-cyan-400/50">HIGH</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Integrity Protocol Section -->
+<section class="md:col-span-12 bg-surface-container-low p-8 relative overflow-hidden">
+<!-- Abstract Glow Background -->
+<div class="absolute -right-20 -top-20 w-64 h-64 bg-cyan-400/5 blur-[100px] rounded-full"></div>
+<div class="flex items-center gap-3 mb-8">
+<span class="material-symbols-outlined text-tertiary">security</span>
+<h2 class="font-['Space_Grotesk'] font-bold text-lg tracking-tight">INTEGRITY PROTOCOL</h2>
+</div>
+<div class="grid md:grid-cols-2 gap-6 relative z-10">
+<div class="p-6 bg-surface-container-lowest border-l-4 border-zinc-700 hover:border-cyan-400 transition-all group cursor-pointer">
+<div class="flex items-center gap-4 mb-3">
+<span class="material-symbols-outlined text-zinc-500 group-hover:text-cyan-400">person</span>
+<h3 class="font-['Space_Grotesk'] font-bold uppercase text-sm tracking-widest">Human Arbiter</h3>
+</div>
+<p class="text-xs text-zinc-500 leading-relaxed font-body">Manual oversight by certified league officials. Highest latency, peak nuance.</p>
+</div>
+<div class="p-6 bg-surface-container-lowest border-l-4 border-cyan-400 group cursor-pointer">
+<div class="flex items-center gap-4 mb-3">
+<span class="material-symbols-outlined text-cyan-400">smart_toy</span>
+<h3 class="font-['Space_Grotesk'] font-bold uppercase text-sm tracking-widest">Automated Bot</h3>
+</div>
+<p class="text-xs text-zinc-500 leading-relaxed font-body">Real-time algorithmic monitoring. Zero-latency enforcement based on engine telemetry.</p>
+</div>
+</div>
+</section>
+</div>
+<!-- Deploy Action -->
+<div class="mt-12 flex flex-col md:flex-row items-center justify-between gap-8 p-8 border-t border-zinc-800">
+<div class="max-w-md">
+<p class="text-xs text-zinc-500 font-body mb-2">Finalizing these rules will push the configuration to the <span class="text-cyan-400">AGS Global Mainnet</span>. This action is irreversible for the duration of the season.</p>
+</div>
+<button class="w-full md:w-auto px-12 py-4 bg-secondary-container text-on-secondary-fixed font-['Space_Grotesk'] font-black tracking-tighter text-lg rounded-none hover:bg-secondary-fixed-dim transition-all active:scale-95 flex items-center justify-center gap-3 shadow-[0_0_20px_rgba(0,227,253,0.3)]">
+                DEPLOY TO LEAGUE
+                <span class="material-symbols-outlined">rocket_launch</span>
+</button>
+</div>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="fixed bottom-0 w-full h-16 z-50 flex justify-around items-center md:hidden bg-[#131313]/90 backdrop-blur-xl border-t border-zinc-800/50">
+<a class="text-zinc-600 flex flex-col items-center gap-1" href="#">
+<span class="material-symbols-outlined">grid_view</span>
+<span class="font-['Space_Grotesk'] text-[10px] font-bold tracking-tight">DASHBOARD</span>
+</a>
+<a class="text-zinc-600 flex flex-col items-center gap-1" href="#">
+<span class="material-symbols-outlined">timer</span>
+<span class="font-['Space_Grotesk'] text-[10px] font-bold tracking-tight">MATCHES</span>
+</a>
+<a class="text-cyan-400 flex flex-col items-center gap-1" href="#">
+<span class="material-symbols-outlined">terminal</span>
+<span class="font-['Space_Grotesk'] text-[10px] font-bold tracking-tight">ENGINE</span>
+</a>
+<a class="text-zinc-600 flex flex-col items-center gap-1" href="#">
+<span class="material-symbols-outlined">tune</span>
+<span class="font-['Space_Grotesk'] text-[10px] font-bold tracking-tight">CONFIG</span>
+</a>
+</nav>
+<!-- Floating Branding Elements (Subtle) -->
+<div class="fixed bottom-20 right-8 pointer-events-none opacity-10 hidden lg:block">
+<h4 class="font-['Space_Grotesk'] text-[120px] font-black leading-none tracking-tighter text-zinc-600">AGS</h4>
+</div>
+</body></html>

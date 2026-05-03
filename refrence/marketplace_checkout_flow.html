@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AGS Global Arena - Secure Checkout</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "tertiary": "#e9c400",
+              "secondary-fixed": "#9cf0ff",
+              "surface-container-low": "#1c1b1b",
+              "surface-tint": "#c8c6c5",
+              "on-secondary-fixed-variant": "#004f58",
+              "background": "#131313",
+              "on-tertiary": "#3a3000",
+              "on-background": "#e5e2e1",
+              "on-tertiary-container": "#4c3f00",
+              "surface-container": "#201f1f",
+              "tertiary-container": "#c9a900",
+              "outline-variant": "#444748",
+              "surface-bright": "#393939",
+              "on-primary-fixed": "#1c1b1b",
+              "surface-variant": "#353534",
+              "primary": "#c8c6c5",
+              "inverse-surface": "#e5e2e1",
+              "inverse-primary": "#5f5e5e",
+              "inverse-on-surface": "#313030",
+              "primary-fixed": "#e5e2e1",
+              "surface-container-lowest": "#0e0e0e",
+              "on-secondary": "#00363d",
+              "secondary-container": "#00e3fd",
+              "secondary": "#bdf4ff",
+              "on-primary-container": "#7e7d7d",
+              "on-surface": "#e5e2e1",
+              "tertiary-fixed-dim": "#e9c400",
+              "surface-container-high": "#2a2a2a",
+              "secondary-fixed-dim": "#00daf3",
+              "on-tertiary-fixed": "#221b00",
+              "on-error-container": "#ffdad6",
+              "primary-fixed-dim": "#c8c6c5",
+              "error-container": "#93000a",
+              "outline": "#8e9192",
+              "surface-dim": "#131313",
+              "primary-container": "#121212",
+              "error": "#ffb4ab",
+              "on-surface-variant": "#c4c7c7",
+              "on-primary": "#313030",
+              "surface": "#131313",
+              "surface-container-highest": "#353534",
+              "on-secondary-fixed": "#001f24",
+              "on-secondary-container": "#00616d",
+              "on-primary-fixed-variant": "#474646",
+              "tertiary-fixed": "#ffe16d",
+              "on-tertiary-fixed-variant": "#544600",
+              "on-error": "#690005"
+            },
+            fontFamily: {
+              "headline": ["Space Grotesk"],
+              "body": ["Inter"],
+              "label": ["Space Grotesk"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .glass-panel {
+            background: rgba(53, 53, 52, 0.6);
+            backdrop-filter: blur(12px);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body selection:bg-secondary-fixed-dim selection:text-on-secondary-fixed">
+<!-- TopAppBar Shell -->
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-6 h-16 bg-[#131313] dark:bg-[#131313] border-b border-white/10 shadow-[0_0_20px_rgba(0,229,255,0.04)]">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[#00E5FF]" data-icon="shield">shield</span>
+<h1 class="font-['Space_Grotesk'] uppercase tracking-[0.05em] text-xs font-bold text-[#00E5FF]">SECURE CHECKOUT</h1>
+</div>
+<div class="flex items-center gap-4">
+<span class="font-label text-[10px] tracking-widest text-on-surface-variant/50 hidden md:block uppercase">Session ID: AGS-992-TX</span>
+<span class="material-symbols-outlined text-[#00E5FF] hover:text-[#00DAF3] transition-colors cursor-pointer" data-icon="help_outline">help_outline</span>
+</div>
+</header>
+<main class="pt-24 pb-32 px-4 md:px-8 max-w-7xl mx-auto">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+<!-- Left Column: Items & Delivery (8 Columns) -->
+<div class="lg:col-span-8 space-y-6">
+<!-- Order Summary Node -->
+<section class="bg-surface-container-low p-6 rounded-lg">
+<div class="flex items-center justify-between mb-8">
+<h2 class="font-headline text-xl font-bold tracking-tight uppercase">Order Summary Node</h2>
+<span class="font-label text-[10px] bg-surface-container-high px-2 py-1 rounded border border-outline-variant/20">2 ITEMS DETECTED</span>
+</div>
+<div class="space-y-4">
+<!-- Item 1 -->
+<div class="bg-surface-container p-4 flex flex-col md:flex-row gap-6 items-start md:items-center relative group">
+<div class="w-24 h-24 bg-surface-container-lowest flex-shrink-0 flex items-center justify-center border border-outline-variant/10">
+<img class="w-20 h-20 object-contain" data-alt="Black high-performance gaming controller with cyan accents" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA3T64xHG3sSiZ0MP59ED3E3hk1D9tFj5NlR489W-i75Yqp8F5zJ6Zotiso1vF9dUloZVZ9sFiYnt16KsHG2e9St3F1t1aHvgZN4DGMH1VJwEi6c-cWpZEnPHglav1yY6pwEe4S1l72lZKQnkHiDuhjMsDAHwsRPv4Di2Psql7IExYXKNF6oh7ohzA1fBMraIhykUGIyhrRC5tVUKQrasjoqGUPah7EmXMNI-MrrJSQ2Cz_hd9Q3p1pl6wrMMJTUhiusAcddgw8dazx"/>
+</div>
+<div class="flex-grow space-y-1">
+<h3 class="font-headline font-bold text-lg uppercase">Pro-Tier Controller</h3>
+<p class="text-xs text-on-surface-variant font-label uppercase tracking-wider">SKU: AG-CTR-X9</p>
+<div class="flex items-center gap-2 mt-2">
+<span class="bg-secondary-fixed-dim/10 text-secondary-fixed-dim text-[10px] px-2 py-0.5 rounded font-bold">TACTICAL GRADE</span>
+</div>
+</div>
+<div class="flex flex-col items-end gap-3">
+<div class="flex items-center bg-surface-container-lowest border border-outline-variant/30 rounded">
+<button class="p-2 hover:bg-surface-container-high transition-colors"><span class="material-symbols-outlined text-xs" data-icon="remove">remove</span></button>
+<span class="px-4 font-label font-bold text-sm">01</span>
+<button class="p-2 hover:bg-surface-container-high transition-colors"><span class="material-symbols-outlined text-xs" data-icon="add">add</span></button>
+</div>
+<p class="font-headline text-tertiary text-xl font-bold">$189.99</p>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="bg-surface-container p-4 flex flex-col md:flex-row gap-6 items-start md:items-center relative group">
+<div class="w-24 h-24 bg-surface-container-lowest flex-shrink-0 flex items-center justify-center border border-outline-variant/10">
+<img class="w-20 h-20 object-contain" data-alt="Sleek black jersey with carbon fiber texture" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAiYKagAjU3bCkztNaZctMbQSHnQeWhT8LZWYq6-0bZXm8B9vVj4i3SduqPjFXoTpfcG0nDBeYJgEfn5qb2cf7Dz0VmnEapiLN029-93yTXY84mHgVY9l3OX1UndgEh98XeQi2vRUWpdY0CB3rOwDKdUKPIAIfhgoWb4ki06H5WATmLPtzo8pQ5OWTFzvpOkByvhrh_PiUGjEsabXqS-gS4LtgmMffIKJBS0OQN16BmtqIL-1EjZFqDAHbuHFRdJtisLlZQB4RyzQ-y"/>
+</div>
+<div class="flex-grow space-y-1">
+<h3 class="font-headline font-bold text-lg uppercase">Carbon-Thread Jersey</h3>
+<p class="text-xs text-on-surface-variant font-label uppercase tracking-wider">SKU: AG-JSY-C01</p>
+<div class="flex items-center gap-2 mt-2">
+<span class="bg-tertiary/10 text-tertiary text-[10px] px-2 py-0.5 rounded font-bold">LIMITED EDITION</span>
+</div>
+</div>
+<div class="flex flex-col items-end gap-3">
+<div class="flex items-center bg-surface-container-lowest border border-outline-variant/30 rounded">
+<button class="p-2 hover:bg-surface-container-high transition-colors"><span class="material-symbols-outlined text-xs" data-icon="remove">remove</span></button>
+<span class="px-4 font-label font-bold text-sm">01</span>
+<button class="p-2 hover:bg-surface-container-high transition-colors"><span class="material-symbols-outlined text-xs" data-icon="add">add</span></button>
+</div>
+<p class="font-headline text-tertiary text-xl font-bold">$124.50</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Tactical Delivery Selection -->
+<section class="bg-surface-container-low p-6 rounded-lg">
+<h2 class="font-headline text-xl font-bold tracking-tight uppercase mb-6">Tactical Delivery Selection</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<!-- Option 1 -->
+<div class="border-2 border-secondary-fixed-dim bg-surface-container p-4 rounded-lg relative cursor-pointer">
+<div class="flex justify-between items-start mb-4">
+<div>
+<h4 class="font-headline font-bold text-secondary-fixed-dim uppercase tracking-wide">Express Drop</h4>
+<p class="text-xs text-on-surface-variant">Global High-Speed Logistics</p>
+</div>
+<span class="material-symbols-outlined text-secondary-fixed-dim" data-icon="bolt">bolt</span>
+</div>
+<div class="flex justify-between items-end">
+<p class="font-label text-xs uppercase opacity-70">Estimated Arrival: <span class="text-on-surface block font-bold">24-48 HOURS</span></p>
+<p class="font-headline font-bold text-tertiary">+$25.00</p>
+</div>
+</div>
+<!-- Option 2 -->
+<div class="border border-outline-variant/20 bg-surface-container p-4 rounded-lg cursor-pointer hover:bg-surface-container-high transition-colors">
+<div class="flex justify-between items-start mb-4">
+<div>
+<h4 class="font-headline font-bold text-on-surface uppercase tracking-wide">Standard Deployment</h4>
+<p class="text-xs text-on-surface-variant">Secure Surface Transport</p>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="local_shipping">local_shipping</span>
+</div>
+<div class="flex justify-between items-end">
+<p class="font-label text-xs uppercase opacity-70">Estimated Arrival: <span class="text-on-surface block font-bold">3-5 DAYS</span></p>
+<p class="font-headline font-bold text-tertiary">FREE</p>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- Right Column: Payment & Total (4 Columns) -->
+<div class="lg:col-span-4 space-y-6">
+<!-- Integrated Payment Protocol -->
+<section class="bg-surface-container-low p-6 rounded-lg">
+<h2 class="font-headline text-xl font-bold tracking-tight uppercase mb-6">Integrated Payment Protocol</h2>
+<div class="space-y-3">
+<!-- Wallet -->
+<div class="p-4 bg-surface-container-high rounded border-l-4 border-secondary-fixed-dim flex justify-between items-center cursor-pointer">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary-fixed-dim" data-icon="account_balance_wallet">account_balance_wallet</span>
+<div>
+<p class="font-headline font-bold text-sm uppercase">Arena Wallet</p>
+<p class="text-[10px] text-secondary-fixed-dim font-bold tracking-tighter uppercase">Balance: $1,420.00</p>
+</div>
+</div>
+<div class="w-4 h-4 rounded-full border-2 border-secondary-fixed-dim flex items-center justify-center">
+<div class="w-2 h-2 bg-secondary-fixed-dim rounded-full"></div>
+</div>
+</div>
+<!-- Razorpay -->
+<div class="p-4 bg-surface-container-lowest rounded border border-outline-variant/10 flex justify-between items-center cursor-pointer hover:bg-surface-container transition-colors">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="credit_card">credit_card</span>
+<div>
+<p class="font-headline font-bold text-sm uppercase opacity-70">Razorpay (Card/UPI)</p>
+<p class="text-[10px] text-on-surface-variant uppercase tracking-tighter">Global Gateway</p>
+</div>
+</div>
+</div>
+<!-- Escrow -->
+<div class="p-4 bg-surface-container-lowest rounded border border-outline-variant/10 flex justify-between items-center cursor-pointer hover:bg-surface-container transition-colors">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="verified_user">verified_user</span>
+<div>
+<p class="font-headline font-bold text-sm uppercase opacity-70">Escrow Holding</p>
+<p class="text-[10px] text-on-surface-variant uppercase tracking-tighter">Enterprise Gear Only</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Order Integrity Verification -->
+<section class="bg-surface-container-low p-6 rounded-lg relative overflow-hidden">
+<!-- Subtle Tech Pattern Background -->
+<div class="absolute inset-0 opacity-5 pointer-events-none" style="background-image: radial-gradient(circle at 2px 2px, #00E5FF 1px, transparent 0); background-size: 24px 24px;"></div>
+<h2 class="font-headline text-xl font-bold tracking-tight uppercase mb-6 relative z-10">Order Integrity</h2>
+<div class="space-y-4 relative z-10">
+<div class="flex justify-between items-center">
+<span class="text-xs font-label uppercase text-on-surface-variant">Subtotal</span>
+<span class="font-headline font-bold">$314.49</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="text-xs font-label uppercase text-on-surface-variant">Tactical Delivery</span>
+<span class="font-headline font-bold text-tertiary">+$25.00</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="text-xs font-label uppercase text-on-surface-variant">Platform Tax (10%)</span>
+<span class="font-headline font-bold text-on-surface-variant">$31.45</span>
+</div>
+<!-- Separator -->
+<div class="h-[1px] bg-outline-variant/20 w-full my-4"></div>
+<div class="flex justify-between items-end pt-2">
+<div>
+<span class="text-[10px] font-label font-bold uppercase tracking-[0.2em] text-secondary-fixed-dim">Unified Total</span>
+<h3 class="font-headline text-4xl font-extrabold text-[#00E5FF] tracking-tighter leading-none mt-1">$370.94</h3>
+</div>
+<span class="material-symbols-outlined text-secondary-fixed-dim opacity-30 text-4xl" data-icon="qr_code_2">qr_code_2</span>
+</div>
+</div>
+<!-- Secure Execution Command -->
+<div class="mt-8 space-y-4 relative z-10">
+<button class="w-full bg-tertiary hover:bg-tertiary-fixed-dim text-on-tertiary font-headline font-black py-4 rounded-md tracking-widest text-sm transition-all active:scale-[0.98] shadow-[0_0_20px_rgba(233,196,0,0.2)]">
+                            AUTHORIZE TRANSACTION
+                        </button>
+<div class="flex items-center justify-center gap-2">
+<div class="flex items-center gap-1 bg-surface-container-high px-3 py-1 rounded-full border border-outline-variant/20">
+<span class="material-symbols-outlined text-[10px] text-tertiary" data-icon="lock" style="font-variation-settings: 'FILL' 1;">lock</span>
+<span class="text-[9px] font-label font-bold text-on-surface-variant tracking-wider uppercase">AES-256 SECURED</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Status Feedback -->
+<div class="bg-surface-container-lowest/50 p-4 border-l-2 border-outline-variant/30 italic text-[10px] text-on-surface-variant/60 font-label leading-relaxed">
+                    BY AUTHORIZING THIS TRANSACTION, YOU ACKNOWLEDGE THE AGS GLOBAL ARENA TERMS OF DEPLOYMENT AND DATA RETENTION PROTOCOLS. FUNDS WILL BE LOCKED IN REAL-TIME.
+                </div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar Shell (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-4 pt-2 bg-[#0E0E0E] dark:bg-[#0E0E0E] rounded-t-lg">
+<a class="flex flex-col items-center justify-center text-gray-400 opacity-60" href="#">
+<span class="material-symbols-outlined" data-icon="shopping_bag">shopping_bag</span>
+<span class="font-['Space_Grotesk'] text-[10px] uppercase tracking-tighter mt-1">GEAR</span>
+</a>
+<a class="flex flex-col items-center justify-center text-gray-400 opacity-60" href="#">
+<span class="material-symbols-outlined" data-icon="leaderboard">leaderboard</span>
+<span class="font-['Space_Grotesk'] text-[10px] uppercase tracking-tighter mt-1">STATS</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-[#2A2A2A] text-[#00E5FF] rounded-md px-3 py-1" href="#">
+<span class="material-symbols-outlined" data-icon="storefront">storefront</span>
+<span class="font-['Space_Grotesk'] text-[10px] uppercase tracking-tighter mt-1">MARKET</span>
+</a>
+<a class="flex flex-col items-center justify-center text-gray-400 opacity-60" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-['Space_Grotesk'] text-[10px] uppercase tracking-tighter mt-1">PROFILE</span>
+</a>
+</nav>
+<!-- Separation Logic Element (Decoration) -->
+<div class="fixed top-16 left-0 w-full h-[2px] bg-[#1C1B1B] z-40"></div>
+</body></html>

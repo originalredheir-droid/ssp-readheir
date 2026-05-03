@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AGS_COMMAND | Domain Selection</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-container": "#201f1f",
+                        "tertiary": "#e9c400",
+                        "on-primary-fixed-variant": "#474646",
+                        "surface-container-highest": "#353534",
+                        "inverse-primary": "#5f5e5e",
+                        "on-error": "#690005",
+                        "inverse-on-surface": "#313030",
+                        "surface-container-high": "#2a2a2a",
+                        "primary-fixed-dim": "#c8c6c5",
+                        "outline-variant": "#444748",
+                        "outline": "#8e9192",
+                        "on-secondary-fixed": "#001f24",
+                        "on-surface": "#e5e2e1",
+                        "secondary-fixed-dim": "#00daf3",
+                        "error-container": "#93000a",
+                        "primary": "#c8c6c5",
+                        "on-error-container": "#ffdad6",
+                        "surface-container-lowest": "#0e0e0e",
+                        "on-tertiary-fixed-variant": "#544600",
+                        "error": "#ffb4ab",
+                        "primary-container": "#121212",
+                        "on-tertiary-fixed": "#221b00",
+                        "on-background": "#e5e2e1",
+                        "on-secondary-fixed-variant": "#004f58",
+                        "surface-tint": "#c8c6c5",
+                        "surface": "#131313",
+                        "tertiary-fixed-dim": "#e9c400",
+                        "on-secondary-container": "#00616d",
+                        "inverse-surface": "#e5e2e1",
+                        "secondary": "#bdf4ff",
+                        "on-surface-variant": "#c4c7c7",
+                        "on-primary-container": "#7e7d7d",
+                        "secondary-container": "#00e3fd",
+                        "tertiary-container": "#c9a900",
+                        "surface-container-low": "#1c1b1b",
+                        "secondary-fixed": "#9cf0ff",
+                        "surface-dim": "#131313",
+                        "background": "#131313",
+                        "on-tertiary": "#3a3000",
+                        "surface-variant": "#353534",
+                        "primary-fixed": "#e5e2e1",
+                        "tertiary-fixed": "#ffe16d",
+                        "on-secondary": "#00363d",
+                        "on-primary": "#313030",
+                        "surface-bright": "#393939",
+                        "on-tertiary-container": "#4c3f00",
+                        "on-primary-fixed": "#1c1b1b"
+                    },
+                    fontFamily: {
+                        "headline": ["Space Grotesk"],
+                        "body": ["Inter"],
+                        "label": ["Space Grotesk"]
+                    },
+                    borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #131313;
+            color: #e5e2e1;
+            font-family: 'Inter', sans-serif;
+        }
+        .header-anchor {
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 800;
+            letter-spacing: -0.05em;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="flex flex-col min-h-screen">
+<!-- TopAppBar Execution -->
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-6 h-16 bg-[#131313] dark:bg-[#131313] shadow-[0_0_32px_rgba(0,229,255,0.04)]">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[#00E5FF] active:scale-95 duration-150 cursor-pointer" data-icon="grid_view">grid_view</span>
+<h1 class="text-xl font-bold tracking-tighter text-[#00E5FF] font-['Space_Grotesk']">AGS_COMMAND</h1>
+</div>
+<div class="flex items-center">
+<div class="w-8 h-8 rounded-full bg-surface-container-high border border-outline-variant/20 overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="User tactical profile avatar placeholder" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAfzOhOYyYuxGVDbRge4suQRiZ9gxqpwW8c46ObNSSR3EVu-ZjPKSBVCHStKfBRMH9S-fgRulFk2nmhL97o-s4nPRk7nmcFG9rlxcEE-dfOxXQxISc8U75EUTkmTcqA300vzWGra_wSghQyz2bwI3oRvabVeQgfyu9BxnMv-CBzeld7MYgPzaSC6bzRtUukRSUeXyjMEwRHxfs1bqPHTd0E2wtk8FCkmrS9VM4nBCkDP0JrY6d_uEJYQu_W8bCxiDS7dQsg5bFY7gsQ"/>
+</div>
+</div>
+<div class="absolute bottom-0 left-0 bg-[#1C1B1B] h-[1px] w-full"></div>
+</header>
+<!-- Main Content: Canvas Area -->
+<main class="flex-grow flex flex-col pt-24 pb-32 px-6 max-w-5xl mx-auto w-full">
+<!-- Header Section -->
+<section class="mb-12">
+<div class="flex items-baseline gap-3 mb-2">
+<span class="font-label text-[10px] font-bold tracking-[0.2em] text-[#00E5FF] uppercase">Protocol 02</span>
+<div class="h-[1px] flex-grow bg-gradient-to-r from-[#00E5FF]/30 to-transparent"></div>
+</div>
+<h2 class="font-headline text-4xl md:text-5xl font-bold text-on-surface uppercase leading-none tracking-tight">Domain Selection</h2>
+<p class="font-body text-on-surface-variant mt-4 max-w-xl text-sm leading-relaxed">
+                Initialize your tactical profile by selecting your primary competitive theaters. Multimodal tracking is supported for elite operatives.
+            </p>
+</section>
+<!-- Bento Grid: Domain Selection -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-4">
+<!-- Physical Sports Card -->
+<div class="md:col-span-8 group relative bg-surface-container-low overflow-hidden transition-all duration-300 hover:bg-surface-container cursor-pointer p-8 flex flex-col justify-between min-h-[320px] rounded-lg">
+<div class="absolute top-0 right-0 p-6 opacity-10 group-hover:opacity-20 transition-opacity">
+<span class="material-symbols-outlined text-9xl" data-icon="fitness_center">fitness_center</span>
+</div>
+<div class="relative z-10">
+<div class="flex items-center gap-2 mb-6">
+<span class="material-symbols-outlined text-[#00E5FF]" data-icon="exercise">exercise</span>
+<span class="font-label text-[10px] font-bold tracking-widest text-[#00E5FF] uppercase">Theater Alpha</span>
+</div>
+<h3 class="font-headline text-3xl font-bold text-on-surface mb-2 uppercase italic tracking-tighter">Physical Sports</h3>
+<p class="font-body text-on-surface-variant max-w-sm text-sm">
+                        High-performance kinetics, biological endurance, and traditional athletic competition. Tracking metrics: VO2 Max, Field Dominance, Tactical Positioning.
+                    </p>
+</div>
+<div class="relative z-10 flex justify-end">
+<div class="flex items-center gap-2 group-hover:translate-x-1 transition-transform">
+<span class="font-label text-[10px] font-bold text-[#00E5FF]">DEPLOY TO SECTOR</span>
+<span class="material-symbols-outlined text-sm text-[#00E5FF]" data-icon="arrow_forward">arrow_forward</span>
+</div>
+</div>
+<div class="absolute inset-0 border border-outline-variant/5 group-hover:border-[#00E5FF]/20 transition-colors pointer-events-none"></div>
+</div>
+<!-- eSports Card -->
+<div class="md:col-span-4 group relative bg-surface-container-low overflow-hidden transition-all duration-300 hover:bg-surface-container-high cursor-pointer p-8 flex flex-col justify-between rounded-lg">
+<div class="relative z-10">
+<div class="flex items-center gap-2 mb-6">
+<span class="material-symbols-outlined text-[#00E5FF]" data-icon="sports_esports">sports_esports</span>
+<span class="font-label text-[10px] font-bold tracking-widest text-[#00E5FF] uppercase">Theater Beta</span>
+</div>
+<h3 class="font-headline text-2xl font-bold text-on-surface mb-2 uppercase tracking-tight">eSports</h3>
+<p class="font-body text-on-surface-variant text-sm">
+                        Cognitive overclocking and digital dominance. Integration for MOBA, FPS, and Strategy systems.
+                    </p>
+</div>
+<div class="mt-8 flex justify-between items-center">
+<div class="flex -space-x-2">
+<div class="w-6 h-6 rounded-full bg-surface-container-highest border border-surface flex items-center justify-center">
+<span class="material-symbols-outlined text-[10px] text-[#00E5FF]" data-icon="keyboard">keyboard</span>
+</div>
+<div class="w-6 h-6 rounded-full bg-surface-container-highest border border-surface flex items-center justify-center">
+<span class="material-symbols-outlined text-[10px] text-[#00E5FF]" data-icon="mouse">mouse</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant opacity-20 group-hover:opacity-100 transition-opacity" data-icon="add_circle">add_circle</span>
+</div>
+</div>
+<!-- Hackathons Card -->
+<div class="md:col-span-12 group relative bg-surface-container-lowest overflow-hidden transition-all duration-300 hover:bg-surface-container-low cursor-pointer p-8 flex flex-col md:flex-row md:items-center justify-between gap-8 border border-outline-variant/10 rounded-lg">
+<div class="flex-grow">
+<div class="flex items-center gap-2 mb-4">
+<span class="material-symbols-outlined text-[#00E5FF]" data-icon="terminal">terminal</span>
+<span class="font-label text-[10px] font-bold tracking-widest text-[#00E5FF] uppercase">Theater Gamma</span>
+</div>
+<h3 class="font-headline text-2xl font-bold text-on-surface mb-1 uppercase tracking-tight">Hackathons &amp; Engineering</h3>
+<p class="font-body text-on-surface-variant text-sm max-w-2xl">
+                        Rapid prototyping and algorithmic warfare. Focus on software architecture, high-pressure builds, and innovation cycles.
+                    </p>
+</div>
+<div class="flex items-center gap-6">
+<div class="text-right hidden md:block">
+<div class="font-label text-[10px] text-on-surface-variant uppercase">Network Activity</div>
+<div class="text-tertiary font-headline font-bold">HIGH DENSITY</div>
+</div>
+<div class="w-12 h-12 rounded-md bg-[#00E5FF]/5 border border-[#00E5FF]/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-[#00E5FF]" data-icon="code_blocks">code_blocks</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Footer Action Area -->
+<div class="mt-auto pt-16 flex flex-col md:flex-row items-center justify-between gap-8">
+<div class="flex items-center gap-4">
+<div class="flex items-center justify-center w-5 h-5 border border-outline-variant rounded-sm bg-surface-container-highest">
+<span class="material-symbols-outlined text-[14px] text-tertiary" data-icon="check" style="font-variation-settings: 'FILL' 1;">check</span>
+</div>
+<span class="font-body text-xs text-on-surface-variant uppercase tracking-wider">I confirm these domains represent my operative profile</span>
+</div>
+<button class="w-full md:w-auto px-12 py-4 bg-tertiary text-on-tertiary font-label font-bold text-xs tracking-[0.2em] rounded-md transition-all duration-200 active:scale-95 hover:shadow-[0_0_20px_rgba(233,196,0,0.3)] uppercase">
+                CONTINUE_PROTOCOL
+            </button>
+</div>
+</main>
+<!-- BottomNavBar Suppression Rule: Transactional/Onboarding Page -> Hide Shell -->
+<!-- (Note: Requirement says UI designer task, typically onboarding screens don't have bottom nav, but I will render it if it was required by the JSON logic, however the prompt mentions 'Onboarding' which triggers 'Automatic Suppression' per the instructions). -->
+<!-- Visual background element for depth -->
+<div class="fixed top-0 right-0 -z-10 w-full h-full opacity-30 pointer-events-none overflow-hidden">
+<div class="absolute top-[-10%] right-[-10%] w-[60%] h-[60%] rounded-full bg-[#00E5FF] blur-[160px] opacity-[0.03]"></div>
+<div class="absolute bottom-[-5%] left-[-5%] w-[40%] h-[40%] rounded-full bg-tertiary blur-[120px] opacity-[0.02]"></div>
+</div>
+</body></html>

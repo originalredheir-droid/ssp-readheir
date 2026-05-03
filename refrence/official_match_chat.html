@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Official Match Chat - VAL-042</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;900&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #131313;
+        }
+        .headline-font { font-family: 'Space Grotesk', sans-serif; }
+        ::-webkit-scrollbar { width: 4px; }
+        ::-webkit-scrollbar-track { background: #131313; }
+        ::-webkit-scrollbar-thumb { background: #353534; border-radius: 2px; }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-tint": "#c8c6c5",
+                        "inverse-surface": "#e5e2e1",
+                        "on-error-container": "#ffdad6",
+                        "on-secondary": "#00363d",
+                        "on-surface": "#e5e2e1",
+                        "surface-dim": "#131313",
+                        "on-primary-fixed-variant": "#474646",
+                        "surface-container-highest": "#353534",
+                        "on-tertiary-fixed": "#221b00",
+                        "background": "#131313",
+                        "on-primary-fixed": "#1c1b1b",
+                        "inverse-on-surface": "#313030",
+                        "surface-bright": "#393939",
+                        "on-error": "#690005",
+                        "surface": "#131313",
+                        "primary-container": "#121212",
+                        "secondary": "#bdf4ff",
+                        "on-primary-container": "#7e7d7d",
+                        "surface-container-low": "#1c1b1b",
+                        "secondary-fixed": "#9cf0ff",
+                        "on-tertiary-fixed-variant": "#544600",
+                        "on-primary": "#313030",
+                        "on-secondary-fixed": "#001f24",
+                        "primary-fixed": "#e5e2e1",
+                        "on-secondary-container": "#00616d",
+                        "surface-container-lowest": "#0e0e0e",
+                        "on-tertiary-container": "#4c3f00",
+                        "outline": "#8e9192",
+                        "inverse-primary": "#5f5e5e",
+                        "primary-fixed-dim": "#c8c6c5",
+                        "tertiary": "#e9c400",
+                        "outline-variant": "#444748",
+                        "surface-container": "#201f1f",
+                        "surface-variant": "#353534",
+                        "error-container": "#93000a",
+                        "error": "#ffb4ab",
+                        "primary": "#c8c6c5",
+                        "tertiary-fixed": "#ffe16d",
+                        "tertiary-container": "#c9a900",
+                        "on-surface-variant": "#c4c7c7",
+                        "on-tertiary": "#3a3000",
+                        "on-secondary-fixed-variant": "#004f58",
+                        "surface-container-high": "#2a2a2a",
+                        "on-background": "#e5e2e1",
+                        "tertiary-fixed-dim": "#e9c400",
+                        "secondary-fixed-dim": "#00daf3",
+                        "secondary-container": "#00e3fd"
+                    },
+                    fontFamily: {
+                        "headline": ["Space Grotesk"],
+                        "body": ["Inter"],
+                        "label": ["Space Grotesk"]
+                    },
+                    borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen flex flex-col overflow-hidden">
+<!-- Top Navigation Shell -->
+<header class="flex justify-between items-center w-full px-6 py-4 bg-[#1C1B1B] shadow-[0_0_20px_rgba(0,229,255,0.05)]">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 bg-surface-container rounded-lg flex items-center justify-center border border-outline-variant/10">
+<span class="material-symbols-outlined text-secondary-fixed-dim">gavel</span>
+</div>
+<div>
+<h1 class="text-[#00E5FF] font-['Space_Grotesk'] font-black tracking-tighter text-xl uppercase">TACTICAL COMMS</h1>
+<p class="font-label text-[10px] text-on-primary-container tracking-widest font-bold">MATCH ENFORCEMENT PROTOCOL</p>
+</div>
+</div>
+<div class="hidden md:flex items-center gap-8">
+<nav class="flex gap-6">
+<a class="font-label text-sm font-bold tracking-wider text-[#353534] hover:bg-[#2A2A2A] transition-colors duration-200 px-2 py-1" href="#">MATCHES</a>
+<a class="font-label text-sm font-bold tracking-wider text-[#00E5FF] border-b-2 border-[#00E5FF] px-2 py-1" href="#">COMMS</a>
+<a class="font-label text-sm font-bold tracking-wider text-[#353534] hover:bg-[#2A2A2A] transition-colors duration-200 px-2 py-1" href="#">INTEL</a>
+<a class="font-label text-sm font-bold tracking-wider text-[#353534] hover:bg-[#2A2A2A] transition-colors duration-200 px-2 py-1" href="#">SQUAD</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<div class="flex flex-col items-end mr-2">
+<span class="font-label text-[10px] text-tertiary font-bold tracking-widest">OFFICIAL</span>
+<span class="font-body text-xs text-on-surface/60">Arbiter-01</span>
+</div>
+<img alt="User Pilot Avatar" class="w-8 h-8 rounded-full border border-secondary-fixed-dim/30" data-alt="User pilot avatar for tactical interface" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBTI6xk6M1JwUSFpayj2_gYi9N4bMSRXv_iFhNC3vfbnuEVMjVF5vpL-p5xQZHzpxl1A8-8V5BaG4WnfDg8S24MhvtrlPEl09VbYR9kbgi6vos8cWEI6ag5XBGMZr2_w9ZLCmXyEHcR0VVmwzjmwL7PAVIXNgNc6XvsjLj2yA3LC_w2e-uRDM7aCGKl-YK4sHms9BZA4ffsGAkOgOI03ZYj_foyvbD4tQ8F9d32uRxJ9l0oGPZiR_L-SkLb2Xlypam6PdFxlup92KGE"/>
+<span class="material-symbols-outlined text-[#00E5FF] cursor-pointer active:scale-95 duration-100">settings</span>
+</div>
+</header>
+<!-- Main Command Interface -->
+<main class="flex-1 flex flex-col md:flex-row overflow-hidden">
+<!-- Left Sidebar: Match Intelligence -->
+<aside class="hidden lg:flex w-80 bg-surface-container-lowest flex-col border-r border-outline-variant/5">
+<div class="p-6">
+<div class="mb-8">
+<h2 class="font-label text-[10px] text-on-primary-container tracking-[0.2em] font-bold mb-4">MATCH TELEMETRY</h2>
+<div class="bg-surface-container-low p-4 rounded-lg space-y-4">
+<div class="flex justify-between items-center">
+<span class="text-xs text-on-surface/50 font-label">ID</span>
+<span class="text-xs font-headline font-bold text-secondary-fixed-dim">VAL-042</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="text-xs text-on-surface/50 font-label">STATUS</span>
+<div class="flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary-fixed-dim animate-pulse"></span>
+<span class="text-[10px] font-bold text-secondary-fixed-dim tracking-wider uppercase">Live</span>
+</div>
+</div>
+<div class="flex justify-between items-center">
+<span class="text-xs text-on-surface/50 font-label">INTEGRITY</span>
+<span class="text-[10px] font-bold text-tertiary px-1.5 py-0.5 bg-tertiary/10 rounded uppercase">Authenticated</span>
+</div>
+</div>
+</div>
+<div>
+<h2 class="font-label text-[10px] text-on-primary-container tracking-[0.2em] font-bold mb-4">NETWORK UPTIME</h2>
+<div class="space-y-3">
+<div class="flex items-center gap-3 p-3 bg-surface-container-high/30 rounded border-l-2 border-secondary-fixed-dim">
+<span class="material-symbols-outlined text-secondary-fixed-dim text-lg">bolt</span>
+<div>
+<p class="text-[10px] font-bold text-on-surface uppercase tracking-tight">Low Latency</p>
+<p class="text-[9px] text-on-surface/40">14ms E2E Response</p>
+</div>
+</div>
+<div class="flex items-center gap-3 p-3 bg-surface-container-high/10 rounded">
+<span class="material-symbols-outlined text-on-surface/30 text-lg">shield</span>
+<div>
+<p class="text-[10px] font-bold text-on-surface/60 uppercase tracking-tight">Encryption Active</p>
+<p class="text-[9px] text-on-surface/40">AES-256 Tunnel</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-auto p-6">
+<button class="w-full flex items-center justify-center gap-2 py-3 bg-surface-container-highest hover:bg-surface-container-high text-on-surface text-xs font-label font-bold tracking-widest rounded transition-all active:scale-95">
+<span class="material-symbols-outlined text-sm">assignment_late</span>
+                    DISPUTE LOG
+                </button>
+</div>
+</aside>
+<!-- Center: Chat Interface -->
+<section class="flex-1 flex flex-col bg-surface relative">
+<!-- Chat Header -->
+<div class="px-6 py-4 bg-surface-container-low flex justify-between items-center">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary-fixed-dim">forum</span>
+<h3 class="font-headline font-bold text-on-surface tracking-tight">Official Comms - Match ID: VAL-042</h3>
+</div>
+<div class="flex gap-2">
+<span class="px-3 py-1 bg-surface-container text-[10px] font-bold text-on-surface/70 rounded-full border border-outline-variant/10">CHANNEL: ALPHA-SECURE</span>
+</div>
+</div>
+<!-- Messages Area -->
+<div class="flex-1 overflow-y-auto p-6 space-y-8 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-surface-container-low/20 to-surface">
+<!-- System Message -->
+<div class="flex justify-center">
+<span class="text-[9px] font-label font-bold tracking-[0.3em] text-on-surface/30 bg-surface-container-lowest px-4 py-1 rounded uppercase">Communication Immutable - Session Log Start</span>
+</div>
+<!-- Message Received -->
+<div class="flex flex-col gap-2 max-w-[80%]">
+<div class="flex items-center gap-2 mb-1">
+<span class="font-label text-[11px] font-bold text-secondary-fixed-dim uppercase tracking-wider">Head Arbiter</span>
+<span class="px-1.5 py-0.5 bg-secondary-fixed-dim/10 text-[9px] text-secondary-fixed-dim font-bold rounded border border-secondary-fixed-dim/20">OFFICIAL</span>
+<span class="text-[9px] text-on-surface/30 font-medium">14:22:01</span>
+</div>
+<div class="bg-surface-container p-4 rounded-lg rounded-tl-none border border-outline-variant/5 shadow-sm">
+<p class="text-sm text-on-surface/90 leading-relaxed font-body">Match Coordinator, please confirm the final score verification for Round 14. We have a discrepancy on the objective plant timing.</p>
+</div>
+</div>
+<!-- Message Sent -->
+<div class="flex flex-col gap-2 max-w-[80%] ml-auto items-end">
+<div class="flex items-center gap-2 mb-1">
+<span class="text-[9px] text-on-surface/30 font-medium">14:22:45</span>
+<span class="px-1.5 py-0.5 bg-tertiary/10 text-[9px] text-tertiary font-bold rounded border border-tertiary/20">COORDINATOR</span>
+<span class="font-label text-[11px] font-bold text-on-surface uppercase tracking-wider">Match Coordinator</span>
+</div>
+<div class="bg-surface-container-high p-4 rounded-lg rounded-tr-none border border-secondary-fixed-dim/10">
+<p class="text-sm text-on-surface/90 leading-relaxed font-body">Server logs reviewed. Objective was neutralized at T-minus 0.02s. Score verified as 1-0 for Team Sentinel. Updating global bracket now.</p>
+</div>
+<div class="mt-2 flex items-center gap-2 px-3 py-2 bg-surface-container-lowest rounded border border-outline-variant/10">
+<span class="material-symbols-outlined text-sm text-tertiary">description</span>
+<span class="text-[10px] text-on-surface/60 font-medium">log_event_042_R14.json</span>
+<span class="material-symbols-outlined text-xs text-on-surface/30">download</span>
+</div>
+</div>
+<!-- Message Received -->
+<div class="flex flex-col gap-2 max-w-[80%]">
+<div class="flex items-center gap-2 mb-1">
+<span class="font-label text-[11px] font-bold text-secondary-fixed-dim uppercase tracking-wider">Head Arbiter</span>
+<span class="px-1.5 py-0.5 bg-secondary-fixed-dim/10 text-[9px] text-secondary-fixed-dim font-bold rounded border border-secondary-fixed-dim/20">OFFICIAL</span>
+<span class="text-[9px] text-on-surface/30 font-medium">14:24:12</span>
+</div>
+<div class="bg-surface-container p-4 rounded-lg rounded-tl-none border border-outline-variant/5 shadow-sm">
+<p class="text-sm text-on-surface/90 leading-relaxed font-body">Acknowledged. Notice received regarding player substitution for Team Vanguard. ID: VNG-SHIFTER replacing VNG-BLADE for Round 15 due to peripheral failure. Authenticate the switch.</p>
+</div>
+</div>
+<!-- Alert Message -->
+<div class="mx-auto max-w-md bg-error-container/10 border border-error/20 p-3 rounded flex items-center gap-4">
+<span class="material-symbols-outlined text-error" data-weight="fill">warning</span>
+<div class="flex-1">
+<p class="text-[10px] font-bold text-error uppercase tracking-widest">INCIDENT FLAGGED</p>
+<p class="text-[11px] text-error/80">Automated integrity check detected anomalous packet loss in Sector 4-B.</p>
+</div>
+<button class="text-[9px] font-bold text-on-surface bg-surface-container-highest px-3 py-1 rounded uppercase">Ignore</button>
+</div>
+</div>
+<!-- Input Area -->
+<div class="p-4 bg-surface-container-low border-t border-outline-variant/5">
+<div class="relative bg-surface-container-lowest rounded-lg border border-outline-variant/20 focus-within:border-secondary-fixed-dim/50 transition-all flex flex-col">
+<textarea class="w-full bg-transparent border-none focus:ring-0 text-sm p-4 h-24 resize-none text-on-surface placeholder:text-on-surface/20" placeholder="Type official directive..."></textarea>
+<div class="flex justify-between items-center px-4 py-3 border-t border-outline-variant/10">
+<div class="flex gap-4">
+<button class="flex items-center gap-1 text-on-surface/40 hover:text-secondary-fixed-dim transition-colors" title="Document Upload">
+<span class="material-symbols-outlined text-lg">upload_file</span>
+<span class="text-[10px] font-bold font-label uppercase">Attach</span>
+</button>
+<button class="flex items-center gap-1 text-on-surface/40 hover:text-error transition-colors" title="Flag Incident">
+<span class="material-symbols-outlined text-lg">flag</span>
+<span class="text-[10px] font-bold font-label uppercase">Flag</span>
+</button>
+</div>
+<button class="bg-secondary-fixed-dim text-on-secondary px-6 py-1.5 rounded text-[11px] font-black font-label uppercase tracking-widest shadow-[0_0_15px_rgba(0,218,243,0.3)] hover:brightness-110 active:scale-95 transition-all">
+                            SEND COMMAND
+                        </button>
+</div>
+</div>
+<p class="text-[9px] text-center mt-3 text-on-surface/20 font-medium tracking-tight">ENCRYPTED END-TO-END • ALL MESSAGES ARE BINDING AND LOGGED IN THE BLOCKCHAIN LEDGER</p>
+</div>
+</section>
+<!-- Right Sidebar: Participants -->
+<aside class="hidden xl:flex w-64 bg-surface-container-lowest flex-col border-l border-outline-variant/5">
+<div class="p-6">
+<h2 class="font-label text-[10px] text-on-primary-container tracking-[0.2em] font-bold mb-6">ACTIVE PERSONNEL</h2>
+<div class="space-y-6">
+<div class="flex items-center gap-3">
+<div class="relative">
+<img alt="Head Arbiter" class="w-10 h-10 rounded border border-secondary-fixed-dim/40" data-alt="Profile photo of Head Arbiter" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDRQwsxbJsjhXVYY65L5bNpdOEFa4Zz_3BkRX_d7M7TGgf6wbcNk63U_s5dhTdfCbJ3j2MjGsIaEE1fn83u5iiRySlOjfUDEneQSYGVImwzPrAYCZr9mzLJdqvyThg4apN_DpGe3MoxTxz4Ru-14TVLIJCP-qzFUxBe490r6RXT536TLyLGC4RUXR7xfzHP2_INK4rtVLqHrpTtnV2uurnu-_KUOcU1BuZCx3qXg4gtVG9JLhVBzRWTOPUM52RXGWO3Wdp8rX0AKEm8"/>
+<span class="absolute -bottom-1 -right-1 w-3 h-3 bg-secondary-fixed-dim border-2 border-surface-container-lowest rounded-full"></span>
+</div>
+<div>
+<p class="text-xs font-bold text-on-surface">Arbiter-01</p>
+<p class="text-[10px] text-secondary-fixed-dim font-bold font-label uppercase">Head Arbiter</p>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<div class="relative">
+<img alt="Match Coordinator" class="w-10 h-10 rounded border border-tertiary/40" data-alt="Profile photo of Match Coordinator" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDcOw9B1O4BhPhSf4E3voTqC-BgfdyF8pvjBFqC-WoQgiRk6chB2kO5wartcxJZ92cRCYKUChC4prapsRphWQ6aVxTSLyHZ38vGtdp41TwSB_oFvgCgfRt-wsPhsXX8uLKH7U0BC3KbkqtAdZHFPFUNXwSxNHw22v4mQQfsdnkx8_cNusrceoXsQ5pfC0J-3i3k1zbBKoHgrSYJX25fkxNU6o8fJwJkl4NJZTCCJkmHyg8fYss9I5feNCZItBl9KdgW54PbA5OyHiOx"/>
+<span class="absolute -bottom-1 -right-1 w-3 h-3 bg-secondary-fixed-dim border-2 border-surface-container-lowest rounded-full"></span>
+</div>
+<div>
+<p class="text-xs font-bold text-on-surface">Coord-Gamma</p>
+<p class="text-[10px] text-tertiary font-bold font-label uppercase">Coordinator</p>
+</div>
+</div>
+<div class="pt-4 border-t border-outline-variant/10">
+<h3 class="text-[9px] font-bold text-on-surface/30 tracking-[0.2em] uppercase mb-4">OBSERVERS (3)</h3>
+<div class="space-y-3 opacity-50">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 bg-surface-container rounded-full flex items-center justify-center text-[10px] font-bold">L1</div>
+<span class="text-[11px] font-medium">League_Admin_Alpha</span>
+</div>
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 bg-surface-container rounded-full flex items-center justify-center text-[10px] font-bold">S2</div>
+<span class="text-[11px] font-medium">Stat_Engine_Realtime</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</aside>
+</main>
+<!-- Bottom Navigation Shell (Mobile) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center h-20 px-4 bg-[#0E0E0E]">
+<div class="flex flex-col items-center justify-center text-[#353534]">
+<span class="material-symbols-outlined">sports_score</span>
+<span class="font-['Space_Grotesk'] text-[10px] font-bold uppercase tracking-[0.05em]">MATCHES</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#00E5FF] bg-[#1C1B1B] rounded-md px-4 py-1">
+<span class="material-symbols-outlined">forum</span>
+<span class="font-['Space_Grotesk'] text-[10px] font-bold uppercase tracking-[0.05em]">COMMS</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#353534]">
+<span class="material-symbols-outlined">monitoring</span>
+<span class="font-['Space_Grotesk'] text-[10px] font-bold uppercase tracking-[0.05em]">INTEL</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#353534]">
+<span class="material-symbols-outlined">groups</span>
+<span class="font-['Space_Grotesk'] text-[10px] font-bold uppercase tracking-[0.05em]">SQUAD</span>
+</div>
+</nav>
+</body></html>

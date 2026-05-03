@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AGS Global Arena | Marketplace: Analytics</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #131313;
+            color: #e5e2e1;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              colors: {
+                "surface-variant": "#353534",
+                "surface-dim": "#131313",
+                "on-secondary-fixed-variant": "#004f58",
+                "surface-container-high": "#2a2a2a",
+                "primary-fixed-dim": "#c8c6c5",
+                "on-primary-fixed": "#1c1b1b",
+                "inverse-on-surface": "#313030",
+                "surface": "#131313",
+                "on-tertiary-container": "#4c3f00",
+                "on-primary-container": "#7e7d7d",
+                "surface-container-highest": "#353534",
+                "outline-variant": "#444748",
+                "on-error": "#690005",
+                "secondary-fixed-dim": "#00daf3",
+                "on-tertiary": "#3a3000",
+                "on-primary": "#313030",
+                "secondary-fixed": "#9cf0ff",
+                "on-secondary-fixed": "#001f24",
+                "on-secondary": "#00363d",
+                "primary-container": "#121212",
+                "surface-container-low": "#1c1b1b",
+                "tertiary-fixed": "#ffe16d",
+                "on-tertiary-fixed-variant": "#544600",
+                "surface-container": "#201f1f",
+                "background": "#131313",
+                "on-tertiary-fixed": "#221b00",
+                "surface-bright": "#393939",
+                "on-surface-variant": "#c4c7c7",
+                "error": "#ffb4ab",
+                "primary": "#c8c6c5",
+                "tertiary-container": "#c9a900",
+                "inverse-primary": "#5f5e5e",
+                "primary-fixed": "#e5e2e1",
+                "outline": "#8e9192",
+                "tertiary": "#e9c400",
+                "error-container": "#93000a",
+                "secondary": "#bdf4ff",
+                "secondary-container": "#00e3fd",
+                "on-secondary-container": "#00616d",
+                "surface-tint": "#c8c6c5",
+                "tertiary-fixed-dim": "#e9c400",
+                "inverse-surface": "#e5e2e1",
+                "surface-container-lowest": "#0e0e0e",
+                "on-primary-fixed-variant": "#474646",
+                "on-error-container": "#ffdad6",
+                "on-surface": "#e5e2e1",
+                "on-background": "#e5e2e1"
+              },
+              fontFamily: {
+                "headline": ["Space Grotesk"],
+                "body": ["Inter"],
+                "label": ["Space Grotesk"]
+              },
+              borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+            },
+          },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-body selection:bg-secondary-container selection:text-on-secondary-container">
+<!-- TopAppBar -->
+<header class="bg-[#131313] dark:bg-zinc-950 flex justify-between items-center w-full px-6 h-16 sticky top-0 z-50">
+<div class="flex items-center gap-4">
+<button class="text-zinc-100 dark:text-zinc-50 hover:bg-zinc-800/50 transition-colors p-2 rounded">
+<span class="material-symbols-outlined" data-icon="arrow_back">arrow_back</span>
+</button>
+<h1 class="font-headline font-bold uppercase tracking-tight text-zinc-100 dark:text-zinc-50 text-lg">MARKETPLACE: ANALYTICS</h1>
+</div>
+<div class="flex items-center gap-4">
+<div class="bg-surface-container px-3 py-1 rounded-sm border border-outline-variant/20 flex items-center gap-2">
+<span class="font-label text-[10px] uppercase tracking-widest text-zinc-500">Node Status:</span>
+<span class="h-2 w-2 rounded-full bg-secondary shadow-[0_0_8px_#00E5FF]"></span>
+<span class="font-headline font-bold text-[11px] text-zinc-100">SECURE</span>
+</div>
+</div>
+</header>
+<main class="max-w-7xl mx-auto px-6 pt-8 pb-32">
+<!-- Liquidity Node (Tenant Liquidity) -->
+<div class="mb-10 bg-surface-container-low p-1 rounded-lg border-l-4 border-secondary shadow-lg">
+<div class="flex flex-col md:flex-row justify-between items-center px-6 py-4 gap-4">
+<div class="flex items-center gap-6">
+<div class="flex flex-col">
+<span class="font-label text-[10px] uppercase tracking-widest text-zinc-500">Available Liquidity</span>
+<div class="flex items-baseline gap-2">
+<span class="font-headline font-bold text-2xl text-zinc-100">$1.2M</span>
+<span class="font-label text-[10px] text-secondary font-bold">USD-T</span>
+</div>
+</div>
+<div class="h-10 w-[1px] bg-outline-variant/20 hidden md:block"></div>
+<div class="hidden lg:flex flex-col">
+<span class="font-label text-[10px] uppercase tracking-widest text-zinc-500">Node ID</span>
+<span class="font-headline font-medium text-xs text-zinc-400">AGS-882-LQD-X9</span>
+</div>
+</div>
+<button class="bg-surface-container-high hover:bg-zinc-700 text-zinc-100 font-headline font-bold py-2 px-8 uppercase tracking-widest text-xs transition-all border border-outline-variant/30 flex items-center gap-2">
+<span class="material-symbols-outlined text-sm" data-icon="account_balance_wallet">account_balance_wallet</span>
+                    REFUEL
+                </button>
+</div>
+</div>
+<!-- Hero Section: PRO ANALYTICS UPLINK -->
+<section class="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-12">
+<div class="lg:col-span-8 bg-surface-container-lowest relative overflow-hidden rounded-xl border border-outline-variant/10 shadow-2xl flex flex-col min-h-[500px]">
+<!-- Decorative Grid Background -->
+<div class="absolute inset-0 opacity-10 pointer-events-none" style="background-image: radial-gradient(circle at 2px 2px, #353534 1px, transparent 0); background-size: 24px 24px;"></div>
+<div class="relative z-10 p-10 flex flex-col h-full">
+<div class="mb-auto">
+<div class="inline-flex items-center gap-2 px-3 py-1 bg-secondary/10 border border-secondary/20 rounded-sm mb-6">
+<span class="material-symbols-outlined text-secondary text-sm" data-icon="verified" style="font-variation-settings: 'FILL' 1;">verified</span>
+<span class="font-label text-[10px] uppercase tracking-widest text-secondary font-bold">PREMIUM TIER UPLINK</span>
+</div>
+<h2 class="font-headline font-extrabold text-5xl lg:text-6xl text-zinc-100 tracking-tighter mb-4 leading-none">
+                            ELITE ANALYTICS<br/>MODULE v4.2
+                        </h2>
+<p class="font-body text-zinc-400 text-lg max-w-lg">Unlock the full-fidelity performance ledger and dominate with predictive tactical modeling.</p>
+</div>
+<div class="mt-12 flex flex-col md:flex-row items-end justify-between gap-8">
+<div>
+<span class="font-label text-xs uppercase tracking-[0.2em] text-zinc-500 mb-2 block">Subscription Access</span>
+<div class="flex items-baseline gap-2">
+<span class="font-headline font-bold text-5xl text-tertiary tracking-tight">$499.00</span>
+<span class="font-headline text-zinc-500 text-xl">/ SEASON</span>
+</div>
+</div>
+<button class="bg-secondary-container hover:bg-secondary-fixed-dim text-on-secondary-container font-headline font-black py-5 px-10 uppercase tracking-widest text-sm transition-all active:scale-95 shadow-[0_0_30px_rgba(0,229,255,0.2)]">
+                            INITIALIZE UPGRADE
+                        </button>
+</div>
+</div>
+<!-- HUD Visual Overlay (Right Side) -->
+<div class="absolute top-0 right-0 w-1/3 h-full opacity-20 pointer-events-none overflow-hidden hidden lg:block">
+<div class="absolute inset-0 border-l border-outline-variant/30"></div>
+<div class="p-8 space-y-8">
+<div class="h-32 w-32 border-2 border-secondary/40 rounded-full flex items-center justify-center animate-pulse">
+<div class="h-24 w-24 border border-secondary/20 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary text-3xl" data-icon="radar">radar</span>
+</div>
+</div>
+<div class="space-y-2">
+<div class="h-1 w-full bg-secondary/20 rounded-full overflow-hidden"><div class="h-full bg-secondary w-3/4"></div></div>
+<div class="h-1 w-full bg-secondary/20 rounded-full overflow-hidden"><div class="h-full bg-secondary w-1/2"></div></div>
+<div class="h-1 w-full bg-secondary/20 rounded-full overflow-hidden"><div class="h-full bg-secondary w-5/6"></div></div>
+</div>
+</div>
+</div>
+</div>
+<div class="lg:col-span-4 flex flex-col gap-6">
+<!-- Trust Badges Card -->
+<div class="bg-surface-container p-8 rounded-xl border border-outline-variant/10 flex-1 flex flex-col justify-center items-center text-center gap-6">
+<div class="space-y-4 w-full">
+<div class="flex items-center justify-center gap-4 p-4 bg-surface-container-low border border-outline-variant/20 rounded-lg">
+<span class="material-symbols-outlined text-zinc-400" data-icon="encrypted">encrypted</span>
+<span class="font-label text-xs uppercase tracking-widest font-bold">AES-256 SECURED</span>
+</div>
+<div class="flex items-center justify-center gap-4 p-4 bg-surface-container-low border border-outline-variant/20 rounded-lg">
+<span class="material-symbols-outlined text-tertiary" data-icon="verified_user" style="font-variation-settings: 'FILL' 1;">verified_user</span>
+<span class="font-label text-xs uppercase tracking-widest font-bold">OFFICIAL AGS PROTOCOL</span>
+</div>
+</div>
+<p class="font-body text-[11px] text-zinc-500 uppercase tracking-tighter">Verified by the Arena Governance Council. All data hashed via AGS-ZK Proofs.</p>
+</div>
+<!-- Small Visual Card -->
+<div class="bg-surface-container-high p-6 rounded-xl border border-outline-variant/10 h-40 relative overflow-hidden group">
+<img class="absolute inset-0 w-full h-full object-cover opacity-20 group-hover:scale-110 transition-transform duration-700" data-alt="High tech circuit board and digital data" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA1DAwGrXISCzThsHxQk85HDnkn1oUmf8oKXFO9l2cAoC9skWjCOEwHj4TVIvbvd991eQeN39hiCTMbzDVAYPnbesI_YOQh9uNvlCvJZ5VEJkAUXLXDSkGmrKEL7lNjOZs64HYvx8POywzEPJTXsHrBfjVLAXvHCyZepE-TYgZXG7V8AygX5T2MAXcfBzovCg0s4rnZ41-P2xqexUpb8cJjW2yOPKvB3VmDTKVtV2wyyjMghfwgK5fVKSkLcBhwKROb_CkXBK0b9r0m"/>
+<div class="relative z-10 flex flex-col justify-end h-full">
+<span class="font-label text-[10px] text-secondary uppercase font-bold tracking-widest">SYSTEM STATUS</span>
+<span class="font-headline text-lg font-bold">MODULE READY</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Unlocked Features List -->
+<h3 class="font-headline font-bold text-xs uppercase tracking-[0.3em] text-zinc-500 mb-6 flex items-center gap-4">
+            CORE MODULE SPECIFICATIONS
+            <span class="flex-1 h-[1px] bg-outline-variant/20"></span>
+</h3>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+<!-- Feature 1 -->
+<div class="bg-surface-container hover:bg-surface-container-high transition-colors p-6 rounded-xl border border-outline-variant/10 group">
+<div class="mb-4 text-secondary">
+<span class="material-symbols-outlined text-3xl" data-icon="settings_accessibility">settings_accessibility</span>
+</div>
+<h4 class="font-headline font-bold text-zinc-100 mb-2 uppercase tracking-tight">Precision Bio-Telemetry</h4>
+<p class="font-body text-xs text-zinc-400 leading-relaxed">Real-time HRV, stress, and kinetic load levels. Track athlete fatigue with sub-second latency.</p>
+</div>
+<!-- Feature 2 -->
+<div class="bg-surface-container hover:bg-surface-container-high transition-colors p-6 rounded-xl border border-outline-variant/10 group">
+<div class="mb-4 text-secondary">
+<span class="material-symbols-outlined text-3xl" data-icon="psychology">psychology</span>
+</div>
+<h4 class="font-headline font-bold text-zinc-100 mb-2 uppercase tracking-tight">Neural AI Forecasting</h4>
+<p class="font-body text-xs text-zinc-400 leading-relaxed">98% accurate match outcome predictions based on 10k+ variables and historic pattern matching.</p>
+</div>
+<!-- Feature 3 -->
+<div class="bg-surface-container hover:bg-surface-container-high transition-colors p-6 rounded-xl border border-outline-variant/10 group">
+<div class="mb-4 text-secondary">
+<span class="material-symbols-outlined text-3xl" data-icon="link">link</span>
+</div>
+<h4 class="font-headline font-bold text-zinc-100 mb-2 uppercase tracking-tight">Blockchain Ledger</h4>
+<p class="font-body text-xs text-zinc-400 leading-relaxed">Access to immutable, hashed match history. Zero-knowledge proof validation for all performance stats.</p>
+</div>
+<!-- Feature 4 -->
+<div class="bg-surface-container hover:bg-surface-container-high transition-colors p-6 rounded-xl border border-outline-variant/10 group">
+<div class="mb-4 text-secondary">
+<span class="material-symbols-outlined text-3xl" data-icon="filter_alt">filter_alt</span>
+</div>
+<h4 class="font-headline font-bold text-zinc-100 mb-2 uppercase tracking-tight">Faceted Querying</h4>
+<p class="font-body text-xs text-zinc-400 leading-relaxed">Search the 'Data Moat' using 50+ granular performance filters. Custom boolean logic support.</p>
+</div>
+</div>
+<!-- Footnote / System Info -->
+<div class="mt-16 flex flex-col md:flex-row justify-between items-center gap-6 pt-8 border-t border-outline-variant/10">
+<div class="flex items-center gap-4">
+<span class="font-label text-[10px] text-zinc-600">FIRMWARE: AGS-OS-9.4.1</span>
+<span class="font-label text-[10px] text-zinc-600">ENCRYPTION: RSA-4096</span>
+<span class="font-label text-[10px] text-zinc-600">LATENCY: 4MS</span>
+</div>
+<div class="font-label text-[10px] text-zinc-500 uppercase tracking-widest">
+                Terms of Protocol apply. Season pass expires in 114 days.
+            </div>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center bg-[#131313] px-4 h-20 border-t border-zinc-800/15 shadow-[0_-4px_20px_rgba(0,229,255,0.04)] z-50">
+<a class="flex flex-col items-center justify-center text-zinc-500 dark:text-zinc-600 pt-2 pb-4 hover:text-zinc-300 transition-colors" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="dashboard">dashboard</span>
+<span class="font-headline uppercase tracking-widest text-[10px] font-bold">DASHBOARD</span>
+</a>
+<a class="flex flex-col items-center justify-center text-zinc-500 dark:text-zinc-600 pt-2 pb-4 hover:text-zinc-300 transition-colors" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="shopping_cart">shopping_cart</span>
+<span class="font-headline uppercase tracking-widest text-[10px] font-bold">MARKET</span>
+</a>
+<a class="flex flex-col items-center justify-center text-zinc-500 dark:text-zinc-600 pt-2 pb-4 hover:text-zinc-300 transition-colors" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="sensors">sensors</span>
+<span class="font-headline uppercase tracking-widest text-[10px] font-bold">LIVE</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#00E5FF] dark:text-cyan-400 border-t-2 border-[#00E5FF] pt-2 pb-4 transition-all opacity-80 scale-95" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="psychology_alt" style="font-variation-settings: 'FILL' 1;">psychology_alt</span>
+<span class="font-headline uppercase tracking-widest text-[10px] font-bold">INTEL</span>
+</a>
+</nav>
+</body></html>

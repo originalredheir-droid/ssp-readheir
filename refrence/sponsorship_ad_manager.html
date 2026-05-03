@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AGS Global Arena | Sponsorship Command</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-error": "#690005",
+                        "surface": "#131313",
+                        "on-primary-fixed": "#1c1b1b",
+                        "on-surface-variant": "#c4c7c7",
+                        "on-primary-fixed-variant": "#474646",
+                        "secondary": "#bdf4ff",
+                        "inverse-surface": "#e5e2e1",
+                        "surface-container": "#201f1f",
+                        "inverse-primary": "#5f5e5e",
+                        "tertiary-fixed": "#ffe16d",
+                        "inverse-on-surface": "#313030",
+                        "secondary-fixed": "#9cf0ff",
+                        "secondary-fixed-dim": "#00daf3",
+                        "surface-variant": "#353534",
+                        "on-tertiary-fixed": "#221b00",
+                        "surface-container-high": "#2a2a2a",
+                        "surface-bright": "#393939",
+                        "outline": "#8e9192",
+                        "on-tertiary-fixed-variant": "#544600",
+                        "on-tertiary": "#3a3000",
+                        "primary-fixed": "#e5e2e1",
+                        "on-surface": "#e5e2e1",
+                        "on-secondary-fixed-variant": "#004f58",
+                        "surface-dim": "#131313",
+                        "primary-fixed-dim": "#c8c6c5",
+                        "on-primary-container": "#7e7d7d",
+                        "on-background": "#e5e2e1",
+                        "primary-container": "#121212",
+                        "surface-tint": "#c8c6c5",
+                        "primary": "#c8c6c5",
+                        "surface-container-highest": "#353534",
+                        "error-container": "#93000a",
+                        "tertiary-fixed-dim": "#e9c400",
+                        "on-secondary-container": "#00616d",
+                        "surface-container-low": "#1c1b1b",
+                        "secondary-container": "#00e3fd",
+                        "on-primary": "#313030",
+                        "on-error-container": "#ffdad6",
+                        "error": "#ffb4ab",
+                        "tertiary-container": "#c9a900",
+                        "on-tertiary-container": "#4c3f00",
+                        "background": "#131313",
+                        "surface-container-lowest": "#0e0e0e",
+                        "on-secondary": "#00363d",
+                        "on-secondary-fixed": "#001f24",
+                        "tertiary": "#e9c400",
+                        "outline-variant": "#444748"
+                    },
+                    fontFamily: {
+                        "headline": ["Space Grotesk"],
+                        "body": ["Inter"],
+                        "label": ["Space Grotesk"]
+                    },
+                    borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3, .font-headline { font-family: 'Space Grotesk', sans-serif; }
+        .glass-panel {
+            background: rgba(53, 53, 52, 0.6);
+            backdrop-filter: blur(12px);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface selection:bg-secondary-container/30">
+<!-- TopAppBar -->
+<header class="bg-[#131313] dark:bg-[#131313] w-full sticky top-0 z-50 shadow-[0_0_32px_rgba(0,229,255,0.04)]">
+<div class="flex justify-between items-center px-6 py-4 max-w-full">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[#00E5FF]">monitoring</span>
+<h1 class="text-xl font-bold text-[#00E5FF] tracking-tighter">APEX COMMAND</h1>
+</div>
+<nav class="hidden md:flex gap-8">
+<a class="text-[#00E5FF] border-b-2 border-[#00E5FF] pb-2 font-['Space_Grotesk'] uppercase tracking-[0.05em] text-sm" href="#">REVENUE</a>
+<a class="text-gray-400 font-medium font-['Space_Grotesk'] uppercase tracking-[0.05em] text-sm hover:text-[#00E5FF] transition-colors duration-200" href="#">CAMPAIGNS</a>
+<a class="text-gray-400 font-medium font-['Space_Grotesk'] uppercase tracking-[0.05em] text-sm hover:text-[#00E5FF] transition-colors duration-200" href="#">PARTNERS</a>
+<a class="text-gray-400 font-medium font-['Space_Grotesk'] uppercase tracking-[0.05em] text-sm hover:text-[#00E5FF] transition-colors duration-200" href="#">INVENTORY</a>
+</nav>
+<div class="flex items-center gap-3">
+<div class="text-right hidden sm:block">
+<p class="text-[10px] text-on-surface-variant font-label uppercase tracking-widest">Executive Profile</p>
+<p class="text-xs font-bold text-secondary-container">L. VAUGHN</p>
+</div>
+<div class="w-10 h-10 rounded-lg bg-surface-container-high border border-outline-variant/20 flex items-center justify-center overflow-hidden">
+<img alt="Executive" data-alt="Close up of a professional executive avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB5dpOlfCNMLT1ItcNDf3oX499bZkgTF1t7zA4jzEP4N9ngyULaH7AAB1gyyyhVw6iVGOpRxAb7zLhl34l4yyQs8NvFWTCPCcyUYg4e4hV74sQY_tevOmjbG4fBZIjmexQ20cJAwA4DiNnKgiqAfP99g0m_fbe6bx7BvO5Kkb6R5r4iDFyEx0Y0FWZ5vKP39TNY-RftlorasAwwZgxUtyDgybRDZ-T6ZsuuGIc4af6frB1Lg2msNZ3PciK0mLJQXvbJ4o4Jy1YTZTU0"/>
+</div>
+</div>
+</div>
+<div class="bg-[#1C1B1B] h-[1px] w-full"></div>
+</header>
+<div class="flex min-h-screen">
+<!-- NavigationDrawer (Side) -->
+<aside class="hidden lg:flex flex-col pt-20 pb-10 bg-[#1C1B1B] dark:bg-[#1C1B1B] h-screen w-64 fixed left-0 top-0 border-r border-[#2A2A2A]/15 z-40">
+<div class="px-6 mb-8">
+<h2 class="text-[#E9C400] text-lg font-black font-headline">SPONSORSHIP OPS</h2>
+</div>
+<nav class="flex flex-col space-y-4">
+<a class="text-gray-500 pl-6 py-3 hover:bg-[#201F1F] transition-all flex items-center gap-3 font-['Space_Grotesk'] font-bold text-xs tracking-widest" href="#">
+<span class="material-symbols-outlined">ads_click</span> CAMPAIGNS
+                </a>
+<a class="text-gray-500 pl-6 py-3 hover:bg-[#201F1F] transition-all flex items-center gap-3 font-['Space_Grotesk'] font-bold text-xs tracking-widest text-on-surface-variant" href="#">
+<span class="material-symbols-outlined">query_stats</span> METRICS
+                </a>
+<a class="bg-[#201F1F] text-[#00E5FF] border-l-4 border-[#00E5FF] pl-4 py-3 ml-2 rounded-l-md flex items-center gap-3 font-['Space_Grotesk'] font-bold text-xs tracking-widest" href="#">
+<span class="material-symbols-outlined">payments</span> REVENUE
+                </a>
+<a class="text-gray-500 pl-6 py-3 hover:bg-[#201F1F] transition-all flex items-center gap-3 font-['Space_Grotesk'] font-bold text-xs tracking-widest" href="#">
+<span class="material-symbols-outlined">perm_media</span> CREATIVES
+                </a>
+<a class="text-gray-500 pl-6 py-3 hover:bg-[#201F1F] transition-all flex items-center gap-3 font-['Space_Grotesk'] font-bold text-xs tracking-widest" href="#">
+<span class="material-symbols-outlined">handshake</span> PARTNERS
+                </a>
+</nav>
+</aside>
+<!-- Main Content Canvas -->
+<main class="flex-1 lg:ml-64 p-6 md:p-10 space-y-10">
+<!-- 1. Sponsorship Revenue Protocol -->
+<section class="grid grid-cols-1 xl:grid-cols-3 gap-6">
+<div class="xl:col-span-2 bg-surface-container-low p-8 rounded-lg relative overflow-hidden group">
+<div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+<span class="material-symbols-outlined text-9xl">account_balance_wallet</span>
+</div>
+<header class="flex justify-between items-start mb-6">
+<div>
+<span class="text-[10px] font-label font-bold text-tertiary tracking-[0.2em] uppercase">Revenue Protocol Alpha-1</span>
+<h2 class="text-4xl font-headline font-bold mt-1">$4,820,500.00</h2>
+</div>
+<div class="bg-secondary-container/10 border border-secondary-container/20 px-3 py-1 rounded">
+<span class="text-secondary-container text-xs font-bold">+12.4% YTD</span>
+</div>
+</header>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div>
+<p class="text-[10px] text-on-surface-variant font-label uppercase tracking-widest mb-1">Direct Sponsorship</p>
+<p class="text-xl font-headline font-bold">$3.2M</p>
+</div>
+<div>
+<p class="text-[10px] text-on-surface-variant font-label uppercase tracking-widest mb-1">Ad Inventory</p>
+<p class="text-xl font-headline font-bold">$1.1M</p>
+</div>
+<div>
+<p class="text-[10px] text-on-surface-variant font-label uppercase tracking-widest mb-1">Affiliate Ops</p>
+<p class="text-xl font-headline font-bold">$520.5K</p>
+</div>
+</div>
+</div>
+<div class="bg-surface-container p-6 rounded-lg flex flex-col justify-between border-l-4 border-tertiary">
+<div>
+<span class="text-[10px] font-label font-bold text-on-surface-variant tracking-[0.2em] uppercase">Next Payout Schedule</span>
+<h3 class="text-2xl font-headline font-bold text-tertiary mt-2">Oct 15, 2023</h3>
+<p class="text-sm text-on-surface-variant mt-2">Verified liquidity audit in progress.</p>
+</div>
+<button class="mt-6 w-full py-3 bg-secondary-container text-on-secondary-fixed font-bold uppercase tracking-widest text-xs rounded hover:bg-secondary-fixed-dim transition-all active:scale-95">
+                        Download Report
+                    </button>
+</div>
+</section>
+<!-- 2. Active Campaigns & Placement Monitor -->
+<section class="space-y-4">
+<div class="flex justify-between items-end">
+<h2 class="text-xl font-headline font-bold tracking-tight">ACTIVE PLACEMENTS</h2>
+<span class="text-[10px] font-label text-secondary-container uppercase tracking-widest">12 Active Nodes</span>
+</div>
+<div class="bg-surface-container-lowest overflow-hidden rounded-lg">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-high">
+<th class="p-4 text-[10px] font-label uppercase tracking-widest text-on-surface-variant">Asset ID</th>
+<th class="p-4 text-[10px] font-label uppercase tracking-widest text-on-surface-variant">Sponsor</th>
+<th class="p-4 text-[10px] font-label uppercase tracking-widest text-on-surface-variant">Impressions</th>
+<th class="p-4 text-[10px] font-label uppercase tracking-widest text-on-surface-variant">CTR</th>
+<th class="p-4 text-[10px] font-label uppercase tracking-widest text-on-surface-variant text-right">Status</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-container-high/50">
+<tr class="hover:bg-surface-container transition-colors">
+<td class="p-4 font-mono text-xs text-secondary-container">TITAN_ENERGY_HERO_BANNER</td>
+<td class="p-4 text-sm font-medium">Titan Energy Drinks</td>
+<td class="p-4 text-sm font-headline">1,240,503</td>
+<td class="p-4 text-sm text-secondary-container font-headline">2.84%</td>
+<td class="p-4 text-right">
+<span class="inline-block w-2 h-2 rounded-full bg-secondary-container animate-pulse mr-2"></span>
+<span class="text-[10px] font-label font-bold uppercase tracking-widest">Live</span>
+</td>
+</tr>
+<tr class="hover:bg-surface-container transition-colors">
+<td class="p-4 font-mono text-xs text-secondary-container">VANGUARD_HALFTIME_LOGO</td>
+<td class="p-4 text-sm font-medium">Vanguard Logistics</td>
+<td class="p-4 text-sm font-headline">892,110</td>
+<td class="p-4 text-sm text-secondary-container font-headline">1.15%</td>
+<td class="p-4 text-right">
+<span class="inline-block w-2 h-2 rounded-full bg-secondary-container animate-pulse mr-2"></span>
+<span class="text-[10px] font-label font-bold uppercase tracking-widest">Live</span>
+</td>
+</tr>
+<tr class="hover:bg-surface-container transition-colors">
+<td class="p-4 font-mono text-xs text-secondary-container">NEON_GEAR_PODIUM_SPOT</td>
+<td class="p-4 text-sm font-medium">Neon Gear Co.</td>
+<td class="p-4 text-sm font-headline">45,002</td>
+<td class="p-4 text-sm text-secondary-container font-headline">4.20%</td>
+<td class="p-4 text-right">
+<span class="inline-block w-2 h-2 rounded-full bg-tertiary-fixed-dim mr-2"></span>
+<span class="text-[10px] font-label font-bold uppercase tracking-widest text-tertiary-fixed-dim">Queued</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<!-- Bento Grid Section: Identity & Inventory -->
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+<!-- 3. Creative Asset Vault -->
+<section class="space-y-4">
+<h2 class="text-xl font-headline font-bold tracking-tight">ASSET VAULT</h2>
+<div class="grid grid-cols-2 gap-4">
+<div class="aspect-video bg-surface-container rounded-lg border border-dashed border-outline/30 flex flex-col items-center justify-center hover:border-secondary-container/50 transition-all cursor-pointer group">
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-secondary-container mb-2">upload_file</span>
+<span class="text-[10px] font-label uppercase tracking-widest text-on-surface-variant">Upload New Spot</span>
+</div>
+<div class="aspect-video relative overflow-hidden rounded-lg group">
+<img alt="Esports stadium screen" class="object-cover w-full h-full opacity-60 group-hover:scale-105 transition-transform duration-700" data-alt="Cyberpunk esports stadium digital signage display" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB153Sclwh0y_qJrpSd8T1ANOr4PaDJDwu_KUdWHQXt8NIczjh9xP99HqX_r7ObW_vvHro59fMZmxA2saqhJKCXfGsQoa2GtUM939DYybAL8jkSZB1TIKoQZ4ShOPS6Mxhzj5NOWYLJvgmhIohGHabK-sYmHY4r6MJY3wdOI_WnYGQ_QlEsjufFrzbUadd2bBhYYBjH7fNrNeXgbsKkc3IIYRBvnXTQUoBOMlZ-0F1vafbIE9yKHFkI0jGksv7q77tJCJUmmTOd7y4H"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface to-transparent"></div>
+<div class="absolute bottom-3 left-3">
+<span class="text-[10px] font-label font-bold text-secondary-container">STADIUM_NORTH_WALL_4K</span>
+</div>
+</div>
+<div class="aspect-video relative overflow-hidden rounded-lg group">
+<img alt="Hardware logos" class="object-cover w-full h-full opacity-60 group-hover:scale-105 transition-transform duration-700" data-alt="Technical computer hardware glowing logo overlay" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBFkwo8KM79qUTPT3SqYvRPEA7gr5dfrv1p8n0dgsgb7Wjns1FnMa_VKXLjW5A8Oak9lMVEP--g4DzK20hKRF2dWCmHQB_fePiZfIQ14De2kUpVZxvbZSVKqclmgtsFUEQx3wBsd26gcFNZWv1gZ7nQdjLkXgwG-EKgh2Fs2yAyn9jkk2pbQ9AQcI9PW4rZzBxyyxj5FTmD48BT4i1KD5s8J0YvW4ISfSuNHupre8Q-0YbeRnjYEAPF-1XeIdBiJtpgTpTrBndmiVTf"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface to-transparent"></div>
+<div class="absolute bottom-3 left-3">
+<span class="text-[10px] font-label font-bold text-secondary-container">LOGO_BRAND_GUIDE_V2</span>
+</div>
+</div>
+<div class="aspect-video relative overflow-hidden rounded-lg group">
+<img alt="Neon abstract" class="object-cover w-full h-full opacity-60 group-hover:scale-105 transition-transform duration-700" data-alt="Abstract cyan and gold digital background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC5QHpflKBYNY7CMPhki_rq3mIT0RqwB5dkSWVIBxcNvabjtD1ncyBKDoZ2RY7JsZ0MMUtfv8X47H6DRO-KhkbvIlfrbcZqRLDxZwYLK2jWeuId98vKJPJV_erHEJ_j0hSPsmfb9gIoR0M_3sd8QJfWKl2scvZVZecUEnC0iuTmArAKMHAc_SdFMrBSv5g7I5YXqBTKDxS328cW_P8RyPtJtX9eIvbI9MbAlp9n2mlipOKoGWNb1P6Tg2QZheZD3PMWAKdyjqTlwhjH"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface to-transparent"></div>
+<div class="absolute bottom-3 left-3">
+<span class="text-[10px] font-label font-bold text-secondary-container">SOCIAL_BANNER_PACK</span>
+</div>
+</div>
+</div>
+</section>
+<!-- 4. Partner Identity Grid -->
+<section class="space-y-4">
+<h2 class="text-xl font-headline font-bold tracking-tight">PARTNER IDENTITY</h2>
+<div class="space-y-3">
+<div class="flex items-center justify-between p-4 bg-surface-container rounded-lg group">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 bg-surface-container-lowest rounded flex items-center justify-center border border-tertiary/20">
+<span class="material-symbols-outlined text-tertiary">diamond</span>
+</div>
+<div>
+<h4 class="text-sm font-bold">Titan Energy Drinks</h4>
+<span class="text-[10px] font-label text-tertiary uppercase tracking-widest font-bold">ELITE_PARTNER</span>
+</div>
+</div>
+<div class="text-right">
+<span class="text-[10px] block text-on-surface-variant font-label uppercase tracking-widest mb-1">Status</span>
+<span class="text-xs font-bold text-secondary-container">CONTRACT_ACTIVE</span>
+</div>
+</div>
+<div class="flex items-center justify-between p-4 bg-surface-container rounded-lg group">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 bg-surface-container-lowest rounded flex items-center justify-center border border-outline-variant/20">
+<span class="material-symbols-outlined text-on-surface-variant">shield</span>
+</div>
+<div>
+<h4 class="text-sm font-bold">Vanguard Logistics</h4>
+<span class="text-[10px] font-label text-on-surface-variant uppercase tracking-widest font-bold">REGIONAL_SUPPORTER</span>
+</div>
+</div>
+<div class="text-right">
+<span class="text-[10px] block text-on-surface-variant font-label uppercase tracking-widest mb-1">Status</span>
+<span class="text-xs font-bold text-secondary-container">CONTRACT_ACTIVE</span>
+</div>
+</div>
+<div class="flex items-center justify-between p-4 bg-surface-container rounded-lg group">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 bg-surface-container-lowest rounded flex items-center justify-center border border-outline-variant/20">
+<span class="material-symbols-outlined text-on-surface-variant">bolt</span>
+</div>
+<div>
+<h4 class="text-sm font-bold">Volt Peripherals</h4>
+<span class="text-[10px] font-label text-on-surface-variant uppercase tracking-widest font-bold">PRO_CIRCUIT_TECH</span>
+</div>
+</div>
+<div class="text-right">
+<span class="text-[10px] block text-on-surface-variant font-label uppercase tracking-widest mb-1">Status</span>
+<span class="text-xs font-bold text-tertiary">PENDING_RENEWAL</span>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- 5. Placement Inventory Tactical Overview -->
+<section class="space-y-4">
+<header class="flex justify-between items-end">
+<h2 class="text-xl font-headline font-bold tracking-tight">DIGITAL INVENTORY (AVAILABILITY)</h2>
+<button class="text-xs font-bold text-secondary-container font-headline underline underline-offset-4">REQUEST VALUATION</button>
+</header>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+<div class="p-4 bg-surface-container-low rounded-lg border border-outline-variant/10">
+<span class="material-symbols-outlined text-secondary-container mb-3">grid_view</span>
+<p class="text-[10px] text-on-surface-variant font-label uppercase tracking-widest mb-1">Brackets Overlay</p>
+<p class="text-lg font-headline font-bold">4 AVAILABLE</p>
+</div>
+<div class="p-4 bg-surface-container-low rounded-lg border border-outline-variant/10">
+<span class="material-symbols-outlined text-secondary-container mb-3">person_search</span>
+<p class="text-[10px] text-on-surface-variant font-label uppercase tracking-widest mb-1">Talent Resume Tags</p>
+<p class="text-lg font-headline font-bold">12 AVAILABLE</p>
+</div>
+<div class="p-4 bg-surface-container-low rounded-lg border border-outline-variant/10">
+<span class="material-symbols-outlined text-secondary-container mb-3">sports_esports</span>
+<p class="text-[10px] text-on-surface-variant font-label uppercase tracking-widest mb-1">In-Game UI Skin</p>
+<p class="text-lg font-headline font-bold">0 RESERVED</p>
+</div>
+<div class="p-4 bg-surface-container-low rounded-lg border border-outline-variant/10">
+<span class="material-symbols-outlined text-secondary-container mb-3">stadium</span>
+<p class="text-[10px] text-on-surface-variant font-label uppercase tracking-widest mb-1">Post-Match Recap</p>
+<p class="text-lg font-headline font-bold">2 AVAILABLE</p>
+</div>
+</div>
+</section>
+</main>
+</div>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="fixed bottom-0 w-full z-50 md:hidden bg-[#131313]/90 backdrop-blur-xl border-t border-[#2A2A2A]/20">
+<div class="flex justify-around items-center h-16 px-4">
+<a class="flex flex-col items-center text-gray-600 font-['Space_Grotesk'] text-[10px] uppercase font-bold" href="#">
+<span class="material-symbols-outlined">rocket_launch</span>
+<span>ACTIVE</span>
+</a>
+<a class="flex flex-col items-center text-gray-600 font-['Space_Grotesk'] text-[10px] uppercase font-bold" href="#">
+<span class="material-symbols-outlined">pending_actions</span>
+<span>PENDING</span>
+</a>
+<a class="flex flex-col items-center text-[#00E5FF] scale-110 font-['Space_Grotesk'] text-[10px] uppercase font-bold" href="#">
+<span class="material-symbols-outlined">account_balance_wallet</span>
+<span>REVENUE</span>
+</a>
+<a class="flex flex-col items-center text-gray-600 font-['Space_Grotesk'] text-[10px] uppercase font-bold" href="#">
+<span class="material-symbols-outlined">notifications_active</span>
+<span>ALERTS</span>
+</a>
+</div>
+</nav>
+</body></html>

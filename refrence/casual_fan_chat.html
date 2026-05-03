@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;900&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-tint": "#c8c6c5",
+              "inverse-surface": "#e5e2e1",
+              "on-error-container": "#ffdad6",
+              "on-secondary": "#00363d",
+              "on-surface": "#e5e2e1",
+              "surface-dim": "#131313",
+              "on-primary-fixed-variant": "#474646",
+              "surface-container-highest": "#353534",
+              "on-tertiary-fixed": "#221b00",
+              "background": "#131313",
+              "on-primary-fixed": "#1c1b1b",
+              "inverse-on-surface": "#313030",
+              "surface-bright": "#393939",
+              "on-error": "#690005",
+              "surface": "#131313",
+              "primary-container": "#121212",
+              "secondary": "#bdf4ff",
+              "on-primary-container": "#7e7d7d",
+              "surface-container-low": "#1c1b1b",
+              "secondary-fixed": "#9cf0ff",
+              "on-tertiary-fixed-variant": "#544600",
+              "on-primary": "#313030",
+              "on-secondary-fixed": "#001f24",
+              "primary-fixed": "#e5e2e1",
+              "on-secondary-container": "#00616d",
+              "surface-container-lowest": "#0e0e0e",
+              "on-tertiary-container": "#4c3f00",
+              "outline": "#8e9192",
+              "inverse-primary": "#5f5e5e",
+              "primary-fixed-dim": "#c8c6c5",
+              "tertiary": "#e9c400",
+              "outline-variant": "#444748",
+              "surface-container": "#201f1f",
+              "surface-variant": "#353534",
+              "error-container": "#93000a",
+              "error": "#ffb4ab",
+              "primary": "#c8c6c5",
+              "tertiary-fixed": "#ffe16d",
+              "tertiary-container": "#c9a900",
+              "on-surface-variant": "#c4c7c7",
+              "on-tertiary": "#3a3000",
+              "on-secondary-fixed-variant": "#004f58",
+              "surface-container-high": "#2a2a2a",
+              "on-background": "#e5e2e1",
+              "tertiary-fixed-dim": "#e9c400",
+              "secondary-fixed-dim": "#00daf3",
+              "secondary-container": "#00e3fd"
+            },
+            fontFamily: {
+              "headline": ["Space Grotesk"],
+              "body": ["Inter"],
+              "label": ["Space Grotesk"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      .glass-panel {
+        background: rgba(53, 53, 52, 0.6);
+        backdrop-filter: blur(12px);
+      }
+      .glow-secondary {
+        box-shadow: 0 0 15px rgba(0, 229, 255, 0.15);
+      }
+      ::-webkit-scrollbar {
+        width: 4px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #131313;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #353534;
+      }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body select-none">
+<!-- Top Navigation Anchor -->
+<header class="flex justify-between items-center w-full px-6 py-4 bg-[#1C1B1B] shadow-[0_0_20px_rgba(0,229,255,0.05)]">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-none bg-surface-container-high flex items-center justify-center border border-outline-variant/20">
+<img alt="User Pilot Avatar" class="w-full h-full" data-alt="Cyberpunk style pilot profile avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBVdiPsC_3MyuKnLCrYVlYkhRYrzW5EGnTbuWREERicCjsboblQSCsADNclgfsqwm27omp19yTISkutPQHruS5Fl-z-ofYYuy_KtR1Il4WiMtvkoE5l3x4zQsZQKKN_w89WOv8afs60ugpMTiPh6s8iq2CIcw97DLuHxJd5BQ-4tlSuaGaFp7FGMTiVbyYZoMrEVxxdJPDZiiTM_cUI5BiOXvUNPVfMUCBmJTqHCfiWu0BpeQruYvJFybiM4CJbJWg0YrOgMcA3161j"/>
+</div>
+<h1 class="text-[#00E5FF] font-['Space_Grotesk'] font-black tracking-tighter text-xl">TACTICAL COMMS</h1>
+</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-[#353534] font-['Space_Grotesk'] uppercase tracking-wider font-bold hover:bg-[#2A2A2A] transition-colors duration-200 px-2" href="#">MATCHES</a>
+<a class="text-[#00E5FF] border-b-2 border-[#00E5FF] font-['Space_Grotesk'] uppercase tracking-wider font-bold px-2" href="#">COMMS</a>
+<a class="text-[#353534] font-['Space_Grotesk'] uppercase tracking-wider font-bold hover:bg-[#2A2A2A] transition-colors duration-200 px-2" href="#">INTEL</a>
+<a class="text-[#353534] font-['Space_Grotesk'] uppercase tracking-wider font-bold hover:bg-[#2A2A2A] transition-colors duration-200 px-2" href="#">SQUAD</a>
+</div>
+<button class="text-[#00E5FF] material-symbols-outlined active:scale-95 duration-100 p-2">settings</button>
+</header>
+<main class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-0 min-h-[calc(100vh-144px)]">
+<!-- Sidebar: Active Squads & Trends (Tactical Info) -->
+<aside class="lg:col-span-3 bg-surface-container-lowest border-r border-outline-variant/5 p-6 hidden lg:block">
+<div class="mb-8">
+<h3 class="font-headline text-xs font-bold tracking-[0.2em] text-on-primary-container mb-4">TACTICAL CHANNELS</h3>
+<nav class="space-y-1">
+<div class="flex items-center gap-3 p-3 bg-surface-container-low border-l-2 border-secondary-fixed-dim">
+<span class="material-symbols-outlined text-secondary-fixed-dim text-sm" style="font-variation-settings: 'FILL' 1;">public</span>
+<span class="font-headline text-xs font-bold tracking-wider">GLOBAL LOUNGE</span>
+</div>
+<div class="flex items-center gap-3 p-3 text-on-primary-container hover:bg-surface-container-high transition-colors cursor-pointer group">
+<span class="material-symbols-outlined text-sm group-hover:text-on-background">groups</span>
+<span class="font-headline text-xs font-bold tracking-wider group-hover:text-on-background">SQUAD FINDER</span>
+</div>
+<div class="flex items-center gap-3 p-3 text-on-primary-container hover:bg-surface-container-high transition-colors cursor-pointer group">
+<span class="material-symbols-outlined text-sm group-hover:text-on-background">workspace_premium</span>
+<span class="font-headline text-xs font-bold tracking-wider group-hover:text-on-background">ELITE PROS</span>
+</div>
+</nav>
+</div>
+<div>
+<h3 class="font-headline text-xs font-bold tracking-[0.2em] text-on-primary-container mb-4">LIVE INTEL</h3>
+<div class="space-y-4">
+<div class="p-4 bg-surface-container rounded-none border-l border-tertiary">
+<div class="flex justify-between items-start mb-2">
+<span class="text-[10px] font-headline font-black text-tertiary tracking-tighter">PRESTIGE MATCH</span>
+<span class="bg-red-500/20 text-red-400 text-[8px] px-1 font-black">LIVE</span>
+</div>
+<p class="text-xs font-bold text-on-surface">TITANS vs PHANTOMS</p>
+<p class="text-[10px] text-on-primary-container mt-1">456 Watching</p>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Content: Chat Interface -->
+<section class="lg:col-span-9 flex flex-col bg-surface-dim relative">
+<!-- Chat Header -->
+<div class="px-6 py-4 flex justify-between items-center bg-surface-container-low border-b border-outline-variant/10">
+<div class="flex items-center gap-3">
+<div class="w-2 h-2 rounded-full bg-secondary-fixed-dim animate-pulse"></div>
+<h2 class="font-headline font-bold text-lg tracking-tight uppercase">Global Fan Lounge</h2>
+</div>
+<div class="flex items-center gap-4">
+<span class="text-[10px] font-headline font-bold text-on-primary-container tracking-widest">1,204 ONLINE</span>
+<button class="material-symbols-outlined text-on-primary-container hover:text-secondary-fixed-dim transition-colors">filter_list</button>
+</div>
+</div>
+<!-- Messages Stream -->
+<div class="flex-1 overflow-y-auto p-6 space-y-6 scroll-smooth pb-32">
+<!-- System Message -->
+<div class="flex justify-center">
+<div class="px-4 py-1 bg-surface-container-highest/30 rounded-none border border-outline-variant/20">
+<p class="text-[10px] font-headline font-bold text-on-primary-container tracking-tighter">SQUAD K1-NG JOINED THE LOUNGE</p>
+</div>
+</div>
+<!-- Chat Message: PRO PLAYER -->
+<div class="flex gap-4 items-start max-w-2xl">
+<div class="relative flex-shrink-0">
+<div class="w-12 h-12 rounded-none border border-tertiary p-0.5">
+<img alt="Pro Player Avatar" class="w-full h-full object-cover" data-alt="Professional gamer profile avatar with gold border" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBrUTFLKMX4MXs76Sd2Om0-9-RE_EHFmIsoZ4njVKi4RJ9qi4TEy60x8DldWXQbZATnumsthMobmhdOTh6UFm2ICcaE8gjrOWVSVZdoW3eRbuYRkZak8rp80nEXPyPiUCNmW-XhOPYJe_5m2mDvkcEpVeu49FfCg5XL9ljL6IF505ryF1OzS_UYo2_xgIsFv9mMHvqZulQyPdj-9TvN_cZSi-gu8i3DWxMJ1wJd83CVwkKKFfBVDQWL-9_JUMKr5y05hxKBM1zs1MI2"/>
+</div>
+<div class="absolute -bottom-1 -right-1 bg-tertiary text-on-tertiary p-0.5 rounded-full flex items-center justify-center border-2 border-surface">
+<span class="material-symbols-outlined text-[12px]" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+</div>
+<div class="flex flex-col gap-1.5">
+<div class="flex items-center gap-3">
+<span class="font-headline font-black text-tertiary text-sm tracking-tight">VORTEX_PRIME</span>
+<span class="bg-tertiary/10 text-tertiary text-[9px] px-1.5 py-0.5 border border-tertiary/30 font-black">MVP</span>
+<button class="material-symbols-outlined text-on-primary-container text-xs hover:text-secondary-fixed-dim transition-colors" title="Add Friend">person_add</button>
+</div>
+<div class="bg-surface-container-low p-4 relative group">
+<p class="text-sm leading-relaxed text-on-surface">That final bracket play by the Titans was absolute textbook tactical execution. Who saw that rotation coming? 🎯</p>
+<div class="flex gap-2 mt-3">
+<span class="bg-surface-container-high px-2 py-1 text-[10px] flex items-center gap-1 border border-outline-variant/20 hover:border-secondary-fixed-dim/40 cursor-pointer">🔥 12</span>
+<span class="bg-surface-container-high px-2 py-1 text-[10px] flex items-center gap-1 border border-outline-variant/20 hover:border-secondary-fixed-dim/40 cursor-pointer">🫡 4</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Chat Message: Regular User -->
+<div class="flex gap-4 items-start max-w-2xl">
+<div class="w-12 h-12 flex-shrink-0 rounded-none border border-outline-variant/20 overflow-hidden">
+<img alt="Fan Avatar" class="w-full h-full object-cover" data-alt="Regular gamer profile avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCOzduLnbEuB5s7nW_-WwBQnBrUQgM46Vf7t9JTfEzc9k0osDACeK3nKGgRkwLpa3kXA1kOaTViAs-GVy3lZUjwftjB_iRER_03WP4NRGNiO1Xw7qPv5EmAEQrL_J4YHiCcjGrSPedw7ZjBWoA6iavBHD0BbXpyqeCiu1yY-_ZUgo2B_ZBCSmhm0GbMRZJ3C5eynpHqckTji2osowIWjRwJRvgxwMGWH6RCx63eqnMBlrFk8Vn3bgLiqACh62YaiMxNY46K9hcHcvAW"/>
+</div>
+<div class="flex flex-col gap-1.5">
+<div class="flex items-center gap-3">
+<span class="font-headline font-bold text-on-surface text-sm tracking-tight">KinetiX_Fan</span>
+<span class="bg-surface-container-highest text-on-primary-container text-[9px] px-1.5 py-0.5 font-bold">BRONZE II</span>
+<button class="material-symbols-outlined text-on-primary-container text-xs hover:text-secondary-fixed-dim transition-colors">person_add</button>
+</div>
+<div class="bg-surface-container p-4">
+<p class="text-sm leading-relaxed text-on-primary-container italic">"I'm still processing that triple save in the 89th minute. Absolute madness."</p>
+</div>
+</div>
+</div>
+<!-- Chat Message: Stat Share -->
+<div class="flex gap-4 items-start max-w-2xl">
+<div class="w-12 h-12 flex-shrink-0 rounded-none border border-outline-variant/20 overflow-hidden">
+<img alt="Fan Avatar" class="w-full h-full object-cover" data-alt="Tactical gamer profile avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAoS7DscnBi6g9n0LXGMmzYe1ASlnzXe2TzdPVhfE_AqyyDNhIrKoIl2lrSgNdjX8DdchIscczMJjwymu-mFRiS8-ynv0qS-Z_ryCbBb-oduWxDRpnEAGyCYRuc36zaJDoVDVS5bE6aMmrWCrlvL6ADJDlQ8IhDfexaUPoc-4JIQvdcrLT4Kd4984n6UimcyB8IE5seiryta65fz9FoTg-XJF3iHKuYUYY8dLE4wKFquMWTpDZzo7YLZi0BJ5qBsk0m3XiVhKvao4oh"/>
+</div>
+<div class="flex flex-col gap-1.5">
+<div class="flex items-center gap-3">
+<span class="font-headline font-bold text-on-surface text-sm tracking-tight">ST_G_HUNTER</span>
+<button class="material-symbols-outlined text-on-primary-container text-xs hover:text-secondary-fixed-dim transition-colors">person_add</button>
+</div>
+<div class="bg-secondary-fixed-dim/5 border border-secondary-fixed-dim/10 p-4">
+<div class="flex items-center gap-2 mb-3">
+<span class="material-symbols-outlined text-secondary-fixed-dim text-sm" style="font-variation-settings: 'FILL' 1;">analytics</span>
+<span class="text-[10px] font-headline font-black text-secondary-fixed-dim tracking-widest uppercase">Match Intel Shared</span>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="bg-surface-container-lowest p-2 border border-outline-variant/10">
+<p class="text-[8px] text-on-primary-container uppercase font-bold">Win Rate</p>
+<p class="text-xl font-headline font-black text-on-surface">74%</p>
+</div>
+<div class="bg-surface-container-lowest p-2 border border-outline-variant/10">
+<p class="text-[8px] text-on-primary-container uppercase font-bold">Top Role</p>
+<p class="text-xl font-headline font-black text-on-surface">STRKR</p>
+</div>
+</div>
+<p class="text-xs text-on-surface mt-3">Looking for a focused squad for the Midnight Tournament. Need a solid Support. HMU!</p>
+</div>
+</div>
+</div>
+<!-- Chat Message: Reaction -->
+<div class="flex gap-4 items-start max-w-2xl ml-auto flex-row-reverse">
+<div class="w-12 h-12 flex-shrink-0 rounded-none border border-secondary-fixed-dim p-0.5">
+<img alt="User Pilot Avatar" class="w-full h-full object-cover" data-alt="Cyberpunk style pilot profile avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBdJvJWqQtxZDMLUKQm6yXAb0xDZYJk7YrRZnkn00GwbsFIGyGzI_YAnGZ08LFZCXSsvIan8Kp04Ct9BhWgTUyi5TiZi5yN_60qJQIwaAj19dASHOrAwKHrXu-ISYaqvcOo7s8VxXEfTM0VG7zqkPBIDrOxAE7x-ebHsAtTY3RlvrcAqTiBWpakbdq86LJFkS8CoEUd_qzM2Qs68ST96V-342yNnYxHHoq-BPcOojFkR-e3RN3jza_VzITR8YCQRRo1zF2PQKj7zVbj"/>
+</div>
+<div class="flex flex-col gap-1.5 items-end">
+<div class="flex items-center gap-3 flex-row-reverse">
+<span class="font-headline font-bold text-secondary-fixed-dim text-sm tracking-tight">YOU</span>
+</div>
+<div class="bg-secondary-fixed-dim text-on-secondary p-4 glow-secondary">
+<p class="text-sm font-bold">LFG! Ready for that midnight run. Checking stats now.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Chat Input Area -->
+<div class="absolute bottom-0 left-0 w-full p-6 bg-gradient-to-t from-background via-background to-transparent pointer-events-none">
+<div class="glass-panel border border-outline-variant/20 p-2 pointer-events-auto flex flex-col gap-2">
+<div class="flex gap-2 px-2 pt-1">
+<button class="p-2 hover:bg-surface-container-high transition-colors material-symbols-outlined text-sm text-on-primary-container">gif_box</button>
+<button class="p-2 hover:bg-surface-container-high transition-colors material-symbols-outlined text-sm text-on-primary-container">add_reaction</button>
+<button class="p-2 hover:bg-surface-container-high transition-colors material-symbols-outlined text-sm text-on-primary-container">analytics</button>
+<div class="h-4 w-[1px] bg-outline-variant/30 self-center mx-1"></div>
+<span class="text-[10px] font-headline font-bold text-on-primary-container self-center tracking-widest uppercase">Share Match Stat</span>
+</div>
+<div class="flex gap-3">
+<input class="flex-1 bg-surface-container-lowest border-none focus:ring-1 focus:ring-secondary-fixed-dim/50 text-sm font-headline tracking-wide px-4 py-3 placeholder:text-on-primary-container/30 uppercase" placeholder="TRANSMIT MESSAGE TO LOUNGE..." type="text"/>
+<button class="bg-secondary-fixed-dim text-on-secondary px-6 font-headline font-black tracking-tighter text-sm flex items-center gap-2 hover:bg-secondary-container transition-all active:scale-95 duration-100">
+                            SEND
+                            <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">send</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Mobile Bottom NavBar Anchor -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center h-20 px-4 bg-[#0E0E0E] md:hidden">
+<button class="flex flex-col items-center justify-center text-[#353534] hover:text-[#00E5FF] transition-all active:scale-90">
+<span class="material-symbols-outlined">sports_score</span>
+<span class="font-['Space_Grotesk'] text-[10px] font-bold uppercase tracking-[0.05em]">MATCHES</span>
+</button>
+<button class="flex flex-col items-center justify-center text-[#00E5FF] bg-[#1C1B1B] rounded-md px-4 py-1 active:scale-90">
+<span class="material-symbols-outlined">forum</span>
+<span class="font-['Space_Grotesk'] text-[10px] font-bold uppercase tracking-[0.05em]">COMMS</span>
+</button>
+<button class="flex flex-col items-center justify-center text-[#353534] hover:text-[#00E5FF] transition-all active:scale-90">
+<span class="material-symbols-outlined">monitoring</span>
+<span class="font-['Space_Grotesk'] text-[10px] font-bold uppercase tracking-[0.05em]">INTEL</span>
+</button>
+<button class="flex flex-col items-center justify-center text-[#353534] hover:text-[#00E5FF] transition-all active:scale-90">
+<span class="material-symbols-outlined">groups</span>
+<span class="font-['Space_Grotesk'] text-[10px] font-bold uppercase tracking-[0.05em]">SQUAD</span>
+</button>
+</nav>
+</body></html>

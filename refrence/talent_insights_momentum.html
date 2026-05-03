@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AGS Global Arena | Talent Momentum &amp; Insights</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-tertiary": "#3a3000",
+              "background": "#131313",
+              "surface-dim": "#131313",
+              "tertiary-container": "#c9a900",
+              "surface-container-low": "#1c1b1b",
+              "secondary-fixed": "#9cf0ff",
+              "primary-fixed": "#e5e2e1",
+              "surface-variant": "#353534",
+              "surface-bright": "#393939",
+              "on-secondary": "#00363d",
+              "on-primary": "#313030",
+              "tertiary-fixed": "#ffe16d",
+              "on-tertiary-container": "#4c3f00",
+              "on-primary-fixed": "#1c1b1b",
+              "tertiary-fixed-dim": "#e9c400",
+              "on-secondary-container": "#00616d",
+              "inverse-surface": "#e5e2e1",
+              "secondary": "#00e5ff",
+              "on-surface-variant": "#c4c7c7",
+              "secondary-container": "#00e3fd",
+              "on-primary-container": "#7e7d7d",
+              "secondary-fixed-dim": "#00daf3",
+              "error-container": "#93000a",
+              "on-surface": "#e5e2e1",
+              "on-secondary-fixed": "#001f24",
+              "on-tertiary-fixed": "#221b00",
+              "on-background": "#e5e2e1",
+              "primary-container": "#121212",
+              "surface-container-lowest": "#0e0e0e",
+              "on-tertiary-fixed-variant": "#544600",
+              "error": "#ffb4ab",
+              "primary": "#c8c6c5",
+              "on-error-container": "#ffdad6",
+              "on-secondary-fixed-variant": "#004f58",
+              "surface-tint": "#c8c6c5",
+              "surface": "#131313",
+              "surface-container": "#201f1f",
+              "surface-container-highest": "#353534",
+              "tertiary": "#e9c400",
+              "on-primary-fixed-variant": "#474646",
+              "surface-container-high": "#2a2a2a",
+              "primary-fixed-dim": "#c8c6c5",
+              "on-error": "#690005",
+              "inverse-on-surface": "#313030",
+              "inverse-primary": "#5f5e5e",
+              "outline": "#8e9192",
+              "outline-variant": "#444748"
+            },
+            fontFamily: {
+              "headline": ["Space Grotesk"],
+              "body": ["Inter"],
+              "label": ["Space Grotesk"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        vertical-align: middle;
+      }
+      .hud-scanline {
+        background: linear-gradient(to bottom, transparent 50%, rgba(0, 229, 255, 0.02) 50%);
+        background-size: 100% 4px;
+      }
+      .no-scrollbar::-webkit-scrollbar { display: none; }
+      .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body selection:bg-secondary/30">
+<!-- Top Navigation Anchor -->
+<header class="fixed top-0 z-50 w-full px-6 py-4 bg-zinc-950/90 backdrop-blur-xl flex justify-between items-center shadow-[0_0_20px_rgba(0,229,255,0.04)]">
+<div class="flex items-center gap-8">
+<h1 class="font-headline font-bold text-xl tracking-tighter text-zinc-100">APEX COMMAND</h1>
+<nav class="hidden md:flex gap-6">
+<span class="font-headline uppercase tracking-[0.05em] text-sm text-cyan-400 font-bold cursor-pointer">DASHBOARD</span>
+<span class="font-headline uppercase tracking-[0.05em] text-sm text-zinc-500 hover:text-zinc-300 transition-colors cursor-pointer">ANALYTICS</span>
+<span class="font-headline uppercase tracking-[0.05em] text-sm text-zinc-500 hover:text-zinc-300 transition-colors cursor-pointer">RADAR</span>
+<span class="font-headline uppercase tracking-[0.05em] text-sm text-zinc-500 hover:text-zinc-300 transition-colors cursor-pointer">TALENT</span>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<div class="text-right hidden sm:block">
+<p class="font-headline text-[10px] tracking-widest text-secondary">SYSTEM ACTIVE</p>
+<p class="font-headline font-bold text-xs">UNIT-01 // COMMANDER</p>
+</div>
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center overflow-hidden border border-outline-variant/20">
+<img alt="Commander Avatar" data-alt="Cybernetic profile avatar for command unit" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAdiKGJdN9vXEWIcNxbBI5-ZUJOCf0W2is7nLEcjaXII-aNm9-UGOesHbaTm78GEGycMfijcO2k7RaGJOciQh_HNs4BLYYF3M7N4OA24PkC93vu4sRmcfFu_mBc-IT7S9fpoidIyFOIiIJnT7FfdTJxpXX3CTO921cbHtNOl1tDG2S0A_PEOec3m68e3ap87OZrNoBy-li5GXMT5fslUyIq5kfuh9WTXEgpOwSHxOuHwOewO3C3w89ydxkfyr4CfoLbpute9hMTp9r-"/>
+</div>
+</div>
+</header>
+<main class="pt-24 pb-28 md:pb-8 px-6 max-w-[1600px] mx-auto hud-scanline">
+<!-- Header Actions & Meta -->
+<div class="flex flex-col md:flex-row justify-between items-end mb-10 gap-6">
+<div class="w-full">
+<div class="flex items-center gap-2 mb-2">
+<span class="material-symbols-outlined text-secondary text-sm">verified</span>
+<span class="font-headline text-xs tracking-[0.2em] text-secondary">ELITE TALENT DOSSIER</span>
+</div>
+<h2 class="font-headline text-5xl md:text-7xl font-bold tracking-tighter uppercase mb-2">Kaelen Vance</h2>
+<div class="flex gap-4 items-center">
+<span class="px-3 py-1 bg-surface-container-high text-xs font-label tracking-widest border border-outline-variant/30">ID: AGS-9928-X</span>
+<span class="px-3 py-1 bg-tertiary/10 text-tertiary text-xs font-label tracking-widest border border-tertiary/20">CLASS: MULTI-DOMAIN APEX</span>
+</div>
+</div>
+<div class="flex flex-wrap gap-3 w-full md:w-auto justify-start md:justify-end">
+<button class="px-6 py-3 bg-secondary text-on-secondary font-headline font-bold text-xs tracking-widest uppercase rounded-md flex items-center gap-2 hover:bg-secondary-fixed-dim transition-all active:scale-95 shadow-[0_0_15px_rgba(0,229,255,0.3)]">
+<span class="material-symbols-outlined text-sm">lock</span> LOCK FOR DRAFT
+                </button>
+<button class="px-6 py-3 bg-surface-container text-on-surface font-headline font-bold text-xs tracking-widest uppercase rounded-md border border-outline-variant/30 hover:bg-surface-container-high transition-all">
+                    REQUEST BIOMETRIC AUDIT
+                </button>
+</div>
+</div>
+<!-- Dashboard Bento Grid -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-4">
+<!-- Column 1: Star Potential & DNA -->
+<div class="md:col-span-4 space-y-4">
+<!-- Star Potential Index -->
+<section class="bg-surface-container-low p-8 rounded-lg relative overflow-hidden group">
+<div class="absolute top-0 right-0 p-4">
+<span class="material-symbols-outlined text-secondary opacity-30 text-4xl">emergency_share</span>
+</div>
+<p class="font-headline text-xs tracking-widest text-on-surface-variant mb-6 uppercase">Star Potential Index</p>
+<div class="flex items-baseline gap-2">
+<span class="font-headline text-8xl font-black text-white tracking-tighter">94.2</span>
+<div class="flex flex-col">
+<span class="material-symbols-outlined text-secondary">trending_up</span>
+<span class="text-secondary font-headline text-sm font-bold">+2.4%</span>
+</div>
+</div>
+<div class="mt-8 h-1 w-full bg-surface-variant rounded-full overflow-hidden">
+<div class="h-full bg-secondary w-[94.2%] shadow-[0_0_10px_#00e5ff]"></div>
+</div>
+<p class="mt-4 text-xs font-body text-on-surface-variant leading-relaxed">Candidate ranks in the 99th percentile for multi-domain adaptation over the last sprint cycle.</p>
+</section>
+<!-- Performance DNA (Multi-Domain) -->
+<section class="bg-surface-container p-6 rounded-lg border border-outline-variant/10">
+<h3 class="font-headline text-xs tracking-widest text-on-surface-variant mb-6 uppercase">Performance DNA</h3>
+<div class="space-y-6">
+<div>
+<div class="flex justify-between mb-2">
+<span class="font-label text-xs uppercase text-zinc-300">Kinetic (Physical)</span>
+<span class="font-label text-xs text-secondary">88/100</span>
+</div>
+<div class="h-1.5 w-full bg-surface-container-lowest">
+<div class="h-full bg-zinc-400 w-[88%]"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between mb-2">
+<span class="font-label text-xs uppercase text-zinc-300">Neural (eSports)</span>
+<span class="font-label text-xs text-secondary">97/100</span>
+</div>
+<div class="h-1.5 w-full bg-surface-container-lowest">
+<div class="h-full bg-secondary w-[97%]"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between mb-2">
+<span class="font-label text-xs uppercase text-zinc-300">Logic (Hackathons)</span>
+<span class="font-label text-xs text-secondary">91/100</span>
+</div>
+<div class="h-1.5 w-full bg-surface-container-lowest">
+<div class="h-full bg-tertiary w-[91%]"></div>
+</div>
+</div>
+</div>
+<button class="w-full mt-8 py-3 bg-surface-container-high text-xs font-headline font-bold tracking-widest uppercase hover:text-secondary transition-colors">
+                        COMPARE WITH BENCHMARKS
+                    </button>
+</section>
+</div>
+<!-- Column 2: Momentum Tracker & Intel -->
+<div class="md:col-span-5 space-y-4">
+<!-- Momentum Tracker -->
+<section class="bg-surface-container-lowest p-6 rounded-lg relative min-h-[300px] border border-outline-variant/10">
+<div class="flex justify-between items-start mb-8">
+<div>
+<h3 class="font-headline text-xs tracking-widest text-on-surface-variant uppercase">Momentum Tracker</h3>
+<p class="text-[10px] text-on-surface-variant/60 font-label">12 MONTH PERFORMANCE YIELD</p>
+</div>
+<span class="px-2 py-1 bg-secondary/5 text-secondary text-[10px] font-label border border-secondary/20">LIVE TELEMETRY</span>
+</div>
+<!-- Mock Chart Visualization -->
+<div class="relative h-48 w-full flex items-end gap-1">
+<div class="flex-1 bg-surface-container h-[40%] hover:bg-secondary/20 transition-all rounded-t-sm"></div>
+<div class="flex-1 bg-surface-container h-[45%] hover:bg-secondary/20 transition-all rounded-t-sm"></div>
+<div class="flex-1 bg-surface-container h-[55%] hover:bg-secondary/20 transition-all rounded-t-sm relative">
+<div class="absolute -top-6 left-1/2 -translate-x-1/2 w-2 h-2 rounded-full bg-tertiary shadow-[0_0_8px_#e9c400]"></div>
+</div>
+<div class="flex-1 bg-surface-container h-[52%] hover:bg-secondary/20 transition-all rounded-t-sm"></div>
+<div class="flex-1 bg-surface-container h-[60%] hover:bg-secondary/20 transition-all rounded-t-sm"></div>
+<div class="flex-1 bg-surface-container h-[75%] hover:bg-secondary/20 transition-all rounded-t-sm"></div>
+<div class="flex-1 bg-secondary h-[85%] hover:opacity-80 transition-all rounded-t-sm relative">
+<div class="absolute -top-6 left-1/2 -translate-x-1/2 w-2 h-2 rounded-full bg-tertiary animate-pulse shadow-[0_0_8px_#e9c400]"></div>
+</div>
+<div class="flex-1 bg-surface-container h-[78%] hover:bg-secondary/20 transition-all rounded-t-sm"></div>
+<div class="flex-1 bg-surface-container h-[82%] hover:bg-secondary/20 transition-all rounded-t-sm"></div>
+<div class="flex-1 bg-surface-container h-[90%] hover:bg-secondary/20 transition-all rounded-t-sm"></div>
+<div class="flex-1 bg-secondary h-[95%] hover:opacity-80 transition-all rounded-t-sm"></div>
+<div class="flex-1 bg-surface-container h-[92%] hover:bg-secondary/20 transition-all rounded-t-sm"></div>
+</div>
+<div class="flex justify-between mt-4 font-label text-[10px] text-on-surface-variant/40">
+<span>Q1</span><span>Q2</span><span>Q3</span><span>Q4</span>
+</div>
+</section>
+<!-- Scout Intel Node -->
+<section class="bg-surface-container-high p-6 rounded-lg relative border-l-4 border-secondary">
+<div class="flex items-center gap-3 mb-4">
+<div class="w-8 h-8 rounded bg-zinc-950 flex items-center justify-center">
+<span class="material-symbols-outlined text-sm text-secondary">psychology</span>
+</div>
+<div>
+<p class="font-headline font-bold text-xs">CHIEF SCOUT ARBITER</p>
+<p class="text-[10px] text-secondary tracking-tighter">INTEL VERIFIED // SIGMA-9</p>
+</div>
+</div>
+<p class="font-body text-sm leading-relaxed italic text-on-surface italic">
+                        "Vance exhibits rare cognitive decoupling during high-stress neural phases. His 'clutch' factor isn't just luck; the biometrics show a 40% decrease in heart rate variance during match point. Intangible leadership metrics are off the charts. Recommend immediate promotion to Tier-1 bracket."
+                    </p>
+<div class="mt-4 pt-4 border-t border-outline-variant/10 flex justify-between items-center">
+<span class="font-label text-[10px] text-on-surface-variant/60 uppercase tracking-widest">Confidence Score: 98%</span>
+<div class="flex gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+</div>
+</div>
+</section>
+</div>
+<!-- Column 3: Verified Achievement Ledger -->
+<div class="md:col-span-3">
+<section class="bg-surface-container-low h-full flex flex-col rounded-lg border border-outline-variant/10">
+<div class="p-6 border-b border-outline-variant/10">
+<h3 class="font-headline text-xs tracking-widest text-on-surface-variant uppercase">Achievement Ledger</h3>
+<p class="text-[10px] text-tertiary mt-1 font-label">BLOCKCHAIN VERIFIED MILESTONES</p>
+</div>
+<div class="flex-1 overflow-y-auto no-scrollbar p-6 space-y-6">
+<!-- Milestone 1 -->
+<div class="group cursor-default">
+<div class="flex justify-between items-start mb-2">
+<span class="font-headline font-bold text-xs uppercase group-hover:text-secondary transition-colors">NEURAL LINK CHAMPION</span>
+<span class="material-symbols-outlined text-tertiary text-sm">workspace_premium</span>
+</div>
+<p class="text-[10px] font-mono text-zinc-500 mb-2 truncate">HASH: 0x82f...a1c9</p>
+<p class="text-xs text-on-surface-variant leading-tight">Secured 1st place in the Global Neural eSports Open with record latency response.</p>
+</div>
+<!-- Milestone 2 -->
+<div class="group cursor-default">
+<div class="flex justify-between items-start mb-2">
+<span class="font-headline font-bold text-xs uppercase group-hover:text-secondary transition-colors">KINETIC OVERLOAD</span>
+<span class="material-symbols-outlined text-secondary text-sm">bolt</span>
+</div>
+<p class="text-[10px] font-mono text-zinc-500 mb-2 truncate">HASH: 0x44d...e221</p>
+<p class="text-xs text-on-surface-variant leading-tight">Maintained 95% physical output for 72 hours during the Endurance Apex trial.</p>
+</div>
+<!-- Milestone 3 -->
+<div class="group cursor-default">
+<div class="flex justify-between items-start mb-2">
+<span class="font-headline font-bold text-xs uppercase group-hover:text-secondary transition-colors">SYSTEMS BREACH</span>
+<span class="material-symbols-outlined text-zinc-500 text-sm">terminal</span>
+</div>
+<p class="text-[10px] font-mono text-zinc-500 mb-2 truncate">HASH: 0x11a...3ff0</p>
+<p class="text-xs text-on-surface-variant leading-tight">Solved L-Tier cryptographic lock in under 4 minutes during Hackathon Elite.</p>
+</div>
+<!-- Milestone 4 -->
+<div class="group cursor-default">
+<div class="flex justify-between items-start mb-2">
+<span class="font-headline font-bold text-xs uppercase group-hover:text-secondary transition-colors">APEX LEADERSHIP</span>
+<span class="material-symbols-outlined text-secondary text-sm">groups</span>
+</div>
+<p class="text-[10px] font-mono text-zinc-500 mb-2 truncate">HASH: 0x99c...921b</p>
+<p class="text-xs text-on-surface-variant leading-tight">Led underdog team to victory in the Regional Inter-League Qualifiers.</p>
+</div>
+</div>
+<div class="p-6 bg-surface-container-highest/20">
+<div class="flex items-center gap-2 text-[10px] text-on-surface-variant/40 font-label tracking-widest uppercase">
+<span class="w-2 h-2 rounded-full bg-green-500/50"></span>
+                            Ledger Sync Complete
+                        </div>
+</div>
+</section>
+</div>
+</div>
+<!-- Tactical Overlays Section -->
+<div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="bg-surface-container p-5 border border-outline-variant/10 flex items-center gap-4">
+<div class="w-12 h-12 bg-surface-container-high rounded flex items-center justify-center border border-outline-variant/20">
+<span class="material-symbols-outlined text-secondary">radar</span>
+</div>
+<div>
+<h4 class="font-headline font-bold text-sm tracking-tight">ACTIVE SURVEILLANCE</h4>
+<p class="text-[10px] text-zinc-500 uppercase tracking-widest">3 scouts currently watching</p>
+</div>
+</div>
+<div class="bg-surface-container p-5 border border-outline-variant/10 flex items-center gap-4">
+<div class="w-12 h-12 bg-surface-container-high rounded flex items-center justify-center border border-outline-variant/20">
+<span class="material-symbols-outlined text-tertiary">diamond</span>
+</div>
+<div>
+<h4 class="font-headline font-bold text-sm tracking-tight">MARKET VALUATION</h4>
+<p class="text-[10px] text-zinc-500 uppercase tracking-widest">Top 5% for current cycle</p>
+</div>
+</div>
+<div class="bg-surface-container p-5 border border-outline-variant/10 flex items-center gap-4">
+<div class="w-12 h-12 bg-surface-container-high rounded flex items-center justify-center border border-outline-variant/20">
+<span class="material-symbols-outlined text-secondary">share</span>
+</div>
+<div>
+<h4 class="font-headline font-bold text-sm tracking-tight">NETWORK INFLUENCE</h4>
+<p class="text-[10px] text-zinc-500 uppercase tracking-widest">8.4M Direct reach</p>
+</div>
+</div>
+</div>
+</main>
+<!-- Bottom Navigation Shell (Mobile Only) -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center bg-zinc-950 pb-safe md:hidden h-20 border-t border-zinc-800/20 shadow-[0_-8px_24px_rgba(0,0,0,0.5)]">
+<div class="flex flex-col items-center justify-center text-cyan-400 bg-cyan-500/5 rounded-md px-3 py-1 transition-all duration-300">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-headline font-bold text-[10px] tracking-widest">DASHBOARD</span>
+</div>
+<div class="flex flex-col items-center justify-center text-zinc-500 hover:text-zinc-300 transition-all duration-300">
+<span class="material-symbols-outlined">insights</span>
+<span class="font-headline font-bold text-[10px] tracking-widest">ANALYTICS</span>
+</div>
+<div class="flex flex-col items-center justify-center text-zinc-500 hover:text-zinc-300 transition-all duration-300">
+<span class="material-symbols-outlined">radar</span>
+<span class="font-headline font-bold text-[10px] tracking-widest">RADAR</span>
+</div>
+<div class="flex flex-col items-center justify-center text-zinc-500 hover:text-zinc-300 transition-all duration-300">
+<span class="material-symbols-outlined">star</span>
+<span class="font-headline font-bold text-[10px] tracking-widest">TALENT</span>
+</div>
+<div class="flex flex-col items-center justify-center text-zinc-500 hover:text-zinc-300 transition-all duration-300">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-headline font-bold text-[10px] tracking-widest">SYSTEM</span>
+</div>
+</nav>
+</body></html>

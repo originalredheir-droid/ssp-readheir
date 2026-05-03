@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "secondary-fixed": "#9cf0ff",
+              "on-secondary-fixed": "#001f24",
+              "surface-container-lowest": "#0e0e0e",
+              "error": "#ffb4ab",
+              "surface-bright": "#393939",
+              "secondary-fixed-dim": "#00daf3",
+              "primary-container": "#121212",
+              "on-tertiary-fixed-variant": "#544600",
+              "on-error-container": "#ffdad6",
+              "tertiary": "#e9c400",
+              "secondary": "#bdf4ff",
+              "on-surface-variant": "#c4c7c7",
+              "surface-container-highest": "#353534",
+              "surface-dim": "#131313",
+              "on-background": "#e5e2e1",
+              "on-secondary-container": "#00616d",
+              "primary-fixed": "#e5e2e1",
+              "on-tertiary": "#3a3000",
+              "on-surface": "#e5e2e1",
+              "surface-container-low": "#1c1b1b",
+              "primary": "#c8c6c5",
+              "inverse-on-surface": "#313030",
+              "on-primary-fixed": "#1c1b1b",
+              "on-secondary": "#00363d",
+              "primary-fixed-dim": "#c8c6c5",
+              "outline": "#8e9192",
+              "outline-variant": "#444748",
+              "inverse-primary": "#5f5e5e",
+              "surface-tint": "#c8c6c5",
+              "tertiary-fixed": "#ffe16d",
+              "tertiary-fixed-dim": "#e9c400",
+              "on-error": "#690005",
+              "on-tertiary-container": "#4c3f00",
+              "on-primary-fixed-variant": "#474646",
+              "surface-container-high": "#2a2a2a",
+              "surface-variant": "#353534",
+              "tertiary-container": "#c9a900",
+              "on-secondary-fixed-variant": "#004f58",
+              "on-primary-container": "#7e7d7d",
+              "on-tertiary-fixed": "#221b00",
+              "on-primary": "#313030",
+              "inverse-surface": "#e5e2e1",
+              "background": "#131313",
+              "secondary-container": "#00e3fd",
+              "error-container": "#93000a",
+              "surface-container": "#201f1f",
+              "surface": "#131313"
+            },
+            fontFamily: {
+              "headline": ["Space Grotesk"],
+              "body": ["Inter"],
+              "label": ["Space Grotesk"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        .glass-overlay {
+            background: rgba(53, 53, 52, 0.6);
+            backdrop-filter: blur(12px);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body selection:bg-secondary-container selection:text-on-secondary-container">
+<!-- Top Navigation Anchor -->
+<header class="flex justify-between items-center px-6 h-16 w-full bg-[#131313] dark:bg-[#131313] border-b border-[#353534]/15 shadow-[0_0_20px_rgba(0,229,255,0.04)] z-50 sticky top-0">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[#00E5FF]">security</span>
+<h1 class="text-xl font-bold text-[#00E5FF] tracking-tighter font-headline uppercase tracking-widest">TACTICAL COMMAND</h1>
+</div>
+<div class="hidden md:flex items-center gap-8">
+<nav class="flex gap-6 font-headline text-[12px] font-bold uppercase tracking-wider">
+<a class="text-[#00E5FF] font-bold" href="#">Active Cases</a>
+<a class="text-zinc-500 hover:bg-[#2A2A2A] transition-colors px-2 py-1" href="#">Archive</a>
+<a class="text-zinc-500 hover:bg-[#2A2A2A] transition-colors px-2 py-1" href="#">Directives</a>
+</nav>
+<div class="h-8 w-[1px] bg-outline-variant/20 mx-2"></div>
+<div class="flex items-center gap-4">
+<div class="flex flex-col items-end">
+<span class="text-[10px] font-headline text-tertiary uppercase leading-none">Status</span>
+<span class="text-[12px] font-bold text-[#00E5FF]">ENCRYPTED SESSION</span>
+</div>
+<span class="material-symbols-outlined text-[#00E5FF]">hub</span>
+</div>
+</div>
+</header>
+<main class="min-h-screen p-4 md:p-8 max-w-[1600px] mx-auto pb-24 md:pb-8">
+<!-- Dashboard Grid Layout -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-start">
+<!-- Left Column: Active Case Queue & Stats -->
+<div class="md:col-span-4 space-y-6">
+<!-- Arbiter Stats Block -->
+<section class="bg-surface-container-low p-5 border-l-2 border-secondary shadow-sm">
+<h2 class="font-headline text-[11px] font-bold uppercase tracking-[0.2em] text-on-surface-variant mb-4">Arbiter Performance Metrics</h2>
+<div class="grid grid-cols-3 gap-4">
+<div class="space-y-1">
+<p class="text-[24px] font-headline font-bold text-on-surface">142</p>
+<p class="text-[9px] font-headline uppercase text-on-surface-variant">Resolved</p>
+</div>
+<div class="space-y-1">
+<p class="text-[24px] font-headline font-bold text-on-surface">4.2h</p>
+<p class="text-[9px] font-headline uppercase text-on-surface-variant">Avg Turnaround</p>
+</div>
+<div class="space-y-1">
+<div class="flex items-center gap-1">
+<p class="text-[24px] font-headline font-bold text-tertiary">98.4</p>
+<span class="material-symbols-outlined text-[14px] text-tertiary" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+<p class="text-[9px] font-headline uppercase text-on-surface-variant">Trust Score</p>
+</div>
+</div>
+</section>
+<!-- Active Case Queue -->
+<section class="bg-surface-container-low flex flex-col h-[600px]">
+<div class="p-5 border-b border-outline-variant/10 flex justify-between items-center">
+<h2 class="font-headline text-[11px] font-bold uppercase tracking-[0.2em] text-[#00E5FF]">Integrity Pipeline</h2>
+<span class="text-[10px] bg-secondary/10 text-secondary px-2 py-0.5 font-bold uppercase tracking-tighter">8 Pending</span>
+</div>
+<div class="overflow-y-auto no-scrollbar flex-1">
+<!-- Case Item: Active -->
+<div class="p-5 bg-surface-container-high border-r-4 border-secondary transition-all cursor-pointer">
+<div class="flex justify-between items-start mb-2">
+<span class="font-headline text-[13px] font-bold text-secondary">#AGS-9821-X</span>
+<span class="text-[9px] font-bold bg-error/20 text-error px-2 py-0.5 rounded-sm uppercase tracking-widest">Critical</span>
+</div>
+<p class="text-[11px] text-on-surface-variant font-medium mb-3">SUSPECTED COLLUSION: Team_A vs Team_B</p>
+<div class="flex justify-between items-center">
+<span class="text-[10px] font-headline text-outline flex items-center gap-1 uppercase">
+<span class="material-symbols-outlined text-[14px]">schedule</span> 14m ago
+                                </span>
+<span class="text-[10px] font-headline text-outline uppercase tracking-wider">Apex League</span>
+</div>
+</div>
+<!-- Case Item -->
+<div class="p-5 hover:bg-surface-container transition-all border-b border-outline-variant/5 cursor-pointer">
+<div class="flex justify-between items-start mb-2">
+<span class="font-headline text-[13px] font-bold text-on-surface">#AGS-4402-Y</span>
+<span class="text-[9px] font-bold bg-tertiary/20 text-tertiary px-2 py-0.5 rounded-sm uppercase tracking-widest">High</span>
+</div>
+<p class="text-[11px] text-on-surface-variant font-medium mb-3">MACRO DETECTED: Player_Spectre_99</p>
+<div class="flex justify-between items-center">
+<span class="text-[10px] font-headline text-outline flex items-center gap-1 uppercase">
+<span class="material-symbols-outlined text-[14px]">schedule</span> 1.2h ago
+                                </span>
+<span class="text-[10px] font-headline text-outline uppercase tracking-wider">Qualifiers</span>
+</div>
+</div>
+<!-- Case Item -->
+<div class="p-5 hover:bg-surface-container transition-all border-b border-outline-variant/5 cursor-pointer opacity-60">
+<div class="flex justify-between items-start mb-2">
+<span class="font-headline text-[13px] font-bold text-on-surface">#AGS-2119-Z</span>
+<span class="text-[9px] font-bold bg-outline-variant/40 text-on-surface-variant px-2 py-0.5 rounded-sm uppercase tracking-widest">Normal</span>
+</div>
+<p class="text-[11px] text-on-surface-variant font-medium mb-3">EXPLOIT USAGE: Map Artifact Clipping</p>
+<div class="flex justify-between items-center">
+<span class="text-[10px] font-headline text-outline flex items-center gap-1 uppercase">
+<span class="material-symbols-outlined text-[14px]">schedule</span> 3.5h ago
+                                </span>
+<span class="text-[10px] font-headline text-outline uppercase tracking-wider">Social Play</span>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- Right Column: Evidence Review & Controls -->
+<div class="md:col-span-8 space-y-6">
+<!-- Evidence Review Node -->
+<section class="bg-surface-container-low p-6 relative">
+<div class="flex justify-between items-center mb-6">
+<div class="space-y-1">
+<h2 class="font-headline text-2xl font-bold tracking-tight">CASE #AGS-9821-X</h2>
+<p class="text-[12px] text-secondary font-headline uppercase tracking-[0.2em]">Live Investigation — Priority Alpha</p>
+</div>
+<div class="flex gap-4">
+<div class="text-right">
+<p class="text-[10px] font-headline text-on-surface-variant uppercase">Telemetry Hash</p>
+<p class="text-[11px] font-mono text-tertiary">0x882A...F92</p>
+</div>
+<div class="text-right">
+<p class="text-[10px] font-headline text-on-surface-variant uppercase">Session ID</p>
+<p class="text-[11px] font-mono text-secondary">A722-110-B00</p>
+</div>
+</div>
+</div>
+<!-- Evidence Viewports -->
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-6">
+<!-- Primary Artifact: Video -->
+<div class="aspect-video bg-surface-container-lowest relative group overflow-hidden border border-outline-variant/10">
+<img alt="Esports tournament match visual" class="w-full h-full object-cover opacity-50 transition-transform duration-700 group-hover:scale-105" data-alt="Intense esports tournament match cinematic viewpoint" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD6Bjn8sai-T_sPGTtsNiCfRIm32DooH6fAp9_ZmNA8f00FW9ayPFSmEAMIX5zfcaj2WkmBKH4dqjzk5_BkZGYBC4O5e9cngS5aBVClOQiiIvnYSCcd_dq-ztgOJ71F_kj4QHeXdKWlwYCnHbzdUkrcNzg_qRD0oXCh7B7NNXCdi9ZNNMkKegrdpi2WP4GluzS9_9twKDNY9D_iBu8LLFrbankjlRt73tR2KGDCr4OsW2QRPG92qbwWoIRVfCw3SYoPS7i2FL2XKE8i"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent"></div>
+<div class="absolute top-4 left-4 flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-error animate-pulse"></span>
+<span class="text-[10px] font-headline font-bold text-on-surface uppercase tracking-widest">Video Artifact B-12</span>
+</div>
+<div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-4xl text-secondary">play_circle</span>
+</div>
+</div>
+<!-- Secondary Artifact: Telemetry -->
+<div class="aspect-video bg-surface-container-lowest p-4 border border-outline-variant/10 overflow-hidden font-mono text-[10px] text-secondary-fixed-dim/70 leading-relaxed">
+<p class="text-secondary font-headline uppercase tracking-widest mb-2 border-b border-secondary/10 pb-1">Telemetry Log v4.02</p>
+<p>[14:02:11] Player_Spectre_99 latency spike detected: 14ms -&gt; 212ms</p>
+<p>[14:02:13] Unusual input sequence on Axis-Y: [0.99, 0.98, 1.00]</p>
+<p>[14:02:14] Hit registry inconsistency: ID-90212 mismatch</p>
+<p class="text-tertiary">[14:02:15] FLAG: Client side prediction override active</p>
+<p>[14:02:18] Team_A communication silent since Match_Start</p>
+<p>[14:02:22] Coordinate drift analysis: 0.002% margin exceeded</p>
+<p>[14:02:25] Process hook attempt: kernel_read(0x442A)</p>
+<p class="text-error">[14:02:28] CRITICAL: Integrity heartbeat interrupted</p>
+</div>
+</div>
+<!-- Tactical Map Overlay -->
+<div class="w-full h-48 bg-surface-container-lowest relative border border-outline-variant/10 overflow-hidden mb-6">
+<img alt="Top down tactical grid map" class="w-full h-full object-cover opacity-20" data-alt="Digital blue tactical heat map grid" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCHdnwRZ--a49KuEXN4F5p2yoBe0Y7JLhARmAhP_DoNqz9wtxs6MGw0WoW0unyH2Fk437jrkxeHOGAQ_xA1e9Eg1Dh4vBofjlx_Bbtndx7Hip3Bxoe8e1ik50Qo-0ouVkmKCID8uB04KzVPHNVClfyc8TYbqNbw1CLr-fyZHjF-T22wIfGBwfYeSTQvCcAxsu3IZp03CPqhCEi0f_wZ72HsTqg2PND1s0giV3Ok9Wqwbc2IeecWhExykFkFlvHAEHp-vts4sO8I5odf"/>
+<div class="absolute inset-0 grid grid-cols-12 grid-rows-6 pointer-events-none">
+<div class="border-[0.5px] border-outline-variant/5"></div><div class="border-[0.5px] border-outline-variant/5"></div><div class="border-[0.5px] border-outline-variant/5"></div><div class="border-[0.5px] border-outline-variant/5"></div><div class="border-[0.5px] border-outline-variant/5"></div><div class="border-[0.5px] border-outline-variant/5"></div><div class="border-[0.5px] border-outline-variant/5"></div><div class="border-[0.5px] border-outline-variant/5"></div><div class="border-[0.5px] border-outline-variant/5"></div><div class="border-[0.5px] border-outline-variant/5"></div><div class="border-[0.5px] border-outline-variant/5"></div><div class="border-[0.5px] border-outline-variant/5"></div>
+<div class="border-[0.5px] border-outline-variant/5"></div><div class="border-[0.5px] border-outline-variant/5"></div><div class="border-[0.5px] border-outline-variant/5"></div><div class="border-[0.5px] border-outline-variant/5"></div><div class="border-[0.5px] border-outline-variant/5"></div><div class="border-[0.5px] border-outline-variant/5"></div><div class="border-[0.5px] border-outline-variant/5"></div><div class="border-[0.5px] border-outline-variant/5"></div><div class="border-[0.5px] border-outline-variant/5"></div><div class="border-[0.5px] border-outline-variant/5"></div><div class="border-[0.5px] border-outline-variant/5"></div><div class="border-[0.5px] border-outline-variant/5"></div>
+</div>
+<div class="absolute top-1/2 left-1/3 w-2 h-2 bg-error rounded-full shadow-[0_0_8px_#ffb4ab]"></div>
+<div class="absolute top-1/4 left-1/2 w-2 h-2 bg-secondary rounded-full shadow-[0_0_8px_#bdf4ff]"></div>
+<div class="absolute bottom-4 left-4 text-[10px] font-headline text-outline tracking-widest bg-background/60 p-1">MAP_REFERENCE: KRYPTON_STATION</div>
+</div>
+<!-- Adjudication Controls -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+<button class="flex items-center justify-center gap-3 bg-secondary text-on-secondary-container h-12 font-headline font-bold uppercase tracking-wider text-[12px] hover:bg-secondary-fixed-dim transition-all active:scale-95 duration-100">
+<span class="material-symbols-outlined text-[20px]">verified_user</span>
+                            Clear Case
+                        </button>
+<button class="flex items-center justify-center gap-3 bg-tertiary text-on-tertiary-container h-12 font-headline font-bold uppercase tracking-wider text-[12px] hover:brightness-110 transition-all active:scale-95 duration-100">
+<span class="material-symbols-outlined text-[20px]">rule</span>
+                            Request More Intel
+                        </button>
+<button class="flex items-center justify-center gap-3 border border-error/50 text-error h-12 font-headline font-bold uppercase tracking-wider text-[12px] hover:bg-error/10 transition-all active:scale-95 duration-100">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">gavel</span>
+                            Issue Penalty
+                        </button>
+</div>
+</section>
+<!-- Case History Bento Section -->
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+<section class="bg-surface-container-low p-5">
+<h3 class="font-headline text-[11px] font-bold uppercase tracking-[0.2em] text-on-surface-variant mb-4">Suspect Profile</h3>
+<div class="flex items-center gap-4">
+<div class="w-16 h-16 bg-surface-container-highest flex items-center justify-center rounded-sm border border-outline-variant/20">
+<span class="material-symbols-outlined text-3xl text-outline">account_circle</span>
+</div>
+<div class="space-y-1">
+<p class="text-lg font-bold">Spectre_99</p>
+<div class="flex gap-2">
+<span class="text-[9px] font-bold bg-secondary/10 text-secondary px-2 py-0.5 uppercase tracking-tighter">Pro Tier</span>
+<span class="text-[9px] font-bold bg-error/10 text-error px-2 py-0.5 uppercase tracking-tighter">2 Warnings</span>
+</div>
+</div>
+</div>
+</section>
+<section class="bg-surface-container-low p-5">
+<h3 class="font-headline text-[11px] font-bold uppercase tracking-[0.2em] text-on-surface-variant mb-4">Direct Evidence Log</h3>
+<ul class="space-y-3">
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary text-[18px]">attachment</span>
+<span class="text-[11px] text-on-surface">Match_9821_Chatlog.txt</span>
+<span class="text-[9px] ml-auto text-outline font-headline uppercase">34 KB</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary text-[18px]">videocam</span>
+<span class="text-[11px] text-on-surface">POV_Spectre_99.mp4</span>
+<span class="text-[9px] ml-auto text-outline font-headline uppercase">142 MB</span>
+</li>
+</ul>
+</section>
+</div>
+</div>
+</div>
+</main>
+<!-- Bottom Navigation Shell (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full flex justify-around items-center h-20 px-4 bg-[#1C1B1B] dark:bg-[#1C1B1B] border-t border-[#353534]/20 z-50">
+<a class="flex flex-col items-center justify-center text-[#00E5FF] bg-[#2A2A2A] rounded-md px-3 py-1 ring-1 ring-[#00E5FF]/30" href="#">
+<span class="material-symbols-outlined">monitoring</span>
+<span class="font-['Space_Grotesk'] text-[10px] font-bold uppercase tracking-wider">Active</span>
+</a>
+<a class="flex flex-col items-center justify-center text-zinc-500 hover:text-[#00DAF3]" href="#">
+<span class="material-symbols-outlined">verified_user</span>
+<span class="font-['Space_Grotesk'] text-[10px] font-bold uppercase tracking-wider">Resolved</span>
+</a>
+<a class="flex flex-col items-center justify-center text-zinc-500 hover:text-[#00DAF3]" href="#">
+<span class="material-symbols-outlined">gavel</span>
+<span class="font-['Space_Grotesk'] text-[10px] font-bold uppercase tracking-wider">Appeals</span>
+</a>
+<a class="flex flex-col items-center justify-center text-zinc-500 hover:text-[#00DAF3]" href="#">
+<span class="material-symbols-outlined">account_circle</span>
+<span class="font-['Space_Grotesk'] text-[10px] font-bold uppercase tracking-wider">Profile</span>
+</a>
+</nav>
+<!-- Floating Global Session Badge (Desktop Corner) -->
+<div class="hidden md:flex fixed bottom-6 right-6 glass-overlay p-4 border border-outline-variant/20 gap-4 items-center shadow-xl">
+<div class="w-10 h-10 rounded-full bg-secondary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-on-secondary-container">shield_with_heart</span>
+</div>
+<div class="space-y-0.5">
+<p class="text-[10px] font-headline font-bold text-secondary uppercase tracking-widest leading-none">Global Integrity</p>
+<p class="text-[14px] font-headline font-bold text-on-surface">99.8% NETWORK HEALTH</p>
+</div>
+</div>
+</body></html>

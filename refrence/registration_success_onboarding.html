@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>BATTLE READY - Tactical Command</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;900&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "tertiary": "#e9c400",
+              "primary-fixed-dim": "#c8c6c5",
+              "surface-container-lowest": "#0e0e0e",
+              "surface-container-high": "#2a2a2a",
+              "on-tertiary": "#3a3000",
+              "on-secondary-container": "#00616d",
+              "on-primary-fixed": "#1c1b1b",
+              "on-error-container": "#ffdad6",
+              "surface-variant": "#353534",
+              "on-primary-container": "#7e7d7d",
+              "inverse-primary": "#5f5e5e",
+              "on-surface-variant": "#c4c7c7",
+              "on-secondary": "#00363d",
+              "primary": "#c8c6c5",
+              "on-background": "#e5e2e1",
+              "surface-container-highest": "#353534",
+              "primary-fixed": "#e5e2e1",
+              "error": "#ffb4ab",
+              "surface-dim": "#131313",
+              "on-secondary-fixed-variant": "#004f58",
+              "primary-container": "#121212",
+              "on-tertiary-fixed": "#221b00",
+              "error-container": "#93000a",
+              "inverse-surface": "#e5e2e1",
+              "outline": "#8e9192",
+              "on-secondary-fixed": "#001f24",
+              "secondary-container": "#00e3fd",
+              "inverse-on-surface": "#313030",
+              "tertiary-fixed": "#ffe16d",
+              "surface-container-low": "#1c1b1b",
+              "surface": "#131313",
+              "on-primary": "#313030",
+              "secondary-fixed": "#9cf0ff",
+              "secondary": "#bdf4ff",
+              "on-primary-fixed-variant": "#474646",
+              "secondary-fixed-dim": "#00daf3",
+              "surface-container": "#201f1f",
+              "tertiary-container": "#c9a900",
+              "surface-bright": "#393939",
+              "outline-variant": "#444748",
+              "on-surface": "#e5e2e1",
+              "surface-tint": "#c8c6c5",
+              "on-tertiary-container": "#4c3f00",
+              "tertiary-fixed-dim": "#e9c400",
+              "on-tertiary-fixed-variant": "#544600",
+              "on-error": "#690005",
+              "background": "#131313"
+            },
+            fontFamily: {
+              "headline": ["Space Grotesk"],
+              "body": ["Inter"],
+              "label": ["Space Grotesk"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      .glass-panel {
+        background: rgba(53, 53, 52, 0.6);
+        backdrop-filter: blur(12px);
+      }
+      .scanline {
+        background: linear-gradient(to bottom, transparent 50%, rgba(0, 229, 255, 0.05) 50%);
+        background-size: 100% 4px;
+      }
+      .asymmetric-cut {
+        clip-path: polygon(0 0, 100% 0, 100% 85%, 95% 100%, 0 100%);
+      }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body selection:bg-secondary-fixed-dim selection:text-on-secondary-fixed overflow-x-hidden">
+<!-- Suppression Logic: No Global Nav Shell for Onboarding/Success Screen as per requirements -->
+<main class="min-h-screen flex flex-col items-center justify-center p-6 relative overflow-hidden">
+<!-- Background Tactical Elements -->
+<div class="absolute inset-0 scanline opacity-20 pointer-events-none"></div>
+<div class="absolute top-[-10%] right-[-10%] w-[500px] h-[500px] bg-secondary-fixed-dim opacity-[0.03] blur-[120px] rounded-full"></div>
+<div class="absolute bottom-[-5%] left-[-5%] w-[400px] h-[400px] bg-tertiary opacity-[0.02] blur-[100px] rounded-full"></div>
+<!-- Success Header -->
+<div class="z-10 text-center mb-12">
+<div class="inline-flex items-center gap-2 mb-4">
+<span class="w-12 h-[2px] bg-secondary-fixed-dim"></span>
+<span class="font-label text-secondary-fixed-dim text-xs tracking-[0.3em] uppercase">Deployment Confirmed</span>
+<span class="w-12 h-[2px] bg-secondary-fixed-dim"></span>
+</div>
+<h1 class="font-headline font-black text-6xl md:text-8xl italic tracking-tighter leading-none mb-2">
+                BATTLE READY
+            </h1>
+<p class="font-label text-on-surface-variant text-sm tracking-widest uppercase">Operational Status: Optimal</p>
+</div>
+<!-- Main Bento Content Grid -->
+<div class="z-10 w-full max-w-5xl grid grid-cols-1 md:grid-cols-12 gap-4">
+<!-- Player Pass Card (High Contrast) -->
+<div class="md:col-span-7 bg-surface-container-low p-1 asymmetric-cut">
+<div class="bg-surface-container h-full p-8 flex flex-col justify-between relative overflow-hidden">
+<div class="absolute top-0 right-0 p-4 opacity-10">
+<span class="material-symbols-outlined text-8xl" style="font-variation-settings: 'FILL' 1;">badge</span>
+</div>
+<div>
+<div class="flex items-center gap-3 mb-8">
+<div class="w-3 h-3 bg-secondary-fixed-dim rounded-sm"></div>
+<span class="font-label text-xs tracking-[0.2em] text-on-surface-variant uppercase">Player Identity Card</span>
+</div>
+<div class="flex items-end gap-6 mb-12">
+<div class="w-24 h-24 bg-surface-container-highest border border-outline-variant/20 relative">
+<img alt="User Pilot Avatar" class="w-full h-full object-cover grayscale contrast-125" data-alt="Modern pilot or tactical operator portrait" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCifNfVP8I2dTUzsNy17HoUVfzu8p1sbwW2Gcx5i2nNKo0vwhZdQtlMeCTn6CfxHAOlIPOqh_OC97aDydyWHNieOUEwI-DervqWyhPsx_5VrjzggE6NNSmGEMX1l6iBefIILgxtNATxtsxvz-fihChcwWZ6EL7Wr0p9xShQjOnEwhhOpnhasQeGpBgTBeH71GL0oCatfwIdCt5d3ZCQfdr2d49iLm0utsJMl54ynoKO0Noc_Qp9deuo7scV6rsdYapj9j6VKuZOjsol"/>
+<div class="absolute -bottom-1 -right-1 bg-tertiary p-1">
+<span class="material-symbols-outlined text-on-tertiary text-xs" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+</div>
+<div>
+<h2 class="font-headline text-4xl font-bold tracking-tight mb-1">XERXES_01</h2>
+<p class="font-label text-secondary-fixed-dim text-sm tracking-widest">RANK: ELITE COMMANDER</p>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-6 border-l-4 border-secondary-fixed-dim">
+<span class="font-label text-[10px] text-on-surface-variant tracking-[0.3em] uppercase block mb-2">Unique Identifier</span>
+<div class="flex justify-between items-center">
+<span class="font-headline text-2xl font-black tracking-[0.15em] text-primary">PLAYER_PASS_ID: 88-X-909</span>
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer hover:text-secondary-fixed-dim transition-colors">content_copy</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Team Assignment & Countdown (Asymmetric Stack) -->
+<div class="md:col-span-5 flex flex-col gap-4">
+<!-- Team Card -->
+<div class="bg-surface-container-low p-6 flex-1 border-r-4 border-tertiary">
+<div class="flex flex-col h-full justify-between">
+<div>
+<span class="font-label text-[10px] text-on-surface-variant tracking-[0.3em] uppercase block mb-4">Assigned Battalion</span>
+<div class="flex items-center gap-4">
+<div class="bg-tertiary/10 p-4 rounded-lg">
+<span class="material-symbols-outlined text-tertiary text-4xl">shield</span>
+</div>
+<div>
+<h3 class="font-headline text-2xl font-bold uppercase tracking-tight text-tertiary">Vanguard Prime</h3>
+<p class="text-xs text-on-surface-variant uppercase tracking-widest">Region: Sector 7-G</p>
+</div>
+</div>
+</div>
+<div class="mt-8 flex -space-x-3">
+<img class="w-10 h-10 rounded-full border-2 border-surface-container object-cover" data-alt="Team member profile photo small" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAi4LUQvvnv8fAe8YovamOS8fXWeaBqGxLEqTFdwHhPGZenrOEcVOQ72sTbJZfN4xmhEi1BvnE-eZOuddtwhnuoyPdU9lB65nMOWuIR11zolgmwCuXfqR1oRVhnH0m-PLkcoGETlKjGg4WkzTjS9U-TtZ-CwpxcBI15OspRMJkY-IIdbXXSonG1B6y6x1WG6c7rC2igZTJWD-Jh-4CXZmcUTcdSTF1WfwI2qoEBG6ItBytsRiwwTcjwfgCdqLHfQR6vwS3CWWLzw9mb"/>
+<img class="w-10 h-10 rounded-full border-2 border-surface-container object-cover" data-alt="Team member profile photo small" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB9CqlJReqssQEGtQkWkfWZ3Ayb0pE4ZoAKZ1MSTQquBtCfgWKtQBGmPS1P8IJkvNWehl0QCSW5Y-T1KShwbc88u8l19G5bxtCA1PvUw7bo0tbyTAsZe6hZe0tn4q0D366wRrPmy0zrmKfpTbJ1uvylZt0Pavqzco0ZZOr9kbLP-aRkpHdZkzSUoToqI0eICHPjEmup3AqpxlXlKoJGmglAiUn2p828FTCXfwq2dtGuYQOJVOrJjb7FbJ85saDfK4kgNotrbYa_72Wg"/>
+<img class="w-10 h-10 rounded-full border-2 border-surface-container object-cover" data-alt="Team member profile photo small" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAIEiLmdSfJD6Y-m37-Bj0TrvmewlezbIOtyXlDk-V0uAV3lM5A5iHe2xn04wY1dcCX0BSpcHufNK-x9ZuEqP_flAtPO6eqpP23hZ09sXdCFX8fRWf0lyarULFLXtfyskmMQoXVMLiG3sAL_qDZQw1MD9IOUNUmyOF7RvkMugLd_wZc-MWR1mbYGfvG8R1g8tnzOVy6hvJlTPxdtfRW5hNi-onUileqiFkTGkGS03dLI2epvsXIrACU-BM1_bb8P9pIFym64vSffBep"/>
+<div class="w-10 h-10 rounded-full border-2 border-surface-container bg-surface-container-highest flex items-center justify-center text-[10px] font-bold">+12</div>
+</div>
+</div>
+</div>
+<!-- Countdown Card -->
+<div class="bg-surface-container-highest p-6 flex-1">
+<span class="font-label text-[10px] text-on-surface-variant tracking-[0.3em] uppercase block mb-4">First Match Initialization</span>
+<div class="grid grid-cols-3 gap-2 text-center">
+<div class="bg-surface-container-low p-3">
+<span class="block font-headline text-3xl font-black text-secondary-fixed-dim">04</span>
+<span class="block font-label text-[8px] tracking-widest opacity-50">HOURS</span>
+</div>
+<div class="bg-surface-container-low p-3">
+<span class="block font-headline text-3xl font-black text-secondary-fixed-dim">22</span>
+<span class="block font-label text-[8px] tracking-widest opacity-50">MINS</span>
+</div>
+<div class="bg-surface-container-low p-3">
+<span class="block font-headline text-3xl font-black text-secondary-fixed-dim">15</span>
+<span class="block font-label text-[8px] tracking-widest opacity-50">SECS</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Footer Actions -->
+<div class="md:col-span-12 flex flex-col md:flex-row gap-4 mt-8">
+<button class="flex-1 group bg-surface-container-high hover:bg-surface-bright transition-all p-6 flex items-center justify-between border border-outline-variant/10">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-secondary-fixed-dim group-hover:scale-110 transition-transform">account_tree</span>
+<div class="text-left">
+<span class="block font-headline font-bold text-xl tracking-wide">VIEW BRACKETS</span>
+<span class="block font-label text-[10px] text-on-surface-variant tracking-[0.1em]">ANALYZE COMPETITION FLOW</span>
+</div>
+</div>
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+<button class="flex-1 group bg-secondary-fixed-dim hover:bg-secondary-container transition-all p-6 flex items-center justify-between shadow-[0_0_20px_rgba(0,218,243,0.15)]">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-on-secondary-fixed group-hover:rotate-12 transition-transform">stadium</span>
+<div class="text-left">
+<span class="block font-headline font-bold text-xl tracking-wide text-on-secondary-fixed">GO TO LOBBY</span>
+<span class="block font-label text-[10px] text-on-secondary-fixed/70 tracking-[0.1em]">JOIN SQUAD CHANNEL</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-on-secondary-fixed">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Technical Metadata (Bottom Right) -->
+<div class="absolute bottom-6 right-8 hidden md:block text-right opacity-30">
+<p class="font-label text-[10px] tracking-[0.4em] mb-1">VER: 4.0.92-TAC</p>
+<p class="font-label text-[10px] tracking-[0.4em]">ENCRYPTION: AES-256-GCM</p>
+</div>
+<!-- System Alerts (Left Vertical) -->
+<div class="absolute left-8 top-1/2 -translate-y-1/2 hidden md:flex flex-col gap-8 opacity-20">
+<span class="font-label text-[10px] tracking-[0.5em] rotate-180 [writing-mode:vertical-lr]">SYSTEM_ONLINE</span>
+<div class="w-[1px] h-32 bg-on-surface-variant/30 self-center"></div>
+<span class="font-label text-[10px] tracking-[0.5em] rotate-180 [writing-mode:vertical-lr]">SIGNAL_LOCKED</span>
+</div>
+</main>
+</body></html>

@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-container": "#201f1f",
+                        "tertiary": "#e9c400",
+                        "on-primary-fixed-variant": "#474646",
+                        "surface-container-highest": "#353534",
+                        "inverse-primary": "#5f5e5e",
+                        "on-error": "#690005",
+                        "inverse-on-surface": "#313030",
+                        "surface-container-high": "#2a2a2a",
+                        "primary-fixed-dim": "#c8c6c5",
+                        "outline-variant": "#444748",
+                        "outline": "#8e9192",
+                        "on-secondary-fixed": "#001f24",
+                        "on-surface": "#e5e2e1",
+                        "secondary-fixed-dim": "#00daf3",
+                        "error-container": "#93000a",
+                        "primary": "#c8c6c5",
+                        "on-error-container": "#ffdad6",
+                        "surface-container-lowest": "#0e0e0e",
+                        "on-tertiary-fixed-variant": "#544600",
+                        "error": "#ffb4ab",
+                        "primary-container": "#121212",
+                        "on-tertiary-fixed": "#221b00",
+                        "on-background": "#e5e2e1",
+                        "on-secondary-fixed-variant": "#004f58",
+                        "surface-tint": "#c8c6c5",
+                        "surface": "#131313",
+                        "tertiary-fixed-dim": "#e9c400",
+                        "on-secondary-container": "#00616d",
+                        "inverse-surface": "#e5e2e1",
+                        "secondary": "#bdf4ff",
+                        "on-surface-variant": "#c4c7c7",
+                        "on-primary-container": "#7e7d7d",
+                        "secondary-container": "#00e3fd",
+                        "tertiary-container": "#c9a900",
+                        "surface-container-low": "#1c1b1b",
+                        "secondary-fixed": "#9cf0ff",
+                        "surface-dim": "#131313",
+                        "background": "#131313",
+                        "on-tertiary": "#3a3000",
+                        "surface-variant": "#353534",
+                        "primary-fixed": "#e5e2e1",
+                        "tertiary-fixed": "#ffe16d",
+                        "on-secondary": "#00363d",
+                        "on-primary": "#313030",
+                        "surface-bright": "#393939",
+                        "on-tertiary-container": "#4c3f00",
+                        "on-primary-fixed": "#1c1b1b"
+                    },
+                    fontFamily: {
+                        "headline": ["Space Grotesk"],
+                        "body": ["Inter"],
+                        "label": ["Space Grotesk"]
+                    },
+                    borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .scanline {
+            background: linear-gradient(to bottom, transparent 50%, rgba(0, 229, 255, 0.02) 50.5%, transparent 51%);
+            background-size: 100% 4px;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body selection:bg-secondary-container/30">
+<!-- Shell Suppression applied: Onboarding flow hides TopAppBar and BottomNavBar to prioritize focus -->
+<main class="relative min-h-screen flex flex-col items-center justify-center p-6 overflow-hidden">
+<!-- Background Tactical Elements -->
+<div class="absolute inset-0 scanline pointer-events-none opacity-40"></div>
+<div class="absolute top-0 right-0 w-[500px] h-[500px] bg-secondary-container/5 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/3"></div>
+<div class="absolute bottom-0 left-0 w-[400px] h-[400px] bg-tertiary/5 rounded-full blur-[100px] translate-y-1/3 -translate-x-1/4"></div>
+<div class="w-full max-w-xl z-10">
+<!-- Header Section -->
+<div class="mb-12 space-y-4">
+<div class="flex items-center gap-3">
+<span class="inline-flex items-center px-2 py-0.5 rounded-sm bg-secondary-container/10 border border-secondary-container/20 text-secondary-container font-label text-[10px] font-bold tracking-[0.1em] uppercase">
+                        System Status
+                    </span>
+<div class="h-[1px] flex-grow bg-outline-variant/20"></div>
+</div>
+<h1 class="font-headline text-5xl md:text-7xl font-bold tracking-tighter uppercase leading-none text-on-background">
+                    AGS GLOBAL <span class="text-secondary-container">ARENA</span>
+</h1>
+<div class="flex items-center gap-2 font-label text-xs font-bold tracking-[0.2em] text-secondary-container">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">terminal</span>
+<span>UPLINK_INITIALIZED</span>
+</div>
+</div>
+<!-- Bento Input Section -->
+<div class="grid grid-cols-1 md:grid-cols-6 gap-4">
+<!-- Instruction Card -->
+<div class="md:col-span-6 bg-surface-container-low p-8 rounded-lg relative overflow-hidden group">
+<div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+<span class="material-symbols-outlined text-6xl">security</span>
+</div>
+<div class="max-w-md relative z-10">
+<p class="font-label text-tertiary text-xs uppercase tracking-widest mb-2 font-bold">Phase 01: Identification</p>
+<h2 class="text-2xl font-headline font-bold mb-4">ESTABLISH COMPETITIVE ALIAS</h2>
+<p class="text-on-surface-variant text-sm leading-relaxed mb-8">
+                            Your alias is your digital signature across the AGS Global network. Choose a name that reflects your tactical presence. This cannot be changed for 30 cycles.
+                        </p>
+<!-- Input Field -->
+<div class="relative">
+<label class="absolute -top-2 left-4 px-1 bg-surface-container-low text-[10px] font-label font-bold text-outline uppercase tracking-tighter" for="alias">Identity String</label>
+<input class="w-full bg-surface-container-lowest border-2 border-outline-variant/30 focus:border-secondary-container/50 text-secondary-container font-headline text-xl p-4 rounded-md tracking-widest focus:ring-0 transition-all outline-none" id="alias" placeholder="ENTER_UNIQUE_ID" type="text"/>
+<div class="absolute right-4 top-1/2 -translate-y-1/2 flex gap-2">
+<span class="material-symbols-outlined text-outline/40">fingerprint</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Secondary Data Points -->
+<div class="md:col-span-3 bg-surface-container-lowest p-6 rounded-lg border border-outline-variant/10 flex flex-col justify-between">
+<div>
+<span class="material-symbols-outlined text-secondary-container mb-4">radar</span>
+<h3 class="font-label text-xs font-bold uppercase tracking-widest text-on-surface mb-1">Global Nodes</h3>
+<p class="text-xs text-on-surface-variant">Synchronizing with 42 regional servers...</p>
+</div>
+<div class="mt-4 h-1 bg-surface-container-high w-full rounded-full overflow-hidden">
+<div class="h-full bg-secondary-container w-[85%]"></div>
+</div>
+</div>
+<div class="md:col-span-3 bg-surface-container-lowest p-6 rounded-lg border border-outline-variant/10">
+<span class="material-symbols-outlined text-tertiary mb-4">verified_user</span>
+<h3 class="font-label text-xs font-bold uppercase tracking-widest text-on-surface mb-1">Security Protocol</h3>
+<p class="text-xs text-on-surface-variant">Encrypted biometric handshake active. Terminal locked to local IP.</p>
+</div>
+</div>
+<!-- Action Area -->
+<div class="mt-12 flex flex-col md:flex-row items-center justify-between gap-8">
+<div class="flex items-center gap-6">
+<div class="flex -space-x-3">
+<div class="w-10 h-10 rounded-full border-2 border-surface bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover grayscale brightness-125" data-alt="User tactical avatar profile picture 1" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBG7ihOlgIYB_WLbkZ6jdba8C-_eGxdGaW3SJkrvrbTHkPnHTylfvtFV60XJt6KwkKhdQNcm4kdMB-J4QmmjLJXkdmPYr8SZB5OhoRkdg8GLX12Xb4H29Rzzg96FnJSVkm2_HaiszEEfaetdio_rzHoT0X_YsWtr_zasgpHNfgWLQRhaayzizkC18IUnx6U-JRY--OivUIA7sYpHC9s2uUUTvW2VZm9tbfvI4TZ488DJvJAn02gqQf9NJOUJu1sVqUJw0W6e8toDiVJ"/>
+</div>
+<div class="w-10 h-10 rounded-full border-2 border-surface bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover grayscale brightness-125" data-alt="User tactical avatar profile picture 2" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZFIAeLPPP5MQcl6AJ3_3peWE7J3Si9O-k8HOXB-Vh5LnDVCD2BCstrzOjYObI6OKByU_nNfJresbFrv0NBP7O7MtR2O0ZPaEbzGuwBAhnXpCWRj0J94R4Hbyp7Au779xWVZItbCaFBkbujeaQJgQA2K9XRQYNncj55dcMi8v3VgDYoNrylF8zn29iG08ewprR0LhgAqgfKt1J90Foe8vLrgWfs3atUzpSXiH8gbYIXTh_-hK88W5LJw-fE9h7PBr1O1SJLM7FSo7R"/>
+</div>
+<div class="w-10 h-10 rounded-full border-2 border-surface bg-surface-container-high flex items-center justify-center">
+<span class="text-[10px] font-bold">+12k</span>
+</div>
+</div>
+<p class="text-[10px] font-label font-bold uppercase tracking-tighter text-outline-variant">
+                        ACTIVE OPERATIVES <br/> READY FOR DEPLOYMENT
+                    </p>
+</div>
+<button class="group relative px-12 py-4 bg-tertiary text-on-tertiary font-label font-extrabold tracking-[0.2em] rounded-md transition-all active:scale-95 hover:bg-tertiary-fixed-dim hover:shadow-[0_0_30px_rgba(233,196,0,0.2)] flex items-center gap-4">
+<span>NEXT_PHASE</span>
+<span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward_ios</span>
+</button>
+</div>
+</div>
+<!-- System Footer Metadata -->
+<div class="absolute bottom-8 left-8 hidden lg:block">
+<div class="font-label text-[10px] text-outline-variant space-y-1">
+<p>LATENCY: 12MS</p>
+<p>ENCRYPTION: AES-512_TACTICAL</p>
+<p>BUILD_VER: 0.9.4_OMEGA</p>
+</div>
+</div>
+<div class="absolute bottom-8 right-8 hidden lg:block">
+<div class="flex gap-4">
+<div class="w-8 h-8 rounded-sm bg-surface-container-low border border-outline-variant/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-sm text-outline">language</span>
+</div>
+<div class="w-8 h-8 rounded-sm bg-surface-container-low border border-outline-variant/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-sm text-outline">help</span>
+</div>
+</div>
+</div>
+</main>
+</body></html>

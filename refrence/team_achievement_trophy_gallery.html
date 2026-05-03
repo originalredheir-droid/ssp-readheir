@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>TROPHY ROOM | Tactical Command</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;900&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-bright": "#393939",
+              "on-surface-variant": "#c4c7c7",
+              "error": "#ffb4ab",
+              "surface-dim": "#131313",
+              "secondary-fixed-dim": "#00daf3",
+              "secondary-fixed": "#9cf0ff",
+              "on-secondary": "#00363d",
+              "on-error-container": "#ffdad6",
+              "primary-fixed": "#e5e2e1",
+              "primary-fixed-dim": "#c8c6c5",
+              "primary-container": "#121212",
+              "surface-container-highest": "#353534",
+              "primary": "#c8c6c5",
+              "on-tertiary-fixed-variant": "#544600",
+              "inverse-on-surface": "#313030",
+              "on-tertiary-fixed": "#221b00",
+              "surface-tint": "#c8c6c5",
+              "on-error": "#690005",
+              "outline": "#8e9192",
+              "surface-container-high": "#2a2a2a",
+              "error-container": "#93000a",
+              "surface-container-lowest": "#0e0e0e",
+              "on-surface": "#e5e2e1",
+              "surface-variant": "#353534",
+              "surface-container": "#201f1f",
+              "on-primary-fixed": "#1c1b1b",
+              "on-secondary-container": "#00616d",
+              "secondary-container": "#00e3fd",
+              "on-secondary-fixed-variant": "#004f58",
+              "surface-container-low": "#1c1b1b",
+              "tertiary-fixed-dim": "#e9c400",
+              "on-primary-fixed-variant": "#474646",
+              "on-primary": "#313030",
+              "secondary": "#bdf4ff",
+              "tertiary": "#e9c400",
+              "on-tertiary-container": "#4c3f00",
+              "inverse-primary": "#5f5e5e",
+              "on-secondary-fixed": "#001f24",
+              "surface": "#131313",
+              "inverse-surface": "#e5e2e1",
+              "outline-variant": "#444748",
+              "tertiary-fixed": "#ffe16d",
+              "on-tertiary": "#3a3000",
+              "tertiary-container": "#c9a900",
+              "on-background": "#e5e2e1",
+              "on-primary-container": "#7e7d7d",
+              "background": "#131313"
+            },
+            fontFamily: {
+              "headline": ["Space Grotesk"],
+              "body": ["Inter"],
+              "label": ["Space Grotesk"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      .glass-panel {
+        background: rgba(53, 53, 52, 0.6);
+        backdrop-filter: blur(12px);
+      }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface font-body selection:bg-secondary-container selection:text-on-secondary-container">
+<!-- TopAppBar -->
+<header class="bg-[#131313] dark:bg-[#131313] fixed top-0 w-full z-50 shadow-[0_0_30px_rgba(0,229,255,0.03)]">
+<div class="flex justify-between items-center w-full px-6 py-4">
+<div class="flex items-center gap-4">
+<button class="text-[#00E5FF] active:scale-95 duration-100 hover:bg-[#2A2A2A] p-2 rounded-md transition-colors">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+<h1 class="font-['Space_Grotesk'] text-2xl font-black text-zinc-100 uppercase tracking-tighter">TROPHY ROOM</h1>
+</div>
+<div class="flex items-center gap-4">
+<span class="font-['Space_Grotesk'] uppercase tracking-widest font-bold text-[#00E5FF] text-xs hidden md:block">Tactical Command Alpha</span>
+<div class="w-10 h-10 rounded-md bg-surface-container-high border border-outline-variant/20 flex items-center justify-center overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Team crest with minimalist eagle emblem" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBSFiToY7V0MUdAp2rgGnOuaRCQMmr_8Awc6naf2qVd2UKxgikfnkOmORijI3JkwH5s1cMafJ2BniaOLzxuGyLh6hl-3jXkXdS-a3QL34x_5MPmAf7OVkdZFi3k24SUjPTP-ecJMkg6lmlnaCKjpj2uMOKuJ86_1aR28jjG1e66NtpLl51WDWQzjYIMe9y-VYVgv8VJ4hVQ38MLJKVivVoVy-wM9zVxE8AxVWiFl-BB2GCmihTRg5D-gSvRHO06CxgW2pCk4tQL5i-l"/>
+</div>
+</div>
+</div>
+<div class="bg-[#1C1B1B] h-px w-full opacity-20"></div>
+</header>
+<main class="pt-24 pb-32 px-6 max-w-7xl mx-auto">
+<!-- Dashboard Header Stats (Intentional Asymmetry) -->
+<section class="mb-12 grid grid-cols-1 md:grid-cols-12 gap-8 items-end">
+<div class="md:col-span-8">
+<p class="font-label text-xs uppercase tracking-[0.2em] text-secondary-fixed-dim mb-2">Operational History</p>
+<h2 class="font-headline text-5xl md:text-7xl font-black uppercase tracking-tighter leading-none">
+                    ELITE <span class="text-tertiary">SQUAD</span><br/>ACHIEVEMENTS
+                </h2>
+</div>
+<div class="md:col-span-4 bg-surface-container-low p-6 rounded-md border-l-4 border-tertiary">
+<div class="flex justify-between items-center mb-4">
+<span class="font-label text-[10px] tracking-widest text-on-surface-variant">TOTAL PRIZE POOL</span>
+<span class="material-symbols-outlined text-tertiary text-sm" data-icon="payments">payments</span>
+</div>
+<div class="font-headline text-4xl font-bold text-white">$142,500.00</div>
+<div class="mt-2 flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-secondary shadow-[0_0_8px_#00E5FF]"></span>
+<span class="text-[10px] font-label text-secondary uppercase">Verified Ledger Active</span>
+</div>
+</div>
+</section>
+<!-- Achievement Cards Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<!-- Trophy Card 1 -->
+<div class="bg-surface-container group hover:bg-surface-container-high transition-all duration-300 rounded-md overflow-hidden flex flex-col border border-transparent hover:border-secondary/10 relative">
+<!-- Achievement Status Ribbon -->
+<div class="absolute top-4 right-0 bg-tertiary text-on-tertiary font-label text-[10px] font-black px-3 py-1 uppercase tracking-tighter z-10">
+                    Champions
+                </div>
+<div class="h-48 bg-surface-container-lowest relative overflow-hidden">
+<img class="w-full h-full object-cover mix-blend-luminosity group-hover:mix-blend-normal transition-all duration-500 opacity-50 group-hover:opacity-100" data-alt="Gold trophy cup in dark atmospheric lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCLSdGtDL9W3mqgP14B8X921f_pyCs-Qw0A7pXoO3ddxX77YNG8wu9qFqqVEE2OXuo7X03RvlnCh7n2Ao4pcMmmW4JEBwAC8WalDUN8lphc5pvIz4w-Fmk9O-CobgvQeJ08lZbU_gPm4BfrkJOYE-TTHzbw7y49P0-d2skNPV2qa6nWIL1yquC7SO0ew7dHsM_h8YoDnDjMLnPMkWXAdfaa-v7DJvt5Bz_pwYwXQovFv1-sinX95bw8FT7hTmlGCeIzkHuEBAJlF1-K"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container to-transparent"></div>
+</div>
+<div class="p-6 flex-1 flex flex-col">
+<div class="flex items-center gap-2 mb-2">
+<span class="text-tertiary font-black font-label text-[10px] tracking-widest flex items-center gap-1">
+<span class="material-symbols-outlined text-xs" data-icon="verified" style="font-variation-settings: 'FILL' 1;">verified</span>
+                            VERIFIED ON LEDGER
+                        </span>
+</div>
+<h3 class="font-headline text-xl font-bold text-white mb-1 group-hover:text-secondary-fixed-dim transition-colors">Global Cyber Open 2024</h3>
+<p class="text-on-surface-variant text-xs mb-4 font-medium tracking-tight">OCT 24, 2024</p>
+<div class="bg-surface-container-lowest p-4 rounded-md mb-6 border-l border-outline-variant/30">
+<div class="flex justify-between items-center mb-3">
+<span class="text-[10px] font-label text-on-surface-variant uppercase tracking-widest">Prize Awarded</span>
+<span class="text-secondary font-bold font-headline">$50,000.00</span>
+</div>
+<div class="space-y-2">
+<div class="text-[10px] font-label text-on-surface-variant uppercase tracking-widest mb-1">Verified Roster</div>
+<div class="flex flex-wrap gap-1">
+<span class="bg-surface-container-high px-2 py-0.5 text-[9px] font-bold text-on-surface border border-outline-variant/20 rounded-sm">MAXIMUS_X</span>
+<span class="bg-surface-container-high px-2 py-0.5 text-[9px] font-bold text-on-surface border border-outline-variant/20 rounded-sm">VOID_RUNN3R</span>
+<span class="bg-surface-container-high px-2 py-0.5 text-[9px] font-bold text-on-surface border border-outline-variant/20 rounded-sm">KORTEX_X</span>
+<span class="bg-surface-container-high px-2 py-0.5 text-[9px] font-bold text-on-surface border border-outline-variant/20 rounded-sm">GHOST_PROTO</span>
+</div>
+</div>
+</div>
+<div class="mt-auto pt-4 border-t border-outline-variant/10 flex justify-between items-center">
+<div class="flex flex-col">
+<span class="text-[9px] font-label text-on-surface-variant uppercase">Match Audit ID</span>
+<span class="text-[10px] font-mono font-bold text-on-surface">AGS-MTCH-9920-X</span>
+</div>
+<button class="bg-secondary/10 hover:bg-secondary text-secondary hover:text-on-secondary px-3 py-1.5 rounded-md transition-all text-[10px] font-bold font-label uppercase">Details</button>
+</div>
+</div>
+</div>
+<!-- Trophy Card 2 -->
+<div class="bg-surface-container group hover:bg-surface-container-high transition-all duration-300 rounded-md overflow-hidden flex flex-col border border-transparent hover:border-secondary/10 relative">
+<div class="absolute top-4 right-0 bg-on-surface-variant text-on-primary-fixed font-label text-[10px] font-black px-3 py-1 uppercase tracking-tighter z-10">
+                    Finalist
+                </div>
+<div class="h-48 bg-surface-container-lowest relative overflow-hidden">
+<img class="w-full h-full object-cover mix-blend-luminosity group-hover:mix-blend-normal transition-all duration-500 opacity-50 group-hover:opacity-100" data-alt="Brushed metal tournament shield" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBCD-g_vknodggSIS2VViLnSSwRtZFB9X7sK-UlbQtSK4GmmUeIWVkW19wWwWf7bTswLa4JAf9m172NGXs4fvY4N8H7yrp6dyhVW2An7KQsIB9nFr4Y2PTQ_vSsDrTiFdE3W1GOkBNsmBjPIHlfR2nJoeLvazX5Bj485hRdBgEb0jHr9syX68tHThX-3hp4GOeEhqbK92k-d1j1yXZ8J1wilAMPtB2bgDRP8IRiCay_izY2b4MR_XY8qMmErl8llv4QXJhqyF8_2UaC"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container to-transparent"></div>
+</div>
+<div class="p-6 flex-1 flex flex-col">
+<div class="flex items-center gap-2 mb-2">
+<span class="text-tertiary font-black font-label text-[10px] tracking-widest flex items-center gap-1">
+<span class="material-symbols-outlined text-xs" data-icon="verified" style="font-variation-settings: 'FILL' 1;">verified</span>
+                            VERIFIED ON LEDGER
+                        </span>
+</div>
+<h3 class="font-headline text-xl font-bold text-white mb-1 group-hover:text-secondary-fixed-dim transition-colors">National Tactical League</h3>
+<p class="text-on-surface-variant text-xs mb-4 font-medium tracking-tight">SEP 12, 2024</p>
+<div class="bg-surface-container-lowest p-4 rounded-md mb-6 border-l border-outline-variant/30">
+<div class="flex justify-between items-center mb-3">
+<span class="text-[10px] font-label text-on-surface-variant uppercase tracking-widest">Runner Up Award</span>
+<span class="text-secondary font-bold font-headline">$22,500.00</span>
+</div>
+<div class="space-y-2">
+<div class="text-[10px] font-label text-on-surface-variant uppercase tracking-widest mb-1">Verified Roster</div>
+<div class="flex flex-wrap gap-1">
+<span class="bg-surface-container-high px-2 py-0.5 text-[9px] font-bold text-on-surface border border-outline-variant/20 rounded-sm">MAXIMUS_X</span>
+<span class="bg-surface-container-high px-2 py-0.5 text-[9px] font-bold text-on-surface border border-outline-variant/20 rounded-sm">VOID_RUNN3R</span>
+<span class="bg-surface-container-high px-2 py-0.5 text-[9px] font-bold text-on-surface border border-outline-variant/20 rounded-sm">SPECTRE</span>
+<span class="bg-surface-container-high px-2 py-0.5 text-[9px] font-bold text-on-surface border border-outline-variant/20 rounded-sm">GHOST_PROTO</span>
+</div>
+</div>
+</div>
+<div class="mt-auto pt-4 border-t border-outline-variant/10 flex justify-between items-center">
+<div class="flex flex-col">
+<span class="text-[9px] font-label text-on-surface-variant uppercase">Match Audit ID</span>
+<span class="text-[10px] font-mono font-bold text-on-surface">NTL-S6-MATCH-112</span>
+</div>
+<button class="bg-secondary/10 hover:bg-secondary text-secondary hover:text-on-secondary px-3 py-1.5 rounded-md transition-all text-[10px] font-bold font-label uppercase">Details</button>
+</div>
+</div>
+</div>
+<!-- Trophy Card 3 -->
+<div class="bg-surface-container group hover:bg-surface-container-high transition-all duration-300 rounded-md overflow-hidden flex flex-col border border-transparent hover:border-secondary/10 relative">
+<div class="absolute top-4 right-0 bg-tertiary text-on-tertiary font-label text-[10px] font-black px-3 py-1 uppercase tracking-tighter z-10">
+                    Champions
+                </div>
+<div class="h-48 bg-surface-container-lowest relative overflow-hidden">
+<img class="w-full h-full object-cover mix-blend-luminosity group-hover:mix-blend-normal transition-all duration-500 opacity-50 group-hover:opacity-100" data-alt="High-tech e-sports trophy with glowing accents" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCQAJbN55LdaEijkOn_WjUg82rubowoTfPrbjR6oEfMn0vthiATvLjusx5zIi8lhDdWJHHKZHR7bXsx_xMVHaJlv2EtZmxk5ZrHDucCIpG0cqqADPBJQtM-NTUuWQs1rmEdLL52LRV96Z9pR87om0Uq61uFusPXqqMq2KTHbyF_JyTTco2M60v-cr83Ng8mJ-IM8wHblfHuj0Q-Z8C3F1q-IzQbraokAZcHDG02eJrUr6H0WZYM3HW4KpS2ZmgyvgPTbzB0NHjCcLED"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container to-transparent"></div>
+</div>
+<div class="p-6 flex-1 flex flex-col">
+<div class="flex items-center gap-2 mb-2">
+<span class="text-tertiary font-black font-label text-[10px] tracking-widest flex items-center gap-1">
+<span class="material-symbols-outlined text-xs" data-icon="verified" style="font-variation-settings: 'FILL' 1;">verified</span>
+                            VERIFIED ON LEDGER
+                        </span>
+</div>
+<h3 class="font-headline text-xl font-bold text-white mb-1 group-hover:text-secondary-fixed-dim transition-colors">Elite Tactical Invitational</h3>
+<p class="text-on-surface-variant text-xs mb-4 font-medium tracking-tight">MAY 04, 2024</p>
+<div class="bg-surface-container-lowest p-4 rounded-md mb-6 border-l border-outline-variant/30">
+<div class="flex justify-between items-center mb-3">
+<span class="text-[10px] font-label text-on-surface-variant uppercase tracking-widest">Grand Prize</span>
+<span class="text-secondary font-bold font-headline">$70,000.00</span>
+</div>
+<div class="space-y-2">
+<div class="text-[10px] font-label text-on-surface-variant uppercase tracking-widest mb-1">Verified Roster</div>
+<div class="flex flex-wrap gap-1">
+<span class="bg-surface-container-high px-2 py-0.5 text-[9px] font-bold text-on-surface border border-outline-variant/20 rounded-sm">MAXIMUS_X</span>
+<span class="bg-surface-container-high px-2 py-0.5 text-[9px] font-bold text-on-surface border border-outline-variant/20 rounded-sm">KORTEX_X</span>
+<span class="bg-surface-container-high px-2 py-0.5 text-[9px] font-bold text-on-surface border border-outline-variant/20 rounded-sm">RAIDEN_01</span>
+<span class="bg-surface-container-high px-2 py-0.5 text-[9px] font-bold text-on-surface border border-outline-variant/20 rounded-sm">VALKYRIE</span>
+</div>
+</div>
+</div>
+<div class="mt-auto pt-4 border-t border-outline-variant/10 flex justify-between items-center">
+<div class="flex flex-col">
+<span class="text-[9px] font-label text-on-surface-variant uppercase">Match Audit ID</span>
+<span class="text-[10px] font-mono font-bold text-on-surface">ETI-INV-2024-X9</span>
+</div>
+<button class="bg-secondary/10 hover:bg-secondary text-secondary hover:text-on-secondary px-3 py-1.5 rounded-md transition-all text-[10px] font-bold font-label uppercase">Details</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Call to Action / Footer Meta -->
+<section class="mt-16 flex flex-col md:flex-row justify-between items-center gap-8 p-8 border-t border-outline-variant/20">
+<div class="text-center md:text-left">
+<h4 class="font-headline text-2xl font-black uppercase tracking-tight text-white mb-2">Authenticated Career</h4>
+<p class="text-on-surface-variant text-sm max-w-md">All achievements are cryptographically signed and verified on the Apex Protocol Ledger. These trophies represent permanent historical records of squad performance.</p>
+</div>
+<div class="flex gap-4">
+<button class="bg-surface-container hover:bg-surface-container-high text-on-surface font-label text-xs font-bold px-6 py-3 rounded-md border border-outline-variant/30 uppercase tracking-widest transition-all">Export Portfolio</button>
+<button class="bg-secondary text-on-secondary font-label text-xs font-black px-6 py-3 rounded-md shadow-[0_0_20px_rgba(0,229,255,0.3)] uppercase tracking-widest hover:bg-secondary-fixed-dim transition-all active:scale-95">Share Profile</button>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-safe bg-[#131313] h-20">
+<div class="bg-[#1C1B1B] h-[2px] w-full absolute top-0 left-0"></div>
+<button class="flex flex-col items-center justify-center text-zinc-600 hover:text-[#00E5FF] transition-all active:translate-y-0.5">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-['Space_Grotesk'] text-[10px] font-bold tracking-tight uppercase mt-1">COMMAND</span>
+</button>
+<button class="flex flex-col items-center justify-center text-zinc-600 hover:text-[#00E5FF] transition-all active:translate-y-0.5">
+<span class="material-symbols-outlined" data-icon="strategy">strategy</span>
+<span class="font-['Space_Grotesk'] text-[10px] font-bold tracking-tight uppercase mt-1">TACTICS</span>
+</button>
+<button class="flex flex-col items-center justify-center text-zinc-600 hover:text-[#00E5FF] transition-all active:translate-y-0.5">
+<span class="material-symbols-outlined" data-icon="groups">groups</span>
+<span class="font-['Space_Grotesk'] text-[10px] font-bold tracking-tight uppercase mt-1">ROSTER</span>
+</button>
+<button class="flex flex-col items-center justify-center text-[#00E5FF] bg-[#1C1B1B] rounded-md px-4 py-1 transition-all active:translate-y-0.5">
+<span class="material-symbols-outlined" data-icon="emoji_events">emoji_events</span>
+<span class="font-['Space_Grotesk'] text-[10px] font-bold tracking-tight uppercase mt-1">TROPHIES</span>
+</button>
+<button class="flex flex-col items-center justify-center text-zinc-600 hover:text-[#00E5FF] transition-all active:translate-y-0.5">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+<span class="font-['Space_Grotesk'] text-[10px] font-bold tracking-tight uppercase mt-1">INTEL</span>
+</button>
+</nav>
+</body></html>

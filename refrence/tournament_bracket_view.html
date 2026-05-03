@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AGS Global Arena - Tournament Bracket</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary-fixed-dim": "#c8c6c5",
+                        "primary-container": "#121212",
+                        "on-primary-fixed": "#1c1b1b",
+                        "tertiary-fixed": "#ffe16d",
+                        "secondary-fixed-dim": "#00daf3",
+                        "secondary": "#bdf4ff",
+                        "inverse-primary": "#5f5e5e",
+                        "tertiary": "#e9c400",
+                        "outline-variant": "#444748",
+                        "inverse-on-surface": "#313030",
+                        "surface-bright": "#393939",
+                        "on-secondary": "#00363d",
+                        "on-background": "#e5e2e1",
+                        "on-secondary-container": "#00616d",
+                        "on-primary": "#313030",
+                        "surface-container-low": "#1c1b1b",
+                        "surface-dim": "#131313",
+                        "on-tertiary": "#3a3000",
+                        "on-error": "#690005",
+                        "tertiary-container": "#c9a900",
+                        "tertiary-fixed-dim": "#e9c400",
+                        "on-surface-variant": "#c4c7c7",
+                        "surface": "#131313",
+                        "primary-fixed": "#e5e2e1",
+                        "on-surface": "#e5e2e1",
+                        "primary": "#c8c6c5",
+                        "surface-container-lowest": "#0e0e0e",
+                        "error-container": "#93000a",
+                        "on-primary-container": "#7e7d7d",
+                        "on-secondary-fixed-variant": "#004f58",
+                        "surface-variant": "#353534",
+                        "background": "#131313",
+                        "surface-container-highest": "#353534",
+                        "surface-container-high": "#2a2a2a",
+                        "outline": "#8e9192",
+                        "on-secondary-fixed": "#001f24",
+                        "error": "#ffb4ab",
+                        "on-error-container": "#ffdad6",
+                        "surface-tint": "#c8c6c5",
+                        "on-tertiary-fixed-variant": "#544600",
+                        "inverse-surface": "#e5e2e1",
+                        "on-tertiary-fixed": "#221b00",
+                        "surface-container": "#201f1f",
+                        "on-tertiary-container": "#4c3f00",
+                        "on-primary-fixed-variant": "#474646",
+                        "secondary-fixed": "#9cf0ff",
+                        "secondary-container": "#00e3fd"
+                    },
+                    fontFamily: {
+                        "headline": ["Space Grotesk"],
+                        "body": ["Inter"],
+                        "label": ["Space Grotesk"]
+                    },
+                    borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        ::-webkit-scrollbar { width: 4px; height: 4px; }
+        ::-webkit-scrollbar-track { background: #131313; }
+        ::-webkit-scrollbar-thumb { background: #2A2A2A; border-radius: 2px; }
+        ::-webkit-scrollbar-thumb:hover { background: #00E5FF; }
+        .bracket-connector-h { height: 2px; background: rgba(68, 71, 72, 0.2); }
+        .bracket-connector-v { width: 2px; background: rgba(68, 71, 72, 0.2); }
+        .active-path { background: #00E5FF !important; box-shadow: 0 0 8px rgba(0, 229, 255, 0.4); }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body selection:bg-secondary-container/30">
+<!-- Top Navigation Anchor -->
+<header class="sticky top-0 w-full z-50 px-6 py-4 flex items-center justify-between bg-[#131313] shadow-[0_0_15px_rgba(0,229,255,0.05)]">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[#00E5FF]">menu</span>
+<h1 class="font-['Space_Grotesk'] uppercase tracking-widest text-sm text-[#00E5FF] font-bold">TACTICAL COMMAND</h1>
+</div>
+<div class="hidden md:flex gap-8 items-center">
+<nav class="flex gap-6">
+<a class="text-[#00E5FF] font-['Space_Grotesk'] text-xs font-bold tracking-widest uppercase" href="#">DASHBOARD</a>
+<a class="text-neutral-500 hover:text-neutral-300 font-['Space_Grotesk'] text-xs font-bold tracking-widest uppercase" href="#">BRACKETS</a>
+<a class="text-neutral-500 hover:text-neutral-300 font-['Space_Grotesk'] text-xs font-bold tracking-widest uppercase" href="#">LIVE</a>
+<a class="text-neutral-500 hover:text-neutral-300 font-['Space_Grotesk'] text-xs font-bold tracking-widest uppercase" href="#">INTEL</a>
+</nav>
+</div>
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-none bg-surface-container-high flex items-center justify-center overflow-hidden border border-outline-variant/20">
+<img alt="User Profile Avatar" class="w-full h-full object-cover" data-alt="Tactical operator profile avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCkRXQZgFVJyCDoVxHujJ6bJFLIcn3PufpTAYhNIWnzjrrO1dPxZ4a9CjUTRP5eq2waZMn8pVlR3t1_laXdxlT-ijnhA7bs2UWYSgUajBTeCIXQtbTZa8azrMrpYVuIyjwceIj7vI1N__STloKHR9FefzgoOTsD4AN_tYdI35W37n7Tq7zstgW2vdxAw5WMTErl3JN9pG3AF7BjisueHnclJu5AyhsbUmspNzPF_5FLi2fROPP1tr4rBd00z6fKgMQhDOtoDdp_buTy"/>
+</div>
+</div>
+</header>
+<main class="min-h-screen pb-24">
+<!-- Tournament Info Header -->
+<section class="px-6 pt-12 pb-8 bg-surface-container-lowest border-b border-outline-variant/10">
+<div class="max-w-7xl mx-auto flex flex-col md:flex-row md:items-end justify-between gap-6">
+<div>
+<div class="flex items-center gap-2 mb-2">
+<span class="px-2 py-0.5 bg-tertiary text-on-tertiary font-label text-[10px] font-black tracking-tighter rounded-sm">OFFICIAL CIRCUIT</span>
+<span class="text-outline text-[10px] font-label tracking-widest">ID: VAL-2024-WIN-01</span>
+</div>
+<h2 class="font-headline text-5xl md:text-6xl font-bold tracking-tighter text-on-surface mb-4">ELITE VALORANT CIRCUIT</h2>
+<div class="flex flex-wrap gap-6 text-sm">
+<div class="flex flex-col">
+<span class="text-outline font-label text-[10px] uppercase tracking-widest">DATES</span>
+<span class="text-on-surface font-medium">NOV 12 - DEC 04, 2024</span>
+</div>
+<div class="flex flex-col">
+<span class="text-outline font-label text-[10px] uppercase tracking-widest">PRIZE POOL</span>
+<span class="text-secondary-fixed-dim font-bold text-lg">$250,000 USD</span>
+</div>
+<div class="flex flex-col">
+<span class="text-outline font-label text-[10px] uppercase tracking-widest">REGION</span>
+<span class="text-on-surface font-medium uppercase">GLOBAL / EMEA</span>
+</div>
+</div>
+</div>
+<div class="flex gap-3">
+<button class="px-6 py-2 bg-surface-container-high hover:bg-[#2A2A2A] text-on-surface font-label text-xs font-bold tracking-widest transition-colors flex items-center gap-2 border border-outline-variant/20">
+<span class="material-symbols-outlined text-sm">download</span> EXPORT INTEL
+                    </button>
+<button class="px-6 py-2 bg-[#00E5FF] hover:bg-[#00DAF3] text-on-secondary font-label text-xs font-bold tracking-widest transition-all active:scale-95">
+                        VIEW LIVE FEED
+                    </button>
+</div>
+</div>
+</section>
+<!-- Bracket Visualization -->
+<section class="overflow-x-auto overflow-y-hidden px-6 py-12">
+<div class="inline-flex gap-16 min-w-full pb-8">
+<!-- Quarter-Finals -->
+<div class="flex flex-col gap-12 min-w-[320px]">
+<h3 class="font-label text-xs tracking-[0.2em] text-outline border-l-2 border-outline-variant/30 pl-3 uppercase">Quarter-Finals</h3>
+<!-- Match 1 -->
+<div class="relative flex items-center">
+<div class="w-full bg-surface-container border-l-4 border-secondary-fixed-dim p-4 flex flex-col gap-3 shadow-lg">
+<div class="flex justify-between items-center text-[10px] font-label text-outline tracking-wider">
+<span>MATCH ID: 401</span>
+<span class="text-secondary-fixed-dim flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary-fixed-dim"></span> LIVE
+                                </span>
+</div>
+<div class="space-y-2">
+<div class="flex justify-between items-center">
+<div class="flex items-center gap-3">
+<span class="text-[10px] text-outline font-mono">#01</span>
+<span class="font-headline font-bold text-on-surface tracking-tight uppercase">NAVI TACTICAL</span>
+</div>
+<span class="font-headline text-lg font-black text-secondary-fixed-dim">13</span>
+</div>
+<div class="flex justify-between items-center opacity-60">
+<div class="flex items-center gap-3">
+<span class="text-[10px] text-outline font-mono">#08</span>
+<span class="font-headline font-bold text-on-surface tracking-tight uppercase">OMEGA OPS</span>
+</div>
+<span class="font-headline text-lg font-black">09</span>
+</div>
+</div>
+</div>
+<div class="absolute -right-16 w-16 h-[2px] active-path"></div>
+</div>
+<!-- Match 2 -->
+<div class="relative flex items-center">
+<div class="w-full bg-surface-container border-l-4 border-outline-variant/30 p-4 flex flex-col gap-3">
+<div class="flex justify-between items-center text-[10px] font-label text-outline tracking-wider">
+<span>MATCH ID: 402</span>
+<span>COMPLETED</span>
+</div>
+<div class="space-y-2">
+<div class="flex justify-between items-center opacity-60">
+<div class="flex items-center gap-3">
+<span class="text-[10px] text-outline font-mono">#04</span>
+<span class="font-headline font-bold text-on-surface tracking-tight uppercase">SENTINEL GHOST</span>
+</div>
+<span class="font-headline text-lg font-black">11</span>
+</div>
+<div class="flex justify-between items-center">
+<div class="flex items-center gap-3">
+<span class="text-[10px] text-outline font-mono">#05</span>
+<span class="font-headline font-bold text-on-surface tracking-tight uppercase">FNATIC ELITE</span>
+</div>
+<span class="font-headline text-lg font-black text-tertiary">13</span>
+</div>
+</div>
+</div>
+<div class="absolute -right-16 w-16 h-[2px] bg-outline-variant/20"></div>
+</div>
+<!-- Match 3 -->
+<div class="relative flex items-center">
+<div class="w-full bg-surface-container border-l-4 border-outline-variant/30 p-4 flex flex-col gap-3">
+<div class="flex justify-between items-center text-[10px] font-label text-outline tracking-wider">
+<span>MATCH ID: 403</span>
+<span class="text-tertiary">UPCOMING</span>
+</div>
+<div class="space-y-2">
+<div class="flex justify-between items-center">
+<div class="flex items-center gap-3">
+<span class="text-[10px] text-outline font-mono">#02</span>
+<span class="font-headline font-bold text-on-surface tracking-tight uppercase">LOUD ESPORTS</span>
+</div>
+<span class="font-headline text-lg font-black text-outline">—</span>
+</div>
+<div class="flex justify-between items-center">
+<div class="flex items-center gap-3">
+<span class="text-[10px] text-outline font-mono">#07</span>
+<span class="font-headline font-bold text-on-surface tracking-tight uppercase">DRX VISION</span>
+</div>
+<span class="font-headline text-lg font-black text-outline">—</span>
+</div>
+</div>
+</div>
+<div class="absolute -right-16 w-16 h-[2px] bg-outline-variant/20"></div>
+</div>
+<!-- Match 4 -->
+<div class="relative flex items-center">
+<div class="w-full bg-surface-container border-l-4 border-outline-variant/30 p-4 flex flex-col gap-3">
+<div class="flex justify-between items-center text-[10px] font-label text-outline tracking-wider">
+<span>MATCH ID: 404</span>
+<span class="text-tertiary">UPCOMING</span>
+</div>
+<div class="space-y-2">
+<div class="flex justify-between items-center">
+<div class="flex items-center gap-3">
+<span class="text-[10px] text-outline font-mono">#03</span>
+<span class="font-headline font-bold text-on-surface tracking-tight uppercase">PAPER REX</span>
+</div>
+<span class="font-headline text-lg font-black text-outline">—</span>
+</div>
+<div class="flex justify-between items-center">
+<div class="flex items-center gap-3">
+<span class="text-[10px] text-outline font-mono">#06</span>
+<span class="font-headline font-bold text-on-surface tracking-tight uppercase">NRG COMMAND</span>
+</div>
+<span class="font-headline text-lg font-black text-outline">—</span>
+</div>
+</div>
+</div>
+<div class="absolute -right-16 w-16 h-[2px] bg-outline-variant/20"></div>
+</div>
+</div>
+<!-- Connectors: Quarter to Semi -->
+<div class="flex flex-col justify-around py-16 -ml-16 mr-0">
+<div class="h-[188px] w-8 border-r-2 border-t-2 border-b-2 border-outline-variant/20 relative">
+<div class="absolute top-0 right-0 w-2 h-2 rounded-full active-path translate-x-1/2 -translate-y-1/2"></div>
+<div class="absolute -right-16 top-1/2 w-16 h-[2px] bg-outline-variant/20 -translate-y-1/2"></div>
+</div>
+<div class="h-[188px] w-8 border-r-2 border-t-2 border-b-2 border-outline-variant/20 relative">
+<div class="absolute -right-16 top-1/2 w-16 h-[2px] bg-outline-variant/20 -translate-y-1/2"></div>
+</div>
+</div>
+<!-- Semi-Finals -->
+<div class="flex flex-col justify-around min-w-[320px] py-8">
+<h3 class="font-label text-xs tracking-[0.2em] text-outline border-l-2 border-outline-variant/30 pl-3 uppercase">Semi-Finals</h3>
+<!-- Semi 1 -->
+<div class="relative flex items-center">
+<div class="w-full bg-surface-container-high border-l-4 border-secondary-fixed-dim/40 p-5 flex flex-col gap-4 shadow-xl">
+<div class="flex justify-between items-center text-[10px] font-label text-outline tracking-wider">
+<span>SEMIFINAL ID: 201</span>
+<span class="text-outline">TBD - DEC 02</span>
+</div>
+<div class="space-y-3">
+<div class="flex justify-between items-center">
+<div class="flex items-center gap-4">
+<div class="w-1.5 h-1.5 rounded-full active-path"></div>
+<span class="font-headline font-bold text-on-surface text-lg uppercase">NAVI TACTICAL</span>
+</div>
+<span class="font-headline text-xl font-black text-outline">—</span>
+</div>
+<div class="flex justify-between items-center">
+<div class="flex items-center gap-4">
+<div class="w-1.5 h-1.5 rounded-full bg-outline-variant/30"></div>
+<span class="font-headline font-bold text-on-surface text-lg uppercase">FNATIC ELITE</span>
+</div>
+<span class="font-headline text-xl font-black text-outline">—</span>
+</div>
+</div>
+</div>
+<div class="absolute -right-16 w-16 h-[2px] bg-outline-variant/20"></div>
+</div>
+<!-- Semi 2 -->
+<div class="relative flex items-center">
+<div class="w-full bg-surface-container-high border-l-4 border-outline-variant/20 p-5 flex flex-col gap-4">
+<div class="flex justify-between items-center text-[10px] font-label text-outline tracking-wider">
+<span>SEMIFINAL ID: 202</span>
+<span class="text-outline">TBD - DEC 02</span>
+</div>
+<div class="space-y-3">
+<div class="flex justify-between items-center opacity-40">
+<span class="font-label text-[10px] tracking-widest pl-4">WINNER OF MATCH 403</span>
+</div>
+<div class="flex justify-between items-center opacity-40">
+<span class="font-label text-[10px] tracking-widest pl-4">WINNER OF MATCH 404</span>
+</div>
+</div>
+</div>
+<div class="absolute -right-16 w-16 h-[2px] bg-outline-variant/20"></div>
+</div>
+</div>
+<!-- Connectors: Semi to Grand Final -->
+<div class="flex flex-col justify-center -ml-16 mr-0">
+<div class="h-[432px] w-8 border-r-2 border-t-2 border-b-2 border-outline-variant/20 relative">
+<div class="absolute -right-16 top-1/2 w-16 h-[2px] bg-outline-variant/20 -translate-y-1/2"></div>
+</div>
+</div>
+<!-- Grand Final -->
+<div class="flex flex-col justify-center min-w-[380px]">
+<div class="text-center mb-8">
+<span class="material-symbols-outlined text-tertiary text-4xl mb-2" style="font-variation-settings: 'FILL' 1;">emoji_events</span>
+<h3 class="font-label text-sm tracking-[0.4em] text-tertiary uppercase font-black">Grand Final</h3>
+<p class="text-outline text-[10px] tracking-widest mt-1">DECEMBER 04 • ARENA PRIME</p>
+</div>
+<div class="relative">
+<!-- Glassmorphism Grand Final Card -->
+<div class="w-full bg-surface-variant/40 backdrop-blur-xl border border-[#00E5FF]/20 p-8 flex flex-col gap-6 shadow-[0_0_40px_rgba(0,229,255,0.1)] relative overflow-hidden">
+<div class="absolute top-0 right-0 p-2">
+<div class="text-[8px] font-bold text-[#00E5FF]/50 uppercase tracking-[0.3em] vertical-text transform rotate-90 origin-right">CHAMPIONSHIP NODE</div>
+</div>
+<div class="flex justify-between items-center">
+<div class="flex flex-col">
+<span class="text-[10px] font-label text-secondary-fixed-dim tracking-[0.2em] mb-1">FINALIST ALPHA</span>
+<span class="font-headline font-bold text-2xl text-on-surface uppercase tracking-tighter">NAVI TACTICAL</span>
+</div>
+<div class="font-headline text-3xl font-black text-outline/30 italic">VS</div>
+<div class="flex flex-col items-end">
+<span class="text-[10px] font-label text-outline tracking-[0.2em] mb-1 text-right">FINALIST BETA</span>
+<span class="font-headline font-bold text-2xl text-outline/40 uppercase tracking-tighter">PENDING INTEL</span>
+</div>
+</div>
+<div class="mt-4 pt-6 border-t border-outline-variant/20 flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-outline text-sm">schedule</span>
+<span class="font-label text-[10px] text-outline uppercase tracking-widest">20:00 UTC</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-outline text-sm">stadium</span>
+<span class="font-label text-[10px] text-outline uppercase tracking-widest">BERLIN CENTER</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Tactical Intel Footer (Bento Style) -->
+<section class="px-6 py-8">
+<div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-4">
+<div class="bg-surface-container p-6 border-l-2 border-tertiary">
+<h4 class="font-label text-[10px] text-outline tracking-widest uppercase mb-4">Win Probability</h4>
+<div class="flex items-center gap-4">
+<div class="flex-1">
+<div class="flex justify-between text-xs mb-1">
+<span class="font-bold">NAVI</span>
+<span class="text-secondary-fixed-dim font-black">68%</span>
+</div>
+<div class="h-1 bg-surface-container-high w-full">
+<div class="h-1 bg-secondary-fixed-dim" style="width: 68%"></div>
+</div>
+</div>
+<div class="text-xs font-label text-outline">VS</div>
+<div class="flex-1 text-right">
+<div class="flex justify-between text-xs mb-1">
+<span class="text-outline font-black">32%</span>
+<span class="font-bold opacity-40">FNATIC</span>
+</div>
+<div class="h-1 bg-surface-container-high w-full">
+<div class="h-1 bg-outline-variant" style="width: 32%"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-surface-container p-6 border-l-2 border-outline-variant/30">
+<h4 class="font-label text-[10px] text-outline tracking-widest uppercase mb-4">Top Performer (Live)</h4>
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 bg-surface-container-high overflow-hidden">
+<img alt="Player Avatar" class="w-full h-full object-cover" data-alt="Cyberpunk style professional player avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuArIDM1IgTge-5U3Ez7doRsidkMyQHcAbnB3zRt1AGZlEcN1E5-BixM23Ve8EbEPJZb1X9af0RhJXptVNX37ibHpPP85wp4hWo0KhD9JGXWYpPZ2somgyI0LkbcEBdZdCa3yG35me_t7MZohAl049pRZu6793VqEd-tyFjCWtv_9Sg4v1I5I1bGXcIYc5aQ6wk9fJbFaWBrHHcqLL143D7_syyBqPYxGP9GLk83xUkxEE4g6_PuyRgD5v0QPeNybhm6sX6KxJ3jMXfp"/>
+</div>
+<div>
+<div class="font-headline font-bold text-on-surface uppercase text-sm">s1mple_tactical</div>
+<div class="text-[10px] text-secondary-fixed-dim font-label tracking-widest">K/D: 2.45 • ADR: 184</div>
+</div>
+</div>
+</div>
+<div class="bg-surface-container p-6 border-l-2 border-secondary-fixed-dim">
+<h4 class="font-label text-[10px] text-outline tracking-widest uppercase mb-4">Next Global Broadcast</h4>
+<div class="flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-headline font-bold text-on-surface text-lg">04:12:44</span>
+<span class="text-[10px] text-outline font-label tracking-widest uppercase">COUNTDOWN TO SEMI B</span>
+</div>
+<button class="bg-secondary-fixed-dim/10 p-2 rounded-sm border border-secondary-fixed-dim/20">
+<span class="material-symbols-outlined text-secondary-fixed-dim">notifications_active</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Bottom Navigation Bar (Mobile Anchor) -->
+<nav class="fixed bottom-0 w-full z-50 flex justify-around items-center px-4 py-3 bg-[#131313]/90 backdrop-blur-xl border-t border-[#00E5FF]/10 md:hidden">
+<a class="flex flex-col items-center justify-center text-neutral-500 hover:text-neutral-300 transition-all duration-300 ease-in-out" href="#">
+<span class="material-symbols-outlined">grid_view</span>
+<span class="font-['Space_Grotesk'] text-[10px] font-bold uppercase tracking-tight">DASHBOARD</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#00E5FF] bg-[#1C1B1B] rounded-md px-3 py-1 transition-all duration-300 ease-in-out" href="#">
+<span class="material-symbols-outlined">account_tree</span>
+<span class="font-['Space_Grotesk'] text-[10px] font-bold uppercase tracking-tight">BRACKETS</span>
+</a>
+<a class="flex flex-col items-center justify-center text-neutral-500 hover:text-neutral-300 transition-all duration-300 ease-in-out" href="#">
+<span class="material-symbols-outlined">sensors</span>
+<span class="font-['Space_Grotesk'] text-[10px] font-bold uppercase tracking-tight">LIVE</span>
+</a>
+<a class="flex flex-col items-center justify-center text-neutral-500 hover:text-neutral-300 transition-all duration-300 ease-in-out" href="#">
+<span class="material-symbols-outlined">analytics</span>
+<span class="font-['Space_Grotesk'] text-[10px] font-bold uppercase tracking-tight">INTEL</span>
+</a>
+</nav>
+</body></html>

@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Tactical Depot | AGS Global Arena</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-container-low": "#1c1b1b",
+                        "tertiary": "#e9c400",
+                        "secondary-fixed": "#9cf0ff",
+                        "background": "#131313",
+                        "surface-tint": "#c8c6c5",
+                        "on-secondary-fixed-variant": "#004f58",
+                        "on-background": "#e5e2e1",
+                        "on-tertiary": "#3a3000",
+                        "surface-container": "#201f1f",
+                        "on-tertiary-container": "#4c3f00",
+                        "surface-bright": "#393939",
+                        "on-primary-fixed": "#1c1b1b",
+                        "tertiary-container": "#c9a900",
+                        "outline-variant": "#444748",
+                        "inverse-primary": "#5f5e5e",
+                        "surface-variant": "#353534",
+                        "primary": "#c8c6c5",
+                        "inverse-surface": "#e5e2e1",
+                        "inverse-on-surface": "#313030",
+                        "secondary-container": "#00e3fd",
+                        "surface-container-lowest": "#0e0e0e",
+                        "on-secondary": "#00363d",
+                        "primary-fixed": "#e5e2e1",
+                        "on-surface": "#e5e2e1",
+                        "secondary": "#bdf4ff",
+                        "on-primary-container": "#7e7d7d",
+                        "on-error-container": "#ffdad6",
+                        "surface-container-high": "#2a2a2a",
+                        "secondary-fixed-dim": "#00daf3",
+                        "on-tertiary-fixed": "#221b00",
+                        "tertiary-fixed-dim": "#e9c400",
+                        "error-container": "#93000a",
+                        "primary-fixed-dim": "#c8c6c5",
+                        "on-surface-variant": "#c4c7c7",
+                        "surface-dim": "#131313",
+                        "primary-container": "#121212",
+                        "error": "#ffb4ab",
+                        "outline": "#8e9192",
+                        "on-primary": "#313030",
+                        "surface": "#131313",
+                        "tertiary-fixed": "#ffe16d",
+                        "on-tertiary-fixed-variant": "#544600",
+                        "on-error": "#690005",
+                        "surface-container-highest": "#353534",
+                        "on-secondary-fixed": "#001f24",
+                        "on-secondary-container": "#00616d",
+                        "on-primary-fixed-variant": "#474646"
+                    },
+                    fontFamily: {
+                        "headline": ["Space Grotesk"],
+                        "body": ["Inter"],
+                        "label": ["Space Grotesk"]
+                    },
+                    borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body select-none">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-[#131313] text-[#00E5FF] font-['Space_Grotesk'] tracking-tight uppercase flex justify-between items-center px-6 py-4">
+<div class="flex items-center gap-4">
+<button class="material-symbols-outlined active:scale-95 duration-150 p-2 hover:bg-[#2A2A2A] rounded-md transition-colors">menu</button>
+<h1 class="text-2xl font-bold tracking-tighter text-[#00E5FF]">TACTICAL DEPOT</h1>
+</div>
+<div class="flex items-center gap-6">
+<button class="material-symbols-outlined hover:bg-[#2A2A2A] p-2 rounded-md transition-colors">search</button>
+<div class="flex items-center gap-2 group cursor-pointer active:scale-95 duration-150">
+<span class="material-symbols-outlined">shopping_bag</span>
+<span class="font-bold text-sm bg-secondary-container text-on-secondary px-2 py-0.5 rounded-sm">3</span>
+</div>
+<div class="hidden md:block h-6 w-[1px] bg-zinc-800"></div>
+<span class="text-[#00E5FF] font-bold text-lg">$1,240.50</span>
+</div>
+<div class="absolute bottom-0 left-0 w-full h-[1px] bg-[#1C1B1B]"></div>
+</header>
+<main class="pt-24 pb-32 px-4 md:px-12 max-w-7xl mx-auto space-y-8">
+<!-- Wallet Integration Bar -->
+<section class="bg-surface-container-low p-1 rounded-lg overflow-hidden flex items-center shadow-[0_-4px_24px_rgba(0,229,255,0.04)]">
+<div class="flex-1 flex items-center justify-between px-6 py-3 bg-surface-container-lowest border-l-4 border-tertiary">
+<div class="flex flex-col">
+<span class="font-label text-[10px] tracking-widest text-zinc-500 uppercase">Arena Wallet Balance</span>
+<span class="font-headline text-xl font-bold text-on-surface">$1,240.50</span>
+</div>
+<button class="bg-[#2A2A2A] hover:bg-[#353534] text-[#00E5FF] font-label text-[11px] px-4 py-2 rounded-md transition-all active:scale-95 uppercase tracking-tighter">Top Up Credits</button>
+</div>
+</section>
+<!-- Category Navigation -->
+<nav class="flex gap-2 overflow-x-auto no-scrollbar pb-2">
+<button class="bg-[#1C1B1B] text-[#00E5FF] border-l-2 border-[#00E5FF] px-6 py-3 font-label text-sm font-bold uppercase whitespace-nowrap">APPAREL</button>
+<button class="text-zinc-500 hover:bg-[#201F1F] hover:text-zinc-200 px-6 py-3 font-label text-sm font-bold uppercase whitespace-nowrap transition-colors">EQUIPMENT</button>
+<button class="text-zinc-500 hover:bg-[#201F1F] hover:text-zinc-200 px-6 py-3 font-label text-sm font-bold uppercase whitespace-nowrap transition-colors">PRO GEAR</button>
+<button class="text-zinc-500 hover:bg-[#201F1F] hover:text-zinc-200 px-6 py-3 font-label text-sm font-bold uppercase whitespace-nowrap transition-colors">TEAM MERCH</button>
+</nav>
+<!-- Featured Product Hero -->
+<section class="relative h-[480px] rounded-xl overflow-hidden group">
+<div class="absolute inset-0 bg-gradient-to-r from-background via-background/40 to-transparent z-10"></div>
+<img alt="Apex Performance Suit" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="High-tech futuristic tactical body suit in matte black" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBqejroCAf7TnBisSklsP54TrPkaZ86N29_HQcLGWzGSDf4It8aI-ikB4mCxTeqxoZOJ89h4YBgo1Ay4LcxFmutSnyczNH6Ga5JU5-un0q-CDh9vUzTk5W33evR82Uj4nUmHeug1OnedDxDXWCXJzMmS-LUTHhPCSmywTcUhS7m61_HTm4TI__0uHJC-5w4jU-8MWCaEpA1vqUWkGDw5z0Y_IZGLed0-Dpcfy6HGPbkLXb2-JuM_IyFRqA6_787NyKaAXBqImDeFvSi"/>
+<div class="absolute bottom-0 left-0 p-8 md:p-12 z-20 max-w-xl space-y-6">
+<div>
+<span class="inline-block bg-secondary-container/20 text-secondary-container font-label text-[10px] px-3 py-1 tracking-widest uppercase mb-4 backdrop-blur-md">Tactical Elite Drop</span>
+<h2 class="font-headline text-5xl md:text-6xl font-extrabold tracking-tighter uppercase leading-none">Apex Performance Suit</h2>
+<p class="text-zinc-400 mt-4 font-body leading-relaxed">Engineered with neuro-link feedback sensors and thermal regulation for high-stakes arena dominance.</p>
+</div>
+<div class="flex items-center gap-8">
+<div class="flex flex-col">
+<span class="font-label text-[10px] text-zinc-500 tracking-widest uppercase">Pricing</span>
+<span class="text-tertiary text-3xl font-bold font-headline">$120.00</span>
+</div>
+<button class="bg-secondary-fixed-dim hover:bg-secondary-container text-background font-label font-bold px-10 py-4 rounded-md transition-all active:scale-95 flex items-center gap-3">
+                        QUICK DEPLOY
+                        <span class="material-symbols-outlined text-lg">bolt</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Product Grid Header -->
+<div class="flex justify-between items-end border-b border-zinc-800/20 pb-4">
+<h3 class="font-headline text-2xl font-bold uppercase tracking-tight">Standard Issue Gear</h3>
+<span class="font-label text-xs text-zinc-500 uppercase tracking-widest">Showing 24 Items</span>
+</div>
+<!-- Product Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- Product Card 1 -->
+<div class="bg-surface-container hover:bg-surface-container-high transition-all duration-300 p-4 rounded-lg flex flex-col gap-4 group">
+<div class="relative aspect-video rounded-md overflow-hidden bg-surface-container-lowest">
+<img alt="Tactical Cleats" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="Sleek red and black professional sports cleats" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAkIpmtb4llxDT1YIp18FyDDMOKrzjNu34oif6u4hiulSNOMnreZGSlUHqjSLVhmHjUUj2m9ncV0cpIdGZK4tcvNAwH3qGPkWtjYArRsC9W2Gik_w7yAb6FnC0Emx8nyqFgiR5fNAZqF2uQJM79qVhxSL0j_uMQJS-Og2tH1B4-6i_e-0xDiBsz2b1b-9dKajrIVcF62dydBn6JHhTJafPL9ttOJKeILhd_HG-BKWvMU3JnEoyDrztdg1dIzHJfm_oObmhnWv_Abvls"/>
+<div class="absolute top-2 left-2 flex gap-1">
+<span class="bg-surface-container-lowest/80 backdrop-blur-sm text-[10px] px-2 py-1 border border-zinc-800 font-label text-zinc-300">VANGUARD</span>
+</div>
+</div>
+<div class="flex justify-between items-start">
+<div class="space-y-1">
+<h4 class="font-headline font-bold text-lg uppercase">Tactical Cleats Mk.II</h4>
+<p class="text-xs text-zinc-500 font-label">ULTRA-GRIP TRACTION SOLE</p>
+</div>
+<span class="text-tertiary font-headline font-bold text-xl">$85.00</span>
+</div>
+<div class="flex gap-2">
+<button class="flex-1 bg-surface-container-low border border-outline-variant/20 hover:border-secondary-container/50 text-zinc-300 hover:text-secondary-container font-label text-xs py-3 rounded-md transition-colors uppercase">View Specs</button>
+<button class="w-12 h-12 flex items-center justify-center bg-secondary-fixed-dim text-background rounded-md active:scale-90 transition-transform">
+<span class="material-symbols-outlined">add</span>
+</button>
+</div>
+</div>
+<!-- Product Card 2 -->
+<div class="bg-surface-container hover:bg-surface-container-high transition-all duration-300 p-4 rounded-lg flex flex-col gap-4 group">
+<div class="relative aspect-video rounded-md overflow-hidden bg-surface-container-lowest">
+<img alt="Cyber-Sport Jersey" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="Futuristic athletic jersey with neon blue accents" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDvKwY8eM5hoy_pOn1aS5QWpbHlRtrGodn_VJ8IUePfxszGgnxnccCHFaJtHVMCjan3Pj0q8Nv0nyIAL255vTTfOrh-RvWhpNOxISLYyO07qTM9JC6We9agEpr0RzukcnU11K0nDs-tvgMjcKyD3F171z2OGwwEl2n5FMplUR1IwaC8avOexBRWXROgd617CiYqodvNjojcg0kvTkkt5Ktn84SBy6VNZZrE-h2rb1_UvgEXld1R5fYjTalxYfXKYQBIs28soaS060TQ"/>
+<div class="absolute top-2 left-2 flex gap-1">
+<span class="bg-surface-container-lowest/80 backdrop-blur-sm text-[10px] px-2 py-1 border border-zinc-800 font-label text-zinc-300">AIFF OFFICIAL</span>
+</div>
+</div>
+<div class="flex justify-between items-start">
+<div class="space-y-1">
+<h4 class="font-headline font-bold text-lg uppercase">Cyber-Sport Jersey</h4>
+<p class="text-xs text-zinc-500 font-label">ANTI-PERSPIRANT IONIC MESH</p>
+</div>
+<span class="text-tertiary font-headline font-bold text-xl">$65.00</span>
+</div>
+<div class="flex gap-2">
+<button class="flex-1 bg-surface-container-low border border-outline-variant/20 hover:border-secondary-container/50 text-zinc-300 hover:text-secondary-container font-label text-xs py-3 rounded-md transition-colors uppercase">View Specs</button>
+<button class="w-12 h-12 flex items-center justify-center bg-secondary-fixed-dim text-background rounded-md active:scale-90 transition-transform">
+<span class="material-symbols-outlined">add</span>
+</button>
+</div>
+</div>
+<!-- Product Card 3 -->
+<div class="bg-surface-container hover:bg-surface-container-high transition-all duration-300 p-4 rounded-lg flex flex-col gap-4 group">
+<div class="relative aspect-video rounded-md overflow-hidden bg-surface-container-lowest">
+<img alt="Ergo-Grip Controller" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="Professional grade gaming controller with carbon fiber finish" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCDUIavu2tygu61jD_PSCRkECGTL6fpAFnSzai79pN20ZkJpuBo1_LrPlBJFRFWJ5hpfDFSMor_AJzWAkVUXNsJg7fBmPQHd31_v3sknRXdIvsbNnGz1gXxlyTvYpoNe-P3xSHXQKGuvYPLsNp98Goj8SQGWoUAvIi2CvEckNmEeCogBZ85wk_nHhNWfh7OviVZ9fyICC4ba4lgE7ETmAzEi7x1CaDvD3jGhHBNONB6u50gFjfzORC_iPouxfRCTPyhXc5B5h0sVKV7"/>
+<div class="absolute top-2 left-2 flex gap-1">
+<span class="bg-surface-container-lowest/80 backdrop-blur-sm text-[10px] px-2 py-1 border border-zinc-800 font-label text-zinc-300">PRO SERIES</span>
+</div>
+</div>
+<div class="flex justify-between items-start">
+<div class="space-y-1">
+<h4 class="font-headline font-bold text-lg uppercase">Ergo-Grip Controller</h4>
+<p class="text-xs text-zinc-500 font-label">0.1MS RESPONSE LATENCY</p>
+</div>
+<span class="text-tertiary font-headline font-bold text-xl">$199.00</span>
+</div>
+<div class="flex gap-2">
+<button class="flex-1 bg-surface-container-low border border-outline-variant/20 hover:border-secondary-container/50 text-zinc-300 hover:text-secondary-container font-label text-xs py-3 rounded-md transition-colors uppercase">View Specs</button>
+<button class="w-12 h-12 flex items-center justify-center bg-secondary-fixed-dim text-background rounded-md active:scale-90 transition-transform">
+<span class="material-symbols-outlined">add</span>
+</button>
+</div>
+</div>
+<!-- Product Card 4 -->
+<div class="bg-surface-container hover:bg-surface-container-high transition-all duration-300 p-4 rounded-lg flex flex-col gap-4 group">
+<div class="relative aspect-video rounded-md overflow-hidden bg-surface-container-lowest">
+<div class="absolute inset-0 bg-gradient-to-br from-zinc-800 to-zinc-950 flex items-center justify-center">
+<span class="material-symbols-outlined text-zinc-700 text-6xl">inventory_2</span>
+</div>
+<img alt="Tactical Headset" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 opacity-60 mix-blend-overlay" data-alt="Military style high-fidelity communication headset" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDwtRM3CwPr4ngYFZb6OV555_KPRuyn_8KIskB1stXFQI7UIEz_boqAyRYETs_wdEJH5YuFLf6E1k8fbaO5x89bY3YEVYLY101smAo3BRiBmQ1YidOnEzh5OO9tANVS8dSnqgnQGHMBSOBYq-aMTqp7eM1S0uSlErfRFO_XBUF-E3kyULC3p8gjaaKFfK45vSx59ljb2Tfko-G9HVr_NyS8UGBIrHCw6aBeXywSIcVDxhEyfs0N4n5x4VTEspghwTpuf8uA-Iq3LKl5"/>
+<div class="absolute top-2 left-2 flex gap-1">
+<span class="bg-tertiary text-on-tertiary text-[10px] px-2 py-1 font-label font-bold">LIMITED</span>
+</div>
+</div>
+<div class="flex justify-between items-start">
+<div class="space-y-1">
+<h4 class="font-headline font-bold text-lg uppercase">Void-Link Headset</h4>
+<p class="text-xs text-zinc-500 font-label">BONE CONDUCTION AUDIO</p>
+</div>
+<span class="text-tertiary font-headline font-bold text-xl">$320.00</span>
+</div>
+<div class="flex gap-2">
+<button class="flex-1 bg-surface-container-low border border-outline-variant/20 hover:border-secondary-container/50 text-zinc-300 hover:text-secondary-container font-label text-xs py-3 rounded-md transition-colors uppercase">View Specs</button>
+<button class="w-12 h-12 flex items-center justify-center bg-secondary-fixed-dim text-background rounded-md active:scale-90 transition-transform">
+<span class="material-symbols-outlined">add</span>
+</button>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center px-4 pb-6 pt-2 bg-[#131313]/90 backdrop-blur-xl border-t border-zinc-800/15 z-50 shadow-[0_-4px_24px_rgba(0,229,255,0.04)]">
+<div class="flex flex-col items-center justify-center text-zinc-500 hover:text-zinc-200 transition-colors cursor-pointer group">
+<span class="material-symbols-outlined mb-1">dashboard</span>
+<span class="font-['Space_Grotesk'] text-[10px] uppercase tracking-[0.05em]">HQ</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#00E5FF] bg-[#1C1B1B] rounded-md px-3 py-1 cursor-pointer group active:scale-90 duration-200">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 1;">shopping_bag</span>
+<span class="font-['Space_Grotesk'] text-[10px] uppercase tracking-[0.05em]">GEAR</span>
+</div>
+<div class="flex flex-col items-center justify-center text-zinc-500 hover:text-zinc-200 transition-colors cursor-pointer group">
+<span class="material-symbols-outlined mb-1">account_balance_wallet</span>
+<span class="font-['Space_Grotesk'] text-[10px] uppercase tracking-[0.05em]">WALLET</span>
+</div>
+<div class="flex flex-col items-center justify-center text-zinc-500 hover:text-zinc-200 transition-colors cursor-pointer group">
+<span class="material-symbols-outlined mb-1">person</span>
+<span class="font-['Space_Grotesk'] text-[10px] uppercase tracking-[0.05em]">PROFILE</span>
+</div>
+</nav>
+</body></html>

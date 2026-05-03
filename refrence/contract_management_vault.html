@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Tactical Agreement Vault - AGS Global Arena</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-surface-variant": "#c4c7c7",
+              "secondary-container": "#00e3fd",
+              "on-primary-container": "#7e7d7d",
+              "tertiary-fixed-dim": "#e9c400",
+              "on-secondary-container": "#00616d",
+              "inverse-surface": "#e5e2e1",
+              "secondary": "#bdf4ff",
+              "surface-bright": "#393939",
+              "on-secondary": "#00363d",
+              "on-primary": "#313030",
+              "tertiary-fixed": "#ffe16d",
+              "on-tertiary-container": "#4c3f00",
+              "on-primary-fixed": "#1c1b1b",
+              "on-tertiary": "#3a3000",
+              "background": "#131313",
+              "surface-dim": "#131313",
+              "tertiary-container": "#c9a900",
+              "surface-container-low": "#1c1b1b",
+              "secondary-fixed": "#9cf0ff",
+              "primary-fixed": "#e5e2e1",
+              "surface-variant": "#353534",
+              "surface-container-high": "#2a2a2a",
+              "primary-fixed-dim": "#c8c6c5",
+              "on-error": "#690005",
+              "inverse-on-surface": "#313030",
+              "inverse-primary": "#5f5e5e",
+              "outline": "#8e9192",
+              "outline-variant": "#444748",
+              "surface-container": "#201f1f",
+              "surface-container-highest": "#353534",
+              "tertiary": "#e9c400",
+              "on-primary-fixed-variant": "#474646",
+              "on-secondary-fixed-variant": "#004f58",
+              "surface-tint": "#c8c6c5",
+              "surface": "#131313",
+              "secondary-fixed-dim": "#00daf3",
+              "error-container": "#93000a",
+              "on-surface": "#e5e2e1",
+              "on-secondary-fixed": "#001f24",
+              "on-tertiary-fixed": "#221b00",
+              "on-background": "#e5e2e1",
+              "primary-container": "#121212",
+              "surface-container-lowest": "#0e0e0e",
+              "on-tertiary-fixed-variant": "#544600",
+              "error": "#ffb4ab",
+              "primary": "#c8c6c5",
+              "on-error-container": "#ffdad6"
+            },
+            fontFamily: {
+              "headline": ["Space Grotesk"],
+              "body": ["Inter"],
+              "label": ["Space Grotesk"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      body {
+        background-color: #131313;
+        color: #e5e2e1;
+        font-family: 'Inter', sans-serif;
+      }
+      .font-space { font-family: 'Space Grotesk', sans-serif; }
+      ::-webkit-scrollbar { width: 4px; }
+      ::-webkit-scrollbar-track { background: #131313; }
+      ::-webkit-scrollbar-thumb { background: #2a2a2a; border-radius: 10px; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="flex flex-col min-h-screen">
+<!-- TopAppBar -->
+<header class="bg-[#131313] dock-full-width top-0 z-50 flex justify-between items-center px-6 py-4 w-full shadow-[0_0_20px_rgba(0,229,255,0.04)]">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[#00E5FF]" data-icon="security">security</span>
+<h1 class="font-['Space_Grotesk'] uppercase tracking-[0.05em] text-sm text-[#00E5FF] font-bold text-xl tracking-tighter">TACTICAL_AGREEMENT_VAULT</h1>
+</div>
+<div class="flex items-center gap-6">
+<nav class="hidden md:flex gap-8">
+<a class="font-['Space_Grotesk'] uppercase tracking-[0.05em] text-sm text-[#00E5FF] border-b-2 border-[#00E5FF] py-1" href="#">CONTRACTS</a>
+<a class="font-['Space_Grotesk'] uppercase tracking-[0.05em] text-sm text-zinc-500 hover:bg-[#2A2A2A] transition-colors duration-200 py-1" href="#">AUDITS</a>
+<a class="font-['Space_Grotesk'] uppercase tracking-[0.05em] text-sm text-zinc-500 hover:bg-[#2A2A2A] transition-colors duration-200 py-1" href="#">LEDGER</a>
+</nav>
+<div class="w-10 h-10 rounded bg-surface-container-high border border-outline-variant/20 flex items-center justify-center overflow-hidden">
+<img alt="User Profile" data-alt="Cybernetic user profile avatar icon" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD_a3r9B3sYLAFfh8bNV0KFCwXVYnh6gz3O_Mi3KkKA_hm01TSGdiAe7dPjgaqeqQ9dwSSzWNn6SVd3u7PVWgrQ8REwIKN817bYCsh3x2nw_kQ4_s_kedtGfGvom_iQZtooMz_NUcHkhzxW53IXA2LVgMQxi56BHt3vMFEWKfCkMPH4tMqPU_pjOxtEFm6Bc1bibSiFpcLEyfFizNL0IuXYIEMrR5nZAj7EpefEopf9wQ3C3px8y74fNHgivNNjtT49oAbMkJYSqyh1"/>
+</div>
+</div>
+</header>
+<div class="bg-[#1C1B1B] h-[4px] w-full"></div>
+<!-- Main Content Canvas -->
+<main class="flex-grow p-4 md:p-8 max-w-7xl mx-auto w-full mb-24 lg:mb-0">
+<!-- Contract Overview Protocol -->
+<section class="mb-8 flex flex-col md:flex-row md:items-end justify-between gap-6">
+<div class="space-y-2">
+<div class="flex items-center gap-3">
+<span class="bg-tertiary/10 text-tertiary px-3 py-1 rounded-sm text-[10px] font-bold tracking-widest font-space border border-tertiary/20">AWAITING_SIGNATURE</span>
+<span class="text-on-surface-variant font-space text-xs tracking-tighter">REF: #CT-8829-X</span>
+</div>
+<h2 class="text-4xl md:text-5xl font-black font-space tracking-tighter leading-none">ELITE_PRO_PLAYER_AGREEMENT</h2>
+<p class="text-on-surface-variant text-sm font-light max-w-xl">Standard cryptographic multi-party agreement for professional circuit placement and automated revenue distribution.</p>
+</div>
+<div class="bg-surface-container-low p-4 border-l-4 border-secondary-fixed-dim flex flex-col gap-1 min-w-[200px]">
+<span class="text-[10px] font-space text-on-surface-variant tracking-widest uppercase">Vault Integrity</span>
+<span class="text-secondary-fixed-dim font-space font-bold text-lg">99.9% VERIFIED</span>
+<div class="w-full bg-background h-1 mt-2">
+<div class="bg-secondary-fixed-dim h-full w-[99.9%] shadow-[0_0_8px_#00E5FF]"></div>
+</div>
+</div>
+</section>
+<!-- Bento Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+<!-- Financial Split & Escrow Terms (Left 7) -->
+<div class="lg:col-span-7 flex flex-col gap-6">
+<div class="bg-surface-container p-6 rounded-lg relative overflow-hidden group">
+<div class="absolute top-0 right-0 p-8 opacity-5 group-hover:opacity-10 transition-opacity">
+<span class="material-symbols-outlined text-[120px]" data-icon="account_balance_wallet">account_balance_wallet</span>
+</div>
+<h3 class="font-space font-bold text-xs tracking-[0.2em] uppercase text-on-surface-variant mb-8 flex items-center gap-2">
+<span class="w-2 h-2 bg-secondary-fixed-dim rounded-full"></span>
+                        FINANCIAL_DISBURSEMENT_TERMS
+                    </h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 relative z-10">
+<div class="space-y-1">
+<span class="text-[10px] text-on-surface-variant font-space tracking-widest">TOTAL_CONTRACT_VALUE</span>
+<div class="text-4xl font-black font-space text-white">$240,000.00 <span class="text-sm font-normal text-secondary-fixed-dim">USD</span></div>
+</div>
+<div class="space-y-1">
+<span class="text-[10px] text-on-surface-variant font-space tracking-widest">ESCROW_PAYOUT_FREQ</span>
+<div class="text-xl font-bold font-space text-white">BI-WEEKLY <span class="material-symbols-outlined align-middle text-sm" data-icon="schedule">schedule</span></div>
+</div>
+</div>
+<!-- Visual Split -->
+<div class="mt-12 space-y-4">
+<div class="flex justify-between text-[10px] font-space font-bold tracking-widest">
+<span class="text-secondary-fixed-dim uppercase">PLAYER_YIELD (90%)</span>
+<span class="text-on-surface-variant uppercase">PLATFORM_FEE (10%)</span>
+</div>
+<div class="h-6 w-full flex gap-1">
+<div class="h-full bg-secondary-fixed-dim w-[90%] rounded-sm"></div>
+<div class="h-full bg-surface-variant w-[10%] rounded-sm"></div>
+</div>
+<div class="flex justify-between font-space text-sm">
+<span class="text-white">$216,000.00</span>
+<span class="text-on-surface-variant">$24,000.00</span>
+</div>
+</div>
+</div>
+<!-- Digital Signature Command -->
+<div class="bg-surface-container-high p-8 border border-secondary-fixed-dim/20 rounded-lg flex flex-col md:flex-row items-center justify-between gap-6">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded bg-secondary-fixed-dim/10 flex items-center justify-center border border-secondary-fixed-dim/30">
+<span class="material-symbols-outlined text-secondary-fixed-dim" data-icon="fingerprint">fingerprint</span>
+</div>
+<div>
+<h4 class="font-space font-bold text-white uppercase tracking-tighter">BIO-VERIFIED COMMAND</h4>
+<p class="text-xs text-on-surface-variant">Signature requires active neural-link or MFA-2 verification.</p>
+</div>
+</div>
+<button class="w-full md:w-auto px-10 py-4 bg-secondary-fixed-dim hover:bg-secondary-container text-on-secondary font-space font-black uppercase tracking-widest text-sm rounded transition-all active:scale-95 shadow-[0_0_20px_rgba(0,229,255,0.2)]">
+                        INITIALIZE_SIGNATURE
+                    </button>
+</div>
+</div>
+<!-- Immutable Clause Ledger (Right 5) -->
+<div class="lg:col-span-5 flex flex-col gap-6">
+<div class="bg-surface-container-low border border-outline-variant/10 rounded-lg flex flex-col h-full overflow-hidden">
+<div class="p-6 border-b border-outline-variant/10 bg-surface-container-high/30">
+<h3 class="font-space font-bold text-xs tracking-[0.2em] uppercase text-tertiary flex items-center gap-2">
+<span class="material-symbols-outlined text-sm" data-icon="gavel">gavel</span>
+                            IMMUTABLE_CLAUSE_LEDGER
+                        </h3>
+</div>
+<div class="flex-grow overflow-y-auto p-4 space-y-3 max-h-[450px]">
+<!-- Clause Item -->
+<div class="p-4 bg-surface-container border-l-2 border-secondary-fixed-dim/50 flex gap-4 items-start group hover:bg-surface-container-high transition-colors">
+<input class="mt-1 rounded-sm bg-background border-outline text-secondary-fixed-dim focus:ring-0" type="checkbox"/>
+<div>
+<span class="text-[10px] font-space text-secondary-fixed-dim tracking-widest">ARTICLE_01</span>
+<p class="text-xs font-bold text-white uppercase mb-1">Competitive Integrity Protocol</p>
+<p class="text-[11px] text-on-surface-variant leading-relaxed">Party A agrees to maintain a minimum neural-link performance score of 85.0 during all active league matches.</p>
+</div>
+</div>
+<!-- Clause Item -->
+<div class="p-4 bg-surface-container border-l-2 border-outline-variant flex gap-4 items-start group hover:bg-surface-container-high transition-colors">
+<input class="mt-1 rounded-sm bg-background border-outline text-secondary-fixed-dim focus:ring-0" type="checkbox"/>
+<div>
+<span class="text-[10px] font-space text-on-surface-variant tracking-widest">ARTICLE_02</span>
+<p class="text-xs font-bold text-white uppercase mb-1">Non-Disclosure Parameters</p>
+<p class="text-[11px] text-on-surface-variant leading-relaxed">All strategic data, replay analysis, and team communications are classified under Level 4 Encryption protocols.</p>
+</div>
+</div>
+<!-- Clause Item -->
+<div class="p-4 bg-surface-container border-l-2 border-outline-variant flex gap-4 items-start group hover:bg-surface-container-high transition-colors">
+<input class="mt-1 rounded-sm bg-background border-outline text-secondary-fixed-dim focus:ring-0" type="checkbox"/>
+<div>
+<span class="text-[10px] font-space text-on-surface-variant tracking-widest">ARTICLE_03</span>
+<p class="text-xs font-bold text-white uppercase mb-1">Payout Auto-Trigger</p>
+<p class="text-[11px] text-on-surface-variant leading-relaxed">Escrow release occurs within 60 seconds of Oracle verification of tournament outcome or schedule milestone.</p>
+</div>
+</div>
+<!-- Clause Item -->
+<div class="p-4 bg-surface-container border-l-2 border-outline-variant flex gap-4 items-start group hover:bg-surface-container-high transition-colors">
+<input class="mt-1 rounded-sm bg-background border-outline text-secondary-fixed-dim focus:ring-0" type="checkbox"/>
+<div>
+<span class="text-[10px] font-space text-on-surface-variant tracking-widest">ARTICLE_04</span>
+<p class="text-xs font-bold text-white uppercase mb-1">Arbitration Jurisdiction</p>
+<p class="text-[11px] text-on-surface-variant leading-relaxed">All disputes are subject to the AGS Central Tribunal rulings, executed via Smart Contract enforcement.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Contractual Audit Log (Full Width Bottom) -->
+<div class="lg:col-span-12">
+<div class="bg-surface-container-lowest p-6 rounded-lg border border-outline-variant/10">
+<div class="flex items-center justify-between mb-6">
+<h3 class="font-space font-bold text-xs tracking-[0.2em] uppercase text-on-surface-variant flex items-center gap-2">
+<span class="material-symbols-outlined text-sm" data-icon="history_edu">history_edu</span>
+                            CONTRACTUAL_AUDIT_LOG
+                        </h3>
+<span class="text-[10px] text-outline px-2 py-1 border border-outline/20 rounded-full font-space">REAL-TIME_FEED</span>
+</div>
+<div class="space-y-4">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-2 p-3 bg-surface-container-low/50 hover:bg-surface-container-low transition-colors group">
+<div class="flex items-center gap-4">
+<span class="text-[10px] font-space text-on-surface-variant opacity-50">2023.10.24 14:32:01</span>
+<span class="text-xs font-bold text-secondary uppercase">READY_FOR_SIGNING</span>
+<span class="text-xs text-on-surface-variant truncate max-w-[200px] md:max-w-none">System state updated by LEGAL_ORACLE_7</span>
+</div>
+<span class="text-[9px] font-mono text-outline group-hover:text-secondary-fixed-dim transition-colors">SHA256: 8A2F...C91B</span>
+</div>
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-2 p-3 bg-surface-container-low/50 hover:bg-surface-container-low transition-colors group">
+<div class="flex items-center gap-4">
+<span class="text-[10px] font-space text-on-surface-variant opacity-50">2023.10.24 11:15:44</span>
+<span class="text-xs font-bold text-tertiary uppercase">LEGAL_REVIEW_COMPLETE</span>
+<span class="text-xs text-on-surface-variant">Validated against circuit regulations v4.2</span>
+</div>
+<span class="text-[9px] font-mono text-outline group-hover:text-tertiary transition-colors">SHA256: 4F91...A22D</span>
+</div>
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-2 p-3 bg-surface-container-low/50 hover:bg-surface-container-low transition-colors group">
+<div class="flex items-center gap-4">
+<span class="text-[10px] font-space text-on-surface-variant opacity-50">2023.10.23 09:00:12</span>
+<span class="text-xs font-bold text-outline-variant uppercase">DRAFT_CREATED</span>
+<span class="text-xs text-on-surface-variant">Initial parameters injected by COMMAND_CENTER</span>
+</div>
+<span class="text-[9px] font-mono text-outline group-hover:text-on-surface transition-colors">SHA256: 110B...E33F</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-6 pt-2 bg-[#131313]/90 backdrop-blur-xl shadow-[0_-4px_24px_rgba(0,0,0,0.5)] md:hidden">
+<a class="flex flex-col items-center justify-center text-zinc-500 p-2 hover:text-[#00E5FF] transition-all active:scale-90" href="#">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+<span class="font-['Space_Grotesk'] text-[10px] uppercase font-bold tracking-tighter">SUMMARY</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#00E5FF] bg-[#1C1B1B] rounded-md p-2 scale-110 active:scale-90" href="#">
+<span class="material-symbols-outlined" data-icon="draw">draw</span>
+<span class="font-['Space_Grotesk'] text-[10px] uppercase font-bold tracking-tighter">SIGN</span>
+</a>
+<a class="flex flex-col items-center justify-center text-zinc-500 p-2 hover:text-[#00E5FF] transition-all active:scale-90" href="#">
+<span class="material-symbols-outlined" data-icon="payments">payments</span>
+<span class="font-['Space_Grotesk'] text-[10px] uppercase font-bold tracking-tighter">FINANCE</span>
+</a>
+<a class="flex flex-col items-center justify-center text-zinc-500 p-2 hover:text-[#00E5FF] transition-all active:scale-90" href="#">
+<span class="material-symbols-outlined" data-icon="verified_user">verified_user</span>
+<span class="font-['Space_Grotesk'] text-[10px] uppercase font-bold tracking-tighter">LOGS</span>
+</a>
+</nav>
+<div class="fixed bottom-0 left-0 w-full h-[1px] bg-[#1C1B1B] opacity-15 md:hidden"></div>
+</body></html>

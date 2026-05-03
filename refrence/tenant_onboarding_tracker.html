@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AGS Global Arena - Onboarding Protocol</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-container": "#201f1f",
+                        "on-primary-container": "#7e7d7d",
+                        "inverse-on-surface": "#313030",
+                        "on-secondary": "#00363d",
+                        "on-secondary-container": "#00616d",
+                        "surface-container-high": "#2a2a2a",
+                        "on-tertiary-fixed": "#221b00",
+                        "on-primary-fixed-variant": "#474646",
+                        "surface-container-lowest": "#0e0e0e",
+                        "secondary": "#bdf4ff",
+                        "inverse-primary": "#5f5e5e",
+                        "on-error": "#690005",
+                        "secondary-fixed-dim": "#00daf3",
+                        "on-secondary-fixed-variant": "#004f58",
+                        "on-secondary-fixed": "#001f24",
+                        "primary-container": "#121212",
+                        "on-tertiary-container": "#4c3f00",
+                        "surface-container-highest": "#353534",
+                        "on-surface-variant": "#c4c7c7",
+                        "tertiary-container": "#c9a900",
+                        "tertiary-fixed-dim": "#e9c400",
+                        "surface-container-low": "#1c1b1b",
+                        "primary": "#c8c6c5",
+                        "surface-variant": "#353534",
+                        "primary-fixed": "#e5e2e1",
+                        "outline": "#8e9192",
+                        "on-tertiary": "#3a3000",
+                        "on-primary-fixed": "#1c1b1b",
+                        "primary-fixed-dim": "#c8c6c5",
+                        "error-container": "#93000a",
+                        "background": "#131313",
+                        "secondary-fixed": "#9cf0ff",
+                        "outline-variant": "#444748",
+                        "on-tertiary-fixed-variant": "#544600",
+                        "surface-bright": "#393939",
+                        "on-surface": "#e5e2e1",
+                        "on-error-container": "#ffdad6",
+                        "surface-tint": "#c8c6c5",
+                        "inverse-surface": "#e5e2e1",
+                        "on-background": "#e5e2e1",
+                        "secondary-container": "#00e3fd",
+                        "error": "#ffb4ab",
+                        "surface-dim": "#131313",
+                        "tertiary": "#e9c400",
+                        "on-primary": "#313030",
+                        "tertiary-fixed": "#ffe16d",
+                        "surface": "#131313"
+                    },
+                    fontFamily: {
+                        "headline": ["Space Grotesk"],
+                        "body": ["Inter"],
+                        "label": ["Space Grotesk"]
+                    },
+                    borderRadius: { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #131313;
+            color: #e5e2e1;
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="min-h-screen flex flex-col md:flex-row">
+<!-- Sidebar / NavigationDrawer (Shared Component) -->
+<aside class="hidden md:flex flex-col h-screen w-72 border-r border-white/5 bg-[#1C1B1B] sticky top-0">
+<div class="p-6 border-b border-white/5">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded bg-secondary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-on-secondary" style="font-variation-settings: 'FILL' 1;">hub</span>
+</div>
+<div>
+<h3 class="font-black text-[#E9C400] text-sm uppercase tracking-tighter">Tenant HQ</h3>
+<p class="text-gray-400 text-[10px] uppercase font-bold tracking-widest">Infrastructure Alpha</p>
+</div>
+</div>
+<div class="mt-4 px-2 py-1 rounded bg-[#201F1F] inline-block">
+<span class="text-[10px] text-secondary-fixed-dim font-mono">ONBOARDING_PHASE</span>
+</div>
+</div>
+<nav class="flex-1 py-6">
+<div class="space-y-1">
+<a class="flex items-center gap-4 px-6 py-4 bg-[#201F1F] text-[#00E5FF] border-l-4 border-[#00E5FF] transition-all duration-300" href="#">
+<span class="material-symbols-outlined">fingerprint</span>
+<span class="font-['Inter'] text-sm">Identity</span>
+</a>
+<a class="flex items-center gap-4 px-6 py-4 text-gray-400 hover:text-white hover:bg-[#2A2A2A] transition-all duration-300" href="#">
+<span class="material-symbols-outlined">payments</span>
+<span class="font-['Inter'] text-sm">Financials</span>
+</a>
+<a class="flex items-center gap-4 px-6 py-4 text-gray-400 hover:text-white hover:bg-[#2A2A2A] transition-all duration-300" href="#">
+<span class="material-symbols-outlined">gavel</span>
+<span class="font-['Inter'] text-sm">Rules</span>
+</a>
+<a class="flex items-center gap-4 px-6 py-4 text-gray-400 hover:text-white hover:bg-[#2A2A2A] transition-all duration-300" href="#">
+<span class="material-symbols-outlined">rocket_launch</span>
+<span class="font-['Inter'] text-sm">Launch</span>
+</a>
+</div>
+</nav>
+<div class="p-6 border-t border-white/5">
+<div class="flex items-center gap-3 p-3 rounded hover:bg-[#2A2A2A] transition-colors cursor-pointer">
+<div class="w-8 h-8 rounded-full bg-surface-container-highest flex items-center justify-center text-[10px] font-bold">JD</div>
+<div class="overflow-hidden">
+<p class="text-xs font-bold text-white truncate">Admin Profile</p>
+<p class="text-[10px] text-gray-500 truncate">System Operator</p>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 flex flex-col relative overflow-x-hidden pb-20 md:pb-0">
+<!-- TopAppBar (Shared Component) -->
+<header class="bg-[#131313] sticky top-0 z-40 shadow-[0_0_20px_rgba(0,229,255,0.04)] w-full">
+<div class="flex items-center justify-between px-6 py-4 w-full">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[#00E5FF] cursor-pointer active:scale-95 duration-200">grid_view</span>
+<h1 class="text-xl font-bold text-[#00E5FF] tracking-tighter font-['Space_Grotesk'] uppercase">COMMAND CENTER</h1>
+</div>
+<div class="flex items-center gap-4">
+<div class="hidden md:flex flex-col items-end">
+<span class="text-[10px] text-[#E9C400] font-bold tracking-widest uppercase">System Status</span>
+<span class="text-[12px] text-white font-mono">SECURE_LINK_STABLE</span>
+</div>
+<div class="w-10 h-10 rounded bg-surface-container-highest border border-white/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-white">notifications</span>
+</div>
+</div>
+</div>
+</header>
+<!-- Canvas Area -->
+<div class="p-6 md:p-10 max-w-7xl mx-auto w-full space-y-12">
+<!-- Protocol Header -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-white/5 pb-8">
+<div class="space-y-2">
+<div class="flex items-center gap-3">
+<h2 class="text-4xl md:text-6xl font-headline font-bold tracking-tight text-white uppercase">ONBOARDING_PROTOCOL</h2>
+</div>
+<p class="text-on-primary-container font-body max-w-xl">
+                        Initialization of global gaming infrastructure for the AGS Arena ecosystem. Complete all verification phases to unlock high-availability server clusters.
+                    </p>
+</div>
+<div class="flex items-center gap-2 px-4 py-2 bg-tertiary/10 border border-tertiary/30 rounded-md">
+<span class="material-symbols-outlined text-tertiary text-sm" style="font-variation-settings: 'FILL' 1;">security</span>
+<span class="text-tertiary font-label text-sm font-bold tracking-wider uppercase">Tier 2 Required</span>
+</div>
+</div>
+<!-- Bento Layout Content -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+<!-- Vertical Progress Tracker -->
+<div class="lg:col-span-4 space-y-4">
+<h3 class="font-label text-xs font-bold text-gray-500 uppercase tracking-widest mb-6">Phase Progression</h3>
+<div class="space-y-6 relative">
+<!-- Step 01 -->
+<div class="relative pl-10 group">
+<div class="absolute left-[15px] top-8 bottom-[-24px] w-[2px] bg-secondary-fixed-dim"></div>
+<div class="absolute left-0 top-0 w-8 h-8 rounded bg-secondary-fixed-dim flex items-center justify-center z-10">
+<span class="material-symbols-outlined text-on-secondary text-sm font-bold">check</span>
+</div>
+<div class="bg-surface-container-low p-5 rounded border-l-2 border-secondary-fixed-dim">
+<span class="text-[10px] font-mono text-secondary-fixed-dim block mb-1">PHASE 01</span>
+<h4 class="text-white font-headline font-bold text-lg leading-tight uppercase">Organization Identity</h4>
+<p class="text-xs text-gray-500 mt-1 uppercase tracking-tighter">KYC/KYB Document Verification</p>
+<div class="mt-3 inline-flex items-center gap-1.5 px-2 py-0.5 bg-secondary-fixed-dim/10 rounded">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary-fixed-dim"></span>
+<span class="text-[10px] font-bold text-secondary-fixed-dim uppercase">VERIFIED</span>
+</div>
+</div>
+</div>
+<!-- Step 02 -->
+<div class="relative pl-10 group">
+<div class="absolute left-[15px] top-8 bottom-[-24px] w-[2px] bg-secondary-fixed-dim"></div>
+<div class="absolute left-0 top-0 w-8 h-8 rounded bg-secondary-fixed-dim flex items-center justify-center z-10">
+<span class="material-symbols-outlined text-on-secondary text-sm font-bold">bolt</span>
+</div>
+<div class="bg-surface-container-low p-5 rounded border-l-2 border-secondary-fixed-dim">
+<span class="text-[10px] font-mono text-secondary-fixed-dim block mb-1">PHASE 02</span>
+<h4 class="text-white font-headline font-bold text-lg leading-tight uppercase">Financial Infrastructure</h4>
+<p class="text-xs text-gray-500 mt-1 uppercase tracking-tighter">Razorpay 90/10 Split Integration</p>
+<div class="mt-3 inline-flex items-center gap-1.5 px-2 py-0.5 bg-secondary-fixed-dim/10 rounded">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary-fixed-dim animate-pulse"></span>
+<span class="text-[10px] font-bold text-secondary-fixed-dim uppercase tracking-widest">ACTIVE</span>
+</div>
+</div>
+</div>
+<!-- Step 03 (Pending) -->
+<div class="relative pl-10 group">
+<div class="absolute left-[15px] top-8 bottom-[-24px] w-[2px] bg-outline-variant"></div>
+<div class="absolute left-0 top-0 w-8 h-8 rounded bg-[#131313] border-2 border-tertiary flex items-center justify-center z-10">
+<span class="material-symbols-outlined text-tertiary text-sm">settings_slow_motion</span>
+</div>
+<div class="bg-surface-container p-5 rounded border-l-2 border-tertiary shadow-xl shadow-tertiary/5">
+<span class="text-[10px] font-mono text-tertiary block mb-1">PHASE 03</span>
+<h4 class="text-white font-headline font-bold text-lg leading-tight uppercase">Rules Engine Configuration</h4>
+<p class="text-xs text-gray-500 mt-1 uppercase tracking-tighter">Match Logic &amp; Latency Buffers</p>
+<div class="mt-3 inline-flex items-center gap-1.5 px-2 py-0.5 bg-tertiary/10 rounded">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span>
+<span class="text-[10px] font-bold text-tertiary uppercase tracking-widest">PENDING_ACTION</span>
+</div>
+</div>
+</div>
+<!-- Step 04 (Locked) -->
+<div class="relative pl-10 group">
+<div class="absolute left-0 top-0 w-8 h-8 rounded bg-surface-container-lowest border border-white/5 flex items-center justify-center z-10">
+<span class="material-symbols-outlined text-gray-700 text-sm">lock</span>
+</div>
+<div class="bg-surface-container-lowest p-5 rounded opacity-40 grayscale">
+<span class="text-[10px] font-mono text-gray-500 block mb-1">PHASE 04</span>
+<h4 class="text-gray-400 font-headline font-bold text-lg leading-tight uppercase">Launch Protocol</h4>
+<p class="text-xs text-gray-600 mt-1 uppercase tracking-tighter">Deployment to Global Edge</p>
+<div class="mt-3 inline-flex items-center gap-1.5 px-2 py-0.5 bg-white/5 rounded">
+<span class="text-[10px] font-bold text-gray-600 uppercase tracking-widest">LOCKED</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Action Card: Rules Engine -->
+<div class="lg:col-span-8 space-y-6">
+<div class="bg-surface-container-low rounded-xl overflow-hidden border border-white/5 flex flex-col h-full">
+<div class="p-8 space-y-8 flex-1">
+<div class="flex items-start justify-between">
+<div class="space-y-1">
+<h3 class="text-2xl font-headline font-bold text-white uppercase tracking-tighter">Active Configuration: Rules Engine</h3>
+<p class="text-sm text-on-primary-container">Identify and define the logic parameters for match resolution and payout triggers.</p>
+</div>
+<span class="material-symbols-outlined text-tertiary text-4xl">precision_manufacturing</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div class="p-4 bg-surface-container-lowest border border-white/5 rounded group hover:border-tertiary/30 transition-colors">
+<div class="flex items-center justify-between mb-4">
+<span class="text-[10px] font-bold text-tertiary uppercase tracking-widest">Task 01</span>
+<span class="material-symbols-outlined text-tertiary text-xs">radio_button_unchecked</span>
+</div>
+<h5 class="text-white font-bold text-sm">Define Victory Conditions</h5>
+<p class="text-[10px] text-gray-500 mt-1">Submit JSON schemas for win/loss validation.</p>
+</div>
+<div class="p-4 bg-surface-container-lowest border border-white/5 rounded group hover:border-tertiary/30 transition-colors">
+<div class="flex items-center justify-between mb-4">
+<span class="text-[10px] font-bold text-tertiary uppercase tracking-widest">Task 02</span>
+<span class="material-symbols-outlined text-tertiary text-xs">radio_button_unchecked</span>
+</div>
+<h5 class="text-white font-bold text-sm">Anti-Cheat Webhooks</h5>
+<p class="text-[10px] text-gray-500 mt-1">Configure telemetry endpoints for real-time monitoring.</p>
+</div>
+<div class="p-4 bg-surface-container-lowest border border-white/5 rounded group hover:border-tertiary/30 transition-colors">
+<div class="flex items-center justify-between mb-4">
+<span class="text-[10px] font-bold text-tertiary uppercase tracking-widest">Task 03</span>
+<span class="material-symbols-outlined text-gray-600 text-xs">radio_button_unchecked</span>
+</div>
+<h5 class="text-white font-bold text-sm">Latency Cap (Max 40ms)</h5>
+<p class="text-[10px] text-gray-500 mt-1">Select regional clusters for low-ping gameplay.</p>
+</div>
+<div class="p-4 bg-surface-container-lowest border border-white/5 rounded group hover:border-tertiary/30 transition-colors">
+<div class="flex items-center justify-between mb-4">
+<span class="text-[10px] font-bold text-tertiary uppercase tracking-widest">Task 04</span>
+<span class="material-symbols-outlined text-gray-600 text-xs">radio_button_unchecked</span>
+</div>
+<h5 class="text-white font-bold text-sm">Payout Logic (90/10)</h5>
+<p class="text-[10px] text-gray-500 mt-1">Finalize treasury split architecture.</p>
+</div>
+</div>
+<div class="bg-surface-container-highest/30 p-6 rounded-lg border border-white/5">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 bg-tertiary/20 rounded flex items-center justify-center">
+<span class="material-symbols-outlined text-tertiary">warning</span>
+</div>
+<div>
+<p class="text-white font-bold text-sm uppercase">Compliance Checkpoint</p>
+<p class="text-xs text-gray-400">Match rules must align with local jurisdiction regulation v.4.01.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="p-8 pt-0">
+<button class="w-full py-5 bg-secondary-fixed-dim hover:bg-secondary-container text-on-secondary font-headline font-black text-lg tracking-widest uppercase rounded shadow-[0_0_20px_rgba(0,229,255,0.2)] active:scale-[0.98] transition-all">
+                                CONFIGURE_LOGIC
+                            </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Compliance Audit Trail -->
+<section class="space-y-6">
+<div class="flex items-center justify-between">
+<h3 class="font-label text-xs font-bold text-gray-500 uppercase tracking-widest">Compliance Audit Trail (Immutable)</h3>
+<div class="h-[1px] flex-1 bg-white/5 ml-4"></div>
+</div>
+<div class="bg-surface-container-lowest rounded overflow-hidden border border-white/5">
+<table class="w-full text-left text-[11px] font-mono border-collapse">
+<thead>
+<tr class="bg-surface-container-low text-gray-500 border-b border-white/5">
+<th class="px-6 py-3 uppercase tracking-wider">Timestamp</th>
+<th class="px-6 py-3 uppercase tracking-wider">Action ID</th>
+<th class="px-6 py-3 uppercase tracking-wider">Status</th>
+<th class="px-6 py-3 uppercase tracking-wider">Hash Signature</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-white/5">
+<tr class="hover:bg-white/5 transition-colors">
+<td class="px-6 py-4 text-gray-400">2023-11-24 14:22:01</td>
+<td class="px-6 py-4 text-white">IDENTITY_KYC_VERIFIED</td>
+<td class="px-6 py-4"><span class="text-secondary-fixed-dim">SUCCESS</span></td>
+<td class="px-6 py-4 text-gray-600 truncate max-w-[120px]">0x8f2a...3e12</td>
+</tr>
+<tr class="hover:bg-white/5 transition-colors">
+<td class="px-6 py-4 text-gray-400">2023-11-24 15:01:45</td>
+<td class="px-6 py-4 text-white">TREASURY_SPLIT_ACTIVE</td>
+<td class="px-6 py-4"><span class="text-secondary-fixed-dim">SUCCESS</span></td>
+<td class="px-6 py-4 text-gray-600 truncate max-w-[120px]">0x41d2...9c01</td>
+</tr>
+<tr class="hover:bg-white/5 transition-colors">
+<td class="px-6 py-4 text-gray-400">2023-11-25 09:12:12</td>
+<td class="px-6 py-4 text-white">RULES_ENGINE_INITIALIZED</td>
+<td class="px-6 py-4"><span class="text-tertiary">AWAITING</span></td>
+<td class="px-6 py-4 text-gray-600 truncate max-w-[120px]">PENDING_GEN</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</div>
+</main>
+<!-- BottomNavBar (Shared Component Mobile) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 py-3 bg-[#131313]/90 backdrop-blur-xl border-t border-white/10 shadow-2xl">
+<a class="flex flex-col items-center justify-center text-gray-500 hover:text-white transition-all" href="#">
+<span class="material-symbols-outlined">fingerprint</span>
+<span class="font-['Space_Grotesk'] text-[10px] uppercase font-bold mt-1">Identity</span>
+</a>
+<a class="flex flex-col items-center justify-center text-gray-500 hover:text-white transition-all" href="#">
+<span class="material-symbols-outlined">payments</span>
+<span class="font-['Space_Grotesk'] text-[10px] uppercase font-bold mt-1">Finance</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-[#00E5FF]/10 text-[#00E5FF] rounded-lg py-1 px-3" href="#">
+<span class="material-symbols-outlined">gavel</span>
+<span class="font-['Space_Grotesk'] text-[10px] uppercase font-bold mt-1">Rules</span>
+</a>
+<a class="flex flex-col items-center justify-center text-gray-500 hover:text-white transition-all" href="#">
+<span class="material-symbols-outlined">rocket_launch</span>
+<span class="font-['Space_Grotesk'] text-[10px] uppercase font-bold mt-1">Launch</span>
+</a>
+</nav>
+</body></html>

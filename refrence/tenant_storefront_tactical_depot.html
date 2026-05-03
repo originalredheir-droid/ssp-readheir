@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>TACTICAL DEPOT - AGS Global Arena</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "tertiary": "#e9c400",
+                        "on-tertiary-container": "#4c3f00",
+                        "secondary-container": "#00e3fd",
+                        "outline": "#8e9192",
+                        "on-primary-container": "#7e7d7d",
+                        "primary-container": "#121212",
+                        "outline-variant": "#444748",
+                        "surface-container-low": "#1c1b1b",
+                        "surface-bright": "#393939",
+                        "on-secondary-fixed": "#001f24",
+                        "tertiary-fixed-dim": "#e9c400",
+                        "surface-container": "#201f1f",
+                        "on-surface-variant": "#c4c7c7",
+                        "surface": "#131313",
+                        "on-primary-fixed-variant": "#474646",
+                        "on-tertiary-fixed-variant": "#544600",
+                        "secondary-fixed": "#9cf0ff",
+                        "on-primary": "#313030",
+                        "on-tertiary-fixed": "#221b00",
+                        "on-background": "#e5e2e1",
+                        "secondary-fixed-dim": "#00daf3",
+                        "on-tertiary": "#3a3000",
+                        "on-secondary-fixed-variant": "#004f58",
+                        "tertiary-fixed": "#ffe16d",
+                        "inverse-surface": "#e5e2e1",
+                        "secondary": "#bdf4ff",
+                        "on-secondary-container": "#00616d",
+                        "surface-variant": "#353534",
+                        "error-container": "#93000a",
+                        "surface-container-highest": "#353534",
+                        "surface-container-lowest": "#0e0e0e",
+                        "on-surface": "#e5e2e1",
+                        "inverse-primary": "#5f5e5e",
+                        "surface-tint": "#c8c6c5",
+                        "primary-fixed": "#e5e2e1",
+                        "primary": "#c8c6c5",
+                        "on-error": "#690005",
+                        "tertiary-container": "#c9a900",
+                        "surface-dim": "#131313",
+                        "inverse-on-surface": "#313030",
+                        "primary-fixed-dim": "#c8c6c5",
+                        "error": "#ffb4ab",
+                        "surface-container-high": "#2a2a2a",
+                        "on-secondary": "#00363d",
+                        "on-primary-fixed": "#1c1b1b",
+                        "background": "#131313",
+                        "on-error-container": "#ffdad6"
+                    },
+                    fontFamily: {
+                        "headline": ["Space Grotesk"],
+                        "body": ["Inter"],
+                        "label": ["Space Grotesk"]
+                    },
+                    borderRadius: { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" },
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; background-color: #131313; color: #e5e2e1; }
+        .font-headline { font-family: 'Space Grotesk', sans-serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background selection:bg-secondary-container selection:text-on-secondary-fixed">
+<!-- TopAppBar Shared Component -->
+<header class="flex justify-between items-center px-6 h-16 w-full fixed top-0 z-50 bg-[#131313] dark:bg-[#131313] shadow-[0_0_32px_rgba(0,229,255,0.04)]">
+<div class="flex items-center gap-4">
+<button class="text-[#00E5FF] active:scale-95 transition-transform hover:bg-[#2A2A2A] p-2 rounded-md">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<h1 class="text-xl font-bold tracking-tighter text-white font-headline">PRO_STORE</h1>
+</div>
+<div class="flex items-center gap-4">
+<button class="text-[#00E5FF] active:scale-95 transition-transform hover:bg-[#2A2A2A] p-2 rounded-md">
+<span class="material-symbols-outlined">search</span>
+</button>
+</div>
+<div class="absolute bottom-0 left-0 bg-[#1C1B1B] h-[4px] w-full"></div>
+</header>
+<main class="pt-20 pb-24 px-4 md:px-8 max-w-7xl mx-auto">
+<!-- Liquidity Bar / Wallet Integration -->
+<section class="mb-8 bg-surface-container-lowest p-1 rounded-lg">
+<div class="bg-surface-container-low flex flex-col md:flex-row items-center justify-between p-4 rounded-md">
+<div class="flex items-center gap-6 mb-4 md:mb-0">
+<div class="flex flex-col">
+<span class="text-[10px] font-headline font-bold text-on-primary-container uppercase tracking-widest">ORG_LIQUIDITY</span>
+<span class="text-2xl font-headline font-bold text-white tracking-tight">$1.2M <span class="text-sm text-on-primary-container">USD</span></span>
+</div>
+<div class="h-10 w-[1px] bg-outline-variant opacity-20 hidden md:block"></div>
+<div class="hidden md:flex flex-col">
+<span class="text-[10px] font-headline font-bold text-on-primary-container uppercase tracking-widest">STATUS</span>
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-secondary-fixed-dim"></span>
+<span class="text-xs font-headline text-secondary-fixed-dim">ACCOUNT_VERIFIED</span>
+</div>
+</div>
+</div>
+<button class="bg-tertiary text-on-tertiary px-6 py-2 rounded-md font-headline font-bold text-sm tracking-widest hover:brightness-110 active:scale-95 transition-all flex items-center gap-2">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">bolt</span>
+                    REFUEL
+                </button>
+</div>
+</section>
+<!-- Tactical Category Hub -->
+<nav class="flex overflow-x-auto gap-2 mb-8 no-scrollbar">
+<button class="flex-none bg-surface-container-high text-secondary-fixed-dim px-6 py-3 rounded-md font-headline text-xs font-bold tracking-widest border-b-2 border-secondary-fixed-dim">
+                PRO_APPAREL
+            </button>
+<button class="flex-none bg-surface-container-low text-on-surface-variant px-6 py-3 rounded-md font-headline text-xs font-bold tracking-widest hover:bg-surface-container transition-colors">
+                ELITE_GEAR
+            </button>
+<button class="flex-none bg-surface-container-low text-on-surface-variant px-6 py-3 rounded-md font-headline text-xs font-bold tracking-widest hover:bg-surface-container transition-colors">
+                FIELD_SUPPLY
+            </button>
+</nav>
+<!-- Command Center Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<!-- Asset Card 1 -->
+<div class="bg-surface-container-low group overflow-hidden transition-all border-l-2 border-transparent hover:border-secondary-fixed-dim">
+<div class="relative h-64 bg-surface-container-lowest overflow-hidden">
+<img class="w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-500" data-alt="High tech ballistic soccer ball in futuristic setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB2_csVWYGhyBe2Z81jGdw-4uZSLc8onhC7o_GJABkFagXIY6lG6ND_TepAqYVcJKY3UQoIZo07AT6BehHlDj4L79WXueCfoZd_wwIq2-2LeIc2mlLDFSruPgjNG6R8bAoPvLSIt8mCEice3szgQ0XE-uLRLN8OzYXeZKv8be2WP6FeNmtPfLcjmiuajPQiYAjAtf2SRI3H7q9YXfOkmeoQBknS3hAMSaMuZDHO3yFlF0dxhowEaBYW5fA3-BUJMX0TtzbrvoNpxX_a"/>
+<div class="absolute top-4 left-4 bg-tertiary text-on-tertiary-container px-2 py-1 flex items-center gap-1 rounded-sm">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">verified</span>
+<span class="text-[9px] font-headline font-bold uppercase tracking-tighter">OFFICIAL_LEAGUE</span>
+</div>
+<div class="absolute bottom-4 left-4">
+<span class="bg-secondary-fixed-dim/10 backdrop-blur-md text-secondary-fixed-dim border border-secondary-fixed-dim/20 px-2 py-1 rounded-sm text-[10px] font-headline font-bold tracking-widest">STK: 240_UNITS</span>
+</div>
+</div>
+<div class="p-6">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-headline font-bold text-lg text-white tracking-tight uppercase">Ballistic Soccer Balls</h3>
+<span class="text-secondary-fixed-dim font-headline font-bold">$14,500 <span class="text-[10px] text-on-surface-variant">/BULK</span></span>
+</div>
+<p class="text-on-surface-variant text-xs mb-6 line-clamp-2 leading-relaxed">Reinforced core with telemetry sensors for elite flight trajectory analysis and real-time impact data.</p>
+<div class="flex items-center gap-3">
+<button class="flex-1 bg-surface-container text-white py-2 rounded-md font-headline text-[10px] font-bold tracking-widest hover:bg-surface-container-high transition-colors">VIEW_SPECS</button>
+<button class="bg-secondary-fixed-dim text-on-secondary-fixed p-2 rounded-md active:scale-95 transition-transform">
+<span class="material-symbols-outlined">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Asset Card 2 -->
+<div class="bg-surface-container-low group overflow-hidden transition-all border-l-2 border-transparent hover:border-secondary-fixed-dim">
+<div class="relative h-64 bg-surface-container-lowest overflow-hidden">
+<img class="w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-500" data-alt="Technical fabric carbon thread jersey texture closeup" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBiBLbRyc70Mn7C0tsM4BKi-zLQrWxj6I0nB8Np5aen9JNeBe6IxxNhT7CaX4n-wvNiJkRnbseLX0FsSyflRcUXzu9mWIbwMgepOq1OOzfdmn-TspSWOp343Yzg1XgjpO1Ij-6Gcy9bD_Y2bTUCoVY0W63LDMVg4wmYCIUnIikf8uLizxRcLf1HW7keE1Iu81nCw6v4eN9HIk6rjJYHj-8srONrGDU1Fe6oIsq0JpfS32h0pGmQ03OtqwSC-fCxB_Hnrzzofp0LrNdG"/>
+<div class="absolute top-4 left-4 bg-tertiary text-on-tertiary-container px-2 py-1 flex items-center gap-1 rounded-sm">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">verified</span>
+<span class="text-[9px] font-headline font-bold uppercase tracking-tighter">OFFICIAL_LEAGUE</span>
+</div>
+<div class="absolute bottom-4 left-4">
+<span class="bg-secondary-fixed-dim/10 backdrop-blur-md text-secondary-fixed-dim border border-secondary-fixed-dim/20 px-2 py-1 rounded-sm text-[10px] font-headline font-bold tracking-widest">STK: 1.2K_UNITS</span>
+</div>
+</div>
+<div class="p-6">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-headline font-bold text-lg text-white tracking-tight uppercase">Carbon-Thread Jerseys</h3>
+<span class="text-secondary-fixed-dim font-headline font-bold">$42,000 <span class="text-[10px] text-on-surface-variant">/BULK</span></span>
+</div>
+<p class="text-on-surface-variant text-xs mb-6 line-clamp-2 leading-relaxed">Integrated biometric tracking threads with thermal regulation and moisture-wicking carbon mesh.</p>
+<div class="flex items-center gap-3">
+<button class="flex-1 bg-surface-container text-white py-2 rounded-md font-headline text-[10px] font-bold tracking-widest hover:bg-surface-container-high transition-colors">VIEW_SPECS</button>
+<button class="bg-secondary-fixed-dim text-on-secondary-fixed p-2 rounded-md active:scale-95 transition-transform">
+<span class="material-symbols-outlined">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Asset Card 3 -->
+<div class="bg-surface-container-low group overflow-hidden transition-all border-l-2 border-transparent hover:border-secondary-fixed-dim">
+<div class="relative h-64 bg-surface-container-lowest overflow-hidden">
+<img class="w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-500" data-alt="Sleek modern digital whistle with led indicators" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDSrwMmz9SRT9z8vEOMI9ZVd1Zhp-6cdlo7pKqnT8o6QkSDbU-HXEO__A7cMJhBowp0dvLHZ3v7ojpnkB1EyLK24T70BSQ4FnWSrVX2MxdfRHEznl8R8x2inKLWezM66hRLggGCTRt2Wr0YEbedVT4OMI3UMJMEih6dVUan3UF-9mJFHk6m588OJMPQPnhICrsAMdjfBRWIdoNIarIq0pFwgTEN7c5zxpl4FJCqbh6obKk4YHP-0lk7TDR_odtrE0EnAz4eNWfCS8RA"/>
+<div class="absolute bottom-4 left-4">
+<span class="bg-secondary-fixed-dim/10 backdrop-blur-md text-secondary-fixed-dim border border-secondary-fixed-dim/20 px-2 py-1 rounded-sm text-[10px] font-headline font-bold tracking-widest">STK: 45_UNITS</span>
+</div>
+</div>
+<div class="p-6">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-headline font-bold text-lg text-white tracking-tight uppercase">Electronic Whistles</h3>
+<span class="text-secondary-fixed-dim font-headline font-bold">$3,200 <span class="text-[10px] text-on-surface-variant">/UNIT</span></span>
+</div>
+<p class="text-on-surface-variant text-xs mb-6 line-clamp-2 leading-relaxed">Multi-tonal digital output with instant stadium sync and encrypted ref-to-VAR voice channel.</p>
+<div class="flex items-center gap-3">
+<button class="flex-1 bg-surface-container text-white py-2 rounded-md font-headline text-[10px] font-bold tracking-widest hover:bg-surface-container-high transition-colors">VIEW_SPECS</button>
+<button class="bg-secondary-fixed-dim text-on-secondary-fixed p-2 rounded-md active:scale-95 transition-transform">
+<span class="material-symbols-outlined">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Bento Featured Section -->
+<div class="lg:col-span-3 grid grid-cols-1 md:grid-cols-3 gap-6 mt-6">
+<div class="md:col-span-2 bg-gradient-to-br from-surface-container-low to-surface-container-lowest p-8 relative overflow-hidden flex flex-col justify-end min-h-[300px] border border-outline-variant/10 rounded-lg">
+<div class="absolute top-0 right-0 w-1/2 h-full opacity-10 pointer-events-none">
+<img class="w-full h-full object-cover" data-alt="Technical blueprint of sports arena equipment" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD-aREmKyA11RLu174HMTYZK4_lrp9bfIMDLBQES6pZbZRjRTwu3brfc1iW5tMqgORkT27KLGuRPXAEyfraAtBMmjmPo37cKbKdByIvztk78hsX9-hzXwsUOXuum6uFow16Zs0NxRSvDsCXcFKsbo_1xn1AuUaFf64a3tSYoUME2ODV_k9JKOK9q2QdvNApGPQSV3J8PJvb65cZsLqJRkpS67ohYIsV34R_t7zBqMi0hCSZoquq-tc_XH4Z2Q6KnVyoLLZg4FSQhOEg"/>
+</div>
+<div class="relative z-10">
+<span class="text-[10px] font-headline font-bold text-tertiary uppercase tracking-widest mb-2 block">QUARTERLY_CONTRACT</span>
+<h2 class="text-3xl font-headline font-extrabold text-white mb-4 tracking-tighter leading-none">ANNUAL FIELD_SUPPLY <br/>SUBSCRIPTION</h2>
+<p class="text-on-surface-variant text-sm mb-6 max-w-md">Lock in enterprise pricing for all federation equipment. Includes verified certification audits and priority shipping for the 2024 season.</p>
+<button class="bg-white text-black px-8 py-3 rounded-md font-headline font-bold text-xs tracking-widest hover:bg-secondary-fixed transition-all">ESTABLISH_CONTRACT</button>
+</div>
+</div>
+<div class="bg-surface-container p-6 border-t-4 border-tertiary flex flex-col justify-between rounded-lg">
+<div>
+<span class="material-symbols-outlined text-tertiary text-4xl mb-4" style="font-variation-settings: 'FILL' 1;">workspace_premium</span>
+<h3 class="font-headline font-bold text-white text-xl mb-2">AUDIT_READY</h3>
+<p class="text-on-surface-variant text-xs leading-relaxed">All inventory comes pre-verified for FIFA, NBA, and NFL professional standards. Zero-delay integration.</p>
+</div>
+<a class="text-tertiary font-headline text-[10px] font-bold tracking-widest flex items-center gap-2 hover:gap-3 transition-all" href="#">
+                        DOWNLOAD_CERTS
+                        <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar Shared Component -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center h-20 px-4 pb-safe bg-[#131313] border-t border-white/10">
+<div class="flex flex-col items-center justify-center text-gray-400 opacity-60 hover:text-white transition-opacity active:bg-[#2A2A2A] cursor-pointer">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-['Space_Grotesk'] text-[10px] font-bold uppercase tracking-widest">HQ</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#00E5FF] bg-[#1C1B1B] rounded-md px-4 py-1 active:bg-[#2A2A2A] cursor-pointer">
+<span class="material-symbols-outlined">shopping_basket</span>
+<span class="font-['Space_Grotesk'] text-[10px] font-bold uppercase tracking-widest">GEAR</span>
+</div>
+<div class="flex flex-col items-center justify-center text-gray-400 opacity-60 hover:text-white transition-opacity active:bg-[#2A2A2A] cursor-pointer">
+<span class="material-symbols-outlined">account_balance_wallet</span>
+<span class="font-['Space_Grotesk'] text-[10px] font-bold uppercase tracking-widest">WALLET</span>
+</div>
+<div class="flex flex-col items-center justify-center text-gray-400 opacity-60 hover:text-white transition-opacity active:bg-[#2A2A2A] cursor-pointer">
+<span class="material-symbols-outlined">account_circle</span>
+<span class="font-['Space_Grotesk'] text-[10px] font-bold uppercase tracking-widest">PROFILE</span>
+</div>
+</nav>
+</body></html>

@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Incident Identification | AGS Global Arena</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;900&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-tertiary-fixed": "#221b00",
+                        "outline": "#8e9192",
+                        "on-tertiary-container": "#4c3f00",
+                        "surface-container-lowest": "#0e0e0e",
+                        "secondary": "#bdf4ff",
+                        "surface-variant": "#353534",
+                        "on-error": "#690005",
+                        "surface-container-high": "#2a2a2a",
+                        "primary-fixed": "#e5e2e1",
+                        "surface": "#131313",
+                        "secondary-fixed": "#9cf0ff",
+                        "tertiary-fixed": "#ffe16d",
+                        "on-secondary-fixed-variant": "#004f58",
+                        "on-background": "#e5e2e1",
+                        "on-primary-fixed-variant": "#474646",
+                        "secondary-fixed-dim": "#00daf3",
+                        "on-surface": "#e5e2e1",
+                        "secondary-container": "#00e3fd",
+                        "on-error-container": "#ffdad6",
+                        "tertiary": "#e9c400",
+                        "inverse-primary": "#5f5e5e",
+                        "background": "#131313",
+                        "tertiary-fixed-dim": "#e9c400",
+                        "surface-tint": "#c8c6c5",
+                        "primary-fixed-dim": "#c8c6c5",
+                        "primary": "#c8c6c5",
+                        "inverse-surface": "#e5e2e1",
+                        "on-secondary-container": "#00616d",
+                        "inverse-on-surface": "#313030",
+                        "surface-bright": "#393939",
+                        "on-secondary-fixed": "#001f24",
+                        "error-container": "#93000a",
+                        "on-primary-container": "#7e7d7d",
+                        "on-secondary": "#00363d",
+                        "on-surface-variant": "#c4c7c7",
+                        "primary-container": "#121212",
+                        "on-tertiary": "#3a3000",
+                        "on-primary": "#313030",
+                        "error": "#ffb4ab",
+                        "on-primary-fixed": "#1c1b1b",
+                        "surface-container": "#201f1f",
+                        "surface-dim": "#131313",
+                        "tertiary-container": "#c9a900",
+                        "surface-container-low": "#1c1b1b",
+                        "on-tertiary-fixed-variant": "#544600",
+                        "surface-container-highest": "#353534",
+                        "outline-variant": "#444748"
+                    },
+                    fontFamily: {
+                        "headline": ["Space Grotesk"],
+                        "body": ["Inter"],
+                        "label": ["Space Grotesk"]
+                    },
+                    borderRadius: { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #131313;
+            font-family: 'Inter', sans-serif;
+        }
+        .header-font {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="text-on-surface min-h-screen flex flex-col">
+<!-- TopAppBar Component -->
+<header class="bg-[#131313] dark:bg-[#131313] docked full-width top-0 z-50 shadow-[0_0_20px_rgba(0,229,255,0.04)]">
+<div class="flex items-center justify-between px-6 py-4 w-full">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[#00E5FF]" data-icon="shield_person">shield_person</span>
+<h1 class="font-['Space_Grotesk'] font-bold tracking-tight uppercase text-[#00E5FF] text-lg">INCIDENT COMMAND</h1>
+</div>
+<div class="flex items-center gap-4">
+<span class="text-[10px] font-['Space_Grotesk'] font-bold tracking-[0.2em] text-[#353534] border border-[#353534]/30 px-2 py-0.5 rounded">SESSION_ENCRYPTED</span>
+<span class="material-symbols-outlined text-[#353534] hover:text-[#00E5FF] transition-colors cursor-pointer" data-icon="info">info</span>
+</div>
+</div>
+<div class="bg-[#1C1B1B] h-[4px] w-full"></div>
+</header>
+<main class="flex-grow flex flex-col items-center py-12 px-4 md:px-8">
+<!-- Progress Protocol Indicator -->
+<div class="w-full max-w-5xl flex justify-between items-center mb-12">
+<div class="flex gap-2">
+<div class="h-1 w-16 bg-[#00E5FF]"></div>
+<div class="h-1 w-16 bg-[#1C1B1B]"></div>
+<div class="h-1 w-16 bg-[#1C1B1B]"></div>
+</div>
+<div class="text-[10px] font-['Space_Grotesk'] font-black tracking-widest text-[#353534]">
+                STEP 01 / IDENTIFY_INCIDENT
+            </div>
+</div>
+<div class="w-full max-w-5xl grid grid-cols-1 md:grid-cols-12 gap-8">
+<!-- Left Side: Main Form Area -->
+<section class="md:col-span-8 space-y-8">
+<div class="space-y-2">
+<h2 class="text-4xl md:text-5xl font-black font-['Space_Grotesk'] tracking-tighter uppercase leading-none">
+                        INCIDENT <span class="text-tertiary">IDENTIFICATION</span>
+</h2>
+<p class="text-on-surface-variant font-['Inter'] text-sm tracking-wide max-w-xl">
+                        Initiate a priority investigation report. All data is routed through the AGS secure backbone with zero-knowledge encryption enabled.
+                    </p>
+</div>
+<!-- Match Selection Node -->
+<div class="bg-surface-container-low p-6 rounded-lg space-y-4">
+<div class="flex items-center justify-between">
+<label class="text-[10px] font-['Space_Grotesk'] font-bold tracking-widest text-secondary-fixed-dim uppercase">MATCH_SELECTION_NODE</label>
+<span class="material-symbols-outlined text-outline text-sm" data-icon="search">search</span>
+</div>
+<div class="relative group">
+<input class="w-full bg-surface-container text-on-surface border-none focus:ring-1 focus:ring-secondary py-4 px-5 text-sm font-medium font-['Inter'] placeholder:text-outline-variant rounded transition-all" placeholder="Search match by team, ID or league..." type="text"/>
+<div class="absolute inset-y-0 right-4 flex items-center pointer-events-none">
+<span class="text-[10px] font-mono text-outline-variant">ALT+S</span>
+</div>
+</div>
+<!-- Quick Select Suggestions -->
+<div class="flex flex-wrap gap-2 pt-2">
+<button class="bg-surface-container-high px-3 py-2 text-[11px] font-bold font-['Space_Grotesk'] text-on-surface hover:text-secondary border-b-2 border-transparent hover:border-secondary transition-all">NAVI TACTICAL vs OMEGA OPS</button>
+<button class="bg-surface-container-high px-3 py-2 text-[11px] font-bold font-['Space_Grotesk'] text-on-surface hover:text-secondary border-b-2 border-transparent hover:border-secondary transition-all">TITAN CORE vs APEX ELITE</button>
+</div>
+</div>
+<!-- Classification Matrix -->
+<div class="space-y-4">
+<label class="text-[10px] font-['Space_Grotesk'] font-bold tracking-widest text-secondary-fixed-dim uppercase">CLASSIFICATION_MATRIX</label>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+<button class="flex flex-col items-center justify-center p-6 bg-surface-container border border-outline-variant/10 hover:bg-secondary-fixed-dim hover:text-on-tertiary-fixed transition-all group">
+<span class="material-symbols-outlined mb-2 text-2xl" data-icon="handshake">handshake</span>
+<span class="text-[10px] font-black font-['Space_Grotesk'] text-center">MATCH-FIXING</span>
+</button>
+<button class="flex flex-col items-center justify-center p-6 bg-surface-container-high text-secondary-fixed-dim border-2 border-secondary-fixed-dim transition-all group shadow-[0_0_15px_rgba(0,229,255,0.1)]">
+<span class="material-symbols-outlined mb-2 text-2xl" data-icon="gavel" style="font-variation-settings: 'FILL' 1;">gavel</span>
+<span class="text-[10px] font-black font-['Space_Grotesk'] text-center">RULE VIOLATION</span>
+</button>
+<button class="flex flex-col items-center justify-center p-6 bg-surface-container border border-outline-variant/10 hover:bg-secondary-fixed-dim hover:text-on-tertiary-fixed transition-all group">
+<span class="material-symbols-outlined mb-2 text-2xl" data-icon="payments">payments</span>
+<span class="text-[10px] font-black font-['Space_Grotesk'] text-center">FINANCIAL ANOMALY</span>
+</button>
+<button class="flex flex-col items-center justify-center p-6 bg-surface-container border border-outline-variant/10 hover:bg-secondary-fixed-dim hover:text-on-tertiary-fixed transition-all group">
+<span class="material-symbols-outlined mb-2 text-2xl" data-icon="query_stats">query_stats</span>
+<span class="text-[10px] font-black font-['Space_Grotesk'] text-center">DATA TAMPERING</span>
+</button>
+</div>
+</div>
+<!-- Strategic Summary -->
+<div class="bg-surface-container-low p-6 rounded-lg space-y-4">
+<label class="text-[10px] font-['Space_Grotesk'] font-bold tracking-widest text-secondary-fixed-dim uppercase">STRATEGIC_SUMMARY</label>
+<textarea class="w-full bg-surface-container text-on-surface border-none focus:ring-1 focus:ring-secondary py-4 px-5 text-sm font-medium font-['Inter'] placeholder:text-outline-variant rounded resize-none" placeholder="Provide a concise high-level description of the observed anomaly. Be specific about the timestamp and actors involved." rows="4"></textarea>
+</div>
+</section>
+<!-- Right Side: Tactical Sidebar -->
+<aside class="md:col-span-4 space-y-6">
+<!-- Secure Transmission Badge -->
+<div class="bg-[#1C1B1B] p-6 border-l-4 border-tertiary relative overflow-hidden group">
+<div class="absolute -right-8 -top-8 text-tertiary/5 select-none">
+<span class="material-symbols-outlined text-8xl" data-icon="lock" style="font-variation-settings: 'FILL' 1;">lock</span>
+</div>
+<div class="relative z-10 flex items-start gap-4">
+<span class="material-symbols-outlined text-tertiary text-3xl" data-icon="verified_user">verified_user</span>
+<div>
+<h3 class="font-['Space_Grotesk'] font-black text-lg text-tertiary leading-tight">256-BIT ANONYMITY LAYER ACTIVE</h3>
+<p class="text-[10px] text-on-surface-variant font-['Inter'] mt-1 font-medium leading-relaxed">
+                                YOUR IP ADRESS HAS BEEN OBFUSCATED. NO LOGS ARE MAINTAINED ON THIS NODE. PROTOCOL 0x99-AGS IS ENGAGED.
+                            </p>
+</div>
+</div>
+</div>
+<!-- Tactical Card -->
+<div class="bg-surface-container p-6 rounded-lg space-y-6">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 bg-secondary rounded-full animate-pulse"></span>
+<h4 class="text-[11px] font-['Space_Grotesk'] font-bold tracking-[0.2em] text-on-surface">REPORT_GUIDELINES</h4>
+</div>
+<ul class="space-y-4">
+<li class="flex gap-3">
+<span class="material-symbols-outlined text-secondary-fixed-dim text-lg" data-icon="double_arrow">double_arrow</span>
+<span class="text-xs text-on-surface-variant font-medium">Focus on factual observation rather than speculation.</span>
+</li>
+<li class="flex gap-3">
+<span class="material-symbols-outlined text-secondary-fixed-dim text-lg" data-icon="double_arrow">double_arrow</span>
+<span class="text-xs text-on-surface-variant font-medium">Upload technical evidence in the next protocol stage.</span>
+</li>
+<li class="flex gap-3">
+<span class="material-symbols-outlined text-secondary-fixed-dim text-lg" data-icon="double_arrow">double_arrow</span>
+<span class="text-xs text-on-surface-variant font-medium">Verify Match ID before proceeding to validation.</span>
+</li>
+</ul>
+<div class="bg-surface-container-lowest p-4 rounded border border-outline-variant/10">
+<img alt="Cyber security pattern" class="w-full h-24 object-cover opacity-30 grayscale rounded mb-4" data-alt="Abstract cyber security hexagonal pattern background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCMnCjJjpj8f4-D9IL2QiunkTiyYycUaO975DEDSZS7c-Xl5MzElJ8-zza7lvGzOaeiUv2hs7C_cY5to7LJxETEW2UfGTas2uEm5UKQd5vX6jQz1q4I-ZeB6NN7s0yI_M0256dklA8ndvSXllX8a2LfXrgpl-e78-JeMLTYQOUUffWe6X7844xaCwD0YL-ZVad6zdOAQgvyTGOrQUGZsHYheNTPiMLRq3bp_qydmfQaIM9qCmtiToj6LmRa_DcP_tXf0LrqPbxFR7Gz"/>
+<div class="text-[9px] font-mono text-outline-variant leading-tight">
+                            SYSTEM_CHECKSUM: 8f92e...44a1 <br/>
+                            LATENCY: 12ms <br/>
+                            UPLINK: SECURE_SOCKET_01
+                        </div>
+</div>
+</div>
+<!-- Primary CTA -->
+<button class="w-full bg-secondary-fixed-dim text-on-tertiary-fixed font-['Space_Grotesk'] font-black py-5 px-6 rounded-md flex items-center justify-between hover:scale-[1.02] active:scale-95 transition-all group shadow-[0_10px_30px_rgba(0,229,255,0.15)]">
+<span class="tracking-widest">PROCEED TO EVIDENCE</span>
+<span class="material-symbols-outlined transition-transform group-hover:translate-x-1" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</aside>
+</div>
+</main>
+<!-- BottomNavBar Component -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center px-4 py-3 bg-[#131313] border-t border-[#353534]/15 z-50">
+<a class="flex flex-col items-center justify-center text-[#353534] px-3 py-1 hover:text-[#E9C400] transition-colors duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+<span class="font-['Space_Grotesk'] text-[10px] font-bold uppercase tracking-[0.05em] mt-1">DASHBOARD</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-[#201F1F] text-[#00E5FF] rounded-md px-3 py-1 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="Assignment_Late">assignment_late</span>
+<span class="font-['Space_Grotesk'] text-[10px] font-bold uppercase tracking-[0.05em] mt-1">REPORTS</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#353534] px-3 py-1 hover:text-[#E9C400] transition-colors duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="radar">radar</span>
+<span class="font-['Space_Grotesk'] text-[10px] font-bold uppercase tracking-[0.05em] mt-1">INTEL</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#353534] px-3 py-1 hover:text-[#E9C400] transition-colors duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="vpn_key">vpn_key</span>
+<span class="font-['Space_Grotesk'] text-[10px] font-bold uppercase tracking-[0.05em] mt-1">SECURE</span>
+</a>
+</nav>
+<!-- Spacing for navigation -->
+<div class="h-20"></div>
+</body></html>
