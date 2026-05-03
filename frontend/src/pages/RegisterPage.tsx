@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { type ChangeEvent, type FormEvent, useState } from "react";
 import { registerUser } from "../api/auth";
 
 const RegisterPage = () => {
@@ -8,7 +8,7 @@ const RegisterPage = () => {
   const [password, setPassword] = useState("");
   const [message, setMessage] = useState<string | null>(null);
 
-  async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     setMessage(null);
     try {
@@ -33,7 +33,7 @@ const RegisterPage = () => {
           <span className="text-sm text-slate-300">Organization name</span>
           <input
             value={organizationName}
-            onChange={(e) => setOrganizationName(e.target.value)}
+            onChange={(e: ChangeEvent<HTMLInputElement>) => setOrganizationName(e.target.value)}
             className="mt-2 w-full rounded-2xl border border-slate-700 bg-[#111111] px-4 py-3 text-white outline-none focus:border-cyan-400"
           />
         </label>
@@ -41,7 +41,7 @@ const RegisterPage = () => {
           <span className="text-sm text-slate-300">Organization slug</span>
           <input
             value={organizationSlug}
-            onChange={(e) => setOrganizationSlug(e.target.value)}
+            onChange={(e: ChangeEvent<HTMLInputElement>) => setOrganizationSlug(e.target.value)}
             className="mt-2 w-full rounded-2xl border border-slate-700 bg-[#111111] px-4 py-3 text-white outline-none focus:border-cyan-400"
           />
         </label>
@@ -49,7 +49,7 @@ const RegisterPage = () => {
           <span className="text-sm text-slate-300">Username</span>
           <input
             value={username}
-            onChange={(e) => setUsername(e.target.value)}
+            onChange={(e: ChangeEvent<HTMLInputElement>) => setUsername(e.target.value)}
             className="mt-2 w-full rounded-2xl border border-slate-700 bg-[#111111] px-4 py-3 text-white outline-none focus:border-cyan-400"
           />
         </label>
@@ -58,7 +58,7 @@ const RegisterPage = () => {
           <input
             type="password"
             value={password}
-            onChange={(e) => setPassword(e.target.value)}
+            onChange={(e: ChangeEvent<HTMLInputElement>) => setPassword(e.target.value)}
             className="mt-2 w-full rounded-2xl border border-slate-700 bg-[#111111] px-4 py-3 text-white outline-none focus:border-cyan-400"
           />
         </label>
