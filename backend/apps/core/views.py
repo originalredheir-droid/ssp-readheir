@@ -34,6 +34,13 @@ class LoginAPIView(ObtainAuthToken):
         return Response({"token": token.key, "user": user_data})
 
 
+class CurrentUserAPIView(APIView):
+    permission_classes = [IsAuthenticated]
+
+    def get(self, request, *args, **kwargs):
+        return Response(UserSerializer(request.user).data)
+
+
 class TournamentViewSet(viewsets.ModelViewSet):
     serializer_class = TournamentSerializer
     permission_classes = [IsAuthenticated, IsTenantUser]

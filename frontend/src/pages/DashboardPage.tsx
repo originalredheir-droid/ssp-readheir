@@ -1,6 +1,23 @@
+import { useEffect, useState } from "react";
 import MetricCard from "../components/MetricCard";
+import { fetchTournaments } from "../api/tournaments";
+import { fetchMatches } from "../api/matches";
 
 const DashboardPage = () => {
+  const [tournamentCount, setTournamentCount] = useState(0);
+  const [liveMatchCount, setLiveMatchCount] = useState(0);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    setLoading(true);
+    Promise.all([fetchTournaments(), fetchMatches()])
+      .then(([tournaments, matches]) => {
+        setTournamentCount(tournaments.length);
+        setLiveMatchCount(matches.filter((match) => match.status === "live").length);
+      })
+      .finally(() => setLoading(false));
+  }, []);
+
   return (
     <section className="space-y-6">
       <div className="rounded-[32px] border border-slate-800 bg-[#181818] p-6 shadow-lg shadow-black/20">
@@ -14,9 +31,17 @@ const DashboardPage = () => {
         </div>
       </div>
       <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
-        <MetricCard label="Active tournaments" value={3} accent="text-cyan-300" />
-        <MetricCard label="Live matches" value={1} accent="text-emerald-400" />
-        <MetricCard label="Verified players" value={12} accent="text-amber-300" />
+        <MetricCard
+          label="Active tournaments"
+          value={loading ? "Loading..." : tournamentCount}
+          accent="text-cyan-300"
+        />
+        <MetricCard
+          label="Live matches"
+          value={loading ? "Loading..." : liveMatchCount}
+          accent="text-emerald-400"
+        />
+        <MetricCard label="Verified players" value="TBD" accent="text-amber-300" />
         <MetricCard label="Leaderboard refresh" value="Realtime" />
       </div>
     </section>

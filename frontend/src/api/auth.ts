@@ -1,11 +1,26 @@
 import api, { setAuthToken } from "./client";
 
-interface LoginPayload {
+export interface Organization {
+  id: string;
+  name: string;
+  slug: string;
+  created_at?: string;
+}
+
+export interface User {
+  id: string;
+  username: string;
+  email: string;
+  role: string;
+  organization?: Organization | null;
+}
+
+export interface LoginPayload {
   username: string;
   password: string;
 }
 
-interface RegisterPayload {
+export interface RegisterPayload {
   username: string;
   password: string;
   email?: string;
@@ -14,8 +29,13 @@ interface RegisterPayload {
   role?: string;
 }
 
-export async function loginUser(payload: LoginPayload) {
-  const response = await api.post("/auth/login/", payload);
+export interface AuthResponse {
+  token: string;
+  user: User;
+}
+
+export async function loginUser(payload: LoginPayload): Promise<AuthResponse> {
+  const response = await api.post<AuthResponse>("/auth/login/", payload);
   const token = response.data?.token;
   if (token) {
     setAuthToken(token);
@@ -24,8 +44,8 @@ export async function loginUser(payload: LoginPayload) {
   return response.data;
 }
 
-export async function registerUser(payload: RegisterPayload) {
-  const response = await api.post("/auth/register/", payload);
+export async function registerUser(payload: RegisterPayload): Promise<AuthResponse> {
+  const response = await api.post<AuthResponse>("/auth/register/", payload);
   const token = response.data?.token;
   if (token) {
     setAuthToken(token);
@@ -34,9 +54,21 @@ export async function registerUser(payload: RegisterPayload) {
   return response.data;
 }
 
-export function loadTokenFromStorage() {
+export async function fetchCurrentUser(): Promise<User> {
+  const response = await api.get<User>("/auth/me/");
+  return response.data;
+}
+
+export function logoutUser() {
+  localStorage.removeItem("ssp_token");
+  setAuthToken(null);
+}
+
+export function loadTokenFromStorage(): string | null {
   const token = localStorage.getItem("ssp_token");
   if (token) {
     setAuthToken(token);
+    return token;
   }
+  return null;
 }

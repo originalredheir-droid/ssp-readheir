@@ -1,5 +1,6 @@
 import { type ChangeEvent, type FormEvent, useState } from "react";
-import { registerUser } from "../api/auth";
+import { useNavigate } from "react-router-dom";
+import { useAuth } from "../context/AuthContext";
 
 const RegisterPage = () => {
   const [organizationName, setOrganizationName] = useState("");
@@ -7,18 +8,20 @@ const RegisterPage = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [message, setMessage] = useState<string | null>(null);
+  const navigate = useNavigate();
+  const { register, loading } = useAuth();
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     setMessage(null);
     try {
-      await registerUser({
+      await register({
         username,
         password,
         organization_name: organizationName,
         organization_slug: organizationSlug,
       });
-      setMessage("Registration successful. You are now signed in.");
+      navigate("/dashboard");
     } catch (err) {
       setMessage("Registration failed. Please check your data and try again.");
     }

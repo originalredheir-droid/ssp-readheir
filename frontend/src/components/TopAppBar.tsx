@@ -1,6 +1,9 @@
 import { Link } from "react-router-dom";
+import { useAuth } from "../context/AuthContext";
 
 const TopAppBar = () => {
+  const { user, logout } = useAuth();
+
   return (
     <header className="border-b border-slate-800 bg-[#0f0f0f] text-white">
       <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-3 px-4 py-4">
@@ -23,9 +26,24 @@ const TopAppBar = () => {
           <Link to="/leaderboard" className="hover:text-white">
             Leaderboard
           </Link>
-          <Link to="/login" className="rounded-lg bg-slate-900 px-3 py-2 hover:bg-slate-800">
-            Login
-          </Link>
+          {user ? (
+            <>
+              <span className="rounded-full border border-slate-700 bg-slate-900 px-3 py-2 text-slate-200">
+                {user.username}
+              </span>
+              <button
+                onClick={logout}
+                className="rounded-lg bg-slate-900 px-3 py-2 text-slate-200 transition hover:bg-slate-800"
+                type="button"
+              >
+                Logout
+              </button>
+            </>
+          ) : (
+            <Link to="/login" className="rounded-lg bg-slate-900 px-3 py-2 hover:bg-slate-800">
+              Login
+            </Link>
+          )}
         </nav>
       </div>
     </header>
