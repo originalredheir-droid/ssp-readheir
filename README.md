@@ -20,6 +20,12 @@ python manage.py createsuperuser
 python manage.py runserver
 ```
 
+After you have a PostgreSQL database configured and the Django app is using it, apply tenant row-level security policies:
+
+```bash
+python manage.py apply_rls_policies
+```
+
 ### Frontend
 
 ```bash

@@ -1,17 +1,17 @@
 import api from "./client";
-import { Tournament, Match, Player } from "../types";
+import { Tournament } from "../types";
 
-export async function fetchTournaments(): Promise<Tournament[]> {
-  const response = await api.get("/tournaments/");
+export interface TournamentQuery {
+  search?: string;
+  status?: string;
+}
+
+export async function fetchTournaments(query: TournamentQuery = {}): Promise<Tournament[]> {
+  const response = await api.get("/tournaments/", { params: query });
   return response.data;
 }
 
-export async function fetchMatch(id: string): Promise<Match> {
-  const response = await api.get(`/matches/${id}/`);
-  return response.data;
-}
-
-export async function fetchPlayer(id: string): Promise<Player> {
-  const response = await api.get(`/players/${id}/`);
+export async function fetchTournament(id: string): Promise<Tournament> {
+  const response = await api.get(`/tournaments/${id}/`);
   return response.data;
 }

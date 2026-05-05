@@ -4,6 +4,15 @@ from rest_framework.authtoken.models import Token
 
 
 class TenantMiddleware(MiddlewareMixin):
+    def _set_current_org(self, org_id):
+        if connection.vendor != "postgresql":
+            return
+        with connection.cursor() as cursor:
+            if org_id:
+                cursor.execute("SET app.current_org = %s", [str(org_id)])
+            else:
+                cursor.execute("RESET app.current_org")
+
     def process_request(self, request):
         auth_header = request.META.get("HTTP_AUTHORIZATION", "")
         token_key = None
@@ -15,8 +24,12 @@ class TenantMiddleware(MiddlewareMixin):
                 token = Token.objects.select_related("user__organization").get(key=token_key)
                 request.user = token.user
                 request.tenant_organization = token.user.organization
-                if token.user.organization_id and connection.vendor == "postgresql":
-                    with connection.cursor() as cursor:
-                        cursor.execute("SET app.current_org = %s", [str(token.user.organization_id)])
+                self._set_current_org(token.user.organization_id)
             except Token.DoesNotExist:
-                pass
+                self._set_current_org(None)
+        else:
+            self._set_current_org(None)
+
+    def process_response(self, request, response):
+        self._set_current_org(None)
+        return response

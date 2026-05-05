@@ -1,1 +1,274 @@
-﻿
+﻿AGS Enterprise: Global Sports Infrastructure Plan
+Parent Entity: AGS Enterprises
+Core Product: Multi-Tenant Sports SaaS Ecosystem
+Vision: Providing the digital "stadium" for global sports management.
+
+## IMPORTANT UPDATE (May 2026)
+This document has been revised to reflect the current stack and MVP direction.
+We are building the product with Django and Firebase, not Elixir.
+
+---
+
+## 1. Brand Identity & Naming
+    • Official App Name: SuperSports (current codename)
+    • Tagline: The Backbone of Every Game.
+    • Color Scheme (High-Performance Professional):
+        ◦ Primary: Midnight Charcoal (#131313) – Authority and stability
+        ◦ Secondary: Electric Cyan (#00E5FF) – Active buttons and live scores
+        ◦ Accent: Safety Gold (#E9C400) – Verified officials and achievements
+    • UI/UX: Dark-mode first, tactical precision aesthetic
+
+---
+
+## 2. Multi-Tenant Business Architecture
+AGS acts as a "Landlord" - we provide the software, organizations run their sports.
+
+    • Tier 1: Local/Grassroots (Transactional)
+        ◦ Users: Schools, local clubs, neighborhood organizers
+        ◦ Revenue: Commission on registration fees + platform fees
+        ◦ Self-Service: Complete autonomy for organizers
+
+    • Tier 2: Professional/Enterprise
+        ◦ Users: Federations, pro leagues, state sports boards
+        ◦ Revenue: Annual license fee or higher commission tiers
+        ◦ Dedicated instances with custom branding
+
+---
+
+## 3. Operational Feature Set (Django + Firebase MVP)
+
+### A. Match & Tournament Operations
+    • Tournament bracket logic (single/double elimination, round-robin)
+    • Digital scoring with referee controls
+    • Automatic bracket progression on score finalization
+    • MVP voting per match
+    • Match status workflow (scheduled → live → completed)
+
+### B. Social & Career Ecosystem
+    • Dual-channel chat: Official (referees only) + Public (fans)
+    • Verified player profiles with stats, BMI, match history
+    • Global leaderboards with live updates
+    • Player achievement badges and verification system
+
+### C. Tactical Features (Phase 2)
+    • Basic tactical board for coach annotations
+    • Player position tracking
+    • Match analytics dashboard
+
+---
+
+## 4. Technical Architecture (Django + Firebase)
+
+### Core Stack
+    • Backend: Django + Django REST Framework
+    • Authentication: Firebase Authentication for MVP login
+    • Database: PostgreSQL with org_id-based tenant filtering
+    • Frontend: React + Vite + Tailwind CSS
+    • Hosting: Django backend on standard cloud platform, React frontend on Vercel/Netlify or Firebase Hosting
+    • Storage: Firebase Storage for uploads if needed
+    • Realtime options: Django Channels/Redis for chat or Firebase Realtime DB for lightweight state
+
+### Multi-Tenancy Implementation
+    • Single PostgreSQL database with org_id tenant field
+    • Django middleware and DRF permissions enforce tenant isolation
+    • Optionally add PostgreSQL RLS later for stronger data separation
+    • Authorization rule example:
+      - Users can only access resources where resource.org_id == user.org_id
+      - Super-admin role can access all tenants
+
+### Authentication Strategy
+    • Use Firebase Auth for user sign in, registration, email verification
+    • Frontend uses Firebase SDK to sign in and obtain ID tokens
+    • Django verifies Firebase ID tokens on incoming requests
+    • Django maps Firebase UID/email to local user records and issues app sessions or API tokens
+    • Keep core business data in Django, not Firebase
+
+### Realtime Architecture
+    • Use simple polling or Django Channels for MVP live updates
+    • Use Firebase Realtime DB / Firestore only for secondary features like chat or spectator status if needed
+    • Keep match/multitenant data in PostgreSQL and update UI via WebSocket or frontend polling
+
+---
+
+## 5. Implementation Roadmap (UI-First + Django MVP)
+
+### PHASE 1: Foundation & UI + Auth (Weeks 1-3)
+**Goal: Build UI components and Firebase-backed login flow**
+
+Week 1 - Core Components:
+    • TopAppBar (navigation)
+    • StatusBadge
+    • MetricCard
+    • CardContainer
+    • AlertBanner
+    • Button variants
+
+Week 2 - Form & Data Components:
+    • FormInput, FormSelect, Checkbox, Radio
+    • DataTable with sorting and filters
+    • Avatar with status badges
+    • SectionHeader
+    • Tabs component
+    • Modal/Overlay
+
+Week 3 - Auth and UI pages:
+    • Login, Register, Forgot Password pages
+    • Firebase Auth integration frontend
+    • Django endpoint to verify Firebase ID tokens
+    • Save user session and attach token to API calls
+
+**Deliverable**: Frontend UI kit + working Firebase/Django auth flow
+
+---
+
+### PHASE 2: Core Features (Weeks 4-7)
+**Goal: Build tournament and match workflows on Django**
+
+Week 4 - Tournament Management:
+    • Tournament list and filters
+    • Create/Edit tournament
+    • Tournament detail with bracket overview
+    • Team registration flow
+    • Bracket generation/progression logic
+
+Week 5 - Live Match Scoring:
+    • Referee scoring interface
+    • Match status controls (start, complete, cancel)
+    • Score updates broadcast to viewers
+    • MVP voting during live matches
+    • Disqualification workflow
+
+Week 6 - Chat & Leaderboards:
+    • Match chat channels
+    • Real-time leaderboard updates
+    • Player ranking and stats display
+    • Tenant-specific leaderboard views
+
+Week 7 - Player Profiles:
+    • Verified player badges
+    • Match history and stats
+    • BMI/supporting player metrics
+    • Player search and discovery
+    • Scout profile view
+
+**Deliverable**: MVP with tournaments, live scoring, chat, leaderboards
+
+---
+
+### PHASE 3: Admin & Polish (Weeks 8-10)
+**Goal: Admin UX, API stability, and production readiness**
+
+Week 8 - Admin Dashboard:
+    • Tenant management
+    • User management across orgs
+    • Financial overview and reports
+    • System health monitoring
+
+Week 9 - API & Mobile Support:
+    • Stable REST API endpoints for mobile/clients
+    • Authentication API for Firebase-backed users
+    • CRUD endpoints for tournaments, matches, players
+    • API documentation
+
+Week 10 - Testing & Production Prep:
+    • Unit tests for Django business logic
+    • Integration tests for API endpoints
+    • Tenant isolation tests
+    • Performance and security checks
+    • Deployment configuration
+    • Seed/demo data setup
+
+**Deliverable**: Production-ready MVP with tests and docs
+
+---
+
+### PHASE 4: Advanced Features (Weeks 11-16+)
+**Goal: Expand functionality once MVP is stable**
+
+    • Advanced bracket types (group stage, Swiss)
+    • Tournament registration payments
+    • Document upload for player verification
+    • Audit logging and activity trails
+    • Email notifications and reminders
+    • Export functionality (PDF brackets, CSV stats)
+    • Analytics dashboards
+    • Match video highlights integration
+    • Team roster management
+    • Referee performance tracking
+    • Sponsorship management
+
+---
+
+## 6. Success Metrics for MVP
+
+**Minimum Viable Product Definition:**
+    ✓ User can register and log in
+    ✓ Organizer can create a tournament with bracket
+    ✓ Referee can update live scores
+    ✓ Scores broadcast to viewers
+    ✓ Players have profiles with stats
+    ✓ Chat works during matches
+    ✓ Leaderboards update automatically
+    ✓ Tenant data is isolated
+    ✓ Admin can manage tenants and users
+    ✓ Responsive design works on desktop/mobile
+
+**MVP Launch Criteria:**
+    • Phase 1-2 complete
+    • No critical security issues
+    • Tenant isolation verified
+    • Frontend performance is acceptable
+    • Key workflows tested
+    • Deployment path documented
+
+---
+
+## 7. Strategic Business Insights
+
+### The "Mafia Offer" - Our 10x Feature
+Solve age-fraud in youth sports with instant digital player verification. If we can verify a player's age and identity in one click, leagues will adopt us just for that.
+
+### The Data Moat
+Verified player and match data becomes the source of truth for scouts, leagues, and referees. That creates network effect and defensibility.
+
+### Land and Expand
+Start with tournament brackets and live match scoring as the hook. Once data and workflows are locked in, expand into chat, analytics, and player verification.
+
+### Self-Serve Infrastructure
+Tenant onboarding must be zero-touch. Organizers should start a tournament without support intervention.
+
+### The "Noisy Neighbor" Problem
+Protect small tenants by limiting requests per org and optimizing database queries.
+
+### Data Residency (Future)
+Design the app so tenant data can be hosted regionally later if needed.
+
+---
+
+## 8. What We're NOT Building
+
+**External Services We Won't Integrate for MVP:**
+    ✗ Razorpay (simple payment handling later)
+    ✗ Meilisearch (PostgreSQL search for now)
+    ✗ Rocket.Chat (build a lightweight in-app chat)
+    ✗ GlobaLeaks (not core for MVP)
+    ✗ Form.io (simple forms built in React)
+    ✗ wger/FullCalendar/Fabric.js/Video.js (build minimal custom UIs)
+    ✗ Lago/Silverback (manual billing until later)
+    ✗ Metabase (use built-in reporting and charts)
+
+**Tech Stack Change:**
+    ✓ Use Django + DRF for backend
+    ✓ Use Firebase Auth for login
+    ✓ Use React + Vite + Tailwind for frontend
+    ✗ No Elixir/Phoenix for this release
+
+---
+
+## 9. What We Plan to Do Next
+
+1. Stabilize the current Django frontend/backend repo.
+2. Add Firebase authentication and verify tokens in Django.
+3. Build the core tournament and match workflows in Django.
+4. Keep chat and live updates lightweight for MVP.
+5. Reserve advanced features for after Phase 2.

@@ -8,8 +8,16 @@ User = get_user_model()
 class OrganizationSerializer(serializers.ModelSerializer):
     class Meta:
         model = Organization
-        fields = ["id", "name", "slug", "created_at"]
-        read_only_fields = ["id", "created_at"]
+        fields = [
+            "id",
+            "name",
+            "slug",
+            "plan_tier",
+            "subscription_status",
+            "subscription_next_billing_at",
+            "created_at",
+        ]
+        read_only_fields = ["id", "subscription_status", "subscription_next_billing_at", "created_at"]
 
 
 class UserSerializer(serializers.ModelSerializer):
@@ -81,5 +89,5 @@ class MatchSerializer(serializers.ModelSerializer):
 class PlayerSerializer(serializers.ModelSerializer):
     class Meta:
         model = Player
-        fields = ["id", "name", "position", "verified", "dob", "created_at"]
+        fields = ["id", "name", "team_name", "position", "verified", "dob", "created_at"]
         read_only_fields = ["id", "created_at"]

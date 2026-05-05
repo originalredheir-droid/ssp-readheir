@@ -18,6 +18,7 @@ interface AuthContextValue {
   login: (payload: LoginPayload) => Promise<void>;
   register: (payload: RegisterPayload) => Promise<void>;
   logout: () => void;
+  refreshUser: () => Promise<void>;
 }
 
 const AuthContext = createContext<AuthContextValue | undefined>(undefined);
@@ -49,6 +50,17 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
         setLoading(false);
         setInitialized(true);
       });
+  }, []);
+
+  const refreshUser = useCallback(async () => {
+    try {
+      const data = await fetchCurrentUser();
+      setUser(data);
+    } catch {
+      apiLogout();
+      setToken(null);
+      setUser(null);
+    }
   }, []);
 
   const login = useCallback(async (payload: LoginPayload) => {
@@ -88,8 +100,9 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
       login,
       register,
       logout,
+      refreshUser,
     }),
-    [user, token, loading, initialized, login, register, logout]
+    [user, token, loading, initialized, login, register, logout, refreshUser]
   );
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;

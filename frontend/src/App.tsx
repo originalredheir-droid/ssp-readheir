@@ -8,7 +8,10 @@ import TournamentListPage from "./pages/TournamentListPage";
 import TournamentBracketPage from "./pages/TournamentBracketPage";
 import LeaderboardPage from "./pages/LeaderboardPage";
 import MatchDetailPage from "./pages/MatchDetailPage";
+import MatchListPage from "./pages/MatchListPage";
+import PlayerDirectoryPage from "./pages/PlayerDirectoryPage";
 import PlayerProfilePage from "./pages/PlayerProfilePage";
+import BillingPage from "./pages/BillingPage";
 import RefereeScoringPage from "./pages/RefereeScoringPage";
 import TopAppBar from "./components/TopAppBar";
 
@@ -48,10 +51,13 @@ function App() {
           <Route path="/dashboard" element={<PrivateRoute><DashboardPage /></PrivateRoute>} />
           <Route path="/tournaments" element={<PrivateRoute><TournamentListPage /></PrivateRoute>} />
           <Route path="/bracket" element={<PrivateRoute><TournamentBracketPage /></PrivateRoute>} />
+          <Route path="/matches" element={<PrivateRoute><MatchListPage /></PrivateRoute>} />
+          <Route path="/matches/:id" element={<PrivateRoute><MatchDetailPage /></PrivateRoute>} />
+          <Route path="/players" element={<PrivateRoute><PlayerDirectoryPage /></PrivateRoute>} />
+          <Route path="/players/:id" element={<PrivateRoute><PlayerProfilePage /></PrivateRoute>} />
+          <Route path="/billing" element={<PrivateRoute><BillingPage /></PrivateRoute>} />
           <Route path="/scoring" element={<PrivateRoute><RefereeScoringPage /></PrivateRoute>} />
           <Route path="/leaderboard" element={<PrivateRoute><LeaderboardPage /></PrivateRoute>} />
-          <Route path="/matches/:id" element={<PrivateRoute><MatchDetailPage /></PrivateRoute>} />
-          <Route path="/players/:id" element={<PrivateRoute><PlayerProfilePage /></PrivateRoute>} />
         </Routes>
       </main>
     </div>

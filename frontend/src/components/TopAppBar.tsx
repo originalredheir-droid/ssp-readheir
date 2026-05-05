@@ -20,6 +20,15 @@ const TopAppBar = () => {
           <Link to="/bracket" className="hover:text-white">
             Bracket
           </Link>
+          <Link to="/matches" className="hover:text-white">
+            Matches
+          </Link>
+          <Link to="/players" className="hover:text-white">
+            Players
+          </Link>
+          <Link to="/billing" className="hover:text-white">
+            Billing
+          </Link>
           <Link to="/scoring" className="hover:text-white">
             Scoring
           </Link>

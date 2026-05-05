@@ -1,21 +1,45 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
-import { matches } from "../data/mock";
-import { Match } from "../types";
+import { Link, useParams } from "react-router-dom";
+import { fetchMatch } from "../api/matches";
+import type { Match } from "../types";
 
 const MatchDetailPage = () => {
   const { id } = useParams();
   const [match, setMatch] = useState<Match | null>(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+
+  const loadMatch = async () => {
+    setLoading(true);
+    setError(null);
+    if (!id) {
+      setError("Match ID is missing.");
+      setLoading(false);
+      return;
+    }
+
+    try {
+      const data = await fetchMatch(id);
+      setMatch(data);
+    } catch {
+      setError("Unable to load match details.");
+    } finally {
+      setLoading(false);
+    }
+  };
 
   useEffect(() => {
-    if (id) {
-      const matchRecord = matches.find((item) => item.id === id) || null;
-      setMatch(matchRecord);
-    }
+    loadMatch();
+    const interval = window.setInterval(loadMatch, 8000);
+    return () => window.clearInterval(interval);
   }, [id]);
 
-  if (!match) {
-    return <p className="text-slate-400">Match not found.</p>;
+  if (loading) {
+    return <p className="text-slate-300">Loading match details...</p>;
+  }
+
+  if (error || !match) {
+    return <p className="text-rose-400">{error ?? "Match not found."}</p>;
   }
 
   return (
@@ -37,9 +61,20 @@ const MatchDetailPage = () => {
           <p className="mt-3 text-4xl font-semibold text-white">{match.away_score}</p>
         </div>
       </div>
-      <div className="mt-8 rounded-3xl border border-slate-800 bg-[#121212] p-6">
-        <h2 className="text-lg font-semibold text-white">Match notes</h2>
-        <p className="mt-3 text-slate-400">Live scoring interface, referee controls, and match metadata will appear here in the next phase.</p>
+      <div className="mt-8 grid gap-6 lg:grid-cols-[1fr_auto]">
+        <div className="rounded-3xl border border-slate-800 bg-[#121212] p-6">
+          <h2 className="text-lg font-semibold text-white">Match notes</h2>
+          <p className="mt-3 text-slate-400">This match is loaded from your backend and is tenant-isolated by auth.</p>
+        </div>
+        <div className="rounded-3xl border border-slate-800 bg-[#121212] p-6 text-center">
+          <p className="text-sm uppercase tracking-[0.24em] text-slate-400">Referee controls</p>
+          <Link
+            to={`/scoring?matchId=${match.id}`}
+            className="mt-4 inline-flex rounded-2xl bg-cyan-500 px-5 py-3 text-sm font-semibold text-slate-950 transition hover:bg-cyan-400"
+          >
+            Open scoring panel
+          </Link>
+        </div>
       </div>
     </section>
   );

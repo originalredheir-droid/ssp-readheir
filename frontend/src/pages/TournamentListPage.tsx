@@ -5,16 +5,27 @@ import type { Tournament } from "../types";
 
 const TournamentListPage = () => {
   const [tournaments, setTournaments] = useState<Tournament[]>([]);
+  const [search, setSearch] = useState("");
+  const [statusFilter, setStatusFilter] = useState("");
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
-  useEffect(() => {
+  const loadTournaments = async () => {
     setLoading(true);
-    fetchTournaments()
-      .then((data) => setTournaments(data))
-      .catch(() => setError("Unable to load tournaments. Please try again."))
-      .finally(() => setLoading(false));
-  }, []);
+    setError(null);
+    try {
+      const data = await fetchTournaments({ search: search || undefined, status: statusFilter || undefined });
+      setTournaments(data);
+    } catch {
+      setError("Unable to load tournaments. Please try again.");
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    loadTournaments();
+  }, [search, statusFilter]);
 
   return (
     <section className="space-y-6">
@@ -32,7 +43,34 @@ const TournamentListPage = () => {
             View bracket
           </Link>
         </div>
-        <div className="mt-6 grid gap-4">
+        <div className="mt-6 grid gap-4 rounded-[32px] border border-slate-800 bg-[#0f1725] p-6 shadow-lg shadow-black/20">
+        <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+          <label className="space-y-2">
+            <span className="text-xs uppercase tracking-[0.24em] text-slate-400">Search tournaments</span>
+            <input
+              value={search}
+              onChange={(event) => setSearch(event.target.value)}
+              className="w-full rounded-3xl border border-slate-700 bg-[#111827] px-4 py-3 text-white outline-none focus:border-cyan-400"
+              placeholder="Search by name or description"
+            />
+          </label>
+          <label className="space-y-2">
+            <span className="text-xs uppercase tracking-[0.24em] text-slate-400">Status</span>
+            <select
+              value={statusFilter}
+              onChange={(event) => setStatusFilter(event.target.value)}
+              className="w-full rounded-3xl border border-slate-700 bg-[#111827] px-4 py-3 text-white outline-none"
+            >
+              <option value="">All statuses</option>
+              <option value="draft">Draft</option>
+              <option value="scheduled">Scheduled</option>
+              <option value="live">Live</option>
+              <option value="completed">Completed</option>
+            </select>
+          </label>
+        </div>
+      </div>
+      <div className="mt-6 grid gap-4">
           {loading ? (
             <div className="rounded-3xl border border-slate-800 bg-[#0d0d0d] p-6 text-center text-slate-300">
               Loading tournaments...

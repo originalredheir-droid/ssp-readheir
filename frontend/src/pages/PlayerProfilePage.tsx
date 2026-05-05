@@ -1,21 +1,36 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { players } from "../data/mock";
+import { fetchPlayer } from "../api/players";
 import { Player } from "../types";
 
 const PlayerProfilePage = () => {
   const { id } = useParams();
   const [player, setPlayer] = useState<Player | null>(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    if (id) {
-      const playerRecord = players.find((item) => item.id === id) || null;
-      setPlayer(playerRecord);
+    if (!id) {
+      setError("Player ID is missing.");
+      setLoading(false);
+      return;
     }
+
+    setLoading(true);
+    setError(null);
+
+    fetchPlayer(id)
+      .then((data) => setPlayer(data))
+      .catch(() => setError("Unable to load player profile."))
+      .finally(() => setLoading(false));
   }, [id]);
 
-  if (!player) {
-    return <p className="text-slate-400">Player not found.</p>;
+  if (loading) {
+    return <p className="text-slate-300">Loading player profile...</p>;
+  }
+
+  if (error || !player) {
+    return <p className="text-rose-400">{error ?? "Player not found."}</p>;
   }
 
   return (
@@ -24,6 +39,7 @@ const PlayerProfilePage = () => {
         <div>
           <p className="text-sm uppercase tracking-[0.24em] text-cyan-300">Player</p>
           <h1 className="mt-3 text-3xl font-semibold text-white">{player.name}</h1>
+          <p className="mt-2 text-sm text-slate-400">{player.team_name || "No team assigned"}</p>
         </div>
         <span className="rounded-full bg-slate-900 px-3 py-1 text-xs uppercase tracking-[0.2em] text-cyan-300">
           {player.position}

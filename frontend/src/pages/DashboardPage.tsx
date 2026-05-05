@@ -1,21 +1,30 @@
 import { useEffect, useState } from "react";
+import { useAuth } from "../context/AuthContext";
 import MetricCard from "../components/MetricCard";
 import { fetchTournaments } from "../api/tournaments";
 import { fetchMatches } from "../api/matches";
 
 const DashboardPage = () => {
+  const { user } = useAuth();
   const [tournamentCount, setTournamentCount] = useState(0);
   const [liveMatchCount, setLiveMatchCount] = useState(0);
   const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
+  const refreshStats = async () => {
     setLoading(true);
-    Promise.all([fetchTournaments(), fetchMatches()])
-      .then(([tournaments, matches]) => {
-        setTournamentCount(tournaments.length);
-        setLiveMatchCount(matches.filter((match) => match.status === "live").length);
-      })
-      .finally(() => setLoading(false));
+    try {
+      const [tournaments, matches] = await Promise.all([fetchTournaments(), fetchMatches()]);
+      setTournamentCount(tournaments.length);
+      setLiveMatchCount(matches.filter((match) => match.status === "live").length);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    refreshStats();
+    const interval = window.setInterval(refreshStats, 10000);
+    return () => window.clearInterval(interval);
   }, []);
 
   return (
@@ -29,6 +38,11 @@ const DashboardPage = () => {
           </div>
           <div className="rounded-3xl bg-slate-900 px-4 py-3 text-sm text-slate-300">Live analytics</div>
         </div>
+        {user?.organization?.subscription_status !== "active" ? (
+          <div className="mt-6 rounded-3xl border border-amber-500/30 bg-amber-500/10 p-4 text-sm text-amber-200">
+            Your tenant billing is not active. Complete subscription setup under Billing to enable full organizer workflows.
+          </div>
+        ) : null}
       </div>
       <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
         <MetricCard
