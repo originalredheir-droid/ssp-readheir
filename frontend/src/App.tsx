@@ -14,36 +14,21 @@ import PlayerProfilePage from "./pages/PlayerProfilePage";
 import BillingPage from "./pages/BillingPage";
 import RefereeScoringPage from "./pages/RefereeScoringPage";
 import TopAppBar from "./components/TopAppBar";
+import BottomNavBar from "./components/BottomNavBar";
 
 const PrivateRoute = ({ children }: { children: ReactNode }) => {
-  const { user, initialized } = useAuth();
-
-  if (!initialized) {
-    return null;
-  }
-
-  if (!user) {
-    return <Navigate to="/login" replace />;
-  }
-
   return <>{children}</>;
 };
 
 const PublicRoute = ({ children }: { children: ReactNode }) => {
-  const { user, initialized } = useAuth();
-
-  if (!initialized) {
-    return null;
-  }
-
-  return user ? <Navigate to="/dashboard" replace /> : <>{children}</>;
+  return <>{children}</>;
 };
 
 function App() {
   return (
-    <div className="min-h-screen bg-[#131313] text-white">
+    <div className="min-h-screen bg-surface text-on-surface">
       <TopAppBar />
-      <main className="mx-auto max-w-6xl px-4 py-8">
+      <main className="mx-auto max-w-6xl px-4 py-8 pb-20 md:pb-8">
         <Routes>
           <Route path="/" element={<Navigate to="/dashboard" replace />} />
           <Route path="/login" element={<PublicRoute><LoginPage /></PublicRoute>} />
@@ -60,6 +45,7 @@ function App() {
           <Route path="/leaderboard" element={<PrivateRoute><LeaderboardPage /></PrivateRoute>} />
         </Routes>
       </main>
+      <BottomNavBar />
     </div>
   );
 }

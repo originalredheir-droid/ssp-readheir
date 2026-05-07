@@ -3,16 +3,18 @@ type StatusBadgeProps = {
 };
 
 const variants: Record<string, string> = {
-  live: "bg-cyan-500 text-slate-950",
-  scheduled: "bg-slate-700 text-slate-100",
-  completed: "bg-slate-600 text-slate-200",
-  draft: "bg-slate-500 text-slate-200",
+  live: "bg-secondary-container/20 text-secondary font-bold animate-pulse",
+  scheduled: "bg-surface-container-high text-on-surface-variant",
+  completed: "bg-surface-container text-on-surface",
+  upcoming: "text-tertiary font-bold",
+  draft: "bg-surface-container-high text-on-surface-variant",
 };
 
 const StatusBadge = ({ status }: StatusBadgeProps) => {
   const color = variants[status] ?? variants.draft;
   return (
-    <span className={`rounded-full px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] ${color}`}>
+    <span className={`inline-flex items-center gap-1 px-2 py-0.5 font-label text-[10px] font-bold uppercase tracking-[0.2em] ${color}`}>
+      {status === 'live' && <span className="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse"></span>}
       {status}
     </span>
   );
