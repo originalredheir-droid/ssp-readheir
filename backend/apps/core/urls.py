@@ -3,6 +3,7 @@ from rest_framework.routers import DefaultRouter
 from .views import (
     CreateOrderAPIView,
     CurrentUserAPIView,
+    FirebaseAuthAPIView,
     LeaderboardAPIView,
     LoginAPIView,
     RegisterAPIView,
@@ -23,6 +24,7 @@ router.register(r"players", PlayerViewSet, basename="player")
 urlpatterns = [
     path("auth/register/", RegisterAPIView.as_view(), name="register"),
     path("auth/login/", LoginAPIView.as_view(), name="login"),
+    path("auth/firebase/", FirebaseAuthAPIView.as_view(), name="firebase_auth"),
     path("auth/me/", CurrentUserAPIView.as_view(), name="current_user"),
     path("leaderboard/", LeaderboardAPIView.as_view(), name="leaderboard"),
     path("billing/plans/", SubscriptionPlanAPIView.as_view(), name="billing_plans"),

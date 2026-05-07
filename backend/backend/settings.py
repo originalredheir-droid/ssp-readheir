@@ -80,6 +80,13 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+AUTHENTICATION_BACKENDS = [
+    'apps.core.firebase_auth.FirebaseAuthenticationBackend',
+    'django.contrib.auth.backends.ModelBackend',
+]
+
+FIREBASE_SERVICE_ACCOUNT_KEY_PATH = os.path.join(BASE_DIR, 'ssp-c3ea6-firebase-adminsdk-fbsvc-cd59a1c7e6.json')
+
 LANGUAGE_CODE = "en-us"
 TIME_ZONE = "UTC"
 USE_I18N = True

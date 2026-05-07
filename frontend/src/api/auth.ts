@@ -27,6 +27,7 @@ export interface RegisterPayload {
   organization_name: string;
   organization_slug: string;
   role?: string;
+  id_token?: string;
 }
 
 export interface AuthResponse {
@@ -46,6 +47,16 @@ export async function loginUser(payload: LoginPayload): Promise<AuthResponse> {
 
 export async function registerUser(payload: RegisterPayload): Promise<AuthResponse> {
   const response = await api.post<AuthResponse>("/auth/register/", payload);
+  const token = response.data?.token;
+  if (token) {
+    setAuthToken(token);
+    localStorage.setItem("ssp_token", token);
+  }
+  return response.data;
+}
+
+export async function firebaseAuth(idToken: string): Promise<AuthResponse> {
+  const response = await api.post<AuthResponse>("/auth/firebase/", { id_token: idToken });
   const token = response.data?.token;
   if (token) {
     setAuthToken(token);

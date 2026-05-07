@@ -63,6 +63,7 @@ class User(AbstractUser):
         related_name="users",
     )
     role = models.CharField(max_length=20, choices=ROLE_CHOICES, default=ROLE_ORGANIZER)
+    firebase_uid = models.CharField(max_length=255, blank=True, null=True, unique=True)
 
     def __str__(self):
         return f"{self.username} ({self.organization.slug if self.organization else 'platform'})"

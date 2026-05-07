@@ -20,6 +20,10 @@ node_modules/
 dist/
 build/
 .env
+.env.local
+
+# Firebase
+ssp-c3ea6-firebase-adminsdk-*.json
 
 # IDE
 .vscode/

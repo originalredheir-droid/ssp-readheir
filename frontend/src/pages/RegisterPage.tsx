@@ -5,19 +5,20 @@ import { useAuth } from "../context/AuthContext";
 const RegisterPage = () => {
   const [organizationName, setOrganizationName] = useState("");
   const [organizationSlug, setOrganizationSlug] = useState("");
-  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [message, setMessage] = useState<string | null>(null);
   const navigate = useNavigate();
-  const { register, loading } = useAuth();
+  const { register, loginWithGoogle, loading } = useAuth();
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     setMessage(null);
     try {
       await register({
-        username,
+        username: email,
         password,
+        email,
         organization_name: organizationName,
         organization_slug: organizationSlug,
       });
@@ -27,49 +28,26 @@ const RegisterPage = () => {
     }
   }
 
+  async function handleGoogleRegister() {
+    setMessage(null);
+    try {
+      await loginWithGoogle();
+      // After Google login, might need to handle organization setup
+      navigate("/dashboard");
+    } catch (err) {
+      setMessage("Google registration failed.");
+    }
+  }
+
   return (
-    <section className="mx-auto max-w-2xl rounded-3xl border border-slate-800 bg-[#181818] p-8 shadow-lg shadow-black/20">
-      <h1 className="mb-4 text-3xl font-semibold text-white">Create an account</h1>
-      <p className="mb-6 text-slate-400">Register your organization and get access to the SuperSports admin experience.</p>
-      <form className="grid gap-4" onSubmit={handleSubmit}>
-        <label className="block">
-          <span className="text-sm text-slate-300">Organization name</span>
-          <input
-            value={organizationName}
-            onChange={(e: ChangeEvent<HTMLInputElement>) => setOrganizationName(e.target.value)}
-            className="mt-2 w-full rounded-2xl border border-slate-700 bg-[#111111] px-4 py-3 text-white outline-none focus:border-cyan-400"
-          />
-        </label>
-        <label className="block">
-          <span className="text-sm text-slate-300">Organization slug</span>
-          <input
-            value={organizationSlug}
-            onChange={(e: ChangeEvent<HTMLInputElement>) => setOrganizationSlug(e.target.value)}
-            className="mt-2 w-full rounded-2xl border border-slate-700 bg-[#111111] px-4 py-3 text-white outline-none focus:border-cyan-400"
-          />
-        </label>
-        <label className="block">
-          <span className="text-sm text-slate-300">Username</span>
-          <input
-            value={username}
-            onChange={(e: ChangeEvent<HTMLInputElement>) => setUsername(e.target.value)}
-            className="mt-2 w-full rounded-2xl border border-slate-700 bg-[#111111] px-4 py-3 text-white outline-none focus:border-cyan-400"
-          />
-        </label>
-        <label className="block">
-          <span className="text-sm text-slate-300">Password</span>
-          <input
-            type="password"
-            value={password}
-            onChange={(e: ChangeEvent<HTMLInputElement>) => setPassword(e.target.value)}
-            className="mt-2 w-full rounded-2xl border border-slate-700 bg-[#111111] px-4 py-3 text-white outline-none focus:border-cyan-400"
-          />
-        </label>
-        {message ? <p className="text-sm text-cyan-300">{message}</p> : null}
-        <button className="rounded-2xl bg-cyan-500 px-4 py-3 font-semibold text-slate-950 transition hover:bg-cyan-400">
-          Register
-        </button>
-      </form>
+    <section className="mx-auto max-w-md rounded-3xl border border-slate-800 bg-[#181818] p-8 shadow-lg shadow-black/20">
+      <h1 className="mb-4 text-3xl font-semibold text-white">Registration disabled</h1>
+      <p className="mb-6 text-slate-400">
+        Signup is temporarily disabled so you can inspect the app pages without authentication.
+      </p>
+      <div className="rounded-3xl border border-slate-700 bg-slate-900 p-6 text-sm text-slate-300">
+        Use the top navigation to explore the app pages and preview the UI.
+      </div>
     </section>
   );
 };
